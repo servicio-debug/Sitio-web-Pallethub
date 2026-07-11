@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PalletHub | Suministro Inteligente de Pallets B2B y Madera Industrial</title>
-    <!-- Importación de Tipografía Premium Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +13,7 @@
             --brand-green: #cce4c5; /* El verde exacto de tu logotipo */
             --brand-dark: #0c0d0e;  /* El tono oscuro de tu logotipo */
             --brand-green-hover: #b9d8b1;
-            --primary-blue: #0284c7; /* Azul complementario para el sector logístico B2B */
+            --primary-blue: #0284c7; /* Azul complementario logístico */
             --light-bg: #f8fafc;
             --muted-gray: #64748b;
         }
@@ -56,15 +55,13 @@
         .nav-links a { text-decoration: none; color: var(--brand-dark); font-weight: 500; font-size: 0.95rem; transition: opacity 0.2s; }
         .nav-links a:hover { opacity: 0.7; }
         
-        /* Split Hero Premium (v0 / Dribbble Style) */
-        .hero-container { padding: 24px 5% 40px 5%; }
+        /* Split Hero Rediseñado (Estilo Tecnológico Limpio) */
+        .hero-container { padding: 40px 5% 20px 5%; }
         .hero { 
             display: flex; 
-            min-height: 75vh; 
+            min-height: 60vh; 
             flex-wrap: wrap; 
-            gap: 20px; 
-            border-radius: 24px; 
-            overflow: hidden; 
+            gap: 24px; 
         }
         .split { 
             flex: 1; 
@@ -73,25 +70,36 @@
             flex-direction: column; 
             justify-content: center; 
             align-items: flex-start; 
-            padding: 60px 40px; 
+            padding: 50px 40px; 
             text-align: left; 
-            color: white; 
-            position: relative; 
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: white;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .split:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.04);
         }
         
-        /* Efectos visuales de fondo refinados */
-        .b2b-client { 
-            background: linear-gradient(135deg, rgba(12, 13, 14, 0.9) 30%, rgba(2, 132, 199, 0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover; 
+        /* Indicadores visuales de sección superiores */
+        .split-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            padding: 6px 12px;
+            border-radius: 6px;
         }
-        .sourcing-partner { 
-            background: linear-gradient(135deg, rgba(12, 13, 14, 0.92) 30%, rgba(22, 163, 74, 0.5)), url('https://images.unsplash.com/photo-1533234458684-d4ba7485ef4b?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover; 
-        }
+        .b2b-tag { background: #e0f2fe; color: #0369a1; }
+        .sourcing-tag { background: #dcfce7; color: #15803d; }
         
-        .hero h1 { font-size: 2.8rem; margin-bottom: 16px; font-weight: 800; max-width: 540px; letter-spacing: -1px; line-height: 1.15; }
-        .hero p { font-size: 1.1rem; margin-bottom: 36px; max-width: 460px; color: rgba(255, 255, 255, 0.85); line-height: 1.5; font-weight: 300; }
+        .hero h1 { font-size: 2.3rem; margin-bottom: 16px; font-weight: 800; max-width: 500px; letter-spacing: -0.8px; line-height: 1.2; color: var(--brand-dark); }
+        .hero p { font-size: 1.05rem; margin-bottom: 32px; max-width: 440px; color: var(--muted-gray); line-height: 1.6; font-weight: 400; }
         
-        /* Botones Estilo Minimalista Activo */
+        /* Botones Sólidos y Visibles */
         .cta-btn { 
             padding: 14px 28px; 
             font-size: 0.95rem; 
@@ -101,12 +109,13 @@
             transition: all 0.2s ease; 
             cursor: pointer; 
             border: none;
+            display: inline-block;
         }
-        .b2b-client .cta-btn { background-color: var(--primary-blue); color: white; }
-        .b2b-client .cta-btn:hover { background-color: #0271a8; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3); }
+        .b2b-client .cta-btn { background-color: var(--brand-dark); color: white; }
+        .b2b-client .cta-btn:hover { background-color: var(--primary-blue); box-shadow: 0 8px 20px rgba(2, 132, 199, 0.2); }
         
-        .sourcing-partner .cta-btn { background-color: var(--brand-green); color: var(--brand-dark); }
-        .sourcing-partner .cta-btn:hover { background-color: var(--brand-green-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(204, 228, 197, 0.3); }
+        .sourcing-partner .cta-btn { background-color: var(--brand-green); color: var(--brand-dark); border: 1px solid rgba(0,0,0,0.1); }
+        .sourcing-partner .cta-btn:hover { background-color: var(--brand-green-hover); box-shadow: 0 8px 20px rgba(204, 228, 197, 0.4); }
 
         /* Contenedor del Formulario */
         .quote-section { padding: 60px 5% 80px 5%; background: var(--light-bg); text-align: center; }
@@ -126,8 +135,7 @@
         
         .submit-btn { width: 100%; padding: 16px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; color: white; cursor: pointer; transition: all 0.2s; }
         .btn-blue { background: var(--brand-dark); }
-        .btn-blue:hover { opacity: 0.9; }
-        .btn-green { background: var(--secondary); }
+        .btn-blue:hover { background: #1e293b; }
 
         /* Sección de Productos */
         .products-section { padding: 80px 5%; text-align: center; background: white; }
@@ -140,7 +148,7 @@
         .tag-green { background: #dcfce7; color: #15803d; }
 
         @media (max-width: 960px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2rem; }
             .split { padding: 40px 30px; }
         }
         @media (max-width: 768px) { 
@@ -151,7 +159,6 @@
 </head>
 <body>
 
-    <!-- Navbar con la Identidad del Logotipo Integrada -->
     <nav>
         <a href="#" class="logo-container">
             <div class="logo-circle">♺</div>
@@ -164,18 +171,17 @@
         </ul>
     </nav>
 
-    <!-- Contenedor del Hero Estilo Dribbble con Bordes Suavizados -->
     <div class="hero-container">
         <main class="hero">
-            <!-- Lado Clientes B2B -->
             <section class="split b2b-client">
+                <span class="split-tag b2b-tag">Para Empresas y Logística</span>
                 <h1>Suministro Inteligente de Pallets B2B y Madera Industrial</h1>
                 <p>Cotizaciones inmediatas por volumen con certificación internacional NIMF-15 y stock garantizado en Jalisco.</p>
                 <a href="#cotizador" class="cta-btn" onclick="switchTab('pallets')">Cotizar Soluciones</a>
             </section>
 
-            <!-- Lado Suministro / Círculo de Proveedores -->
             <section class="split sourcing-partner">
+                <span class="split-tag sourcing-tag">Para Transportistas y Lotes</span>
                 <h1>Monetiza tu Activo Logístico. Únete al Círculo</h1>
                 <p>Genera ingresos estables aprovechando tus fletes vacíos, almacenamiento disponible o residuos de madera industrial.</p>
                 <a href="#cotizador" class="cta-btn" onclick="switchTab('proveedores')">Ser Aliado de Suministro</a>
@@ -183,7 +189,6 @@
         </main>
     </div>
 
-    <!-- Centro de Cotización -->
     <section id="cotizador" class="quote-section">
         <h2>Centro de Cotización e Integración</h2>
         <div class="quote-container">
@@ -193,7 +198,6 @@
                 <button class="tab-btn" id="tab-proveedores" onclick="switchTab('proveedores')">🤝 Círculo de Proveedores</button>
             </div>
             
-            <!-- Panel 1: Pallets -->
             <div class="form-panel active" id="panel-pallets">
                 <form onsubmit="handleWhatsAppSubmit(event, 'pallets')">
                     <div class="form-group"><label>Tipo de Requerimiento</label>
@@ -217,7 +221,6 @@
                 </form>
             </div>
             
-            <!-- Panel 2: Madera -->
             <div class="form-panel" id="panel-madera">
                 <form onsubmit="handleWhatsAppSubmit(event, 'madera')">
                     <div class="form-group"><label>Material Requerido</label>
@@ -236,7 +239,6 @@
                 </form>
             </div>
             
-            <!-- Panel 3: Proveedores -->
             <div class="form-panel" id="panel-proveedores">
                 <form onsubmit="handleWhatsAppSubmit(event, 'proveedores')">
                     <div class="form-group"><label>Perfil de Aliado</label>
@@ -256,7 +258,6 @@
         </div>
     </section>
 
-    <!-- Sección de Productos -->
     <section class="products-section">
         <h2>Infraestructura Logística y Suministro a Gran Escala en Jalisco</h2>
         <div class="products-grid">
