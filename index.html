@@ -16,14 +16,13 @@
             --bg-neutral: #f8fafc;
             --text-muted: #64748b;
             --border-color: #e2e8f0;
-            --primary-accent: #10b981; /* Verde activo para selección */
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-neutral); color: var(--brand-dark); }
         
-        /* NAVBAR NAVEGACIÓN GLOBAL */
+        /* NAVBAR LOGÍSTICA */
         nav {
             display: flex;
             justify-content: space-between;
@@ -42,11 +41,11 @@
         .menu-links a { text-decoration: none; color: var(--brand-dark); font-weight: 500; font-size: 0.9rem; padding: 8px 12px; border-radius: 6px; transition: background 0.2s; }
         .menu-links a:hover { background: #e2e8f0; }
         
-        /* DINÁMICA VISUAL SPLIT-HERO */
+        /* DINÁMICA VISUAL SPLIT-HERO (Tus esquemas B2B vs Suministro) */
         .hero-section {
             display: flex;
             background: white;
-            min-height: 65vh;
+            min-height: 60vh;
             border-bottom: 1px solid rgba(0,0,0,0.05);
             flex-wrap: wrap;
         }
@@ -63,32 +62,36 @@
             flex: 1.2; min-width: 320px; background-color: #f2fbf0; padding: 60px 5%;
             display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
         }
-        .hero-section h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; color: var(--brand-dark); }
-        .hero-section p { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; line-height: 1.5; }
-        .cta-btn-main { padding: 14px 28px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; cursor: pointer; border: none; transition: transform 0.2s; display: inline-block; }
+        .hero-section h1 { font-size: 2.1rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; color: var(--brand-dark); }
+        .hero-section p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 28px; line-height: 1.5; }
+        
+        .cta-btn-main { padding: 14px 24px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border-radius: 8px; cursor: pointer; border: none; transition: transform 0.2s; display: inline-block; }
         .cta-btn-main:hover { transform: translateY(-2px); }
         .btn-blue-solid { background: #1e3a8a; color: white; }
         .btn-green-solid { background: #166534; color: white; }
         
-        /* CERTIFICACIONES SUTILES */
+        /* BLOQUE DE CONFIANZA INDUSTRIAL */
         .trust-bar { padding: 30px 5%; background: white; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .trust-bar h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 20px; }
         .badges-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
         .badge-item { display: flex; flex-direction: column; align-items: center; font-size: 0.75rem; font-weight: 700; color: var(--brand-dark); }
         .badge-icon { width: 45px; height: 45px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; font-size: 1.2rem; border: 1px solid #cbd5e1; }
 
-        /* --- NUEVO REDISEÑO ESTILO STRIPE / APPLE PARA EL WIZARD --- */
-        .wizard-wrapper { padding: 80px 5%; max-width: 720px; margin: 0 auto; }
+        /* WIZARD REDISEÑADO CON LA ESTÉTICA STRIPE/APPLE */
+        .wizard-wrapper { padding: 80px 5%; max-width: 760px; margin: 0 auto; text-align: center; }
+        .wizard-wrapper h2 { font-size: 2rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px; }
+        .wizard-wrapper .subtitle { color: var(--text-muted); font-size: 1rem; margin-bottom: 40px; }
         
         .premium-wizard-card {
             background: #ffffff;
             border-radius: 16px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
-            padding: 36px;
+            padding: 40px;
+            text-align: left;
         }
 
-        /* Indicador de pasos minimalista lineal */
+        /* Línea indicadora superior */
         .premium-steps {
             display: flex;
             align-items: center;
@@ -97,31 +100,31 @@
             position: relative;
         }
         .premium-steps::before {
-            content: ''; position: absolute; top: 12px; left: 0; right: 0; height: 2px; background: #e2e8f0; z-index: 1;
+            content: ''; position: absolute; top: 13px; left: 0; right: 0; height: 2px; background: #e2e8f0; z-index: 1;
         }
         .premium-step-item {
-            position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 60px;
+            position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 70px;
         }
         .step-dot {
-            width: 26px; height: 26px; border-radius: 50%; background: #ffffff; border: 2px solid #cbd5e1;
-            display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); transition: all 0.3s;
+            width: 28px; height: 28px; border-radius: 50%; background: #ffffff; border: 2px solid #cbd5e1;
+            display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); transition: all 0.3s;
         }
         .premium-step-item.active .step-dot {
             border-color: var(--brand-dark); background: var(--brand-dark); color: white;
         }
-        .step-label { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; width: 80px; }
+        .step-label { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; }
         .premium-step-item.active .step-label { color: var(--brand-dark); font-weight: 700; }
 
-        .premium-wizard-card h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 28px; color: var(--brand-dark); }
+        .premium-wizard-card h3 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 24px; color: var(--brand-dark); }
 
-        /* Lista de Opciones Estilo Referencia (Bordes Limpios y Check Circular) */
+        /* Filas de Opciones e Interacción Visual */
         .premium-options-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
         
         .premium-option-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 18px 20px;
+            padding: 16px 20px;
             border: 1px solid var(--border-color);
             border-radius: 12px;
             cursor: pointer;
@@ -139,13 +142,13 @@
         
         .option-left { display: flex; align-items: center; gap: 16px; }
         .option-icon-frame {
-            width: 40px; height: 40px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+            width: 42px; height: 42px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
         }
-        .option-details { display: flex; flex-direction: column; text-align: left; }
+        .option-details { display: flex; flex-direction: column; }
         .option-title { font-size: 0.95rem; font-weight: 600; color: var(--brand-dark); }
         .option-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
         
-        /* El radio button circular customizado */
+        /* Check circular personalizado */
         .custom-radio-circle {
             width: 20px; height: 20px; border-radius: 50%; border: 2px solid #cbd5e1; position: relative; transition: all 0.2s; background: white;
         }
@@ -156,16 +159,18 @@
             content: ''; position: absolute; width: 6px; height: 6px; background: white; border-radius: 50%; top: 5px; left: 5px;
         }
 
-        /* Formularios y Ajustes de Inputs */
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
-        .form-group { display: flex; flex-direction: column; text-align: left; }
+        /* Bloques de Formulario */
+        .step-panel { display: none; }
+        .step-panel.active { display: block; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+        .form-group { display: flex; flex-direction: column; }
         .full-width { grid-column: span 2; }
         .form-group label { font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; color: var(--brand-dark); letter-spacing: 0.3px; }
         
-        select, input { padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.95rem; background: #ffffff; color: var(--brand-dark); transition: all 0.2s; }
+        select, input { padding: 13px 16px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.95rem; background: #ffffff; color: var(--brand-dark); transition: all 0.2s; }
         select:focus, input:focus { outline: none; border-color: var(--brand-dark); box-shadow: 0 0 0 3px rgba(12,13,14,0.05); }
 
-        /* Controles Inferiores Flotantes */
+        /* Controles Inferiores */
         .premium-footer-nav { display: flex; justify-content: space-between; margin-top: 32px; border-top: 1px solid var(--border-color); padding-top: 24px; }
         .btn-premium-nav { padding: 12px 24px; font-size: 0.9rem; font-weight: 600; border-radius: 8px; cursor: pointer; border: none; transition: all 0.2s; }
         .btn-p-back { background: transparent; color: var(--text-muted); }
@@ -192,25 +197,25 @@
         </a>
         <ul class="menu-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#seccion-cotizador" onclick="scrollToCotizador()">Soluciones B2B</a></li>
-            <li><a href="#seccion-cotizador" onclick="scrollToCotizador()">Madera Industrial</a></li>
-            <li><a href="#seccion-cotizador" onclick="scrollToCotizador()">Círculo de Proveedores</a></li>
+            <li><a href="#seccion-cotizador" onclick="seleccionarLineaAutomatica('Tarima de Madera')">Soluciones B2B</a></li>
+            <li><a href="#seccion-cotizador" onclick="seleccionarLineaAutomatica('Madera Dimensionada / Polines')">Madera Industrial</a></li>
+            <li><a href="#seccion-cotizador" onclick="seleccionarLineaAutomatica('Tarima de Plástico')">Modelos Especiales</a></li>
         </ul>
     </nav>
 
     <section class="hero-section">
         <div class="hero-b2b">
             <h1>Suministro Inteligente de Pallets B2B y Madera Industrial</h1>
-            <p>High FETA Button, of the desktop home. Big CTA Button: "Split-Hero".</p>
-            <a href="#seccion-cotizador" class="cta-btn-main btn-blue-solid" onclick="scrollToCotizador()">[Cotizar Soluciones B2B]</a>
+            <p>Optimización y abasto garantizado para corporativos, cedis e industrias de Jalisco.</p>
+            <a href="#seccion-cotizador" class="cta-btn-main btn-blue-solid" onclick="seleccionarLineaAutomatica('Tarima de Madera')">[Cotizar Soluciones B2B]</a>
         </div>
         
         <div class="hero-center-img"></div>
         
         <div class="hero-supply">
             <h1>Monetiza tu Activo Logístico. Únete al Círculo de Proveedores</h1>
-            <p>Big CTA Button ser Aliado de Suministro y optimización de fletes vacíos en Jalisco.</p>
-            <a href="#seccion-cotizador" class="cta-btn-main btn-green-solid" onclick="scrollToCotizador()">[Ser Aliado de Suministro]</a>
+            <p>Optimización de fletes vacíos y gestión de stock excedente en Jalisco.</p>
+            <a href="#seccion-cotizador" class="cta-btn-main btn-green-solid" onclick="seleccionarLineaAutomatica('Madera Dimensionada / Polines')">[Ser Aliado de Suministro]</a>
         </div>
     </section>
 
@@ -225,6 +230,9 @@
     </section>
 
     <main id="seccion-cotizador" class="wizard-wrapper">
+        <h2>Centro de Integración Operativa</h2>
+        <p class="subtitle">Configura tu requerimiento en menos de 1 minuto y recíbelo por WhatsApp</p>
+        
         <div class="premium-wizard-card">
             
             <div class="premium-steps">
@@ -250,34 +258,34 @@
                 <h3>Selecciona la línea de producto corporativo</h3>
                 <div class="premium-options-list">
                     
-                    <div class="premium-option-row" onclick="selectPremiumProduct('Tarima de Madera', this)">
+                    <div class="premium-option-row" id="opt-madera" onclick="selectPremiumProduct('Tarima de Madera', this)">
                         <div class="option-left">
                             <div class="option-icon-frame">🪵</div>
                             <div class="option-details">
                                 <span class="option-title">Tarima de Madera</span>
-                                <span class="option-desc">Nuevas, recicladas y habilitados de alta resistencia</span>
+                                <span class="option-desc">Nuevas, recicladas y habilitados con tratamiento HT</span>
                             </div>
                         </div>
                         <div class="custom-radio-circle"></div>
                     </div>
 
-                    <div class="premium-option-row" onclick="selectPremiumProduct('Tarima de Plástico', this)">
+                    <div class="premium-option-row" id="opt-plastico" onclick="selectPremiumProduct('Tarima de Plástico', this)">
                         <div class="option-left">
                             <div class="option-icon-frame">📦</div>
                             <div class="option-details">
                                 <span class="option-title">Tarima de Plástico</span>
-                                <span class="option-desc">Grado alimenticio e industrial reutilizable</span>
+                                <span class="option-desc">Modelos grado alimenticio e industriales reutilizables</span>
                             </div>
                         </div>
                         <div class="custom-radio-circle"></div>
                     </div>
 
-                    <div class="premium-option-row" onclick="selectPremiumProduct('Madera Dimensionada / Polines', this)">
+                    <div class="premium-option-row" id="opt-polines" onclick="selectPremiumProduct('Madera Dimensionada / Polines', this)">
                         <div class="option-left">
                             <div class="option-icon-frame">🌲</div>
                             <div class="option-details">
-                                <span class="option-title">Madera Industrial / Polines</span>
-                                <span class="option-desc">Madera de pino nacional para frentes de obra y embalajes</span>
+                                <span class="option-title">Madera Dimensionada / Polines</span>
+                                <span class="option-desc">Material de pino nacional para frentes de obra y embalajes</span>
                             </div>
                         </div>
                         <div class="custom-radio-circle"></div>
@@ -308,10 +316,10 @@
                         </select>
                     </div>
                     <div class="form-group full-width">
-                        <label>Tratamiento Internacional</label>
+                        <label>Tratamiento Fitosanitario Internacional</label>
                         <select id="p-nimf">
-                            <option value="Requiere Certificado NIMF-15 / HT">SÍ, requiere tratamiento Térmico Fitosanitario (NIMF-15)</option>
-                            <option value="No requiere exportación">No, para movimiento interno/local</option>
+                            <option value="Requiere Certificado NIMF-15 / HT">SÍ, requiere Sello térmico oficial (NIMF-15)</option>
+                            <option value="No requiere exportación">No, para movimiento interno/local de mercancía</option>
                         </select>
                     </div>
                 </div>
@@ -325,8 +333,8 @@
                 <h3>Volumen y Destino de Suministro</h3>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>Cantidad Solicitada</label>
-                        <input type="number" id="p-cantidad" placeholder="Ej. 450 piezas" required>
+                        <label>Cantidad Solicitada (Piezas)</label>
+                        <input type="number" id="p-cantidad" placeholder="Ej. 500" required>
                     </div>
                     <div class="form-group">
                         <label>Frecuencia de Consumo</label>
@@ -337,7 +345,7 @@
                     </div>
                     <div class="form-group full-width">
                         <label>Zona Industrial o Municipio de Entrega (Jalisco)</label>
-                        <input type="text" id="p-destino" placeholder="Ej. El Salto, Zapopan, Guadalajara" required>
+                        <input type="text" id="p-destino" placeholder="Ej. Parque Industrial El Salto, Zapopan, Guadalajara" required>
                     </div>
                 </div>
                 <div class="premium-footer-nav">
@@ -354,8 +362,8 @@
                         <input type="text" id="p-nombre" placeholder="Tu nombre completo" required>
                     </div>
                     <div class="form-group">
-                        <label>Empresa</label>
-                        <input type="text" id="p-empresa" placeholder="Razón social o Corporativo" required>
+                        <label>Empresa / Corporativo</label>
+                        <input type="text" id="p-empresa" placeholder="Razón social de la compañía" required>
                     </div>
                 </div>
                 <div class="premium-footer-nav">
@@ -376,19 +384,32 @@
             selectedProduct = name;
         }
 
-        function scrollToCotizador() {
+        // Enlace automático desde botones del Hero o Navbar
+        function seleccionarLineaAutomatica(lineaName) {
+            let elementoObjetivo;
+            if(lineaName === 'Tarima de Madera') elementoObjetivo = document.getElementById('opt-madera');
+            if(lineaName === 'Tarima de Plástico') elementoObjetivo = document.getElementById('opt-plastico');
+            if(lineaName === 'Madera Dimensionada / Polines') elementoObjetivo = document.getElementById('opt-polines');
+            
+            if(elementoObjetivo) {
+                selectPremiumProduct(lineaName, elementoObjetivo);
+            }
+            
             document.getElementById('seccion-cotizador').scrollIntoView({ behavior: 'smooth' });
+            goToPremiumStep(1);
         }
 
         function goToPremiumStep(step) {
             if (step === 2 && !selectedProduct) {
-                alert("Por favor selecciona un activo de la lista antes de continuar.");
+                alert("Por favor selecciona una línea corporativa antes de continuar.");
                 return;
             }
             
+            // Apagar todos los paneles y burbujas
             document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
             document.querySelectorAll('.premium-step-item').forEach(i => i.classList.remove('active'));
             
+            // Prender el paso actual
             document.getElementById('p-panel-' + step).classList.add('active');
             for(let i = 1; i <= step; i++) {
                 document.getElementById('p-ind-' + i).classList.add('active');
@@ -406,7 +427,7 @@
             const destino = document.getElementById('p-destino').value;
 
             if (!nombre || !empresa || !cantidad || !destino) {
-                alert("Por favor rellena todos los campos del formulario.");
+                alert("Por favor rellena todos los campos para procesar tu solicitud.");
                 return;
             }
 
