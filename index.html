@@ -48,7 +48,7 @@
         .btn-blue { background: var(--primary); }
         .btn-green { background: var(--secondary); }
 
-        /* NUEVA SECCIÓN: Catálogo de Soluciones Avanzadas (SEO) */
+        /* Sección de Infraestructura y SEO Local */
         .products-section { padding: 80px 5%; text-align: center; background: white; }
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
         .product-card { background: var(--light); padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: left; }
@@ -99,60 +99,73 @@
                 <button class="tab-btn" id="tab-madera" onclick="switchTab('madera')">🪵 Madera Industrial</button>
                 <button class="tab-btn" id="tab-proveedores" onclick="switchTab('proveedores')">🤝 Círculo de Proveedores</button>
             </div>
-            <!-- Panel 1 -->
+            
+            <!-- Panel 1: Pallets -->
             <div class="form-panel active" id="panel-pallets">
-                <form onsubmit="handleSubmit(event, 'Pallets B2B')">
+                <form onsubmit="handleWhatsAppSubmit(event, 'pallets')">
                     <div class="form-group"><label>Tipo de Requerimiento</label>
-                        <select required>
+                        <select id="pallet-type" required>
                             <option value="">Selecciona...</option>
-                            <option value="madera-nueva">Tarimas de Madera Nueva</option>
-                            <option value="madera-reciclada">Tarimas de Madera Reciclada</option>
-                            <option value="ht-exportacion">Tratamiento Fitosanitario HT (NIMF-15)</option>
+                            <option value="Tarimas de Madera Nueva">Tarimas de Madera Nueva</option>
+                            <option value="Tarimas de Madera Reciclada / Usadas">Tarimas de Madera Reciclada / Usadas</option>
+                            <option value="Tarimas de Plástico / Grado Alimenticio">Tarimas de Plástico / Grado Alimenticio</option>
+                            <option value="Tratamiento Fitosanitario HT (NIMF-15)">Tratamiento Fitosanitario HT (NIMF-15)</option>
                         </select>
                     </div>
-                    <div class="form-group"><label>Teléfono (WhatsApp)</label><input type="tel" required></div>
+                    <div class="form-group"><label>Volumen Mensual Estimado</label>
+                        <select id="pallet-volume" required>
+                            <option value="">Selecciona el volumen...</option>
+                            <option value="100 a 500 piezas">100 a 500 piezas</option>
+                            <option value="500 a 2,000 piezas">500 a 2,000 piezas</option>
+                            <option value="Más de 2,000 piezas">Más de 2,000 piezas (Gran Volumen)</option>
+                        </select>
+                    </div>
                     <button type="submit" class="submit-btn btn-blue">Solicitar Cotización B2B</button>
                 </form>
             </div>
-            <!-- Panel 2 -->
+            
+            <!-- Panel 2: Madera -->
             <div class="form-panel" id="panel-madera">
-                <form onsubmit="handleSubmit(event, 'Madera Industrial')">
+                <form onsubmit="handleWhatsAppSubmit(event, 'madera')">
                     <div class="form-group"><label>Material Requerido</label>
-                        <select required>
+                        <select id="madera-type" required>
                             <option value="">Selecciona...</option>
-                            <option value="polines">Polines para Cimbra / Construcción</option>
-                            <option value="vigas">Vigas Estructurales</option>
-                            <option value="aserradero-medida">Habilitado a la Medida</option>
+                            <option value="Polines para Cimbra / Construcción">Polines para Cimbra</option>
+                            <option value="Vigas Estructurales">Vigas Estructurales</option>
+                            <option value="Tablones de Pino Nacional">Tablones de Pino</option>
+                            <option value="Habilitado a la Medida (Especificación Industrial)">Habilitado a la Medida</option>
                         </select>
                     </div>
-                    <div class="form-group"><label>Teléfono (WhatsApp)</label><input type="tel" required></div>
+                    <div class="form-group"><label>Destino de Entrega (Jalisco / Obra)</label>
+                        <input type="text" id="madera-destino" placeholder="Ej: Zapopan, El Salto" required>
+                    </div>
                     <button type="submit" class="submit-btn btn-blue">Cotizar Madera Industrial</button>
                 </form>
             </div>
-            <!-- Panel 3 -->
+            
+            <!-- Panel 3: Proveedores -->
             <div class="form-panel" id="panel-proveedores">
-                <form onsubmit="handleSubmit(event, 'Círculo de Proveedores')">
+                <form onsubmit="handleWhatsAppSubmit(event, 'proveedores')">
                     <div class="form-group"><label>Perfil de Aliado</label>
-                        <select required>
+                        <select id="prov-type" required>
                             <option value="">Selecciona...</option>
-                            <option value="transportista">Transportista Independiente</option>
-                            <option value="minibodega">Minibodega / Punto de Acopio</option>
+                            <option value="Transportista Independiente (Monetizar retornos)">Transportista Independiente</option>
+                            <option value="Minibodega / Punto de Acopio">Minibodega / Punto de Acopio</option>
+                            <option value="Recolector de Residuos de Madera">Recolector de Residuos</option>
                         </select>
                     </div>
-                    <div class="form-group"><label>WhatsApp Directo</label><input type="tel" required></div>
+                    <div class="form-group"><label>Capacidad Operativa / Activos Disponibles</label>
+                        <input type="text" id="prov-capacidad" placeholder="Ej: Camión 3.5 ton, Almacén 200m2" required>
+                    </div>
                     <button type="submit" class="submit-btn btn-green">Unirse a la Red</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN DE INFRAESTRUCTURA Y SEO LOCAL -->
+    <!-- Sección de Productos -->
     <section class="products-section">
         <h2>Infraestructura Logística y Suministro a Gran Escala en Jalisco</h2>
-        <p style="color: var(--gray); margin-top: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">
-            Como fábrica de tarimas líder en Guadalajara, resolvemos las necesidades de empaque y distribución de alta resistencia para la industria B2B y constructores locales.
-        </p>
-
         <div class="products-grid">
             <div class="product-card">
                 <span class="tag tag-blue">Logística Internacional</span>
@@ -173,15 +186,44 @@
     </section>
 
     <script>
+        // CONFIGURACIÓN: Reemplaza con tu número de WhatsApp Business (Incluye código de país, ej: 52 para México + 10 dígitos)
+        const WHATSAPP_NUMBER = "523312345678"; 
+
         function switchTab(tabName) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.form-panel').forEach(panel => panel.classList.remove('active'));
             document.getElementById('tab-' + tabName).classList.add('active');
             document.getElementById('panel-' + tabName).classList.add('active');
         }
-        function handleSubmit(event, tipoFlujo) {
+
+        function handleWhatsAppSubmit(event, formulario) {
             event.preventDefault();
-            alert('¡Excelente! Procesando solicitud de ' + tipoFlujo);
+            let baseText = "Hola PalletHub, me interesa cotizar desde el sitio web:\n\n";
+            let message = "";
+
+            if (formulario === 'pallets') {
+                const tipo = document.getElementById('pallet-type').value;
+                const volumen = document.getElementById('pallet-volume').value;
+                message = `${baseText}*Línea:* Soluciones en Pallets B2B\n*Tipo:* ${tipo}\n*Volumen Mensual:* ${volumen}`;
+            } 
+            else if (formulario === 'madera') {
+                const tipo = document.getElementById('madera-type').value;
+                const destino = document.getElementById('madera-destino').value;
+                message = `${baseText}*Línea:* Madera Industrial y Construcción\n*Material:* ${tipo}\n*Destino de Obra:* ${destino}`;
+            } 
+            else if (formulario === 'proveedores') {
+                const perfil = document.getElementById('prov-type').value;
+                const capacidad = document.getElementById('prov-capacidad').value;
+                message = `${baseText}*Línea:* Registro Círculo de Proveedores\n*Perfil:* ${perfil}\n*Capacidad/Activos:* ${capacidad}`;
+            }
+
+            // Codificar el texto para URL
+            const urlEncodedMessage = encodeURIComponent(message);
+            // Generar enlace de WhatsApp
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${urlEncodedMessage}`;
+            
+            // Abrir en pestaña nueva
+            window.open(whatsappUrl, '_blank');
         }
     </script>
 </body>
