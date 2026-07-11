@@ -48,7 +48,7 @@
         .btn-blue { background: var(--primary); }
         .btn-green { background: var(--secondary); }
 
-        /* Sección de Infraestructura y SEO Local */
+        /* Sección de Productos */
         .products-section { padding: 80px 5%; text-align: center; background: white; }
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
         .product-card { background: var(--light); padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: left; }
@@ -186,8 +186,8 @@
     </section>
 
     <script>
-        // CONFIGURACIÓN: Reemplaza con tu número de WhatsApp Business (Incluye código de país, ej: 52 para México + 10 dígitos)
-        const WHATSAPP_NUMBER = "523312345678"; 
+        // CONFIGURACIÓN: Número de WhatsApp real de PalletHub
+        const WHATSAPP_NUMBER = "523350185490"; 
 
         function switchTab(tabName) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -217,12 +217,9 @@
                 message = `${baseText}*Línea:* Registro Círculo de Proveedores\n*Perfil:* ${perfil}\n*Capacidad/Activos:* ${capacidad}`;
             }
 
-            // Codificar el texto para URL
             const urlEncodedMessage = encodeURIComponent(message);
-            // Generar enlace de WhatsApp
             const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${urlEncodedMessage}`;
             
-            // Abrir en pestaña nueva
             window.open(whatsappUrl, '_blank');
         }
     </script>
