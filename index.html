@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PalletHub | Suministro Inteligente de Pallets B2B y Madera Industrial</title>
+    <style>
+        :root {
+            --primary: #0284c7; /* Azul logístico */
+            --secondary: #16a34a; /* Verde proveedores/sustentabilidad */
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        /* Navbar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .logo { font-weight: bold; font-size: 24px; color: var(--dark); }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; }
+        
+        /* Split Hero Section */
+        .hero { display: flex; min-height: calc(100vh - 74px); flex-wrap: wrap; }
+        .split { flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; text-align: center; color: white; position: relative; transition: transform 0.3s; }
+        
+        /* Lado Clientes B2B */
+        .b2b-client { background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover; }
+        /* Lado Suministro / Proveedores */
+        .sourcing-partner { background: linear-gradient(rgba(22, 163, 74, 0.7), rgba(30, 41, 59, 0.8)), url('https://images.unsplash.com/photo-1533234458684-d4ba7485ef4b?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover; }
+        
+        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; max-width: 500px; }
+        .hero p { font-size: 1.1rem; margin-bottom: 30px; max-width: 450px; }
+        
+        .cta-btn { padding: 15px 30px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 5px; text-transform: uppercase; border: 2px solid white; color: white; transition: 0.3s; }
+        .b2b-client .cta-btn:hover { background: white; color: var(--dark); }
+        .sourcing-partner .cta-btn:hover { background: var(--secondary); border-color: var(--secondary); }
+
+        @media (max-width: 768px) { .hero { flex-direction: column; } .split { min-height: 50vh; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">📦 PalletHub</div>
+        <ul class="nav-links">
+            <li><a href="#pallets">Soluciones B2B</a></li>
+            <li><a href="#madera">Madera Industrial</a></li>
+            <li><a href="#proveedores">Círculo de Proveedores</a></li>
+            <li><a href="#tecnologia">Tecnología</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <main class="hero">
+        <section class="split b2b-client">
+            <h1>Suministro Inteligente de Pallets B2B y Madera Industrial</h1>
+            <p>Cotizaciones inmediatas por volumen con certificación internacional NIMF-15 y stock garantizado en Jalisco.</p>
+            <a href="#cotizar-b2b" class="cta-btn">Cotizar Soluciones B2B</a>
+        </section>
+
+        <section class="split sourcing-partner">
+            <h1>Monetiza tu Activo Logístico. Únete al Círculo de Proveedores</h1>
+            <p>Genera ingresos estables aprovechando tus fletes vacíos, almacenamiento disponible o residuos de madera industrial.</p>
+            <a href="#unirse-proveedor" class="cta-btn">Ser Aliado de Suministro</a>
+        </section>
+    </main>
+
+</body>
+</html>
