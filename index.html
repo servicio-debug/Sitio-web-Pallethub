@@ -1,30 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PalletHub | Sistema Inteligente de Cotización B2B</title>
+    <title>PalletHub | Suministro Inteligente de Tarimas y Madera Industrial</title>
+    <!-- Tipografía Corporativa Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --brand-green-light: #cce4c5;
-            --brand-dark: #0c0d0e;
-            --brand-blue: #0284c7;
+            --brand-green-light: #cce4c5; /* Verde de tu logotipo */
+            --brand-dark: #0c0d0e;        /* Negro/Grafito de tu logotipo */
+            --brand-blue: #0284c7;        
             --bg-neutral: #f8fafc;
             --text-muted: #64748b;
             --border-color: #e2e8f0;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-neutral); color: var(--brand-dark); padding: 40px 5%; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-neutral); color: var(--brand-dark); }
+        
+        /* NAVBAR NAVEGACIÓN GLOBAL */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 5%;
+            background: white;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--brand-dark); font-weight: 700; font-size: 20px; }
+        .logo-box { width: 32px; height: 32px; background: var(--brand-green-light); border: 2px solid var(--brand-dark); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+        
+        .menu-links { display: flex; list-style: none; gap: 20px; }
+        .menu-links a { text-decoration: none; color: var(--brand-dark); font-weight: 500; font-size: 0.9rem; padding: 8px 12px; border-radius: 6px; transition: background 0.2s; }
+        .menu-links a:hover { background: #e2e8f0; }
+        
+        /* DINÁMICA VISUAL SPLIT-HERO */
+        .hero-section {
+            display: flex;
+            background: white;
+            min-height: 65vh;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+        
+        /* Lado Izquierdo: Clientes B2B */
+        .hero-b2b {
+            flex: 1.2;
+            min-width: 320px;
+            background-color: #f0f7ff;
+            padding: 60px 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        /* Centro: Imagen Puerta de Enlace Logística */
+        .hero-center-img {
+            flex: 1;
+            min-width: 300px;
+            background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800') no-repeat center center/cover;
+            border-left: 4px solid white;
+            border-right: 4px solid white;
+        }
+        
+        /* Lado Derecho: Suministro/Aliados */
+        .hero-supply {
+            flex: 1.2;
+            min-width: 320px;
+            background-color: #f2fbf0;
+            padding: 60px 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .hero-section h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; color: var(--brand-dark); }
+        .hero-section p { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; line-height: 1.5; }
+        
+        /* Botones de Acción */
+        .cta-btn-main { padding: 14px 28px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; cursor: pointer; border: none; transition: transform 0.2s; display: inline-block; }
+        .cta-btn-main:hover { transform: translateY(-2px); }
+        .btn-blue-solid { background: #1e3a8a; color: white; }
+        .btn-green-solid { background: #166534; color: white; }
+        
+        /* BARRA DE CONFIANZA LOCAL Y CERTIFICACIONES */
+        .trust-bar { padding: 30px 5%; background: white; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .trust-bar h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 20px; }
+        .badges-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .badge-item { display: flex; flex-direction: column; align-items: center; font-size: 0.75rem; font-weight: 700; color: var(--brand-dark); }
+        .badge-icon { width: 45px; height: 45px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; font-size: 1.2rem; border: 1px solid #cbd5e1; }
+
+        /* CONTENEDOR DEL WIZARD DE COTIZACIÓN */
+        .wizard-wrapper { padding: 80px 5%; max-width: 1000px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 30px; }
+        .section-header h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.5px; }
 
         .wizard-container {
-            max-width: 800px;
-            margin: 0 auto;
             background: white;
             border-radius: 20px;
             border: 1px solid rgba(0,0,0,0.08);
@@ -32,12 +113,11 @@
             overflow: hidden;
         }
 
-        /* Indicador de Pasos del Diagrama */
         .wizard-steps {
             display: flex;
             background: #f1f5f9;
             border-bottom: 1px solid var(--border-color);
-            padding: 12px;
+            padding: 14px;
         }
         .step-indicator {
             flex: 1;
@@ -45,32 +125,27 @@
             font-size: 0.8rem;
             font-weight: 700;
             color: var(--text-muted);
-            opacity: 0.5;
-            position: relative;
+            opacity: 0.4;
         }
         .step-indicator.active {
             opacity: 1;
             color: var(--brand-dark);
         }
-        .step-number {
-            display: block;
-            font-size: 1.1rem;
-            font-weight: 800;
-        }
+        .step-number { display: block; font-size: 1.1rem; font-weight: 800; }
 
         .wizard-content { padding: 40px; }
         .step-panel { display: none; }
         .step-panel.active { display: block; }
 
-        h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.5px; }
+        .wizard-content h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.5px; }
         label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; color: var(--brand-dark); }
 
-        /* NUEVO: Selectores Visuales con Imágenes por Defecto */
+        /* Selectores Visuales con Imágenes */
         .image-selector-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 28px;
         }
         .image-option {
             border: 2px solid var(--border-color);
@@ -83,250 +158,223 @@
         }
         .image-option img {
             width: 100%;
-            height: 120px;
+            height: 130px;
             object-fit: cover;
             border-bottom: 1px solid var(--border-color);
         }
-        .image-option span {
-            display: block;
-            padding: 12px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        .image-option:hover {
-            border-color: var(--text-muted);
-            transform: translateY(-2px);
-        }
-        .image-option.selected {
-            border-color: var(--brand-dark);
-            background: #f0fdf4;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
+        .image-option span { display: block; padding: 14px; font-size: 0.95rem; font-weight: 600; }
+        .image-option:hover { border-color: var(--text-muted); transform: translateY(-2px); }
+        .image-option.selected { border-color: var(--brand-dark); background: #f0fdf4; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
-        /* Controles de Formulario */
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 24px;
-        }
+        /* Inputs y Formulario */
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
         .form-group { display: flex; flex-direction: column; }
         .full-width { grid-column: span 2; }
         
-        select, input {
-            padding: 14px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            background: #f8fafc;
-        }
-        select:focus, input:focus {
-            outline: 2px solid var(--brand-dark);
-            background: white;
-        }
+        select, input { padding: 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; background: #f8fafc; }
+        select:focus, input:focus { outline: 2px solid var(--brand-dark); background: white; }
 
-        /* Switch tipo ebanistería / iOS para NIMF-15 y Personalizados */
-        .switch-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-            background: #f8fafc;
-            padding: 14px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-        .switch-input {
-            width: 40px;
-            height: 20px;
-            appearance: none;
-            background: #cbd5e1;
-            border-radius: 10px;
-            position: relative;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+        /* Elementos Switch */
+        .switch-container { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid var(--border-color); }
+        .switch-input { width: 40px; height: 20px; appearance: none; background: #cbd5e1; border-radius: 10px; position: relative; cursor: pointer; transition: background 0.3s; }
         .switch-input:checked { background: var(--brand-dark); }
-        .switch-input::before {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: white;
-            top: 2px;
-            left: 2px;
-            transition: transform 0.3s;
-        }
+        .switch-input::before { content: ''; position: absolute; width: 16px; height: 16px; border-radius: 50%; background: white; top: 2px; left: 2px; transition: transform 0.3s; }
         .switch-input:checked::before { transform: translateX(20px); }
 
-        /* Caja del Círculo de Proveedores Local GDL */
-        .provider-alert-box {
-            background: #f0fdf4;
-            border: 1px dashed #22c55e;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
+        .provider-alert-box { background: #f0fdf4; border: 1px dashed #22c55e; padding: 20px; border-radius: 12px; margin-bottom: 24px; display: flex; align-items: flex-start; gap: 12px; }
 
-        /* Botonera de Navegación del Wizard */
-        .wizard-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-        .btn-wizard {
-            padding: 14px 28px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s;
-        }
+        /* Botonera */
+        .wizard-buttons { display: flex; justify-content: space-between; margin-top: 30px; }
+        .btn-wizard { padding: 14px 28px; font-size: 0.95rem; font-weight: 600; border-radius: 8px; cursor: pointer; border: none; transition: all 0.2s; }
         .btn-back { background: #e2e8f0; color: var(--brand-dark); }
         .btn-next { background: var(--brand-dark); color: white; margin-left: auto; }
         .btn-submit { background: #166534; color: white; margin-left: auto; }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .hero-section { flex-direction: column; }
+            .hero-center-img { min-height: 250px; }
             .form-grid { grid-template-columns: 1fr; }
             .full-width { grid-column: span 1; }
+            .menu-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="wizard-container">
-        <!-- Barra de Pasos -->
-        <div class="wizard-steps">
-            <div class="step-indicator active" id="ind-1"><span class="step-number">1.</span> Activo</div>
-            <div class="step-indicator" id="ind-2"><span class="step-number">2.</span> Especificación</div>
-            <div class="step-indicator" id="ind-3"><span class="step-number">3.</span> Volumen / Destino</div>
-            <div class="step-indicator" id="ind-4"><span class="step-number">4.</span> Contacto</div>
-        </div>
+    <!-- NAVBAR NIVEL 1 -->
+    <nav>
+        <a href="#" class="logo-area">
+            <div class="logo-box">♺</div>
+            <div>PalletHub</div>
+        </a>
+        <ul class="menu-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#seccion-cotizador" onclick="scrollToCotizador()">Soluciones B2B</a></li>
+            <li><a href="#seccion-cotizador" onclick="scrollToCotizador()">Madera Industrial</a></li>
+            <li><a href="#seccion-cotizador" onclick="scrollToCotizador()">Círculo de Proveedores</a></li>
+        </ul>
+    </nav>
 
-        <div class="wizard-content">
-            
-            <!-- PASO 1: SELECCIÓN VISUAL DEL ACTIVO -->
-            <div class="step-panel active" id="panel-1">
-                <h2>¿Qué tipo de producto requieres cotizar?</h2>
-                <div class="image-selector-grid">
-                    <div class="image-option" onclick="selectProduct('Tarima de Madera', this)">
-                        <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=400" alt="Tarima Madera">
-                        <span>Tarima de Madera</span>
-                    </div>
-                    <div class="image-option" onclick="selectProduct('Tarima de Plástico', this)">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=400" alt="Tarima Plástico">
-                        <span>Tarima de Plástico</span>
-                    </div>
-                    <div class="image-option" onclick="selectProduct('Madera Industrial / Polines', this)">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=400" alt="Madera Industrial">
-                        <span>Madera Industrial</span>
-                    </div>
-                </div>
-                <div class="wizard-buttons">
-                    <button class="btn-wizard btn-next" onclick="goToStep(2)">Continuar a Especificación</button>
-                </div>
+    <!-- SPLIT-HERO ASIMÉTRICO (La base visual de tu segunda maqueta) -->
+    <section class="hero-section">
+        <div class="hero-b2b">
+            <h1>Suministro Inteligente de Pallets B2B y Madera Industrial</h1>
+            <p>High FETA Button, of the desktop home. Big CTA Button: "Split-Hero".</p>
+            <a href="#seccion-cotizador" class="cta-btn-main btn-blue-solid" onclick="scrollToCotizador()">[Cotizar Soluciones B2B]</a>
+        </div>
+        
+        <div class="hero-center-img"></div>
+        
+        <div class="hero-supply">
+            <h1>Monetiza tu Activo Logístico. Únete al Círculo de Proveedores</h1>
+            <p>Big CTA Button ser Aliado de Suministro y optimización de fletes vacíos en Jalisco.</p>
+            <a href="#seccion-cotizador" class="cta-btn-main btn-green-solid" onclick="scrollToCotizador()">[Ser Aliado de Suministro]</a>
+        </div>
+    </section>
+
+    <!-- CERTIFICACIONES LOGÍSTICAS -->
+    <section class="trust-bar">
+        <h4>Confianza Local y Nacional (Jalisco / GDL / Nacional)</h4>
+        <div class="badges-container">
+            <div class="badge-item"><div class="badge-icon">🪪</div>NIMF-15</div>
+            <div class="badge-item"><div class="badge-icon">🌲</div>Pino Nacional</div>
+            <div class="badge-item"><div class="badge-icon">🚚</div>Retornos Círculo</div>
+            <div class="badge-item"><div class="badge-icon">🔒</div>Trazabilidad</div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DEL WIZARD INTEGRADO -->
+    <main id="seccion-cotizador" class="wizard-wrapper">
+        <div class="section-header">
+            <h2>Centro de Cotización Express</h2>
+        </div>
+        
+        <div class="wizard-container">
+            <div class="wizard-steps">
+                <div class="step-indicator active" id="ind-1"><span class="step-number">1.</span> Activo</div>
+                <div class="step-indicator" id="ind-2"><span class="step-number">2.</span> Especificación</div>
+                <div class="step-indicator" id="ind-3"><span class="step-number">3.</span> Volumen / Destino</div>
+                <div class="step-indicator" id="ind-4"><span class="step-number">4.</span> Contacto</div>
             </div>
 
-            <!-- PASO 2: ESPECIFICACIONES DINÁMICAS -->
-            <div class="step-panel" id="panel-2">
-                <h2>Configurar Especificaciones Técnicas</h2>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Medidas Estándar</label>
-                        <select id="medida-select">
-                            <option value="48x40 pulgadas (Estándar EUA)">48x40 in (Estándar EUA)</option>
-                            <option value="1200x800 mm (Eurotarima)">1200x800 mm (Eurotarima)</option>
-                            <option value="Personalizado">Dimensiones Personalizadas</option>
-                        </select>
+            <div class="wizard-content">
+                
+                <!-- PASO 1: SELECCIÓN POR IMAGEN -->
+                <div class="step-panel active" id="panel-1">
+                    <h3>¿Qué tipo de producto requieres cotizar?</h3>
+                    <div class="image-selector-grid">
+                        <div class="image-option" onclick="selectProduct('Tarima de Madera', this)">
+                            <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=400" alt="Tarima Madera">
+                            <span>Tarima de Madera</span>
+                        </div>
+                        <div class="image-option" onclick="selectProduct('Tarima de Plástico', this)">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=400" alt="Tarima Plástico">
+                            <span>Tarima de Plástico</span>
+                        </div>
+                        <div class="image-option" onclick="selectProduct('Madera Industrial / Polines', this)">
+                            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=400" alt="Madera Industrial">
+                            <span>Madera Industrial</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Grado de la Madera</label>
-                        <select id="grado-select">
-                            <option value="Grado A (Nueva / Premium)">Grado A (Nueva / Alta Resistencia)</option>
-                            <option value="Grado B (Reciclada funcional)">Grado B (Reciclada / Comercial)</option>
-                            <option value="Grado C (Económica)">Grado C (Económica / Un solo uso)</option>
-                        </select>
+                    <div class="wizard-buttons">
+                        <button class="btn-wizard btn-next" onclick="goToStep(2)">Continuar a Especificación</button>
                     </div>
-                    
-                    <div class="form-group full-width">
-                        <div class="switch-container">
-                            <input type="checkbox" id="switch-nimf" class="switch-input">
-                            <div>
-                                <label style="margin:0; display:inline;">Requiere Certificación NIMF-15 / HT</label>
-                                <p style="font-size:0.8rem; color:var(--text-muted);">Obligatorio para exportación internacional.</p>
+                </div>
+
+                <!-- PASO 2: ESPECIFICACIÓN -->
+                <div class="step-panel" id="panel-2">
+                    <h3>Configurar Especificaciones Técnicas</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Medidas Estándar</label>
+                            <select id="medida-select">
+                                <option value="48x40 pulgadas (Estándar EUA)">48x40 in (Estándar EUA)</option>
+                                <option value="1200x800 mm (Eurotarima)">1200x800 mm (Eurotarima)</option>
+                                <option value="Personalizado">Dimensiones Personalizadas</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Grado de la Madera</label>
+                            <select id="grado-select">
+                                <option value="Grado A (Nueva / Premium)">Grado A (Nueva)</option>
+                                <option value="Grado B (Comercial / Reciclada)">Grado B (Comercial)</option>
+                                <option value="Grado C (Económica)">Grado C (Económica)</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <div class="switch-container">
+                                <input type="checkbox" id="switch-nimf" class="switch-input">
+                                <div>
+                                    <label style="margin:0; display:inline;">Requiere Certificación NIMF-15 / HT</label>
+                                    <p style="font-size:0.8rem; color:var(--text-muted);">Indispensable para exportaciones logísticas internacionales.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="wizard-buttons">
+                        <button class="btn-wizard btn-back" onclick="goToStep(1)">Regresar</button>
+                        <button class="btn-wizard btn-next" onclick="goToStep(3)">Continuar a Volumen</button>
+                    </div>
                 </div>
-                <div class="wizard-buttons">
-                    <button class="btn-wizard btn-back" onclick="goToStep(1)">Regresar</button>
-                    <button class="btn-wizard btn-next" onclick="goToStep(3)">Continuar a Volumen</button>
+
+                <!-- PASO 3: VOLUMEN / DESTINO -->
+                <div class="step-panel" id="panel-3">
+                    <h3>Detalles de Volumen y Destino</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Cantidad (Piezas)</label>
+                            <input type="number" id="log-cantidad" placeholder="Ej. 600" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Frecuencia</label>
+                            <select id="log-frecuencia">
+                                <option value="Pedido único de una vez">Una vez</option>
+                                <option value="Abastecimiento Mensual Recurrente">Mensual</option>
+                                <option value="Abastecimiento Semanal">Semanal</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Destino o Ubicación de la Obra (Jalisco)</label>
+                            <input type="text" id="log-destino" placeholder="Ej. Parque Industrial El Salto, Zapopan" required>
+                        </div>
+                    </div>
+                    
+                    <div class="provider-alert-box">
+                        <input type="checkbox" id="switch-red" class="switch-input" checked style="margin-top: 3px;">
+                        <div>
+                            <label style="margin:0;">Activar proveedores de la red PalletHub</label>
+                            <p style="font-size:0.8rem; color:#166534; margin-top:4px;">Verificar inventarios de retorno en la red local de Jalisco para optimizar costos logísticos.</p>
+                        </div>
+                    </div>
+
+                    <div class="wizard-buttons">
+                        <button class="btn-wizard btn-back" onclick="goToStep(2)">Regresar</button>
+                        <button class="btn-wizard btn-next" onclick="goToStep(4)">Continuar a Contacto</button>
+                    </div>
                 </div>
+
+                <!-- PASO 4: CONTACTO -->
+                <div class="step-panel" id="panel-4">
+                    <h3>Datos de Contacto Comercial</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nombre Completo</label>
+                            <input type="text" id="c-nombre" placeholder="Ej. Ing. Miguel Ángel" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Empresa</label>
+                            <input type="text" id="c-empresa" placeholder="Ej. Logística de Occidente S.A." required>
+                        </div>
+                    </div>
+                    <div class="wizard-buttons">
+                        <button class="btn-wizard btn-back" onclick="goToStep(3)">Regresar</button>
+                        <button class="btn-wizard btn-submit" onclick="enviarCotizacionFinal()">[Solicitar Cotización B2B]</button>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- PASO 3: VOLUMEN Y LOGÍSTICA DE SUMINISTRO -->
-            <div class="step-panel" id="panel-3">
-                <h2>Detalles de Entrega y Volumen</h2>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Cantidad de Piezas</label>
-                        <input type="number" id="log-cantidad" placeholder="Ej. 500" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Frecuencia de Suministro</label>
-                        <select id="log-frecuencia">
-                            <option value="Pedido único de una vez">Pedido de Única Vez</option>
-                            <option value="Abastecimiento Mensual Recurrente">Suministro Mensual</option>
-                            <option value="Abastecimiento Semanal">Suministro Semanal</option>
-                        </select>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Ubicación o Zona de Entrega (Jalisco)</label>
-                        <input type="text" id="log-destino" placeholder="Ej. Parque Industrial El Salto, Zapopan Norte" required>
-                    </div>
-                </div>
-
-                <!-- Integración Simplificada a la Red de Proveedores -->
-                <div class="provider-alert-box">
-                    <input type="checkbox" id="switch-red" class="switch-input" checked style="margin-top: 3px;">
-                    <div>
-                        <label style="margin:0;">Activar proveedores de la red PalletHub</label>
-                        <p style="font-size:0.8rem; color:#15803d; margin-top:4px;">Verificar disponibilidad de stock excedente en zonas aledañas (GDL/Zapopan) para reducir costos de flete.</p>
-                    </div>
-                </div>
-
-                <div class="wizard-buttons">
-                    <button class="btn-wizard btn-back" onclick="goToStep(2)">Regresar</button>
-                    <button class="btn-wizard btn-next" onclick="goToStep(4)">Continuar a Contacto</button>
-                </div>
-            </div>
-
-            <!-- PASO 4: CONFIRMACIÓN Y ENVÍO B2B -->
-            <div class="step-panel" id="panel-4">
-                <h2>Datos de Contacto Comercial</h2>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Nombre Completo</label>
-                        <input type="text" id="c-nombre" placeholder="Ej. Ing. Carlos Mendoza" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Empresa / Razón Social</label>
-                        <input type="text" id="c-empresa" placeholder="Ej. Logística Continental S.A." required>
-                    </div>
-                </div>
-                <div class="wizard-buttons">
-                    <button class="btn-wizard btn-back" onclick="goToStep(3)">Regresar</button>
-                    <button class="btn-wizard btn-submit" onclick="enviarCotizacionFinal()">[Solicitar Cotización B2B]</button>
-                </div>
-            </div>
-
         </div>
-    </div>
+    </main>
 
     <script>
         let currentStep = 1;
@@ -338,17 +386,19 @@
             selectedProductType = productName;
         }
 
+        function scrollToCotizador() {
+            document.getElementById('seccion-cotizador').scrollIntoView({ behavior: 'smooth' });
+        }
+
         function goToStep(step) {
             if (step === 2 && !selectedProductType) {
-                alert("Por favor selecciona un producto mediante la imagen antes de continuar.");
+                alert("Por favor selecciona una categoría mediante la imagen antes de continuar.");
                 return;
             }
             
-            // Ocultar paneles y desactivar indicadores
             document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
             document.querySelectorAll('.step-indicator').forEach(i => i.classList.remove('active'));
             
-            // Activar paso actual
             document.getElementById('panel-' + step).classList.add('active');
             for(let i = 1; i <= step; i++) {
                 document.getElementById('ind-' + i).classList.add('active');
@@ -361,32 +411,28 @@
             const empresa = document.getElementById('c-empresa').value;
             const medida = document.getElementById('medida-select').value;
             const grado = document.getElementById('grado-select').value;
-            const nimf = document.getElementById('switch-nimf').checked ? "SÍ (Certificación HT)" : "No Requerida";
+            const nimf = document.getElementById('switch-nimf').checked ? "SÍ (NIMF-15)" : "No";
             const cantidad = document.getElementById('log-cantidad').value;
             const frecuencia = document.getElementById('log-frecuencia').value;
             const destino = document.getElementById('log-destino').value;
-            const redActiva = document.getElementById('switch-red').checked ? "Activada (Optimizar Flete)" : "Desactivada";
+            const redActiva = document.getElementById('switch-red').checked ? "Activada" : "Desactivada";
 
             if (!nombre || !empresa || !cantidad || !destino) {
-                alert("Por favor completa los campos de contacto y logística faltantes.");
+                alert("Por favor completa los campos obligatorios.");
                 return;
             }
 
-            const baseText = `*NUEVA SOLICITUD DE COTIZACIÓN B2B*\n\n` +
-                             `*Producto:* ${selectedProductType}\n` +
-                             `*Medida:* ${medida}\n` +
-                             `*Grado:* ${grado}\n` +
-                             `*Tratamiento NIMF-15:* ${nimf}\n\n` +
-                             `*Logística & Volumen:*\n` +
-                             `*Cantidad:* ${cantidad} pzas (${frecuencia})\n` +
-                             `*Destino:* ${destino}\n` +
-                             `*Red de Suministro Local:* ${redActiva}\n\n` +
-                             `*Contacto:*\n` +
-                             `*Nombre:* ${nombre}\n` +
-                             `*Empresa:* ${empresa}`;
+            const mensaje = `*NUEVA COTIZACIÓN PALLETHUB*\n\n` +
+                            `*Producto:* ${selectedProductType}\n` +
+                            `*Medidas:* ${medida}\n` +
+                            `*Grado:* ${grado}\n` +
+                            `*NIMF-15:* ${nimf}\n\n` +
+                            `*Volumen/Frecuencia:* ${cantidad} piezas (${frecuencia})\n` +
+                            `*Destino:* ${destino}\n` +
+                            `*Red local:* ${redActiva}\n\n` +
+                            `*Contacto:* ${nombre} - ${empresa}`;
 
-            const url = `https://wa.me/523350185490?text=${encodeURIComponent(baseText)}`;
-            window.open(url, '_blank');
+            window.open(`https://wa.me/523350185490?text=${encodeURIComponent(mensaje)}`, '_blank');
         }
     </script>
 </body>
