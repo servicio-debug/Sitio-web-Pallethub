@@ -6,8 +6,8 @@
     <title>PalletHub | Suministro Inteligente de Pallets B2B y Madera Industrial</title>
     <style>
         :root {
-            --primary: #0284c7; /* Azul logístico */
-            --secondary: #16a34a; /* Verde proveedores */
+            --primary: #0284c7;
+            --secondary: #16a34a;
             --dark: #1e293b;
             --light: #f8fafc;
             --gray: #64748b;
@@ -21,50 +21,47 @@
         .nav-links { display: flex; list-style: none; gap: 20px; }
         .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; }
         
-        /* Split Hero Section */
+        /* Split Hero */
         .hero { display: flex; min-height: calc(100vh - 74px); flex-wrap: wrap; }
         .split { flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; text-align: center; color: white; position: relative; }
-        
         .b2b-client { background: linear-gradient(rgba(30, 41, 59, 0.75), rgba(30, 41, 59, 0.75)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover; }
         .sourcing-partner { background: linear-gradient(rgba(22, 163, 74, 0.65), rgba(30, 41, 59, 0.85)), url('https://images.unsplash.com/photo-1533234458684-d4ba7485ef4b?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover; }
-        
         .hero h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; max-width: 500px; line-height: 1.2; }
         .hero p { font-size: 1.1rem; margin-bottom: 30px; max-width: 450px; opacity: 0.9; }
-        
         .cta-btn { padding: 15px 30px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 5px; text-transform: uppercase; border: 2px solid white; color: white; transition: 0.3s; cursor: pointer; }
         .b2b-client .cta-btn:hover { background: white; color: var(--dark); }
         .sourcing-partner .cta-btn:hover { background: var(--secondary); border-color: var(--secondary); }
 
-        /* Contenedor del Formulario de Cotización */
+        /* Contenedor del Formulario */
         .quote-section { padding: 80px 5%; background: var(--light); text-align: center; }
         .quote-container { max-width: 700px; background: white; margin: 40px auto 0 auto; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; }
-        
-        /* Pestañas del Formulario */
         .form-tabs { display: flex; background: #e2e8f0; }
         .tab-btn { flex: 1; padding: 18px; border: none; background: none; font-size: 1rem; font-weight: 600; color: var(--gray); cursor: pointer; transition: 0.2s; }
         .tab-btn.active { background: white; color: var(--dark); border-top: 4px solid var(--primary); }
         .tab-btn:nth-child(3).active { border-top-color: var(--secondary); }
-
-        /* Paneles de Contenido */
         .form-panel { display: none; padding: 40px; text-align: left; }
         .form-panel.active { display: block; }
-
         .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--dark); font-size: 0.95rem; }
-        .form-group select, .form-group input { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; color: var(--dark); outline: none; }
-        .form-group select:focus, .form-group input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1); }
-        
-        .submit-btn { width: 100%; padding: 15px; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: bold; color: white; cursor: pointer; text-transform: uppercase; transition: 0.3s; margin-top: 10px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
+        .form-group select, .form-group input { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; }
+        .submit-btn { width: 100%; padding: 15px; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: bold; color: white; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
         .btn-blue { background: var(--primary); }
-        .btn-blue:hover { background: #0271a8; }
         .btn-green { background: var(--secondary); }
-        .btn-green:hover { background: #117a37; }
+
+        /* NUEVA SECCIÓN: Catálogo de Soluciones Avanzadas (SEO) */
+        .products-section { padding: 80px 5%; text-align: center; background: white; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .product-card { background: var(--light); padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: left; }
+        .product-card h3 { font-size: 1.4rem; color: var(--dark); margin-bottom: 12px; }
+        .product-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; }
+        .tag { display: inline-block; padding: 4px 10px; font-size: 0.75rem; font-weight: bold; border-radius: 20px; margin-bottom: 10px; text-transform: uppercase; }
+        .tag-blue { background: #e0f2fe; color: var(--primary); }
+        .tag-green { background: #dcfce7; color: var(--secondary); }
 
         @media (max-width: 768px) { 
             .hero { flex-direction: column; } 
             .split { min-height: 50vh; } 
             .form-tabs { flex-direction: column; }
-            .tab-btn.active { border-top: none; border-left: 4px solid var(--primary); }
         }
     </style>
 </head>
@@ -93,111 +90,98 @@
         </section>
     </main>
 
+    <!-- Centro de Cotización -->
     <section id="cotizador" class="quote-section">
         <h2>Centro de Cotización e Integración</h2>
-        <p style="color: var(--gray); margin-top: 5px;">Selecciona tu perfil para una atención inmediata en menos de 2 horas</p>
-
         <div class="quote-container">
             <div class="form-tabs">
                 <button class="tab-btn active" id="tab-pallets" onclick="switchTab('pallets')">📦 Soluciones en Pallets</button>
                 <button class="tab-btn" id="tab-madera" onclick="switchTab('madera')">🪵 Madera Industrial</button>
                 <button class="tab-btn" id="tab-proveedores" onclick="switchTab('proveedores')">🤝 Círculo de Proveedores</button>
             </div>
-
+            <!-- Panel 1 -->
             <div class="form-panel active" id="panel-pallets">
                 <form onsubmit="handleSubmit(event, 'Pallets B2B')">
-                    <div class="form-group">
-                        <label>Tipo de Requerimiento</label>
+                    <div class="form-group"><label>Tipo de Requerimiento</label>
                         <select required>
-                            <option value="">Selecciona una opción...</option>
+                            <option value="">Selecciona...</option>
                             <option value="madera-nueva">Tarimas de Madera Nueva</option>
-                            <option value="madera-reciclada">Tarimas de Madera Reciclada / Usadas</option>
-                            <option value="plastico">Tarimas de Plástico / Grado Alimenticio</option>
+                            <option value="madera-reciclada">Tarimas de Madera Reciclada</option>
                             <option value="ht-exportacion">Tratamiento Fitosanitario HT (NIMF-15)</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Volumen Mensual Estimado</label>
-                        <select required>
-                            <option value="">Selecciona el volumen...</option>
-                            <option value="100-500">100 a 500 piezas</option>
-                            <option value="500-2000">500 a 2,000 piezas</option>
-                            <option value="2000+">Más de 2,000 piezas (Gran Volumen)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Teléfono de Contacto (WhatsApp Corporativo)</label>
-                        <input type="tel" placeholder="Ej: 33 1234 5678" required>
-                    </div>
+                    <div class="form-group"><label>Teléfono (WhatsApp)</label><input type="tel" required></div>
                     <button type="submit" class="submit-btn btn-blue">Solicitar Cotización B2B</button>
                 </form>
             </div>
-
+            <!-- Panel 2 -->
             <div class="form-panel" id="panel-madera">
                 <form onsubmit="handleSubmit(event, 'Madera Industrial')">
-                    <div class="form-group">
-                        <label>Material Requerido</label>
+                    <div class="form-group"><label>Material Requerido</label>
                         <select required>
-                            <option value="">Selecciona el producto...</option>
+                            <option value="">Selecciona...</option>
                             <option value="polines">Polines para Cimbra / Construcción</option>
                             <option value="vigas">Vigas Estructurales</option>
-                            <option value="tablones">Tablones de Pino Nacional</option>
-                            <option value="gualdras">Gualdras para Montajes</option>
-                            <option value="aserradero-medida">Habilitado a la Medida (Especificación Industrial)</option>
+                            <option value="aserradero-medida">Habilitado a la Medida</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Destino de Entrega (Únicamente Jalisco u Obra activa)</label>
-                        <input type="text" placeholder="Ej: Zapopan, El Salto, Guadalajara Centro" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Teléfono de Contacto (WhatsApp Corporativo)</label>
-                        <input type="tel" placeholder="Ej: 33 1234 5678" required>
-                    </div>
+                    <div class="form-group"><label>Teléfono (WhatsApp)</label><input type="tel" required></div>
                     <button type="submit" class="submit-btn btn-blue">Cotizar Madera Industrial</button>
                 </form>
             </div>
-
+            <!-- Panel 3 -->
             <div class="form-panel" id="panel-proveedores">
                 <form onsubmit="handleSubmit(event, 'Círculo de Proveedores')">
-                    <div class="form-group">
-                        <label>¿Cómo deseas integrarte al Círculo?</label>
+                    <div class="form-group"><label>Perfil de Aliado</label>
                         <select required>
-                            <option value="">Selecciona tu perfil de aliado...</option>
-                            <option value="transportista">Transportista Independiente (Monetizar fletes vacíos)</option>
-                            <option value="minibodega">Minibodega / Lote (Punto de Acopio Excedentes)</option>
-                            <option value="recolector">Recolector de Residuos de Madera e Industriales</option>
-                            <option value="aserradero">Aserradero Aliado / Suministro Base</option>
+                            <option value="">Selecciona...</option>
+                            <option value="transportista">Transportista Independiente</option>
+                            <option value="minibodega">Minibodega / Punto de Acopio</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Capacidad de Operación / Residuos Disponibles</label>
-                        <input type="text" placeholder="Ej: Camión de 3.5 ton, Almacén de 200m2, Tarimas en desuso" required>
-                    </div>
-                    <div class="form-group">
-                        <label>WhatsApp de Contacto Directo</label>
-                        <input type="tel" placeholder="Ej: 33 1234 5678" required>
-                    </div>
-                    <button type="submit" class="submit-btn btn-green">Unirse a la Red de Suministro</button>
+                    <div class="form-group"><label>WhatsApp Directo</label><input type="tel" required></div>
+                    <button type="submit" class="submit-btn btn-green">Unirse a la Red</button>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN DE INFRAESTRUCTURA Y SEO LOCAL -->
+    <section class="products-section">
+        <h2>Infraestructura Logística y Suministro a Gran Escala en Jalisco</h2>
+        <p style="color: var(--gray); margin-top: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Como fábrica de tarimas líder en Guadalajara, resolvemos las necesidades de empaque y distribución de alta resistencia para la industria B2B y constructores locales.
+        </p>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <span class="tag tag-blue">Logística Internacional</span>
+                <h3>Tarimas de Madera Certificadas</h3>
+                <p>Fabricación bajo estándares rígidos con tratamiento térmico fitosanitario (HT) avalado por la norma NIMF-15 para procesos de exportación seguros.</p>
+            </div>
+            <div class="product-card">
+                <span class="tag tag-blue">Construcción y Obra</span>
+                <h3>Venta de Polines, Vigas y Tablones</h3>
+                <p>Abastecimiento de madera industrial dimensionada en pino nacional para frentes de obra activos en la Zona Metropolitana de Guadalajara y Jalisco.</p>
+            </div>
+            <div class="product-card">
+                <span class="tag tag-green">Sustentabilidad Activa</span>
+                <h3>Gestión y Recuperación de Activos</h3>
+                <p>Programa de economía circular diseñado para monetizar mermas de madera, tarimas en desuso y eficientar los retornos vacíos de transportistas independientes.</p>
             </div>
         </div>
     </section>
 
     <script>
         function switchTab(tabName) {
-            // Desactivar todas las pestañas y paneles
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.form-panel').forEach(panel => panel.classList.remove('active'));
-            
-            // Activar la pestaña y el panel correspondiente
             document.getElementById('tab-' + tabName).classList.add('active');
             document.getElementById('panel-' + tabName).classList.add('active');
         }
-
         function handleSubmit(event, tipoFlujo) {
             event.preventDefault();
-            alert('¡Excelente! Procesando solicitud de ' + tipoFlujo + '. En la siguiente fase conectaremos este botón directamente al flujo automatizado de WhatsApp de PalletHub.');
+            alert('¡Excelente! Procesando solicitud de ' + tipoFlujo);
         }
     </script>
 </body>
