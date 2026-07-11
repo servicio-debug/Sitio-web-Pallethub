@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PalletHub | Suministro Inteligente de Tarimas y Madera Industrial</title>
-    <!-- Tipografía Corporativa Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --brand-green-light: #cce4c5; /* Verde de tu logotipo */
-            --brand-dark: #0c0d0e;        /* Negro/Grafito de tu logotipo */
+            --brand-green-light: #cce4c5; 
+            --brand-dark: #0c0d0e;        
             --brand-blue: #0284c7;        
             --bg-neutral: #f8fafc;
             --text-muted: #64748b;
             --border-color: #e2e8f0;
+            --primary-accent: #10b981; /* Verde activo para selección */
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
@@ -50,145 +50,129 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
             flex-wrap: wrap;
         }
-        
-        /* Lado Izquierdo: Clientes B2B */
         .hero-b2b {
-            flex: 1.2;
-            min-width: 320px;
-            background-color: #f0f7ff;
-            padding: 60px 5%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            flex: 1.2; min-width: 320px; background-color: #f0f7ff; padding: 60px 5%;
+            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
         }
-        
-        /* Centro: Imagen Puerta de Enlace Logística */
         .hero-center-img {
-            flex: 1;
-            min-width: 300px;
+            flex: 1; min-width: 300px;
             background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800') no-repeat center center/cover;
-            border-left: 4px solid white;
-            border-right: 4px solid white;
+            border-left: 4px solid white; border-right: 4px solid white;
         }
-        
-        /* Lado Derecho: Suministro/Aliados */
         .hero-supply {
-            flex: 1.2;
-            min-width: 320px;
-            background-color: #f2fbf0;
-            padding: 60px 5%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            flex: 1.2; min-width: 320px; background-color: #f2fbf0; padding: 60px 5%;
+            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
         }
-        
         .hero-section h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; color: var(--brand-dark); }
         .hero-section p { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; line-height: 1.5; }
-        
-        /* Botones de Acción */
         .cta-btn-main { padding: 14px 28px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; cursor: pointer; border: none; transition: transform 0.2s; display: inline-block; }
         .cta-btn-main:hover { transform: translateY(-2px); }
         .btn-blue-solid { background: #1e3a8a; color: white; }
         .btn-green-solid { background: #166534; color: white; }
         
-        /* BARRA DE CONFIANZA LOCAL Y CERTIFICACIONES */
+        /* CERTIFICACIONES SUTILES */
         .trust-bar { padding: 30px 5%; background: white; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .trust-bar h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 20px; }
         .badges-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
         .badge-item { display: flex; flex-direction: column; align-items: center; font-size: 0.75rem; font-weight: 700; color: var(--brand-dark); }
         .badge-icon { width: 45px; height: 45px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; font-size: 1.2rem; border: 1px solid #cbd5e1; }
 
-        /* CONTENEDOR DEL WIZARD DE COTIZACIÓN */
-        .wizard-wrapper { padding: 80px 5%; max-width: 1000px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 30px; }
-        .section-header h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.5px; }
-
-        .wizard-container {
-            background: white;
-            border-radius: 20px;
-            border: 1px solid rgba(0,0,0,0.08);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            overflow: hidden;
+        /* --- NUEVO REDISEÑO ESTILO STRIPE / APPLE PARA EL WIZARD --- */
+        .wizard-wrapper { padding: 80px 5%; max-width: 720px; margin: 0 auto; }
+        
+        .premium-wizard-card {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+            padding: 36px;
         }
 
-        .wizard-steps {
+        /* Indicador de pasos minimalista lineal */
+        .premium-steps {
             display: flex;
-            background: #f1f5f9;
-            border-bottom: 1px solid var(--border-color);
-            padding: 14px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
         }
-        .step-indicator {
-            flex: 1;
-            text-align: center;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            opacity: 0.4;
+        .premium-steps::before {
+            content: ''; position: absolute; top: 12px; left: 0; right: 0; height: 2px; background: #e2e8f0; z-index: 1;
         }
-        .step-indicator.active {
-            opacity: 1;
-            color: var(--brand-dark);
+        .premium-step-item {
+            position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 60px;
         }
-        .step-number { display: block; font-size: 1.1rem; font-weight: 800; }
+        .step-dot {
+            width: 26px; height: 26px; border-radius: 50%; background: #ffffff; border: 2px solid #cbd5e1;
+            display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); transition: all 0.3s;
+        }
+        .premium-step-item.active .step-dot {
+            border-color: var(--brand-dark); background: var(--brand-dark); color: white;
+        }
+        .step-label { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; width: 80px; }
+        .premium-step-item.active .step-label { color: var(--brand-dark); font-weight: 700; }
 
-        .wizard-content { padding: 40px; }
-        .step-panel { display: none; }
-        .step-panel.active { display: block; }
+        .premium-wizard-card h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 28px; color: var(--brand-dark); }
 
-        .wizard-content h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.5px; }
-        label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; color: var(--brand-dark); }
-
-        /* Selectores Visuales con Imágenes */
-        .image-selector-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 28px;
-        }
-        .image-option {
-            border: 2px solid var(--border-color);
+        /* Lista de Opciones Estilo Referencia (Bordes Limpios y Check Circular) */
+        .premium-options-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
+        
+        .premium-option-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            overflow: hidden;
             cursor: pointer;
             transition: all 0.2s ease;
-            background: white;
-            text-align: center;
+            background: #ffffff;
         }
-        .image-option img {
-            width: 100%;
-            height: 130px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border-color);
+        .premium-option-row:hover {
+            border-color: #cbd5e1; background: #fafafa;
         }
-        .image-option span { display: block; padding: 14px; font-size: 0.95rem; font-weight: 600; }
-        .image-option:hover { border-color: var(--text-muted); transform: translateY(-2px); }
-        .image-option.selected { border-color: var(--brand-dark); background: #f0fdf4; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-
-        /* Inputs y Formulario */
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
-        .form-group { display: flex; flex-direction: column; }
-        .full-width { grid-column: span 2; }
+        .premium-option-row.selected {
+            border-color: var(--brand-dark);
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
         
-        select, input { padding: 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; background: #f8fafc; }
-        select:focus, input:focus { outline: 2px solid var(--brand-dark); background: white; }
+        .option-left { display: flex; align-items: center; gap: 16px; }
+        .option-icon-frame {
+            width: 40px; height: 40px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+        }
+        .option-details { display: flex; flex-direction: column; text-align: left; }
+        .option-title { font-size: 0.95rem; font-weight: 600; color: var(--brand-dark); }
+        .option-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+        
+        /* El radio button circular customizado */
+        .custom-radio-circle {
+            width: 20px; height: 20px; border-radius: 50%; border: 2px solid #cbd5e1; position: relative; transition: all 0.2s; background: white;
+        }
+        .premium-option-row.selected .custom-radio-circle {
+            border-color: var(--brand-dark); background: var(--brand-dark);
+        }
+        .premium-option-row.selected .custom-radio-circle::after {
+            content: ''; position: absolute; width: 6px; height: 6px; background: white; border-radius: 50%; top: 5px; left: 5px;
+        }
 
-        /* Elementos Switch */
-        .switch-container { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid var(--border-color); }
-        .switch-input { width: 40px; height: 20px; appearance: none; background: #cbd5e1; border-radius: 10px; position: relative; cursor: pointer; transition: background 0.3s; }
-        .switch-input:checked { background: var(--brand-dark); }
-        .switch-input::before { content: ''; position: absolute; width: 16px; height: 16px; border-radius: 50%; background: white; top: 2px; left: 2px; transition: transform 0.3s; }
-        .switch-input:checked::before { transform: translateX(20px); }
+        /* Formularios y Ajustes de Inputs */
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
+        .form-group { display: flex; flex-direction: column; text-align: left; }
+        .full-width { grid-column: span 2; }
+        .form-group label { font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; color: var(--brand-dark); letter-spacing: 0.3px; }
+        
+        select, input { padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.95rem; background: #ffffff; color: var(--brand-dark); transition: all 0.2s; }
+        select:focus, input:focus { outline: none; border-color: var(--brand-dark); box-shadow: 0 0 0 3px rgba(12,13,14,0.05); }
 
-        .provider-alert-box { background: #f0fdf4; border: 1px dashed #22c55e; padding: 20px; border-radius: 12px; margin-bottom: 24px; display: flex; align-items: flex-start; gap: 12px; }
-
-        /* Botonera */
-        .wizard-buttons { display: flex; justify-content: space-between; margin-top: 30px; }
-        .btn-wizard { padding: 14px 28px; font-size: 0.95rem; font-weight: 600; border-radius: 8px; cursor: pointer; border: none; transition: all 0.2s; }
-        .btn-back { background: #e2e8f0; color: var(--brand-dark); }
-        .btn-next { background: var(--brand-dark); color: white; margin-left: auto; }
-        .btn-submit { background: #166534; color: white; margin-left: auto; }
+        /* Controles Inferiores Flotantes */
+        .premium-footer-nav { display: flex; justify-content: space-between; margin-top: 32px; border-top: 1px solid var(--border-color); padding-top: 24px; }
+        .btn-premium-nav { padding: 12px 24px; font-size: 0.9rem; font-weight: 600; border-radius: 8px; cursor: pointer; border: none; transition: all 0.2s; }
+        .btn-p-back { background: transparent; color: var(--text-muted); }
+        .btn-p-back:hover { color: var(--brand-dark); }
+        .btn-p-next { background: var(--brand-dark); color: white; margin-left: auto; }
+        .btn-p-next:hover { opacity: 0.9; }
+        .btn-p-submit { background: #166534; color: white; margin-left: auto; }
 
         @media (max-width: 768px) {
             .hero-section { flex-direction: column; }
@@ -201,7 +185,6 @@
 </head>
 <body>
 
-    <!-- NAVBAR NIVEL 1 -->
     <nav>
         <a href="#" class="logo-area">
             <div class="logo-box">♺</div>
@@ -215,7 +198,6 @@
         </ul>
     </nav>
 
-    <!-- SPLIT-HERO ASIMÉTRICO (La base visual de tu segunda maqueta) -->
     <section class="hero-section">
         <div class="hero-b2b">
             <h1>Suministro Inteligente de Pallets B2B y Madera Industrial</h1>
@@ -232,7 +214,6 @@
         </div>
     </section>
 
-    <!-- CERTIFICACIONES LOGÍSTICAS -->
     <section class="trust-bar">
         <h4>Confianza Local y Nacional (Jalisco / GDL / Nacional)</h4>
         <div class="badges-container">
@@ -243,194 +224,201 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DEL WIZARD INTEGRADO -->
     <main id="seccion-cotizador" class="wizard-wrapper">
-        <div class="section-header">
-            <h2>Centro de Cotización Express</h2>
-        </div>
-        
-        <div class="wizard-container">
-            <div class="wizard-steps">
-                <div class="step-indicator active" id="ind-1"><span class="step-number">1.</span> Activo</div>
-                <div class="step-indicator" id="ind-2"><span class="step-number">2.</span> Especificación</div>
-                <div class="step-indicator" id="ind-3"><span class="step-number">3.</span> Volumen / Destino</div>
-                <div class="step-indicator" id="ind-4"><span class="step-number">4.</span> Contacto</div>
+        <div class="premium-wizard-card">
+            
+            <div class="premium-steps">
+                <div class="premium-step-item active" id="p-ind-1">
+                    <div class="step-dot">1</div>
+                    <div class="step-label">Activo</div>
+                </div>
+                <div class="premium-step-item" id="p-ind-2">
+                    <div class="step-dot">2</div>
+                    <div class="step-label">Especificación</div>
+                </div>
+                <div class="premium-step-item" id="p-ind-3">
+                    <div class="step-dot">3</div>
+                    <div class="step-label">Logística</div>
+                </div>
+                <div class="premium-step-item" id="p-ind-4">
+                    <div class="step-dot">4</div>
+                    <div class="step-label">Contacto</div>
+                </div>
             </div>
 
-            <div class="wizard-content">
-                
-                <!-- PASO 1: SELECCIÓN POR IMAGEN -->
-                <div class="step-panel active" id="panel-1">
-                    <h3>¿Qué tipo de producto requieres cotizar?</h3>
-                    <div class="image-selector-grid">
-                        <div class="image-option" onclick="selectProduct('Tarima de Madera', this)">
-                            <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=400" alt="Tarima Madera">
-                            <span>Tarima de Madera</span>
-                        </div>
-                        <div class="image-option" onclick="selectProduct('Tarima de Plástico', this)">
-                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=400" alt="Tarima Plástico">
-                            <span>Tarima de Plástico</span>
-                        </div>
-                        <div class="image-option" onclick="selectProduct('Madera Industrial / Polines', this)">
-                            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=400" alt="Madera Industrial">
-                            <span>Madera Industrial</span>
-                        </div>
-                    </div>
-                    <div class="wizard-buttons">
-                        <button class="btn-wizard btn-next" onclick="goToStep(2)">Continuar a Especificación</button>
-                    </div>
-                </div>
-
-                <!-- PASO 2: ESPECIFICACIÓN -->
-                <div class="step-panel" id="panel-2">
-                    <h3>Configurar Especificaciones Técnicas</h3>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Medidas Estándar</label>
-                            <select id="medida-select">
-                                <option value="48x40 pulgadas (Estándar EUA)">48x40 in (Estándar EUA)</option>
-                                <option value="1200x800 mm (Eurotarima)">1200x800 mm (Eurotarima)</option>
-                                <option value="Personalizado">Dimensiones Personalizadas</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Grado de la Madera</label>
-                            <select id="grado-select">
-                                <option value="Grado A (Nueva / Premium)">Grado A (Nueva)</option>
-                                <option value="Grado B (Comercial / Reciclada)">Grado B (Comercial)</option>
-                                <option value="Grado C (Económica)">Grado C (Económica)</option>
-                            </select>
-                        </div>
-                        <div class="form-group full-width">
-                            <div class="switch-container">
-                                <input type="checkbox" id="switch-nimf" class="switch-input">
-                                <div>
-                                    <label style="margin:0; display:inline;">Requiere Certificación NIMF-15 / HT</label>
-                                    <p style="font-size:0.8rem; color:var(--text-muted);">Indispensable para exportaciones logísticas internacionales.</p>
-                                </div>
+            <div class="step-panel active" id="p-panel-1">
+                <h3>Selecciona la línea de producto corporativo</h3>
+                <div class="premium-options-list">
+                    
+                    <div class="premium-option-row" onclick="selectPremiumProduct('Tarima de Madera', this)">
+                        <div class="option-left">
+                            <div class="option-icon-frame">🪵</div>
+                            <div class="option-details">
+                                <span class="option-title">Tarima de Madera</span>
+                                <span class="option-desc">Nuevas, recicladas y habilitados de alta resistencia</span>
                             </div>
                         </div>
+                        <div class="custom-radio-circle"></div>
                     </div>
-                    <div class="wizard-buttons">
-                        <button class="btn-wizard btn-back" onclick="goToStep(1)">Regresar</button>
-                        <button class="btn-wizard btn-next" onclick="goToStep(3)">Continuar a Volumen</button>
+
+                    <div class="premium-option-row" onclick="selectPremiumProduct('Tarima de Plástico', this)">
+                        <div class="option-left">
+                            <div class="option-icon-frame">📦</div>
+                            <div class="option-details">
+                                <span class="option-title">Tarima de Plástico</span>
+                                <span class="option-desc">Grado alimenticio e industrial reutilizable</span>
+                            </div>
+                        </div>
+                        <div class="custom-radio-circle"></div>
                     </div>
+
+                    <div class="premium-option-row" onclick="selectPremiumProduct('Madera Dimensionada / Polines', this)">
+                        <div class="option-left">
+                            <div class="option-icon-frame">🌲</div>
+                            <div class="option-details">
+                                <span class="option-title">Madera Industrial / Polines</span>
+                                <span class="option-desc">Madera de pino nacional para frentes de obra y embalajes</span>
+                            </div>
+                        </div>
+                        <div class="custom-radio-circle"></div>
+                    </div>
+
                 </div>
-
-                <!-- PASO 3: VOLUMEN / DESTINO -->
-                <div class="step-panel" id="panel-3">
-                    <h3>Detalles de Volumen y Destino</h3>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Cantidad (Piezas)</label>
-                            <input type="number" id="log-cantidad" placeholder="Ej. 600" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Frecuencia</label>
-                            <select id="log-frecuencia">
-                                <option value="Pedido único de una vez">Una vez</option>
-                                <option value="Abastecimiento Mensual Recurrente">Mensual</option>
-                                <option value="Abastecimiento Semanal">Semanal</option>
-                            </select>
-                        </div>
-                        <div class="form-group full-width">
-                            <label>Destino o Ubicación de la Obra (Jalisco)</label>
-                            <input type="text" id="log-destino" placeholder="Ej. Parque Industrial El Salto, Zapopan" required>
-                        </div>
-                    </div>
-                    
-                    <div class="provider-alert-box">
-                        <input type="checkbox" id="switch-red" class="switch-input" checked style="margin-top: 3px;">
-                        <div>
-                            <label style="margin:0;">Activar proveedores de la red PalletHub</label>
-                            <p style="font-size:0.8rem; color:#166534; margin-top:4px;">Verificar inventarios de retorno en la red local de Jalisco para optimizar costos logísticos.</p>
-                        </div>
-                    </div>
-
-                    <div class="wizard-buttons">
-                        <button class="btn-wizard btn-back" onclick="goToStep(2)">Regresar</button>
-                        <button class="btn-wizard btn-next" onclick="goToStep(4)">Continuar a Contacto</button>
-                    </div>
+                <div class="premium-footer-nav">
+                    <button class="btn-premium-nav btn-p-next" onclick="goToPremiumStep(2)">Continuar</button>
                 </div>
-
-                <!-- PASO 4: CONTACTO -->
-                <div class="step-panel" id="panel-4">
-                    <h3>Datos de Contacto Comercial</h3>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Nombre Completo</label>
-                            <input type="text" id="c-nombre" placeholder="Ej. Ing. Miguel Ángel" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Empresa</label>
-                            <input type="text" id="c-empresa" placeholder="Ej. Logística de Occidente S.A." required>
-                        </div>
-                    </div>
-                    <div class="wizard-buttons">
-                        <button class="btn-wizard btn-back" onclick="goToStep(3)">Regresar</button>
-                        <button class="btn-wizard btn-submit" onclick="enviarCotizacionFinal()">[Solicitar Cotización B2B]</button>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="step-panel" id="p-panel-2">
+                <h3>Configuración y Certificaciones</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Dimensiones Requeridas</label>
+                        <select id="p-medida">
+                            <option value="48x40 pulgadas (Estándar EUA)">48x40 in (Estándar EUA)</option>
+                            <option value="1200x800 mm (Eurotarima)">1200x800 mm (Eurotarima)</option>
+                            <option value="Medida Personalizada">Dimensión Especial a la Medida</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Grado del Material</label>
+                        <select id="p-grado">
+                            <option value="Grado A (Madera Nueva)">Grado A (Madera Nueva)</option>
+                            <option value="Grado B (Comercial / Reciclado)">Grado B (Reciclada Funcional)</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Tratamiento Internacional</label>
+                        <select id="p-nimf">
+                            <option value="Requiere Certificado NIMF-15 / HT">SÍ, requiere tratamiento Térmico Fitosanitario (NIMF-15)</option>
+                            <option value="No requiere exportación">No, para movimiento interno/local</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="premium-footer-nav">
+                    <button class="btn-premium-nav btn-p-back" onclick="goToPremiumStep(1)">Atrás</button>
+                    <button class="btn-premium-nav btn-p-next" onclick="goToPremiumStep(3)">Continuar</button>
+                </div>
+            </div>
+
+            <div class="step-panel" id="p-panel-3">
+                <h3>Volumen y Destino de Suministro</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Cantidad Solicitada</label>
+                        <input type="number" id="p-cantidad" placeholder="Ej. 450 piezas" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Frecuencia de Consumo</label>
+                        <select id="p-frecuencia">
+                            <option value="Pedido único de una vez">Entrega de una sola vez</option>
+                            <option value="Suministro Mensual Recurrente">Suministro Mensual Programado</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Zona Industrial o Municipio de Entrega (Jalisco)</label>
+                        <input type="text" id="p-destino" placeholder="Ej. El Salto, Zapopan, Guadalajara" required>
+                    </div>
+                </div>
+                <div class="premium-footer-nav">
+                    <button class="btn-premium-nav btn-p-back" onclick="goToPremiumStep(2)">Atrás</button>
+                    <button class="btn-premium-nav btn-p-next" onclick="goToPremiumStep(4)">Continuar</button>
+                </div>
+            </div>
+
+            <div class="step-panel" id="p-panel-4">
+                <h3>Validación Comercial</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nombre Comercial</label>
+                        <input type="text" id="p-nombre" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Empresa</label>
+                        <input type="text" id="p-empresa" placeholder="Razón social o Corporativo" required>
+                    </div>
+                </div>
+                <div class="premium-footer-nav">
+                    <button class="btn-premium-nav btn-p-back" onclick="goToPremiumStep(3)">Atrás</button>
+                    <button class="btn-premium-nav btn-p-submit" onclick="finalizarCotizacionPremium()">[Enviar Solicitud B2B]</button>
+                </div>
+            </div>
+
         </div>
     </main>
 
     <script>
-        let currentStep = 1;
-        let selectedProductType = "";
+        let selectedProduct = "";
 
-        function selectProduct(productName, element) {
-            document.querySelectorAll('.image-option').forEach(opt => opt.classList.remove('selected'));
+        function selectPremiumProduct(name, element) {
+            document.querySelectorAll('.premium-option-row').forEach(row => row.classList.remove('selected'));
             element.classList.add('selected');
-            selectedProductType = productName;
+            selectedProduct = name;
         }
 
         function scrollToCotizador() {
             document.getElementById('seccion-cotizador').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function goToStep(step) {
-            if (step === 2 && !selectedProductType) {
-                alert("Por favor selecciona una categoría mediante la imagen antes de continuar.");
+        function goToPremiumStep(step) {
+            if (step === 2 && !selectedProduct) {
+                alert("Por favor selecciona un activo de la lista antes de continuar.");
                 return;
             }
             
             document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.step-indicator').forEach(i => i.classList.remove('active'));
+            document.querySelectorAll('.premium-step-item').forEach(i => i.classList.remove('active'));
             
-            document.getElementById('panel-' + step).classList.add('active');
+            document.getElementById('p-panel-' + step).classList.add('active');
             for(let i = 1; i <= step; i++) {
-                document.getElementById('ind-' + i).classList.add('active');
+                document.getElementById('p-ind-' + i).classList.add('active');
             }
-            currentStep = step;
         }
 
-        function enviarCotizacionFinal() {
-            const nombre = document.getElementById('c-nombre').value;
-            const empresa = document.getElementById('c-empresa').value;
-            const medida = document.getElementById('medida-select').value;
-            const grado = document.getElementById('grado-select').value;
-            const nimf = document.getElementById('switch-nimf').checked ? "SÍ (NIMF-15)" : "No";
-            const cantidad = document.getElementById('log-cantidad').value;
-            const frecuencia = document.getElementById('log-frecuencia').value;
-            const destino = document.getElementById('log-destino').value;
-            const redActiva = document.getElementById('switch-red').checked ? "Activada" : "Desactivada";
+        function finalizarCotizacionPremium() {
+            const nombre = document.getElementById('p-nombre').value;
+            const empresa = document.getElementById('p-empresa').value;
+            const medida = document.getElementById('p-medida').value;
+            const grado = document.getElementById('p-grado').value;
+            const nimf = document.getElementById('p-nimf').value;
+            const cantidad = document.getElementById('p-cantidad').value;
+            const frecuencia = document.getElementById('p-frecuencia').value;
+            const destino = document.getElementById('p-destino').value;
 
             if (!nombre || !empresa || !cantidad || !destino) {
-                alert("Por favor completa los campos obligatorios.");
+                alert("Por favor rellena todos los campos del formulario.");
                 return;
             }
 
-            const mensaje = `*NUEVA COTIZACIÓN PALLETHUB*\n\n` +
-                            `*Producto:* ${selectedProductType}\n` +
-                            `*Medidas:* ${medida}\n` +
-                            `*Grado:* ${grado}\n` +
-                            `*NIMF-15:* ${nimf}\n\n` +
-                            `*Volumen/Frecuencia:* ${cantidad} piezas (${frecuencia})\n` +
-                            `*Destino:* ${destino}\n` +
-                            `*Red local:* ${redActiva}\n\n` +
-                            `*Contacto:* ${nombre} - ${empresa}`;
+            const mensaje = `*SOLICITUD PREMIUM PALLETHUB*\n\n` +
+                            `*Línea:* ${selectedProduct}\n` +
+                            `*Medida:* ${medida}\n` +
+                            `*Clase:* ${grado}\n` +
+                            `*Especificación:* ${nimf}\n\n` +
+                            `*Volumen:* ${cantidad} unidades (${frecuencia})\n` +
+                            `*Zona de Entrega:* ${destino}\n\n` +
+                            `*Contacto:* ${nombre}\n` +
+                            `*Empresa:* ${empresa}`;
 
             window.open(`https://wa.me/523350185490?text=${encodeURIComponent(mensaje)}`, '_blank');
         }
