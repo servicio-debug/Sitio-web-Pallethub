@@ -4,71 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PalletHub | Suministro Inteligente de Pallets B2B y Madera Industrial</title>
+    <!-- Importación de Tipografía Premium Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #0284c7;
-            --secondary: #16a34a;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
+            --brand-green: #cce4c5; /* El verde exacto de tu logotipo */
+            --brand-dark: #0c0d0e;  /* El tono oscuro de tu logotipo */
+            --brand-green-hover: #b9d8b1;
+            --primary-blue: #0284c7; /* Azul complementario para el sector logístico B2B */
+            --light-bg: #f8fafc;
+            --muted-gray: #64748b;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
+        body { background-color: var(--light-bg); color: var(--brand-dark); }
         
-        /* Navbar */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-        .logo { font-weight: bold; font-size: 24px; color: var(--dark); }
-        .nav-links { display: flex; list-style: none; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; }
+        /* Navbar Premium */
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 16px 5%; 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(12px); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .logo-container { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--brand-dark); }
+        .logo-circle { 
+            width: 36px; 
+            height: 36px; 
+            background-color: var(--brand-green); 
+            border-radius: 50%; 
+            border: 2px solid var(--brand-dark); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: 800; 
+            font-size: 14px; 
+        }
+        .logo-text { font-weight: 700; font-size: 20px; letter-spacing: -0.5px; }
+        .logo-text span { font-weight: 400; color: var(--muted-gray); }
         
-        /* Split Hero */
-        .hero { display: flex; min-height: calc(100vh - 74px); flex-wrap: wrap; }
-        .split { flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; text-align: center; color: white; position: relative; }
-        .b2b-client { background: linear-gradient(rgba(30, 41, 59, 0.75), rgba(30, 41, 59, 0.75)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover; }
-        .sourcing-partner { background: linear-gradient(rgba(22, 163, 74, 0.65), rgba(30, 41, 59, 0.85)), url('https://images.unsplash.com/photo-1533234458684-d4ba7485ef4b?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; max-width: 500px; line-height: 1.2; }
-        .hero p { font-size: 1.1rem; margin-bottom: 30px; max-width: 450px; opacity: 0.9; }
-        .cta-btn { padding: 15px 30px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 5px; text-transform: uppercase; border: 2px solid white; color: white; transition: 0.3s; cursor: pointer; }
-        .b2b-client .cta-btn:hover { background: white; color: var(--dark); }
-        .sourcing-partner .cta-btn:hover { background: var(--secondary); border-color: var(--secondary); }
+        .nav-links { display: flex; list-style: none; gap: 24px; }
+        .nav-links a { text-decoration: none; color: var(--brand-dark); font-weight: 500; font-size: 0.95rem; transition: opacity 0.2s; }
+        .nav-links a:hover { opacity: 0.7; }
+        
+        /* Split Hero Premium (v0 / Dribbble Style) */
+        .hero-container { padding: 24px 5% 40px 5%; }
+        .hero { 
+            display: flex; 
+            min-height: 75vh; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+            border-radius: 24px; 
+            overflow: hidden; 
+        }
+        .split { 
+            flex: 1; 
+            min-width: 320px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: flex-start; 
+            padding: 60px 40px; 
+            text-align: left; 
+            color: white; 
+            position: relative; 
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Efectos visuales de fondo refinados */
+        .b2b-client { 
+            background: linear-gradient(135deg, rgba(12, 13, 14, 0.9) 30%, rgba(2, 132, 199, 0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover; 
+        }
+        .sourcing-partner { 
+            background: linear-gradient(135deg, rgba(12, 13, 14, 0.92) 30%, rgba(22, 163, 74, 0.5)), url('https://images.unsplash.com/photo-1533234458684-d4ba7485ef4b?auto=format&fit=crop&q=80&w=1000') no-repeat center/cover; 
+        }
+        
+        .hero h1 { font-size: 2.8rem; margin-bottom: 16px; font-weight: 800; max-width: 540px; letter-spacing: -1px; line-height: 1.15; }
+        .hero p { font-size: 1.1rem; margin-bottom: 36px; max-width: 460px; color: rgba(255, 255, 255, 0.85); line-height: 1.5; font-weight: 300; }
+        
+        /* Botones Estilo Minimalista Activo */
+        .cta-btn { 
+            padding: 14px 28px; 
+            font-size: 0.95rem; 
+            font-weight: 600; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            transition: all 0.2s ease; 
+            cursor: pointer; 
+            border: none;
+        }
+        .b2b-client .cta-btn { background-color: var(--primary-blue); color: white; }
+        .b2b-client .cta-btn:hover { background-color: #0271a8; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3); }
+        
+        .sourcing-partner .cta-btn { background-color: var(--brand-green); color: var(--brand-dark); }
+        .sourcing-partner .cta-btn:hover { background-color: var(--brand-green-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(204, 228, 197, 0.3); }
 
         /* Contenedor del Formulario */
-        .quote-section { padding: 80px 5%; background: var(--light); text-align: center; }
-        .quote-container { max-width: 700px; background: white; margin: 40px auto 0 auto; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; }
-        .form-tabs { display: flex; background: #e2e8f0; }
-        .tab-btn { flex: 1; padding: 18px; border: none; background: none; font-size: 1rem; font-weight: 600; color: var(--gray); cursor: pointer; transition: 0.2s; }
-        .tab-btn.active { background: white; color: var(--dark); border-top: 4px solid var(--primary); }
-        .tab-btn:nth-child(3).active { border-top-color: var(--secondary); }
+        .quote-section { padding: 60px 5% 80px 5%; background: var(--light-bg); text-align: center; }
+        .quote-section h2 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
+        .quote-container { max-width: 700px; background: white; margin: 40px auto 0 auto; border-radius: 16px; box-shadow: 0 4px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); overflow: hidden; }
+        
+        .form-tabs { display: flex; background: #f1f5f9; padding: 6px; gap: 4px; }
+        .tab-btn { flex: 1; padding: 14px; border: none; background: none; font-size: 0.9rem; font-weight: 600; color: var(--muted-gray); cursor: pointer; border-radius: 10px; transition: all 0.2s; }
+        .tab-btn.active { background: white; color: var(--brand-dark); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+
         .form-panel { display: none; padding: 40px; text-align: left; }
         .form-panel.active { display: block; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
-        .form-group select, .form-group input { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; }
-        .submit-btn { width: 100%; padding: 15px; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: bold; color: white; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
-        .btn-blue { background: var(--primary); }
+        .form-group { margin-bottom: 24px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--brand-dark); font-size: 0.9rem; }
+        .form-group select, .form-group input { width: 100%; padding: 14px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.95rem; background-color: #f8fafc; color: var(--brand-dark); transition: all 0.2s; }
+        .form-group select:focus, .form-group input:focus { border-color: var(--brand-dark); background-color: white; outline: none; }
+        
+        .submit-btn { width: 100%; padding: 16px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; color: white; cursor: pointer; transition: all 0.2s; }
+        .btn-blue { background: var(--brand-dark); }
+        .btn-blue:hover { opacity: 0.9; }
         .btn-green { background: var(--secondary); }
 
         /* Sección de Productos */
         .products-section { padding: 80px 5%; text-align: center; background: white; }
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-        .product-card { background: var(--light); padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: left; }
-        .product-card h3 { font-size: 1.4rem; color: var(--dark); margin-bottom: 12px; }
-        .product-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; }
-        .tag { display: inline-block; padding: 4px 10px; font-size: 0.75rem; font-weight: bold; border-radius: 20px; margin-bottom: 10px; text-transform: uppercase; }
-        .tag-blue { background: #e0f2fe; color: var(--primary); }
-        .tag-green { background: #dcfce7; color: var(--secondary); }
+        .product-card { background: var(--light-bg); padding: 36px 30px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.04); text-align: left; }
+        .product-card h3 { font-size: 1.3rem; color: var(--brand-dark); margin-bottom: 12px; font-weight: 700; }
+        .product-card p { color: var(--muted-gray); font-size: 0.95rem; line-height: 1.6; }
+        .tag { display: inline-block; padding: 6px 12px; font-size: 0.75rem; font-weight: 600; border-radius: 6px; margin-bottom: 14px; }
+        .tag-blue { background: #e0f2fe; color: #0369a1; }
+        .tag-green { background: #dcfce7; color: #15803d; }
 
+        @media (max-width: 960px) {
+            .hero h1 { font-size: 2.2rem; }
+            .split { padding: 40px 30px; }
+        }
         @media (max-width: 768px) { 
             .hero { flex-direction: column; } 
-            .split { min-height: 50vh; } 
             .form-tabs { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navbar con la Identidad del Logotipo Integrada -->
     <nav>
-        <div class="logo">📦 PalletHub</div>
+        <a href="#" class="logo-container">
+            <div class="logo-circle">♺</div>
+            <div class="logo-text">Pallet<span>Hub</span></div>
+        </a>
         <ul class="nav-links">
             <li><a href="#cotizador" onclick="switchTab('pallets')">Soluciones B2B</a></li>
             <li><a href="#cotizador" onclick="switchTab('madera')">Madera Industrial</a></li>
@@ -76,19 +164,24 @@
         </ul>
     </nav>
 
-    <main class="hero">
-        <section class="split b2b-client">
-            <h1>Suministro Inteligente de Pallets B2B y Madera Industrial</h1>
-            <p>Cotizaciones inmediatas por volumen con certificación internacional NIMF-15 y stock garantizado en Jalisco.</p>
-            <a href="#cotizador" class="cta-btn" onclick="switchTab('pallets')">Cotizar Soluciones B2B</a>
-        </section>
+    <!-- Contenedor del Hero Estilo Dribbble con Bordes Suavizados -->
+    <div class="hero-container">
+        <main class="hero">
+            <!-- Lado Clientes B2B -->
+            <section class="split b2b-client">
+                <h1>Suministro Inteligente de Pallets B2B y Madera Industrial</h1>
+                <p>Cotizaciones inmediatas por volumen con certificación internacional NIMF-15 y stock garantizado en Jalisco.</p>
+                <a href="#cotizador" class="cta-btn" onclick="switchTab('pallets')">Cotizar Soluciones</a>
+            </section>
 
-        <section class="split sourcing-partner">
-            <h1>Monetiza tu Activo Logístico. Únete al Círculo de Proveedores</h1>
-            <p>Genera ingresos estables aprovechando tus fletes vacíos, almacenamiento disponible o residuos de madera industrial.</p>
-            <a href="#cotizador" class="cta-btn" onclick="switchTab('proveedores')">Ser Aliado de Suministro</a>
-        </section>
-    </main>
+            <!-- Lado Suministro / Círculo de Proveedores -->
+            <section class="split sourcing-partner">
+                <h1>Monetiza tu Activo Logístico. Únete al Círculo</h1>
+                <p>Genera ingresos estables aprovechando tus fletes vacíos, almacenamiento disponible o residuos de madera industrial.</p>
+                <a href="#cotizador" class="cta-btn" onclick="switchTab('proveedores')">Ser Aliado de Suministro</a>
+            </section>
+        </main>
+    </div>
 
     <!-- Centro de Cotización -->
     <section id="cotizador" class="quote-section">
@@ -157,7 +250,7 @@
                     <div class="form-group"><label>Capacidad Operativa / Activos Disponibles</label>
                         <input type="text" id="prov-capacidad" placeholder="Ej: Camión 3.5 ton, Almacén 200m2" required>
                     </div>
-                    <button type="submit" class="submit-btn btn-green">Unirse a la Red</button>
+                    <button type="submit" class="submit-btn btn-blue">Unirse a la Red</button>
                 </form>
             </div>
         </div>
@@ -186,7 +279,6 @@
     </section>
 
     <script>
-        // CONFIGURACIÓN: Número de WhatsApp real de PalletHub
         const WHATSAPP_NUMBER = "523350185490"; 
 
         function switchTab(tabName) {
