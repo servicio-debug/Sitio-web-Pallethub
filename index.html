@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PalletHub | Suministro Inteligente de Tarimas y Madera Industrial</title>
+    <!-- Tipografía Corporativa Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,21 +12,23 @@
     <style>
         :root {
             --brand-green-light: #cce4c5; 
-            --brand-green-cta: #166534; /* Verde premium para el acceso al cotizador */
+            --brand-green-cta: #166534; 
             --brand-dark: #0c0d0e;        
             --bg-neutral: #f8fafc;
             --text-muted: #64748b;
+            --border-color: #e2e8f0;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
         body { background-color: var(--bg-neutral); color: var(--brand-dark); }
         
-        /* 1. MENÚ DE NAVEGACIÓN SUPERIOR (MÁS GRANDE Y PREMIUM) */
+        /* 1. MENÚ DE NAVEGACIÓN SUPERIOR (ROBUSTO Y PREMIUM) */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 5%; /* Padding aumentado para dar jerarquía y aire */
+            padding: 24px 5%;
             background: white;
             border-bottom: 1px solid rgba(0,0,0,0.06);
             position: sticky;
@@ -33,7 +36,6 @@
             z-index: 1000;
         }
         
-        /* Contenedor del logotipo robusto */
         .logo-area { 
             display: flex; 
             align-items: center; 
@@ -41,7 +43,7 @@
             text-decoration: none; 
             color: var(--brand-dark); 
             font-weight: 800; 
-            font-size: 26px; /* Logotipo notablemente más grande */
+            font-size: 26px; 
             letter-spacing: -0.5px;
         }
         
@@ -57,7 +59,6 @@
             font-size: 20px; 
         }
         
-        /* Estructura del Menú Solicitado */
         .menu-links { 
             display: flex; 
             list-style: none; 
@@ -79,7 +80,6 @@
             background: #f1f5f9; 
         }
         
-        /* Botón Verde Destacado - Acceso al Centro de Cotización */
         .menu-links .btn-cotizador {
             background-color: var(--brand-green-cta);
             color: white;
@@ -95,7 +95,7 @@
             transform: translateY(-1px);
         }
         
-        /* 2. DINÁMICA VISUAL SPLIT-HERO (FILTRO DE 3 SEGUNDOS) */
+        /* 2. SPLIT-HERO */
         .hero-section {
             display: flex;
             background: white;
@@ -125,21 +125,103 @@
         .btn-green-solid { background: #166534; color: white; }
 
         /* 3. BLOQUE DE CONFIANZA LOCAL */
-        .trust-bar { padding: 40px 5%; background: white; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.04); }
+        .trust-bar { padding: 40px 5%; background: white; text-align: center; border-bottom: 1px solid var(--border-color); }
         .trust-bar h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 24px; }
         .badges-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
         .badge-item { display: flex; flex-direction: column; align-items: center; font-size: 0.75rem; font-weight: 700; color: var(--brand-dark); }
         .badge-icon { width: 45px; height: 45px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; font-size: 1.2rem; border: 1px solid #cbd5e1; }
 
+        /* 4. MOCKUP 2: CATEGORÍAS PRINCIPALES TÉCNICAS Y MINIMALISTAS */
+        .technical-section {
+            padding: 100px 5%;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .technical-section.alt-bg {
+            background: #fafafa;
+        }
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .tech-info h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            color: var(--brand-dark);
+        }
+        .tech-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-green-cta);
+            margin-bottom: 16px;
+        }
+        .tech-info .tech-lead {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        /* Fichas Técnicas Estilo Cuadrícula de Datos */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .spec-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .technical-section.alt-bg .spec-card {
+            background: #ffffff;
+        }
+        .spec-card:hover {
+            border-color: var(--brand-dark);
+        }
+        .spec-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .spec-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 4px;
+        }
+        .spec-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
         @media (max-width: 992px) {
-            .menu-links { display: none; } /* Control responsivo para el flujo del menú */
+            .menu-links { display: none; }
             .hero-section { flex-direction: column; }
             .hero-center-img { min-height: 250px; }
+            .tech-container { grid-template-columns: 1fr; gap: 40px; }
+            .specs-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- MENÚ SUPERIOR PREMIUM -->
     <nav>
         <a href="#" class="logo-area">
             <div class="logo-box">♺</div>
@@ -147,8 +229,8 @@
         </a>
         <ul class="menu-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Soluciones B2B</a></li>
-            <li><a href="#">Madera Industrial</a></li>
+            <li><a href="#soluciones-b2b">Soluciones B2B</a></li>
+            <li><a href="#madera-industrial">Madera Industrial</a></li>
             <li><a href="#">Circulo de proveedores</a></li>
             <li><a href="#">Tecnología</a></li>
             <li><a href="#">Nosotros</a></li>
@@ -156,15 +238,101 @@
         </ul>
     </nav>
 
+    <!-- SPLIT-HERO -->
     <section class="hero-section">
         <div class="hero-b2b">
             <h1>Suministro Inteligente de Pallets B2B y Madera Industrial</h1>
             <p>High FETA Button, of the desktop home. Big CTA Button: "Split-Hero".</p>
-            <a href="#" class="cta-btn-main btn-blue-solid">[Cotizar Soluciones B2B]</a>
+            <a href="#soluciones-b2b" class="cta-btn-main btn-blue-solid">[Cotizar Soluciones B2B]</a>
         </div>
         
         <div class="hero-center-img"></div>
         
         <div class="hero-supply">
             <h1>Monetiza tu Activo Logístico. Únete al Círculo de Proveedores</h1>
-            <p>Big CTA Button ser Aliado de Suministro y optimización de fletes
+            <p>Big CTA Button ser Aliado de Suministro y optimización de fletes vacíos en Jalisco.</p>
+            <a href="#" class="cta-btn-main btn-green-solid">[Ser Aliado de Suministro]</a>
+        </div>
+    </section>
+
+    <!-- CERTIFICACIONES LOGÍSTICAS SUTILES -->
+    <section class="trust-bar">
+        <h4>Confianza Local y Nacional (Jalisco / GDL / Nacional)</h4>
+        <div class="badges-container">
+            <div class="badge-item"><div class="badge-icon">🪪</div>NIMF-15</div>
+            <div class="badge-item"><div class="badge-icon">🌲</div>Pino Nacional</div>
+            <div class="badge-item"><div class="badge-icon">🚚</div>Retornos Círculo</div>
+            <div class="badge-item"><div class="badge-icon">🔒</div>Trazabilidad</div>
+        </div>
+    </section>
+
+    <!-- MOCKUP 2: CATEGORÍA 1 - SOLUCIONES B2B -->
+    <section id="soluciones-b2b" class="technical-section">
+        <div class="tech-container">
+            <div class="tech-info">
+                <span class="tech-tag">Ingeniería de Empaque</span>
+                <h2>Soluciones B2B</h2>
+                <p class="tech-lead">Arquitectura de distribución industrial y tarimas estructurales diseñadas bajo simulación de flexión y fatiga estática. Garantizamos resiliencia mecánica en racks y transportación cross-docking.</p>
+            </div>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-label">Capacidad de Carga</div>
+                    <div class="spec-value">Estática: 4,000 kg / Dinámica: 1,500 kg</div>
+                    <div class="spec-desc">Cálculos validados para estiba en vertical y racks automatizados de alta densidad.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Estándar Fitosanitario</div>
+                    <div class="spec-value">Certificación NIMF-15 (HT)</div>
+                    <div class="spec-desc">Tratamiento térmico regulado para exportaciones globales libre de plagas.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Materiales Base</div>
+                    <div class="spec-value">Pino Clasificado & Polímeros</div>
+                    <div class="spec-desc">Madera estructural desflecada con humedades controladas por debajo del 19%.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Ciclo de Vida</div>
+                    <div class="spec-value">Alta Retornabilidad B2B</div>
+                    <div class="spec-desc">Diseñadas estructuralmente para soportar más de 12 rotaciones operativas completas.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOCKUP 2: CATEGORÍA 2 - MADERA INDUSTRIAL -->
+    <section id="madera-industrial" class="technical-section alt-bg">
+        <div class="tech-container">
+            <div class="tech-info">
+                <span class="tech-tag">Habilitado y Dimensionado</span>
+                <h2>Madera Industrial</h2>
+                <p class="tech-lead">Componentes primarios y polines de soporte cortados bajo tolerancias milimétricas rígidas. Diseñados para frentes de obra civil, estibadores de maquinaria pesada y embalajes especiales de alta resistencia.</p>
+            </div>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-label">Configuración Física</div>
+                    <div class="spec-value">Polines y Tablas Rigurosas</div>
+                    <div class="spec-desc">Cortes limpios longitudinales sin nudos estructurales críticos que comprometan la flexión.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Grado Estructural</div>
+                    <div class="spec-value">Clasificación Nacional Selecta</div>
+                    <div class="spec-desc">Selección de especies con alta densidad molecular idóneas para acuñamiento y soporte físico.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Resistencia Mecánica</div>
+                    <div class="spec-value">Alto Módulo de Ruptura</div>
+                    <div class="spec-desc">Soporta esfuerzos cortantes perpendiculares extremos en maniobras críticas de estiba.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Aplicación Directa</div>
+                    <div class="spec-value">Heavy-Duty & Embalaje</div>
+                    <div class="spec-desc">Perfecto para estructuras de fijación interna en contenedores marítimos y cimentaciones.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
