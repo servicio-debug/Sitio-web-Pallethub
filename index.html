@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PalletHub | Cabecera y Navegación Premium</title>
-    <!-- Tipografía Corporativa Premium -->
+    <title>PalletHub | Suministro Inteligente de Tarimas y Madera Industrial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +25,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 5%; /* Aumentamos el padding para darle más aire y tamaño */
+            padding: 24px 5%; /* Padding aumentado para dar jerarquía y aire */
             background: white;
             border-bottom: 1px solid rgba(0,0,0,0.06);
             position: sticky;
@@ -34,20 +33,20 @@
             z-index: 1000;
         }
         
-        /* Modificamos el contenedor del logo para darle mayor jerarquía visual */
+        /* Contenedor del logotipo robusto */
         .logo-area { 
             display: flex; 
             align-items: center; 
             gap: 14px; 
             text-decoration: none; 
             color: var(--brand-dark); 
-            font-weight: 800; /* Más peso para que resalte la marca */
-            font-size: 26px;  /* Logotipo notablemente más grande */
+            font-weight: 800; 
+            font-size: 26px; /* Logotipo notablemente más grande */
             letter-spacing: -0.5px;
         }
         
         .logo-box { 
-            width: 42px; /* Caja del isotipo escalada proporcionalmente */
+            width: 42px; 
             height: 42px; 
             background: var(--brand-green-light); 
             border: 2px solid var(--brand-dark); 
@@ -58,7 +57,7 @@
             font-size: 20px; 
         }
         
-        /* Estructura de Enlaces Solicitada */
+        /* Estructura del Menú Solicitado */
         .menu-links { 
             display: flex; 
             list-style: none; 
@@ -96,7 +95,7 @@
             transform: translateY(-1px);
         }
         
-        /* 2. SPLIT-HERO SUPERIOR (ESTRUCTURA DE CONTEXTO) */
+        /* 2. DINÁMICA VISUAL SPLIT-HERO (FILTRO DE 3 SEGUNDOS) */
         .hero-section {
             display: flex;
             background: white;
@@ -120,18 +119,27 @@
         .hero-section h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; }
         .hero-section p { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; line-height: 1.5; }
         
-        .cta-btn-main { padding: 14px 28px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; display: inline-block; }
+        .cta-btn-main { padding: 14px 28px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; display: inline-block; transition: transform 0.2s; }
+        .cta-btn-main:hover { transform: translateY(-2px); }
         .btn-blue-solid { background: #1e3a8a; color: white; }
         .btn-green-solid { background: #166534; color: white; }
 
+        /* 3. BLOQUE DE CONFIANZA LOCAL */
+        .trust-bar { padding: 40px 5%; background: white; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.04); }
+        .trust-bar h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 24px; }
+        .badges-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .badge-item { display: flex; flex-direction: column; align-items: center; font-size: 0.75rem; font-weight: 700; color: var(--brand-dark); }
+        .badge-icon { width: 45px; height: 45px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; font-size: 1.2rem; border: 1px solid #cbd5e1; }
+
         @media (max-width: 992px) {
-            .menu-links { display: none; } /* Resguardo responsivo básico para control del flujo */
+            .menu-links { display: none; } /* Control responsivo para el flujo del menú */
+            .hero-section { flex-direction: column; }
+            .hero-center-img { min-height: 250px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR ACTUALIZADO -->
     <nav>
         <a href="#" class="logo-area">
             <div class="logo-box">♺</div>
@@ -139,15 +147,15 @@
         </a>
         <ul class="menu-links">
             <li><a href="#">Home</a></li>
+            <li><a href="#">Soluciones B2B</a></li>
+            <li><a href="#">Madera Industrial</a></li>
             <li><a href="#">Circulo de proveedores</a></li>
             <li><a href="#">Tecnología</a></li>
             <li><a href="#">Nosotros</a></li>
-            <!-- Botón de acceso verde premium solicitado -->
             <li><a href="#" class="btn-cotizador">Centro de Cotización</a></li>
         </ul>
     </nav>
 
-    <!-- SPLIT HERO DE TRES SEGUNDOS -->
     <section class="hero-section">
         <div class="hero-b2b">
             <h1>Suministro Inteligente de Pallets B2B y Madera Industrial</h1>
@@ -159,12 +167,4 @@
         
         <div class="hero-supply">
             <h1>Monetiza tu Activo Logístico. Únete al Círculo de Proveedores</h1>
-            <p>Big CTA Button ser Aliado de Suministro y optimización de fletes vacíos en Jalisco.</p>
-            <a href="#" class="cta-btn-main btn-green-solid">[Ser Aliado de Suministro]</a>
-        </div>
-    </section>
-
-    <!-- NOTA COMERCIAL: EL CENTRO DE INTEGRACIÓN OPERATIVA HA SIDO ELIMINADO COMPLETAMENTE DE ESTA VISTA PRINCIPAL -->
-
-</body>
-</html>
+            <p>Big CTA Button ser Aliado de Suministro y optimización de fletes
