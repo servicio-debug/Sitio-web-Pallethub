@@ -99,46 +99,6 @@
         }
         .tech-table th { font-weight: 700; color: var(--text-muted); background: #f1f5f9; }
 
-        /* ARQUITECTURA DEL CENTRO DE COTIZACIONES (BETA INTERFAZ) */
-        .quote-architecture {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 40px;
-            margin-top: 40px;
-        }
-        .quote-steps-nav {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 16px;
-            margin-bottom: 30px;
-        }
-        .step-pill { font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
-        .step-pill.active { color: var(--brand-green-cta); border-bottom: 2px solid var(--brand-green-cta); padding-bottom: 16px; margin-bottom: -18px; }
-        
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-        .form-group { display: flex; flex-direction: column; gap: 8px; }
-        .form-group label { font-size: 0.85rem; font-weight: 700; color: var(--brand-dark); }
-        .form-group select, .form-group input { padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.95rem; }
-        
-        .btn-next {
-            grid-column: span 2;
-            background: var(--brand-green-cta);
-            color: white;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            text-align: center;
-            margin-top: 16px;
-        }
-
         /* FOOTER AD HOC */
         footer { background-color: #edf2ee; padding: 60px 5%; border-top: 1px solid var(--border-color); margin-top: 100px; }
         .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr 1.5fr; gap: 40px; align-items: center; }
@@ -152,14 +112,11 @@
 
         @media (max-width: 768px) {
             .hero-container, .product-row { grid-template-columns: 1fr !important; }
-            .form-grid { grid-template-columns: 1fr; }
-            .btn-next { grid-column: span 1; }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR -->
     <nav>
         <a href="index.html" class="logo-area">
             <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img">
@@ -168,31 +125,28 @@
         <ul class="menu-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="soluciones-b2b.html" style="color: var(--blue-b2b);">Soluciones B2B</a></li>
-            <li><a href="#">Madera Industrial</a></li>
-            <li><a href="#">Circulo de proveedores</a></li>
-            <li><a href="#">Tecnología</a></li>
-            <li><a href="#">Nosotros</a></li>
+            <li><a href="index.html#madera-industrial">Madera Industrial</a></li>
+            <li><a href="index.html#circulo-proveedores">Circulo de proveedores</a></li>
+            <li><a href="index.html#tecnologia">Tecnología</a></li>
+            <li><a href="index.html#nosotros">Nosotros</a></li>
             <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
         </ul>
     </nav>
 
-    <!-- HERO DE OPERACIÓN DE ÁREA -->
     <section class="page-hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1>Infraestructura Corporativa de Tarimas</h1>
                 <p>Ingeniería de distribución avanzada optimizada para cadenas de suministro automotrices, alimenticias y de retail de alta densidad en México.</p>
-<a href="cotizador.html" class="btn-cotizador" style="text-decoration:none; display:inline-block; padding:14px 28px;">Configurar Especificación Técnica</a>
+                <a href="cotizador.html" class="btn-cotizador" style="text-decoration:none; display:inline-block; padding:14px 28px;">Configurar Especificación Técnica</a>
             </div>
             <div class="hero-bg-view"></div>
         </div>
     </section>
 
-    <!-- DESGLOSE PROFUNDO DE LÍNEAS OPERATIVAS -->
     <main class="deep-dive">
         <h2 class="section-title">Especificaciones de Operación B2B</h2>
 
-        <!-- PRODUCTO 1 -->
         <div class="product-row">
             <div class="product-info">
                 <h3>01. Tarima para Rack de Alta Carga</h3>
@@ -205,18 +159,17 @@
                 </table>
             </div>
             <div style="background:#f1f5f9; height:280px; border-radius:12px; border:1px solid var(--border-color); padding:30px; display:flex; flex-direction:column; justify-content:center;">
-                <code style="color:var(--blue-b2b); font-size:0.9rem;">// Simulación de Tensión Estructural<br>Deflexión Max: < 0.5% del claro libre<br>Madera: Pino Selecto Secado en Horno<br>Entrada: 4 entradas para montacargas</code>
+                <code style="color:var(--blue-b2b); font-size:0.9rem;">// Simulación de Tensión Estructural<br>Deflexión Max: &lt; 0.5% del claro libre<br>Madera: Pino Selecto Secado en Horno<br>Entrada: 4 entradas para montacargas</code>
             </div>
         </div>
 
-        <!-- PRODUCTO 2 -->
         <div class="product-row">
             <div class="product-info">
                 <h3>02. Tarima de Exportación NIMF-15</h3>
                 <p>Componentes estructurales con trazabilidad aduanera garantizada. Sometidos a ciclos estrictos de tratamiento térmico en cámara (HT) para asegurar la eliminación microbiológica y evitar detenciones en puertos internacionales.</p>
                 <table class="tech-table">
                     <tr><th>Cumplimiento Aduanal</th><th>Especificación</th></tr>
-                    <tr><td>Ciclo Térmico Central</td><td>> 56°C por mínimo 30 min</td></tr>
+                    <tr><td>Ciclo Térmico Central</td><td>&gt; 56°C por mínimo 30 min</td></tr>
                     <tr><td>Humedad Promedio</td><td>Menor al 19% de saturación</td></tr>
                     <tr><td>Identificación</td><td>Sello indeleble registrado ante SEMARNAT</td></tr>
                 </table>
@@ -225,45 +178,8 @@
                 <code style="color:var(--brand-green-cta); font-size:0.9rem;">// Certificación de Lote Internacional<br>Apto para: US, UE, Asia-Pacífico<br>Especie: Conífera certificada sustentable<br>Grosor de Tabla: 11/16" constante</code>
             </div>
         </div>
-
-        <hr style="border:0; border-top:1px solid var(--border-color); margin:60px 0;">
-
-        <!-- INICIO DE LA ARQUITECTURA DEL CENTRO DE COTIZACIONES -->
-        <section id="cotizador-b2b" class="quote-architecture">
-            <div class="quote-steps-nav">
-                <div class="step-pill active">01. Dimensión y Uso</div>
-                <div class="step-pill">02. Carga Mecánica</div>
-                <div class="step-pill">03. Logística</div>
-                <div class="step-pill">04. Resumen Técnico</div>
-            </div>
-            
-            <div class="architecture-form">
-                <h3 style="margin-bottom: 20px;">Paso 1: Configurar Geometría Básica</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Dimensiones del Lote (Pulgadas Estándar)</label>
-                        <select>
-                            <option>48" x 40" (Estándar GMA)</option>
-                            <option>42" x 42" (Químicos / Tambores)</option>
-                            <option>48" x 48" (Carga Volumétrica)</option>
-                            <option>Medida Personalizada Especial</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Uso Operativo Destinado</label>
-                        <select>
-                            <option>Estiba a Piso / Almacenamiento Estático</option>
-                            <option>Rack Abierto (Voladizo sin soporte)</option>
-                            <option>Exportación Internacional Directa</option>
-                        </select>
-                    </div>
-                    <button class="btn-next" onclick="alert('Arquitectura del cotizador iniciada: Conectando con los cálculos de peso del Paso 2...')">Continuar a Requerimientos de Carga Estructural →</button>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- FOOTER AD HOC INTEGRADO -->
     <footer>
         <div class="footer-container">
             <ul class="footer-links">
