@@ -1,13 +1,19 @@
++1
+-1
+Lines changed: 1 addition & 1 deletion
+Original file line number	Diff line number	Diff line change
+@@ -1,508 +1,508 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PalletHub | Ingeniería de Empaque y Distribución Corporativa</title>
+    <title>PalletHub | Suministro Inteligente de Tarimas y Madera Industrial</title>
+    <!-- Tipografía Corporativa Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --brand-green-light: #cce4c5; 
@@ -16,14 +22,13 @@
             --bg-neutral: #f8fafc;
             --text-muted: #64748b;
             --border-color: #e2e8f0;
-            --blue-b2b: #1e3a8a;
         }
-        
+
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-neutral); color: var(--brand-dark); }
-        
-        /* CABECERA / MENÚ NAV */
+
+        /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
         nav {
             display: flex;
             justify-content: space-between;
@@ -35,57 +40,257 @@
             top: 0;
             z-index: 1000;
         }
-        .logo-area { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--brand-dark); font-weight: 800; font-size: 26px; letter-spacing: -0.5px; }
-        .logo-img { width: 48px; height: 48px; object-fit: contain; display: block; }
-        .menu-links { display: flex; list-style: none; gap: 12px; align-items: center; }
-        .menu-links a { text-decoration: none; color: var(--brand-dark); font-weight: 600; font-size: 0.95rem; padding: 8px 14px; border-radius: 6px; transition: all 0.2s ease; }
-        .menu-links a:hover { background: #f1f5f9; }
-        .menu-links .btn-cotizador { background-color: var(--brand-green-cta); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; }
 
-        /* HERO SECTOR */
-        .hero {
-            padding: 100px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+            text-decoration: none; 
+            color: var(--brand-dark); 
+            font-weight: 800; 
+            font-size: 26px; 
+            letter-spacing: -0.5px;
+        }
+
+        .logo-img {
+            width: 48px;       
+            height: 48px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .menu-links { 
+            display: flex; 
+            list-style: none; 
+            gap: 12px; 
             align-items: center;
         }
-        .hero-text h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; line-height: 1.1; margin-bottom: 20px; color: #0f172a; }
-        .hero-text p { font-size: 1.25rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 32px; max-width: 600px; }
-        .hero-img-container { position: relative; }
-        .hero-img-container img { width: 100%; height: 480px; object-fit: cover; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); }
 
-        /* GRID SECTIONS (Marcadores para desarrollo futuro) */
-        .main-content { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-        .info-section { padding: 60px 0; border-bottom: 1px solid var(--border-color); }
-        .info-section h2 { font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #0f172a; }
-        .info-section p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
+        .menu-links a { 
+            text-decoration: none; 
+            color: var(--brand-dark); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            padding: 8px 14px; 
+            border-radius: 6px; 
+            transition: all 0.2s ease; 
+        }
 
-        /* FOOTER AD HOC */
-        footer { background-color: #edf2ee; padding: 60px 5%; border-top: 1px solid var(--border-color); margin-top: 100px; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr 1.5fr; gap: 40px; align-items: center; }
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 14px; }
-        .footer-links a { text-decoration: none; color: #2c3e35; font-size: 1.05rem; font-weight: 500; transition: color 0.2s ease; }
-        .footer-links a:hover { color: var(--brand-green-cta); text-decoration: underline; }
-        .footer-logo-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
-        .footer-logo-center img { width: 90px; height: 90px; object-fit: contain; }
-        .footer-right { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 16px; }
-        .footer-credits { font-size: 0.9rem; color: #475569; }
+        .menu-links a:hover { 
+            background: #f1f5f9; 
+        }
 
-        @media (max-width: 968px) {
-            .hero { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-            .hero-text p { margin: 0 auto 32px; }
-            .hero-img-container img { height: 350px; }
-            .footer-container { grid-template-columns: 1fr; text-align: center; }
+        .menu-links .btn-cotizador {
+            background-color: var(--brand-green-cta);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
+            margin-left: 8px;
+        }
+
+        .menu-links .btn-cotizador:hover {
+            background-color: #14532d;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* 2. SPLIT-HERO PRINCIPAL */
+        .hero-section {
+            display: flex;
+            background: white;
+            min-height: 65vh;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+        .hero-b2b {
+            flex: 1.2; min-width: 320px; background-color: #f0f7ff; padding: 60px 5%;
+            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+        }
+        .hero-center-img {
+            flex: 1; min-width: 300px;
+            background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800') no-repeat center center/cover;
+            border-left: 4px solid white; border-right: 4px solid white;
+        }
+        .hero-supply {
+            flex: 1.2; min-width: 320px; background-color: #f2fbf0; padding: 60px 5%;
+            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+        }
+        .hero-section h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; }
+        .hero-section p { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; line-height: 1.5; }
+
+        .cta-btn-main { padding: 14px 28px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; display: inline-block; transition: transform 0.2s; }
+        .cta-btn-main:hover { transform: translateY(-2px); }
+        .btn-blue-solid { background: #1e3a8a; color: white; }
+        .btn-green-solid { background: #166534; color: white; }
+
+        /* 3. BARRA DE CONFIANZA */
+        .trust-bar { padding: 40px 5%; background: white; text-align: center; border-bottom: 1px solid var(--border-color); }
+        .trust-bar h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 24px; }
+        .badges-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .badge-item { display: flex; flex-direction: column; align-items: center; font-size: 0.75rem; font-weight: 700; color: var(--brand-dark); }
+        .badge-icon { width: 45px; height: 45px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; font-size: 1.2rem; border: 1px solid #cbd5e1; }
+
+        /* 4. BLOQUES MOCKUP 2 (ESTILO SISTÉMICO Y MINIMALISTA) */
+        .technical-section {
+            padding: 100px 5%;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .technical-section.alt-bg {
+            background: #fafafa;
+        }
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .tech-info h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            color: var(--brand-dark);
+        }
+        .tech-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-green-cta);
+            margin-bottom: 16px;
+        }
+        .tech-info .tech-lead {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .spec-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .spec-card:hover {
+            border-color: var(--brand-dark);
+        }
+        .spec-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .spec-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 4px;
+        }
+        .spec-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* 5. PIE DE PÁGINA CORPORATIVO (FOOTER) AD HOC */
+        footer {
+            background-color: #edf2ee; /* Tono verde muy claro y limpio según la captura */
+            padding: 60px 5%;
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1.5fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+        .footer-links a {
+            text-decoration: underline;
+            color: #2c3e35;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+        .footer-logo-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+        }
+        .footer-logo-center img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
+        .footer-logo-center a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--brand-dark);
+            text-decoration: underline;
+        }
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            gap: 16px;
+        }
+        .social-icon-linkedin {
+            background: var(--brand-dark);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .footer-credits {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 992px) {
+            .menu-links { display: none; }
+            .hero-section { flex-direction: column; }
+            .hero-center-img { min-height: 250px; }
+            .tech-container { grid-template-columns: 1fr; gap: 40px; }
+            .specs-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
             .footer-right { align-items: center; text-align: center; }
         }
     </style>
 </head>
 <body>
 
+    <!-- MENÚ SUPERIOR PREMIUM -->
     <nav>
         <a href="#" class="logo-area">
             <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img">
@@ -98,63 +303,208 @@
             <li><a href="#circulo-proveedores">Circulo de proveedores</a></li>
             <li><a href="#tecnologia">Tecnología</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
+            <li><a href="#" class="btn-cotizador">Centro de Cotización</a></li>
+         <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <div class="hero-text">
-            <h1>Ingeniería de Empaque de Alta Densidad</h1>
-            <p>Estructuramos cadenas de suministro corporativas mediante tarimas optimizadas y soluciones de madera industrial de alto rendimiento mecánico en todo México.</p>
-            <a href="cotizador.html" class="btn-cotizador" style="text-decoration:none; display:inline-block; padding:16px 32px; font-size:1.05rem;">Iniciar Configuración Técnica</a>
+    <!-- SPLIT-HERO -->
+    <section class="hero-section">
+        <div class="hero-b2b">
+            <h1>Suministro Inteligente de Pallets B2B y Madera Industrial</h1>
+            <p>High FETA Button, of the desktop home. Big CTA Button: "Split-Hero".</p>
+            <a href="soluciones-b2b.html" class="cta-btn-main btn-blue-solid">[Cotizar Soluciones B2B]</a>
         </div>
-        <div class="hero-img-container">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200" alt="PalletHub Warehouse Industrial">
+
+        <div class="hero-center-img"></div>
+
+        <div class="hero-supply">
+            <h1>Monetiza tu Activo Logístico. Únete al Círculo de Proveedores</h1>
+            <p>Big CTA Button ser Aliado de Suministro y optimización de fletes vacíos en Jalisco.</p>
+            <a href="#circulo-proveedores" class="btn-green-solid cta-btn-main">[Ser Aliado de Suministro]</a>
         </div>
-    </header>
+    </section>
 
-    <main class="main-content">
-        <section id="madera-industrial" class="info-section">
-            <h2>Madera Industrial</h2>
-            <p>Componentes estructurales diseñados bajo rigurosos estándares industriales. Suministro estratégico para embalajes robustos, cajas y proyectos logísticos a gran escala.</p>
-        </section>
+    <!-- CERTIFICACIONES LOGÍSTICAS SUTILES -->
+    <section class="trust-bar">
+        <h4>Confianza Local y Nacional (Jalisco / GDL / Nacional)</h4>
+        <div class="badges-container">
+            <div class="badge-item"><div class="badge-icon">🪪</div>NIMF-15</div>
+            <div class="badge-item"><div class="badge-icon">🌲</div>Pino Nacional</div>
+            <div class="badge-item"><div class="badge-icon">🚚</div>Retornos Círculo</div>
+            <div class="badge-item"><div class="badge-icon">🔒</div>Trazabilidad</div>
+        </div>
+    </section>
 
-        <section id="circulo-proveedores" class="info-section">
-            <h2>Círculo de Proveedores</h2>
-            <p>La red de valor más grande de fabricantes en México. Conectamos infraestructura de aserraderos certificados con demandas corporativas de alta densidad.</p>
-        </section>
+    <!-- BLOQUE 1: SOLUCIONES B2B -->
+    <section id="soluciones-b2b" class="technical-section">
+        <div class="tech-container">
+            <div class="tech-info">
+                <span class="tech-tag">Ingeniería de Empaque</span>
+                <h2>Soluciones B2B</h2>
+                <p class="tech-lead">Arquitectura de distribución industrial y tarimas estructurales diseñadas bajo simulación de flexión y fatiga estática. Garantizamos resiliencia mecánica en racks y transportación cross-docking.</p>
+            </div>
 
-        <section id="tecnologia" class="info-section">
-            <h2>Tecnología</h2>
-            <p>Simulaciones de fatiga elástica, cálculo dimensional automatizado e inteligencia predictiva para optimizar el rendimiento y coste de sus activos de empaque.</p>
-        </section>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-label">Capacidad de Carga</div>
+                    <div class="spec-value">Estática: 4,000 kg / Dinámica: 1,500 kg</div>
+                    <div class="spec-desc">Cálculos validados para estiba en vertical y racks automatizados de alta densidad.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Estándar Fitosanitario</div>
+                    <div class="spec-value">Certificación NIMF-15 (HT)</div>
+                    <div class="spec-desc">Tratamiento térmico regulado para exportaciones globales libre de plagas.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Materiales Base</div>
+                    <div class="spec-value">Pino Clasificado & Polímeros</div>
+                    <div class="spec-desc">Madera estructural desflecada con humedades controladas por debajo del 19%.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Ciclo de Vida</div>
+                    <div class="spec-value">Alta Retornabilidad B2B</div>
+                    <div class="spec-desc">Diseñadas estructuralmente para soportar más de 12 rotaciones operativas completas.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="nosotros" class="info-section">
-            <h2>Nosotros</h2>
-            <p>En PalletHub redefinimos la ingeniería de empaque. Nuestro enfoque en soluciones B2B corporativas garantiza trazabilidad, sustentabilidad y resistencia estructural en cada lote.</p>
-        </section>
-    </main>
+    <!-- BLOQUE 2: MADERA INDUSTRIAL -->
+    <section id="madera-industrial" class="technical-section alt-bg">
+        <div class="tech-container">
+            <div class="tech-info">
+                <span class="tech-tag">Habilitado y Dimensionado</span>
+                <h2>Madera Industrial</h2>
+                <p class="tech-lead">Componentes primarios y polines de soporte cortados bajo tolerancias milimétricas rígidas. Diseñados para frentes de obra civil, estibadores de maquinaria pesada y embalajes especiales de alta resistencia.</p>
+            </div>
 
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-label">Configuración Física</div>
+                    <div class="spec-value">Polines y Tablas Rigurosas</div>
+                    <div class="spec-desc">Cortes limpios longitudinales sin nudos estructurales críticos que comprometan la flexión.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Grado Estructural</div>
+                    <div class="spec-value">Clasificación Nacional Selecta</div>
+                    <div class="spec-desc">Selección de especies con alta densidad molecular idóneas para acuñamiento y soporte físico.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Resistencia Mecánica</div>
+                    <div class="spec-value">Alto Módulo de Ruptura</div>
+                    <div class="spec-desc">Soporta esfuerzos cortantes perpendiculares extremos en maniobras críticas de estiba.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Aplicación Directa</div>
+                    <div class="spec-value">Heavy-Duty & Embalaje</div>
+                    <div class="spec-desc">Perfecto para estructuras de fijación interna en contenedores marítimos y cimentaciones.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE 3: CÍRCULO DE PROVEEDORES (NUEVO) -->
+    <section id="circulo-proveedores" class="technical-section">
+        <div class="tech-container">
+            <div class="tech-info">
+                <span class="tech-tag">Red de Suministro Aliada</span>
+                <h2>Círculo de Proveedores</h2>
+                <p class="tech-lead">Ecosistema colaborativo enfocado en transportistas y fabricantes que buscan eliminar el costo del flete vacío (backhaul) en la región de Jalisco. Monetizamos capacidades ociosas mediante logística inversa inteligente.</p>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-label">Optimización de Rutas</div>
+                    <div class="spec-value">Backhaul Eficiente</div>
+                    <div class="spec-desc">Reducción de hasta un 35% en kilómetros recorridos sin carga en corredores logísticos clave.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Disponibilidad de Activos</div>
+                    <div class="spec-value">Monetización Continua</div>
+                    <div class="spec-desc">Canalización inmediata de excedentes de tarimas recuperadas directamente a la red PalletHub.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Impacto Sustentable</div>
+                    <div class="spec-value">Economía Circular Activa</div>
+                    <div class="spec-desc">Reducción medible de huella de carbono al optimizar espacios de carga existentes en tránsitos locales.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Esquema Operativo</div>
+                    <div class="spec-value">Liquidación Preferente</div>
+                    <div class="spec-desc">Procesos ágiles y transparentes de auditoría de tarimas recibidas con pagos asegurados por volumen.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE 4: TECNOLOGÍA (NUEVO) -->
+    <section id="tecnologia" class="technical-section alt-bg">
+        <div class="tech-container">
+            <div class="tech-info">
+                <span class="tech-tag">Trazabilidad Automatizada</span>
+                <h2>Tecnología</h2>
+                <p class="tech-lead">Control algorítmico y monitoreo digital para la administración del inventario de tarimas. Desarrollamos herramientas que transparentan los ciclos de entrega, cubicación y balances operativos de activos logísticos.</p>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-label">Cubicación Inteligente</div>
+                    <div class="spec-value">Algoritmos de Optimización</div>
+                    <div class="spec-desc">Cálculo exacto del acomodo volumétrico para maximizar la capacidad de cajas secas y contenedores.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Monitoreo Fitosanitario</div>
+                    <div class="spec-value">Registro de Datos Termográficos</div>
+                    <div class="spec-desc">Acceso inmediato a los reportes técnicos digitales de tratamiento térmico NIMF-15 exigidos por aduanas.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Integración Ágil</div>
+                    <div class="spec-value">Dashboard de Clientes</div>
+                    <div class="spec-desc">Consulta en tiempo real de estatus de pedidos, cotizaciones activas e históricos de consumo B2B.</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-label">Transparencia Total</div>
+                    <div class="spec-value">Auditoría Digital de Activos</div>
+                    <div class="spec-desc">Trazabilidad del ciclo de vida de cada lote de tarimas, asegurando un control riguroso de rotaciones.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NOSOTROS (ANCLA DE CONTEXTO) -->
+    <section id="nosotros" class="technical-section" style="border-bottom: none; padding-bottom: 60px;">
+        <div class="tech-container" style="grid-template-columns: 1fr;">
+            <div class="tech-info" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <span class="tech-tag">Sobre PalletHub</span>
+                <h2>Nosotros</h2>
+                <p class="tech-lead">Somos el nodo central del suministro e ingeniería de empaque industrial en el occidente del país. Conectamos la demanda corporativa de tarimas con una infraestructura logística sustentable, transparente y de alto rendimiento técnico.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PIE DE PÁGINA (FOOTER) CORRESPONDIENTE A LA CAPTURA -->
     <footer>
         <div class="footer-container">
+            <!-- Enlaces del lado izquierdo -->
             <ul class="footer-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
-                <li><a href="#madera-industrial">Madera Industrial</a></li>
-                <li><a href="#circulo-proveedores">Circulo de proveedores</a></li>
-                <li><a href="#tecnologia">Tecnología</a></li>
+                <li><a href="#circulo-proveedores">Circulo de Proveedores</a></li>
+                <li><a href="#soluciones-b2b">Compradores</a></li>
+                <li><a href="#">Contacto</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
             </ul>
-            
+
+            <!-- Logotipo y registro centralizado -->
             <div class="footer-logo-center">
                 <img src="logo-pallethub.png" alt="PalletHub Logo">
-                <a href="#circulo-proveedores" style="font-weight: 600; color: #166534; text-decoration: none;">Registrate en el circulo de proveedores</a>
+                <a href="#circulo-proveedores">Registrate en el circulo de proveedores</a>
             </div>
-            
+
+            <!-- Redes y créditos obligatorios lado derecho -->
             <div class="footer-right">
-                <a href="#" class="social-icon-linkedin" style="background:#0c0d0e; color:white; width:32px; height:32px; border-radius:6px; display:flex; align-items:center; justify-content:center; text-decoration:none; font-weight:bold;">in</a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
                 <div class="footer-credits">
-                    © 2026 Desarrollo por Fandango Ventures<br>con mucho cariño desde Guadalajara, Jalisco Mex.
+                    © 2025 Desarrollo por Fandango Ventures<br>con mucho cariño desde Guadalajara, Jalisco Mex.
                 </div>
             </div>
         </div>
