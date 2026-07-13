@@ -1,8 +1,3 @@
-+1
--1
-Lines changed: 1 addition & 1 deletion
-Original file line number	Diff line number	Diff line change
-@@ -1,508 +1,508 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -207,9 +202,9 @@ Original file line number	Diff line number	Diff line change
             line-height: 1.4;
         }
 
-        /* 5. PIE DE PÁGINA CORPORATIVO (FOOTER) AD HOC */
+        /* 5. PIE DE PÁGINA CORPORATIVO (FOOTER) UNIFICADO */
         footer {
-            background-color: #edf2ee; /* Tono verde muy claro y limpio según la captura */
+            background-color: #edf2ee; 
             padding: 60px 5%;
             border-top: 1px solid var(--border-color);
         }
@@ -228,10 +223,15 @@ Original file line number	Diff line number	Diff line change
             margin-bottom: 14px;
         }
         .footer-links a {
-            text-decoration: underline;
+            text-decoration: none;
             color: #2c3e35;
             font-size: 1.05rem;
             font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover {
+            color: var(--brand-green-cta);
+            text-decoration: underline;
         }
         .footer-logo-center {
             display: flex;
@@ -248,7 +248,10 @@ Original file line number	Diff line number	Diff line change
         .footer-logo-center a {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--brand-dark);
+            color: var(--brand-green-cta);
+            text-decoration: none;
+        }
+        .footer-logo-center a:hover {
             text-decoration: underline;
         }
         .footer-right {
@@ -303,8 +306,7 @@ Original file line number	Diff line number	Diff line change
             <li><a href="#circulo-proveedores">Circulo de proveedores</a></li>
             <li><a href="#tecnologia">Tecnología</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#" class="btn-cotizador">Centro de Cotización</a></li>
-         <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
+            <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
         </ul>
     </nav>
 
@@ -404,7 +406,7 @@ Original file line number	Diff line number	Diff line change
         </div>
     </section>
 
-    <!-- BLOQUE 3: CÍRCULO DE PROVEEDORES (NUEVO) -->
+    <!-- BLOQUE 3: CÍRCULO DE PROVEEDORES -->
     <section id="circulo-proveedores" class="technical-section">
         <div class="tech-container">
             <div class="tech-info">
@@ -438,7 +440,7 @@ Original file line number	Diff line number	Diff line change
         </div>
     </section>
 
-    <!-- BLOQUE 4: TECNOLOGÍA (NUEVO) -->
+    <!-- BLOQUE 4: TECNOLOGÍA -->
     <section id="tecnologia" class="technical-section alt-bg">
         <div class="tech-container">
             <div class="tech-info">
@@ -472,7 +474,7 @@ Original file line number	Diff line number	Diff line change
         </div>
     </section>
 
-    <!-- SECCIÓN NOSOTROS (ANCLA DE CONTEXTO) -->
+    <!-- SECCIÓN NOSOTROS -->
     <section id="nosotros" class="technical-section" style="border-bottom: none; padding-bottom: 60px;">
         <div class="tech-container" style="grid-template-columns: 1fr;">
             <div class="tech-info" style="max-width: 800px; margin: 0 auto; text-align: center;">
@@ -483,14 +485,16 @@ Original file line number	Diff line number	Diff line change
         </div>
     </section>
 
-    <!-- 5. PIE DE PÁGINA (FOOTER) CORRESPONDIENTE A LA CAPTURA -->
+    <!-- 5. PIE DE PÁGINA (FOOTER) UNIFICADO CON ATAJOS DEL MENÚ SUPERIOR -->
     <footer>
         <div class="footer-container">
-            <!-- Enlaces del lado izquierdo -->
+            <!-- Enlaces del lado izquierdo sincronizados con el menú superior -->
             <ul class="footer-links">
-                <li><a href="#circulo-proveedores">Circulo de Proveedores</a></li>
-                <li><a href="#soluciones-b2b">Compradores</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
+                <li><a href="#madera-industrial">Madera Industrial</a></li>
+                <li><a href="#circulo-proveedores">Circulo de proveedores</a></li>
+                <li><a href="#tecnologia">Tecnología</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
             </ul>
 
@@ -504,7 +508,7 @@ Original file line number	Diff line number	Diff line change
             <div class="footer-right">
                 <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
                 <div class="footer-credits">
-                    © 2025 Desarrollo por Fandango Ventures<br>con mucho cariño desde Guadalajara, Jalisco Mex.
+                    © 2026 Desarrollo por Fandango Ventures<br>con mucho cariño desde Guadalajara, Jalisco Mex.
                 </div>
             </div>
         </div>
