@@ -3,115 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnología y Control Escalable V2.0 | Pallethub</title>
-    <!-- SEO Meta Tags sugeridos en tu esquema -->
+    <title>Tecnología y Control Escalable V2.0 | PalletHub</title>
+    <!-- SEO Meta Tags -->
     <meta name="keywords" content="fabrica de tarimas guadalajara, polines de madera jalisco, trazabilidad pallets gdl">
+    
+    <!-- Tipografía Corporativa Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary-color: #d15c3d; /* Tono naranja-óxido del botón de cotización rápida */
-            --dark-color: #1a1a1a;
-            --light-bg: #f8f9fa;
-            --border-color: #e0e0e0;
+            --brand-green-light: #cce4c5; 
+            --brand-green-cta: #166534; 
+            --brand-gray: #8d9394;         /* Gris Acero Industrial */
+            --brand-gray-light: #f1f3f4;   /* Fondo Gris Tenue */
+            --brand-dark: #0c0d0e;        
+            --bg-neutral: #f8fafc;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: #ffffff;
-            color: #333;
+            background-color: var(--bg-neutral);
+            color: var(--brand-dark);
             line-height: 1.6;
         }
 
-        /* --- HEADER & NAVEGACIÓN --- */
-        header {
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 1000;
-        }
-
-        .navbar {
+        /* --- HEADER & NAVEGACIÓN UNIFICADA --- */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
+            padding: 24px 5%;
+            background: white;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--dark-color);
-            text-decoration: none;
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+            text-decoration: none; 
+            color: var(--brand-dark); 
+            font-weight: 800; 
+            font-size: 26px; 
+            letter-spacing: -0.5px;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
+        .logo-img {
+            width: 48px;       
+            height: 48px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .menu-links { 
+            display: flex; 
+            list-style: none; 
+            gap: 12px; 
             align-items: center;
-            gap: 20px;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+        .menu-links a { 
+            text-decoration: none; 
+            color: var(--brand-dark); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            padding: 8px 14px; 
+            border-radius: 6px; 
+            transition: all 0.2s ease; 
         }
 
-        .nav-links a:hover {
-            color: var(--primary-color);
+        .menu-links a:hover { 
+            background: #f1f5f9; 
         }
 
-        .btn-cta-fast {
-            background: linear-gradient(135deg, #d15c3d, #a04028);
-            color: white !important;
-            padding: 8px 18px;
-            border-radius: 6px;
+        .menu-links .btn-cotizador {
+            background-color: var(--brand-green-cta);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
             font-weight: 600;
+            box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
+            margin-left: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .menu-links .btn-cotizador:hover {
+            background-color: #14532d;
+            color: white;
+            transform: translateY(-1px);
         }
 
         /* --- HERO: TECNOLOGÍA Y CONTROL --- */
         .hero {
             text-align: center;
-            padding: 60px 20px;
-            background-color: var(--light-bg);
+            padding: 80px 20px;
+            background-color: white;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            color: var(--dark-color);
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+            margin-bottom: 12px;
+            letter-spacing: -1px;
         }
 
         .hero p.subtitle {
             font-size: 1.2rem;
-            color: #666;
+            color: var(--text-muted);
             margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* --- DIAGRAMA: ECOSISTEMA DIGITAL (1/4) --- */
         .ecosystem-container {
             max-width: 1000px;
             margin: 0 auto;
-            background: white;
+            background: var(--brand-gray-light);
             padding: 40px 20px;
             border-radius: 12px;
-            border: 1px dashed var(--border-color);
-            margin-bottom: 50px;
+            border: 1px solid var(--border-color);
         }
 
         .ecosystem-container h3 {
             margin-bottom: 30px;
-            color: #777;
+            color: var(--brand-dark);
             font-size: 1rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -130,6 +164,10 @@
             min-width: 200px;
             text-align: center;
             padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-color);
         }
 
         .flow-icon {
@@ -141,18 +179,19 @@
         .flow-step h4 {
             font-size: 1.1rem;
             margin-bottom: 8px;
-            color: var(--dark-color);
+            color: var(--brand-dark);
+            font-weight: 700;
         }
 
         .flow-step p {
             font-size: 0.85rem;
-            color: #777;
+            color: var(--text-muted);
         }
 
         /* --- SECCIÓN PRINCIPAL: TRES PILARES --- */
         .pilares-section {
             max-width: 1200px;
-            margin: 0 auto 80px auto;
+            margin: 80px auto;
             padding: 0 20px;
         }
 
@@ -164,41 +203,43 @@
 
         .card-pilar {
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 35px;
             background: #ffffff;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
         }
 
         .card-pilar:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.04);
+            border-color: var(--brand-gray);
         }
 
         .card-pilar h2 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            font-weight: 800;
             margin-bottom: 20px;
-            color: var(--dark-color);
+            color: var(--brand-dark);
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* Simulación de elementos gráficos descritos en tus imágenes */
+        /* Simulación de elementos gráficos */
         .graphic-mock {
-            height: 150px;
-            background-color: #eee;
-            border-radius: 6px;
+            height: 160px;
+            background-color: var(--brand-gray-light);
+            border-radius: 8px;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border: 1px solid #ddd;
+            border: 1px solid var(--border-color);
         }
 
         .graphic-mock img {
@@ -214,17 +255,18 @@
 
         .list-features li {
             font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 10px;
+            color: #475569;
+            margin-bottom: 12px;
             position: relative;
             padding-left: 20px;
+            line-height: 1.4;
         }
 
         .list-features li::before {
             content: "•";
-            color: var(--primary-color);
+            color: var(--brand-green-cta);
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             position: absolute;
             left: 0;
             top: -2px;
@@ -234,50 +276,146 @@
         .btn-pilar {
             display: block;
             text-align: center;
-            padding: 12px;
-            background-color: #000000;
+            padding: 14px;
+            background-color: var(--brand-dark);
             color: #ffffff;
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-weight: 700;
             font-size: 0.9rem;
-            transition: background 0.3s;
+            transition: background 0.2s, transform 0.2s;
         }
 
         .btn-pilar:hover {
-            background-color: #333333;
+            background-color: #1e293b;
+            transform: translateY(-1px);
+        }
+
+        .btn-pilar-green {
+            background-color: var(--brand-green-cta);
+        }
+
+        .btn-pilar-green:hover {
+            background-color: #14532d;
+        }
+
+        /* --- PIE DE PÁGINA CORPORATIVO (FOOTER) --- */
+        footer {
+            background-color: #edf2ee; 
+            padding: 60px 5%;
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1.5fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #2c3e35;
+            font-size: 1.05rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover {
+            color: var(--brand-green-cta);
+            text-decoration: underline;
+        }
+        .footer-logo-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+        }
+        .footer-logo-center img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
+        .footer-logo-center a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--brand-green-cta);
+            text-decoration: none;
+        }
+        .footer-logo-center a:hover {
+            text-decoration: underline;
+        }
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            gap: 16px;
+        }
+        .social-icon-linkedin {
+            background: var(--brand-dark);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .footer-credits {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.5;
         }
 
         /* --- RESPONSIVIDAD --- */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
+        @media (max-width: 992px) {
+            .menu-links { display: none; }
             .ecosystem-flow {
                 flex-direction: column;
             }
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+            .footer-container { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+                justify-items: center; 
+            }
+            .footer-right { 
+                align-items: center; 
+                text-align: center; 
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVEGACIÓN -->
-    <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">PalletMéxico</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Menu</a></li>
-                <li><a href="tecnologia.html" style="color: var(--primary-color); font-weight: bold;">Tecnologías</a></li>
-                <li><a href="index.html#cotizacion">Cotización</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
-                <li><a href="index.html#cotizador" class="btn-cta-fast">Cotización Rápida</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- NAVEGACIÓN UNIFICADA PALLETHUB -->
+    <nav>
+        <a href="index.html" class="logo-area">
+            <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img">
+            <div>PalletHub</div>
+        </a>
+        <ul class="menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
+            <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
+            <li><a href="circulo-proveedores.html">Circulo de proveedores</a></li>
+            <li><a href="tecnologia.html" style="color: var(--brand-green-cta); font-weight: bold;">Tecnología</a></li>
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
+        </ul>
+    </nav>
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -316,8 +454,8 @@
                 <div>
                     <h2>📍 Trazabilidad de Activos</h2>
                     <div class="graphic-mock">
-                        <!-- Mapa interactivo o imagen de ubicación de stock GDL/Zapopan -->
-                        <span style="color: #888; font-size: 0.9rem;">📍 Vista de Mapa GDL/Zapopan</span>
+                        <!-- Vista de Mapa GDL/Zapopan -->
+                        <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 600;">📍 Vista de Mapa GDL/Zapopan</span>
                     </div>
                     <ul class="list-features">
                         <li>Control Georreferenciado en GDL/Zapopan</li>
@@ -325,7 +463,7 @@
                         <li>Monitoreo de ciclo de vida del activo</li>
                     </ul>
                 </div>
-                <a href="index.html#contacto" class="btn-pilar">Solicitar Cotización B2B</a>
+                <a href="soluciones-b2b.html" class="btn-pilar">Solicitar Cotización B2B</a>
             </div>
 
             <!-- Pilar 2: Control Escalable de Stock -->
@@ -333,8 +471,8 @@
                 <div>
                     <h2>📊 Control de Stock</h2>
                     <div class="graphic-mock">
-                        <!-- Gráfico de barras o líneas de inventario -->
-                        <span style="color: #888; font-size: 0.9rem;">📈 Gráfico de Validación Local</span>
+                        <!-- Gráfico de Validación Local -->
+                        <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 600;">📈 Gráfico de Validación Local</span>
                     </div>
                     <ul class="list-features">
                         <li>Inventario de stock en tiempo real</li>
@@ -342,7 +480,7 @@
                         <li>Alertas automáticas de desabasto</li>
                     </ul>
                 </div>
-                <a href="index.html#cotizador" class="btn-pilar">Demo Control Logístico</a>
+                <a href="cotizador.html" class="btn-pilar btn-pilar-green">Demo Control Logístico</a>
             </div>
 
             <!-- Pilar 3: Optimización Logística -->
@@ -350,8 +488,8 @@
                 <div>
                     <h2>🚚 Red de Proveedores</h2>
                     <div class="graphic-mock">
-                        <!-- Gráfico o mockup de logística de transporte -->
-                        <span style="color: #888; font-size: 0.9rem;">🚚 Flujo de Red de Proveedores</span>
+                        <!-- Flujo de Red de Proveedores -->
+                        <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 600;">🚚 Flujo de Red de Proveedores</span>
                     </div>
                     <ul class="list-features">
                         <li>Optimización logística y rutas directas</li>
@@ -359,11 +497,40 @@
                         <li>Acceso simplificado a la red de proveedores</li>
                     </ul>
                 </div>
-                <a href="index.html#cotizador" class="btn-pilar">Demo Control Logístico</a>
+                <a href="circulo-proveedores.html" class="btn-pilar">Demo Control Logístico</a>
             </div>
 
         </div>
     </main>
+
+    <!-- PIE DE PÁGINA (FOOTER) UNIFICADO -->
+    <footer>
+        <div class="footer-container">
+            <!-- Enlaces de navegación izquierda -->
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
+                <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
+                <li><a href="circulo-proveedores.html">Circulo de proveedores</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+            </ul>
+
+            <!-- Logotipo y registro centralizado -->
+            <div class="footer-logo-center">
+                <img src="logo-pallethub.png" alt="PalletHub Logo">
+                <a href="circulo-proveedores.html">Registrate en el circulo de proveedores</a>
+            </div>
+
+            <!-- Redes y créditos obligatorios lado derecho -->
+            <div class="footer-right">
+                <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
+                <div class="footer-credits">
+                    © 2026 Desarrollo por Fandango Ventures<br>con mucho cariño desde Guadalajara, Jalisco Mex.
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
