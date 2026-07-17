@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología y Control Escalable V2.0 | Pallethub</title>
+    <!-- SEO Meta Tags sugeridos en tu esquema -->
+    <meta name="keywords" content="fabrica de tarimas guadalajara, polines de madera jalisco, trazabilidad pallets gdl">
+    <style>
+        :root {
+            --primary-color: #d15c3d; /* Tono naranja-óxido del botón de cotización rápida */
+            --dark-color: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- HEADER & NAVEGACIÓN --- */
+        header {
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-cta-fast {
+            background: linear-gradient(135deg, #d15c3d, #a04028);
+            color: white !important;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        /* --- HERO: TECNOLOGÍA Y CONTROL --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--light-bg);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* --- DIAGRAMA: ECOSISTEMA DIGITAL (1/4) --- */
+        .ecosystem-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            border: 1px dashed var(--border-color);
+            margin-bottom: 50px;
+        }
+
+        .ecosystem-container h3 {
+            margin-bottom: 30px;
+            color: #777;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ecosystem-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .flow-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .flow-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .flow-step h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+        }
+
+        .flow-step p {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* --- SECCIÓN PRINCIPAL: TRES PILARES --- */
+        .pilares-section {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+
+        .grid-pilares {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card-pilar {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card-pilar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        }
+
+        .card-pilar h2 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Simulación de elementos gráficos descritos en tus imágenes */
+        .graphic-mock {
+            height: 150px;
+            background-color: #eee;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .graphic-mock img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .list-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .list-features li {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .list-features li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Botones de Acción Internos */
+        .btn-pilar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn-pilar:hover {
+            background-color: #333333;
+        }
+
+        /* --- RESPONSIVIDAD --- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .ecosystem-flow {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">PalletMéxico</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="tecnologia.html" style="color: var(--primary-color); font-weight: bold;">Tecnologías</a></li>
+                <li><a href="index.html#cotizacion">Cotización</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="index.html#cotizador" class="btn-cta-fast">Cotización Rápida</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Tecnología y Control Escalable V2.0</h1>
+        <p class="subtitle">Ecosistema Digital de Trazabilidad para tu Cadena de Suministro</p>
+
+        <!-- FLUJO ECOSISTEMA DIGITAL (1/4) -->
+        <div class="ecosystem-container">
+            <h3>Ecosistema Digital de Trazabilidad</h3>
+            <div class="ecosystem-flow">
+                <div class="flow-step">
+                    <span class="flow-icon">📦</span>
+                    <h4>Captura de Suministro</h4>
+                    <p>(Red de Proveedores)</p>
+                </div>
+                <div class="flow-step">
+                    <span class="flow-icon">📱</span>
+                    <h4>Plataforma Digital</h4>
+                    <p>Centralizada con Integración NIMF-15/HT</p>
+                </div>
+                <div class="flow-step">
+                    <span class="flow-icon">👁️</span>
+                    <h4>Visibilidad para Cliente</h4>
+                    <p>(B2B / Corporativo)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRES PILARES OPERATIVOS -->
+    <main class="pilares-section">
+        <div class="grid-pilares">
+            
+            <!-- Pilar 1: Trazabilidad de Activos -->
+            <div class="card-pilar">
+                <div>
+                    <h2>📍 Trazabilidad de Activos</h2>
+                    <div class="graphic-mock">
+                        <!-- Mapa interactivo o imagen de ubicación de stock GDL/Zapopan -->
+                        <span style="color: #888; font-size: 0.9rem;">📍 Vista de Mapa GDL/Zapopan</span>
+                    </div>
+                    <ul class="list-features">
+                        <li>Control Georreferenciado en GDL/Zapopan</li>
+                        <li>Identificación única por tarima</li>
+                        <li>Monitoreo de ciclo de vida del activo</li>
+                    </ul>
+                </div>
+                <a href="index.html#contacto" class="btn-pilar">Solicitar Cotización B2B</a>
+            </div>
+
+            <!-- Pilar 2: Control Escalable de Stock -->
+            <div class="card-pilar">
+                <div>
+                    <h2>📊 Control de Stock</h2>
+                    <div class="graphic-mock">
+                        <!-- Gráfico de barras o líneas de inventario -->
+                        <span style="color: #888; font-size: 0.9rem;">📈 Gráfico de Validación Local</span>
+                    </div>
+                    <ul class="list-features">
+                        <li>Inventario de stock en tiempo real</li>
+                        <li>Validación local optimizada en Guadalajara</li>
+                        <li>Alertas automáticas de desabasto</li>
+                    </ul>
+                </div>
+                <a href="index.html#cotizador" class="btn-pilar">Demo Control Logístico</a>
+            </div>
+
+            <!-- Pilar 3: Optimización Logística -->
+            <div class="card-pilar">
+                <div>
+                    <h2>🚚 Red de Proveedores</h2>
+                    <div class="graphic-mock">
+                        <!-- Gráfico o mockup de logística de transporte -->
+                        <span style="color: #888; font-size: 0.9rem;">🚚 Flujo de Red de Proveedores</span>
+                    </div>
+                    <ul class="list-features">
+                        <li>Optimización logística y rutas directas</li>
+                        <li>Control estricto de proveedores externos</li>
+                        <li>Acceso simplificado a la red de proveedores</li>
+                    </ul>
+                </div>
+                <a href="index.html#cotizador" class="btn-pilar">Demo Control Logístico</a>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
