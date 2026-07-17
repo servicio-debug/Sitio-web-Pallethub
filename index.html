@@ -25,6 +25,103 @@
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-neutral); color: var(--brand-dark); }
 
+/* --- NUEVA ESTRUCTURA SPLIT-HERO 50/50 --- */
+.hero-split-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.hero-half {
+    flex: 1;
+    min-width: 320px; /* Hace que se apilen verticalmente en móviles */
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Alinea el contenido hacia abajo */
+    padding: 60px 8%;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Imágenes de Fondo específicas para cada lado */
+.buyer-side {
+    background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80'); /* Imagen de fábrica/almacén */
+}
+
+.supplier-side {
+    background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80'); /* Imagen de camión/logística */
+    border-left: 4px solid white; /* Línea divisoria elegante */
+}
+
+/* Capa oscura (Overlay) para que el texto blanco sea 100% legible */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: 1;
+}
+
+/* Contenedor del contenido encima del fondo */
+.hero-half-content {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+}
+
+/* Badges (60% / 40%) */
+.hero-badge {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.badge-green {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+}
+
+/* Tipografía adaptada para fondo oscuro */
+.hero-half h1 {
+    font-size: 2rem !important;
+    font-weight: 800;
+    color: #ffffff !important;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-half h2 {
+    font-size: 1rem !important;
+    color: #cbd5e1 !important; /* Gris claro legible */
+    font-weight: 400 !important;
+    line-height: 1.5;
+    margin-bottom: 28px !important;
+}
+
+/* Ajustes de responsividad en pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero-half {
+        min-height: 60vh;
+        padding: 40px 6%;
+    }
+    .supplier-side {
+        border-left: none;
+        border-top: 4px solid white;
+    }
+}
+        
         /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
         nav {
             display: flex;
@@ -324,23 +421,32 @@
         </ul>
     </nav>
 
-    <!-- SPLIT-HERO CON NUEVO COLOR GRIS MATE -->
-    <section class="hero-section">
-    <div class="hero-b2b">
-        <h1>Fabricación de Tarimas y Madera para Construcción en Guadalajara</h1>
-        <h2 style="font-size: 1rem; color: var(--text-muted); font-weight: normal; margin-bottom: 28px; line-height: 1.5;">Suministro corporativo de tarimas de madera y plástico con certificación NIMF-15 para logística en Jalisco</h2>
-        <!-- Actualizado a la clase del nuevo botón gris -->
-        <a href="soluciones-b2b.html" class="cta-btn-main btn-gray-solid">Cotizar Tarimas o Madera</a>
+   <!-- SPLIT-HERO DE DOS COLUMNAS CON IMÁGENES DE FONDO -->
+<section class="hero-split-container">
+    
+    <!-- LADO IZQUIERDO: COMPRADOR INDUSTRIAL -->
+    <div class="hero-half buyer-side">
+        <div class="hero-overlay"></div>
+        <div class="hero-half-content">
+            <span class="hero-badge">60% Comprador Industrial</span>
+            <h1>Fabricación de Tarimas y Madera para Construcción en Guadalajara</h1>
+            <h2>Suministro corporativo de tarimas de madera y plástico con certificación NIMF-15 para logística en Jalisco</h2>
+            <a href="soluciones-b2b.html" class="cta-btn-main btn-gray-solid">Cotizar Tarimas o Madera</a>
+        </div>
+    </div>
+    
+    <!-- LADO DERECHO: ALIADO DE SUMINISTRO -->
+    <div class="hero-half supplier-side">
+        <div class="hero-overlay"></div>
+        <div class="hero-half-content">
+            <span class="hero-badge badge-green">40% Aliado de Suministro</span>
+            <h1>Monetiza tu Flota o Bodega. Únete a la Red de Suministro Inteligente</h1>
+            <h2>Monetiza fletes muertos y espacios disponibles. Conecta tu operación con nuestra plataforma digital de logística en GDL.</h2>
+            <a href="circulo-proveedores.html" class="btn-green-solid cta-btn-main">Unirte como Aliado</a>
+        </div>
     </div>
 
-        <div class="hero-center-img"></div>
-
-        <div class="hero-supply">
-            <h1>Monetiza tu Flota o Bodega. Únete a la Red de Suministro Inteligente</h1>
-            <h2 style="font-size: 1rem; color: var(--text-muted); font-weight: normal; margin-bottom: 28px; line-height: 1.5;">Monetiza fletes muertos y espacios disponibles. Conecta tu operación con nuestra plataforma digital de logística en GDL.</h2>
-            <!-- Vinculado directo a la Landing independiente -->
-          <a href="circulo-proveedores.html" class="btn-green-solid cta-btn-main">Unirte como Aliado</a>
-    </section>
+</section>
 
     <!-- CERTIFICACIONES LOGÍSTICAS SUTILES -->
     <section class="trust-bar">
