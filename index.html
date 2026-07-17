@@ -13,6 +13,8 @@
         :root {
             --brand-green-light: #cce4c5; 
             --brand-green-cta: #166534; 
+            --brand-gray: #8d9394;         /* NUEVO: Gris Acero Industrial */
+            --brand-gray-light: #f1f3f4;   /* NUEVO: Fondo Gris Tenue */
             --brand-dark: #0c0d0e;        
             --bg-neutral: #f8fafc;
             --text-muted: #64748b;
@@ -100,8 +102,14 @@
             flex-wrap: wrap;
         }
         .hero-b2b {
-            flex: 1.2; min-width: 320px; background-color: #f0f7ff; padding: 60px 5%;
-            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+            flex: 1.2; 
+            min-width: 320px; 
+            background-color: var(--brand-gray-light); /* Actualizado a Gris Suave */
+            padding: 60px 5%;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: flex-start;
         }
         .hero-center-img {
             flex: 1; min-width: 300px;
@@ -115,10 +123,15 @@
         .hero-section h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; }
         .hero-section p { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; line-height: 1.5; }
 
-        .cta-btn-main { padding: 14px 28px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; display: inline-block; transition: transform 0.2s; }
+        .cta-btn-main { padding: 14px 28px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; display: inline-block; transition: transform 0.2s, background-color 0.2s; }
         .cta-btn-main:hover { transform: translateY(-2px); }
-        .btn-blue-solid { background: #1e3a8a; color: white; }
+        
+        /* Botón Gris Acero Personalizado */
+        .btn-gray-solid { background: var(--brand-gray); color: white; }
+        .btn-gray-solid:hover { background: #73797a; } /* Un tono más oscuro al pasar el cursor */
+
         .btn-green-solid { background: #166534; color: white; }
+        .btn-green-solid:hover { background: #14532d; }
 
         /* 3. BARRA DE CONFIANZA */
         .trust-bar { padding: 40px 5%; background: white; text-align: center; border-bottom: 1px solid var(--border-color); }
@@ -127,7 +140,7 @@
         .badge-item { display: flex; flex-direction: column; align-items: center; font-size: 0.75rem; font-weight: 700; color: var(--brand-dark); }
         .badge-icon { width: 45px; height: 45px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; font-size: 1.2rem; border: 1px solid #cbd5e1; }
 
-        /* 4. BLOQUES MOCKUP 2 (ESTILO SISTÉMICO Y MINIMALISTA) */
+        /* 4. BLOQUES MOCKUP 2 */
         .technical-section {
             padding: 100px 5%;
             background: #ffffff;
@@ -310,12 +323,13 @@
         </ul>
     </nav>
 
-    <!-- SPLIT-HERO -->
+    <!-- SPLIT-HERO CON NUEVO COLOR GRIS MATE -->
     <section class="hero-section">
         <div class="hero-b2b">
             <h1>Suministro Inteligente de Tarimas y Madera para Construcción B2B</h1>
             <p>High FETA Button, of the desktop home. Big CTA Button: "Split-Hero".</p>
-            <a href="soluciones-b2b.html" class="cta-btn-main btn-blue-solid">[Cotizar Soluciones B2B]</a>
+            <!-- Actualizado a la clase del nuevo botón gris -->
+            <a href="soluciones-b2b.html" class="cta-btn-main btn-gray-solid">[Cotizar Soluciones B2B]</a>
         </div>
 
         <div class="hero-center-img"></div>
@@ -342,7 +356,7 @@
     <section id="soluciones-b2b" class="technical-section">
         <div class="tech-container">
             <div class="tech-info">
-                <span class="tech-tag">Ingeniería de Empaque</span>
+                <span class="tech-tag" style="color: var(--brand-gray);">Ingeniería de Empaque</span>
                 <h2>Soluciones B2B</h2>
                 <p class="tech-lead">Arquitectura de distribución industrial y tarimas estructurales diseñadas bajo simulación de flexión y fatiga estática. Garantizamos resiliencia mecánica en racks y transportación cross-docking.</p>
             </div>
