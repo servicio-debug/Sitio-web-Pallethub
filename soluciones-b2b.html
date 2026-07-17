@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soluciones B2B | PalletHub Ingeniería de Empaque</title>
+    <title>Soluciones B2B | PalletHub Jalisco</title>
+    <!-- Tipografía Corporativa Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --brand-green-light: #cce4c5; 
             --brand-green-cta: #166534; 
+            --brand-gray: #8d9394;         /* NUEVO: Gris Acero Industrial */
+            --brand-gray-light: #f1f3f4;   /* NUEVO: Fondo Gris Tenue */
             --brand-dark: #0c0d0e;        
             --bg-neutral: #f8fafc;
             --text-muted: #64748b;
             --border-color: #e2e8f0;
-            --blue-b2b: #1e3a8a;
+            --bg-accent-green: #edf2ee;
         }
-        
+
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { background-color: var(--bg-neutral); color: var(--brand-dark); }
-        
-        /* CABECERA (IDÉNTICA AL HOME) */
+        body { background-color: white; color: var(--brand-dark); }
+
+        /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
         nav {
             display: flex;
             justify-content: space-between;
@@ -35,88 +38,225 @@
             top: 0;
             z-index: 1000;
         }
-        .logo-area { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--brand-dark); font-weight: 800; font-size: 26px; letter-spacing: -0.5px; }
+
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+            text-decoration: none; 
+            color: var(--brand-dark); 
+            font-weight: 800; 
+            font-size: 26px; 
+            letter-spacing: -0.5px;
+        }
+
         .logo-img { width: 48px; height: 48px; object-fit: contain; display: block; }
         .menu-links { display: flex; list-style: none; gap: 12px; align-items: center; }
         .menu-links a { text-decoration: none; color: var(--brand-dark); font-weight: 600; font-size: 0.95rem; padding: 8px 14px; border-radius: 6px; transition: all 0.2s ease; }
         .menu-links a:hover { background: #f1f5f9; }
-        .menu-links .btn-cotizador { background-color: var(--brand-green-cta); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; }
-
-        /* HERO OPERATIVO PROFUNDO */
-        .page-hero {
-            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
-            padding: 80px 5%;
-            border-bottom: 1px solid var(--border-color);
+        
+        .menu-links .btn-cotizador {
+            background-color: var(--brand-green-cta);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
+            margin-left: 8px;
         }
-        .hero-container {
+        .menu-links .btn-cotizador:hover { background-color: #14532d; transform: translateY(-1px); }
+
+        /* 2. HERO / BANNER PRINCIPAL (B2B) */
+        .b2b-hero {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            height: 240px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.05);
+        }
+
+        .b2b-hero-badge {
+            background-color: var(--brand-gray); /* Color Gris Mate de marca */
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            letter-spacing: -0.5px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            max-width: 90%;
+        }
+
+        /* 3. GRID DE SOLUCIONES B2B */
+        .solutions-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 5%;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .solution-card {
+            background: var(--bg-neutral);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .solution-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--brand-gray);
+        }
+
+        .solution-icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .solution-icon-box svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--brand-gray);
+        }
+
+        .solution-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+        }
+
+        .solution-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* 4. BANNER DE CIERRE: LLAMADO A ACCIÓN */
+        .b2b-cta-section {
+            max-width: 1200px;
+            margin: 60px auto 100px;
+            padding: 0 5%;
+        }
+
+        .b2b-cta-banner {
+            background-color: var(--brand-gray-light); /* Fondo Gris Suave */
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .b2b-cta-info h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .b2b-cta-info p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .btn-b2b-cta {
+            background-color: var(--brand-gray);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+        .btn-b2b-cta:hover { background-color: #73797a; }
+
+        /* 5. PIE DE PÁGINA (FOOTER) UNIFICADO */
+        footer {
+            background-color: var(--bg-accent-green); 
+            padding: 60px 5%;
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
+            grid-template-columns: 1fr 1.2fr 1.5fr;
             gap: 40px;
             align-items: center;
         }
-        .hero-content h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 16px; color: var(--blue-b2b); }
-        .hero-content p { font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; }
-        
-        /* Imagen heredada de la cabecera/almacén industrial */
-        .hero-bg-view {
-            height: 350px;
-            border-radius: 16px;
-            background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800') no-repeat center center/cover;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-        }
-
-        /* SECCIÓN TÉCNICA DE PRODUCTO */
-        .deep-dive { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 48px; text-align: center; }
-        
-        .product-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
-            align-items: center;
-        }
-        .product-row:nth-child(even) { grid-template-columns: 1fr 1fr; }
-        .product-row:nth-child(even) .product-info { order: 2; }
-        
-        .product-info h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 14px; }
-        .product-info p { color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
-        
-        /* DATA TABLES - CONOCIMIENTO TÉCNICO COMPARTIDO */
-        .tech-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 16px;
-            font-size: 0.9rem;
-        }
-        .tech-table th, .tech-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .tech-table th { font-weight: 700; color: var(--text-muted); background: #f1f5f9; }
-
-        /* FOOTER AD HOC */
-        footer { background-color: #edf2ee; padding: 60px 5%; border-top: 1px solid var(--border-color); margin-top: 100px; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr 1.5fr; gap: 40px; align-items: center; }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 14px; }
-        .footer-links a { text-decoration: underline; color: #2c3e35; font-size: 1.05rem; }
+        .footer-links a {
+            text-decoration: none;
+            color: #2c3e35;
+            font-size: 1.05rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover { color: var(--brand-green-cta); text-decoration: underline; }
         .footer-logo-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
         .footer-logo-center img { width: 90px; height: 90px; object-fit: contain; }
+        .footer-logo-center a { font-size: 1rem; font-weight: 600; color: var(--brand-green-cta); text-decoration: none; }
+        .footer-logo-center a:hover { text-decoration: underline; }
         .footer-right { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 16px; }
-        .footer-credits { font-size: 0.9rem; color: #475569; }
+        
+        .social-icon-linkedin {
+            background: var(--brand-dark);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .footer-credits { font-size: 0.9rem; color: #475569; line-height: 1.5; }
 
-        @media (max-width: 768px) {
-            .hero-container, .product-row { grid-template-columns: 1fr !important; }
+        /* RESPONSIVO */
+        @media (max-width: 992px) {
+            .menu-links { display: none; }
+            .solutions-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .b2b-cta-banner { flex-direction: column; text-align: center; padding: 32px 24px; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+            .footer-right { align-items: center; text-align: center; }
+        }
+        @media (max-width: 576px) {
+            .solutions-grid { grid-template-columns: 1fr; }
+            .b2b-hero-badge { font-size: 1.4rem; padding: 12px 20px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- MENÚ SUPERIOR PREMIUM -->
     <nav>
         <a href="index.html" class="logo-area">
             <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img">
@@ -124,8 +264,8 @@
         </a>
         <ul class="menu-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="soluciones-b2b.html" style="color: var(--blue-b2b);">Soluciones B2B</a></li>
-            <li><a href="index.html#madera-industrial">Madera Industrial</a></li>
+            <li><a href="#">Soluciones B2B</a></li>
+            <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
             <li><a href="index.html#circulo-proveedores">Circulo de proveedores</a></li>
             <li><a href="index.html#tecnologia">Tecnología</a></li>
             <li><a href="index.html#nosotros">Nosotros</a></li>
@@ -133,69 +273,79 @@
         </ul>
     </nav>
 
-    <section class="page-hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Infraestructura Corporativa de Tarimas</h1>
-                <p>Ingeniería de distribución avanzada optimizada para cadenas de suministro automotrices, alimenticias y de retail de alta densidad en México.</p>
-                <a href="cotizador.html" class="btn-cotizador" style="text-decoration:none; display:inline-block; padding:14px 28px;">Configurar Especificación Técnica</a>
-            </div>
-            <div class="hero-bg-view"></div>
+    <!-- BANNER PRINCIPAL (HERO B2B) -->
+    <section class="b2b-hero">
+        <div class="b2b-hero-badge">
+            Soluciones Corporativas B2B
         </div>
     </section>
 
-    <main class="deep-dive">
-        <h2 class="section-title">Especificaciones de Operación B2B</h2>
-
-        <div class="product-row">
-            <div class="product-info">
-                <h3>01. Tarima para Rack de Alta Carga</h3>
-                <p>Diseñada rigurosamente para almacenamiento vertical continuo en centros de distribución automatizados. Su arquitectura minimiza la deflexión central bajo condiciones críticas de fatiga elástica.</p>
-                <table class="tech-table">
-                    <tr><th>Parámetro Mecánico</th><th>Métrica Estándar</th></tr>
-                    <tr><td>Resistencia Estática</td><td>4,500 kg</td></tr>
-                    <tr><td>Carga en Racking de Voladizo</td><td>1,200 kg sin pandeo</td></tr>
-                    <tr><td>Fijación Perimetral</td><td>Clavo roscado de alta sujeción 2.5"</td></tr>
-                </table>
+    <!-- SECCIÓN DE SOLUCIONES -->
+    <section class="solutions-section">
+        <div class="solutions-grid">
+            
+            <!-- TARIMAS NUEVAS -->
+            <div class="solution-card">
+                <div class="solution-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V11H6V13H11V18H13V13H18V11H13V6H11Z"/></svg>
+                </div>
+                <h3>Tarimas Nuevas</h3>
+                <p>Fabricación automatizada bajo estándares rígidos NIMF-15. Diseñadas a la medida exacta de sus necesidades logísticas nacionales o de exportación.</p>
             </div>
-            <div style="background:#f1f5f9; height:280px; border-radius:12px; border:1px solid var(--border-color); padding:30px; display:flex; flex-direction:column; justify-content:center;">
-                <code style="color:var(--blue-b2b); font-size:0.9rem;">// Simulación de Tensión Estructural<br>Deflexión Max: &lt; 0.5% del claro libre<br>Madera: Pino Selecto Secado en Horno<br>Entrada: 4 entradas para montacargas</code>
+
+            <!-- TARIMAS RECICLADAS -->
+            <div class="solution-card">
+                <div class="solution-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M12,2C17.52,2 22,6.48 22,12C22,17.52 17.52,22 12,22C6.48,22 2,17.52 2,12C2,6.48 6.48,2 12,2M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4M12,6V12H16V14H10V6H12Z"/></svg>
+                </div>
+                <h3>Tarimas Recicladas</h3>
+                <p>Estructuras reacondicionadas grado A y B. Una alternativa de alto rendimiento que disminuye significativamente los costos y el impacto ecológico.</p>
+            </div>
+
+            <!-- DISEÑO ESTRUCTURAL -->
+            <div class="solution-card">
+                <div class="solution-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/></svg>
+                </div>
+                <h3>Diseño Estructural</h3>
+                <p>Simulaciones de carga digitalizada para reducir las mermas mecánicas y optimizar costos de materiales basados en la configuración de su rack.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BANNER DE CIERRE CON LLAMADO A ACCIÓN -->
+    <section class="b2b-cta-section">
+        <div class="b2b-cta-banner">
+            <div class="b2b-cta-info">
+                <h2>¿Necesita un presupuesto corporativo?</h2>
+                <p>Utilice nuestro cotizador digital para volumetrías de tarimas o cargamentos especiales de madera.</p>
+                <a href="cotizador.html" class="btn-b2b-cta">[Iniciar Cotización Digital]</a>
             </div>
         </div>
+    </section>
 
-        <div class="product-row">
-            <div class="product-info">
-                <h3>02. Tarima de Exportación NIMF-15</h3>
-                <p>Componentes estructurales con trazabilidad aduanera garantizada. Sometidos a ciclos estrictos de tratamiento térmico en cámara (HT) para asegurar la eliminación microbiológica y evitar detenciones en puertos internacionales.</p>
-                <table class="tech-table">
-                    <tr><th>Cumplimiento Aduanal</th><th>Especificación</th></tr>
-                    <tr><td>Ciclo Térmico Central</td><td>&gt; 56°C por mínimo 30 min</td></tr>
-                    <tr><td>Humedad Promedio</td><td>Menor al 19% de saturación</td></tr>
-                    <tr><td>Identificación</td><td>Sello indeleble registrado ante SEMARNAT</td></tr>
-                </table>
-            </div>
-            <div style="background:#f1f5f9; height:280px; border-radius:12px; border:1px solid var(--border-color); padding:30px; display:flex; flex-direction:column; justify-content:center;">
-                <code style="color:var(--brand-green-cta); font-size:0.9rem;">// Certificación de Lote Internacional<br>Apto para: US, UE, Asia-Pacífico<br>Especie: Conífera certificada sustentable<br>Grosor de Tabla: 11/16" constante</code>
-            </div>
-        </div>
-    </main>
-
+    <!-- PIE DE PÁGINA (FOOTER) UNIFICADO -->
     <footer>
         <div class="footer-container">
             <ul class="footer-links">
-                <li><a href="index.html#circulo-proveedores">Circulo de Proveedores</a></li>
-                <li><a href="soluciones-b2b.html">Compradores</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Soluciones B2B</a></li>
+                <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
+                <li><a href="index.html#circulo-proveedores">Circulo de proveedores</a></li>
+                <li><a href="index.html#tecnologia">Tecnología</a></li>
                 <li><a href="index.html#nosotros">Nosotros</a></li>
             </ul>
+
             <div class="footer-logo-center">
                 <img src="logo-pallethub.png" alt="PalletHub Logo">
                 <a href="index.html#circulo-proveedores">Registrate en el circulo de proveedores</a>
             </div>
+
             <div class="footer-right">
-                <a href="#" class="social-icon-linkedin" style="background:#0c0d0e; color:white; width:32px; height:32px; border-radius:6px; display:flex; align-items:center; justify-content:center; text-decoration:none;">in</a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
                 <div class="footer-credits">
-                    © 2025 Desarrollo por Fandango Ventures<br>con mucho cariño desde Guadalajara, Jalisco Mex.
+                    © 2026 Desarrollo por Fandango Ventures<br>con mucho cariño desde Guadalajara, Jalisco Mex.
                 </div>
             </div>
         </div>
