@@ -238,11 +238,13 @@
         .floating-badge-card .indicator-dot.w-long { width: 24px; background-color: white; }
         .floating-badge-card .indicator-dot.w-short { width: 12px; }
 
-      /* 3. GRID DE SOLUCIONES B2B (ESTILO INMERSIVO DE ALTO IMPACTO) */
+  /* 3. GRID DE SOLUCIONES B2B (ESTILO INMERSIVO DE ALTO IMPACTO) */
 .services-premium-section {
     max-width: 1200px;
     margin: 60px auto 80px;
     padding: 0 5%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .services-container-header {
@@ -264,6 +266,147 @@
     margin: 0 auto;
 }
 
+/* Contenedor Grid adaptable a 4 columnas o 2x2 */
+.services-premium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    width: 100%;
+}
+
+/* Tarjeta Base Premium */
+.service-premium-card {
+    position: relative;
+    min-height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 32px 24px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.service-premium-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Control estricto para que los iconos viejos heredados no crezcan desmedidamente */
+.service-premium-card svg, 
+.service-premium-card i,
+.solution-icon-box {
+    max-width: 40px !important;
+    max-height: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 3;
+}
+
+/* Capa oscura interna (Overlay) */
+.service-premium-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 55%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: 1;
+}
+
+/* Contenido de la Tarjeta */
+.service-premium-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: left;
+    width: 100%;
+}
+
+/* Burbujas Superiores (Badges) */
+.service-badge-bubble {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.bg-bubble-gray { background-color: rgba(241, 245, 249, 0.15); }
+.bg-bubble-green { background-color: rgba(34, 197, 94, 0.2); color: #4ade80; border-color: rgba(34, 197, 94, 0.3); }
+.bg-bubble-dark { background-color: rgba(15, 23, 42, 0.3); }
+
+/* Textos internos */
+.service-premium-content h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    color: #ffffff !important;
+}
+
+.service-gancho {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
+
+.service-seo-text {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.service-seo-text strong {
+    color: #ffffff;
+}
+
+/* Burbujas de Etiquetas de Cierre (Footer Tags) */
+.service-bubbles-footer {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.bubble-tag {
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+/* Imágenes de fondo para cada servicio */
+.service-bg-new {
+    background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80');
+}
+.service-bg-used {
+    background-image: url('https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6c?auto=format&fit=crop&w=600&q=80');
+}
+.service-bg-rent {
+    background-image: url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80');
+}
+.service-bg-waste {
+    background-image: url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=600&q=80');
+}
 /* Contenedor Grid adaptable a 4 columnas */
 .services-premium-grid {
     display: grid;
