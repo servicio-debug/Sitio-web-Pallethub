@@ -82,7 +82,7 @@
         }
 
         .b2b-hero-badge {
-            background-color: var(--brand-gray); /* Color Gris Mate de marca */
+            background-color: var(--brand-gray); 
             color: white;
             padding: 16px 32px;
             border-radius: 8px;
@@ -94,10 +94,154 @@
             max-width: 90%;
         }
 
+        /* --- NUEVA ARQUITECTURA DE PRESENTACIÓN (SPLIT 50/50 DE IMAGEN) --- */
+        .split-intro-section {
+            max-width: 1200px;
+            margin: 60px auto 40px;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .split-content .intro-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-green-cta);
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .split-content h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--brand-dark);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .split-content .main-paragraph {
+            font-size: 1.05rem;
+            color: var(--brand-dark);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .split-content .sub-paragraph {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .split-action-row {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .btn-split-cta {
+            background-color: var(--brand-dark);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .btn-split-cta:hover {
+            background-color: #1e293b;
+            transform: translateY(-1px);
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .author-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+        }
+        .author-title {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Lado de la Imagen */
+        .split-visual {
+            position: relative;
+            width: 100%;
+        }
+
+        .image-container-wrapper {
+            position: relative;
+            border-radius: 16px;
+        }
+
+        .split-main-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 16px;
+            display: block;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+        }
+
+        /* Tarjeta Verde Estadística Flotante */
+        .floating-badge-card {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background-color: #84cc16; /* Verde vibrante similar a la referencia */
+            color: white;
+            padding: 24px 28px;
+            border-radius: 12px;
+            max-width: 240px;
+            box-shadow: 0 10px 25px rgba(132, 204, 22, 0.3);
+            z-index: 10;
+        }
+
+        .floating-badge-card .stat-number {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .floating-badge-card .stat-text {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .floating-badge-card .stat-indicators {
+            display: flex;
+            gap: 6px;
+        }
+
+        .floating-badge-card .indicator-dot {
+            height: 4px;
+            border-radius: 2px;
+            background-color: rgba(255,255,255,0.4);
+        }
+        .floating-badge-card .indicator-dot.w-long { width: 24px; background-color: white; }
+        .floating-badge-card .indicator-dot.w-short { width: 12px; }
+
         /* 3. GRID DE SOLUCIONES B2B */
         .solutions-section {
             max-width: 1200px;
-            margin: 60px auto;
+            margin: 40px auto 60px;
             padding: 0 5%;
         }
 
@@ -158,7 +302,7 @@
         }
 
         .b2b-cta-banner {
-            background-color: var(--brand-gray-light); /* Fondo Gris Suave */
+            background-color: var(--brand-gray-light); 
             border-radius: 16px;
             padding: 40px;
             display: flex;
@@ -243,6 +387,9 @@
         /* RESPONSIVO */
         @media (max-width: 992px) {
             .menu-links { display: none; }
+            .split-intro-section { grid-template-columns: 1fr; gap: 40px; }
+            .split-main-img { height: 320px; }
+            .floating-badge-card { position: relative; bottom: 0; right: 0; margin: -30px auto 0 20px; }
             .solutions-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
             .b2b-cta-banner { flex-direction: column; text-align: center; padding: 32px 24px; }
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
@@ -251,6 +398,7 @@
         @media (max-width: 576px) {
             .solutions-grid { grid-template-columns: 1fr; }
             .b2b-hero-badge { font-size: 1.4rem; padding: 12px 20px; }
+            .split-action-row { flex-direction: column; align-items: flex-start; gap: 16px; }
         }
     </style>
 </head>
@@ -280,7 +428,54 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE SOLUCIONES -->
+    <!-- NUEVO CUADRO: ARQUITECTURA SPLIT (TEXTO + IMAGEN + CONTADOR FLOTANTE) -->
+    <section class="split-intro-section">
+        
+        <!-- Columna Izquierda: Mensaje Persuasivo de la Empresa -->
+        <div class="split-content">
+            <span class="intro-tag">Suministro Inteligente de Tarimas</span>
+            <h1>Un proveedor aliado para fabricantes, instaladores y contratistas logísticos.</h1>
+            
+            <p class="main-paragraph">
+                Diseñamos y distribuimos soluciones modulares que eliminan los quiebres de inventario en planta. Suministro estratégico con ingeniería de empaque integrada para que su cadena de valor nunca se detenga.
+            </p>
+            
+            <p class="sub-paragraph">
+                Nuestra infraestructura responde a las demandas industriales más críticas de la región con entregas puntuales y un control de calidad estricto. Sin demoras innecesarias en andén, optimizando cada metro cúbico disponible.
+            </p>
+
+            <div class="split-action-row">
+                <a href="cotizador.html" class="btn-split-cta">
+                    <span>📅</span> Agendar una Cita Comercial
+                </a>
+                <div class="author-info">
+                    <span class="author-name">Equipo Operativo</span>
+                    <span class="author-title">PalletHub Corporativo</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna Derecha: Imagen Estructural con Tarjeta Verde Flotante -->
+        <div class="split-visual">
+            <div class="image-container-wrapper">
+                <!-- Imagen de contexto industrial/almacén -->
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" alt="Suministro Corporativo PalletHub" class="split-main-img">
+                
+                <!-- Tarjeta Verde Flotante (Idéntica a la referencia) -->
+                <div class="floating-badge-card">
+                    <div class="stat-number">345</div>
+                    <p class="stat-text">Maniobras eficientes con control total sobre su volumen de carga diario.</p>
+                    <div class="stat-indicators">
+                        <span class="indicator-dot w-long"></span>
+                        <span class="indicator-dot w-short"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SECCIÓN DE OPCIONES (TUS 3 CUADROS ORIGINALES) -->
     <section class="solutions-section">
         <div class="solutions-grid">
             
