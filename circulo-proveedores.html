@@ -23,7 +23,7 @@
             --border-color: #e2e8f0;
             --bg-accent-green: #edf2ee;
             
-            /* Nuevos colores oscuros premium para la sección FAQ */
+            /* Colores oscuros premium para la sección FAQ */
             --faq-bg-dark: #1e2229;
             --faq-card-bg: #282d37;
             --faq-text-light: #f8fafc;
@@ -244,7 +244,7 @@
             line-height: 1.6;
         }
 
-        /* --- SECCIÓN INTERMEDIA: INTRO TEXT SPLIT (Asimétrica de dos columnas) --- */
+        /* --- SECCIÓN INTERMEDIA: INTRO TEXT SPLIT --- */
         .intro-text-split-section {
             background-color: #ffffff;
             padding: 100px 5%;
@@ -286,7 +286,7 @@
             margin-top: 34px;
         }
 
-        /* --- SECCIÓN: TESTIMONIOS (Limpia y con flechas de navegación) --- */
+        /* --- SECCIÓN: TESTIMONIOS --- */
         .testimonials-section {
             background-color: #ffffff;
             padding: 80px 5% 100px 5%;
@@ -474,9 +474,7 @@
             color: var(--brand-dark);
         }
 
-        /* ========================================================
-           NUEVA SECCIÓN: PREGUNTAS FRECUENTES (FAQ) PREMIUM DARK 
-           ======================================================== */
+        /* 5. PREGUNTAS FRECUENTES (FAQ) PREMIUM DARK */
         .faq-section {
             background-color: var(--faq-bg-dark);
             padding: 100px 5%;
@@ -506,7 +504,6 @@
             object-fit: cover;
         }
 
-        /* Capa sutil superpuesta para homogeneizar con el fondo oscuro */
         .faq-image-side::after {
             content: '';
             position: absolute;
@@ -581,7 +578,6 @@
             padding-bottom: 24px;
         }
 
-        /* Clases de Estado Activo controladas por JS */
         .faq-item.active {
             border-color: rgba(224, 90, 38, 0.3);
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -596,7 +592,139 @@
             color: white;
         }
 
-        /* 5. PIE DE PÁGINA (FOOTER) */
+
+        /* ========================================================
+           NUEVA SECCIÓN: CIERRE CTA DUAL (Segmentación de Proveedores)
+           ======================================================== */
+        .dual-cta-section {
+            background-color: #f8fafc;
+            padding: 100px 5%;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .dual-cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .cta-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08);
+        }
+
+        .cta-card-badge {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--brand-gray);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .cta-card h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--brand-dark);
+            margin-bottom: 18px;
+        }
+
+        .cta-card .cta-description {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        /* Lista de beneficios con checks */
+        .cta-bullets-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .cta-bullet-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: #334155;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .cta-check-icon {
+            width: 20px;
+            height: 20px;
+            background-color: #f0fdf4; /* Fondo verde tenue para el check */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .cta-check-icon svg {
+            width: 12px;
+            height: 12px;
+            fill: #16a34a; /* Icono verde */
+        }
+
+        /* Botón de acción masivo */
+        .btn-card-action {
+            width: 100%;
+            text-align: center;
+            background-color: var(--brand-dark);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.2s;
+            display: inline-block;
+            border: 2px solid var(--brand-dark);
+        }
+
+        .cta-card:first-child .btn-card-action {
+            background-color: var(--brand-dark);
+            border-color: var(--brand-dark);
+        }
+        .cta-card:first-child .btn-card-action:hover {
+            background-color: #22252a;
+        }
+
+        /* El segundo botón usa el verde institucional CTA para diferenciar la acción técnica/logística */
+        .cta-card:last-child .btn-card-action {
+            background-color: var(--brand-green-cta);
+            border-color: var(--brand-green-cta);
+        }
+        .cta-card:last-child .btn-card-action:hover {
+            background-color: #14532d;
+            border-color: #14532d;
+        }
+
+
+        /* 6. PIE DE PÁGINA (FOOTER) */
         footer {
             background-color: var(--bg-accent-green); 
             padding: 60px 5%;
@@ -656,10 +784,13 @@
             .testimonials-grid { grid-template-columns: 1fr; }
             .trust-grid { grid-template-columns: repeat(2, 1fr); }
             
-            /* Ajustes responsivos FAQ */
             .faq-container { grid-template-columns: 1fr; gap: 40px; }
             .faq-image-side { height: 360px; order: 2; }
             .faq-content-side h2 { font-size: 2.2rem; text-align: center; margin-bottom: 28px; }
+            
+            /* Responsivo del Cierre Dual */
+            .dual-cta-container { grid-template-columns: 1fr; gap: 24px; }
+            .cta-card { padding: 32px; }
             
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
             .footer-right { align-items: center; text-align: center; }
@@ -672,6 +803,7 @@
             .faq-trigger { padding: 18px 20px; font-size: 0.95rem; }
             .faq-panel { padding: 0 20px; }
             .trust-grid { grid-template-columns: 1fr; }
+            .cta-card h3 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -694,7 +826,7 @@
         </ul>
     </nav>
 
-    <!-- HERO SECTION DE LA LANDING PAGE -->
+    <!-- HERO SECTION -->
     <section class="hero-section">
         <div class="hero-content">
             <h1>Únete a la Red de Suministro Inteligente de Pallets</h1>
@@ -709,7 +841,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CÍRCULO DE PROVEEDORES (4 COLUMNAS UNIFICADAS) -->
+    <!-- CÍRCULO DE PROVEEDORES -->
     <section class="suppliers-section">
         <div class="suppliers-container">
             <div class="suppliers-header">
@@ -718,7 +850,6 @@
             </div>
 
             <div class="suppliers-grid">
-                <!-- PUNTOS DE ACOPIO -->
                 <div class="supplier-card">
                     <div class="supplier-icon-box">
                         <svg viewBox="0 0 24 24"><path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3m6 11H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z"/></svg>
@@ -728,7 +859,6 @@
                     <p>Aliados locales que almacenan y consolidan lotes mínimos de tarimas en desuso. Ofrecemos recolección rápida para liberar su espacio operativo.</p>
                 </div>
 
-                <!-- RECOLECTORES -->
                 <div class="supplier-card">
                     <div class="supplier-icon-box">
                         <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
@@ -738,7 +868,6 @@
                     <p>Empresas recolectoras de desperdicios de embalaje. PalletHub procesa y re-manufactura la madera residual dándole un valor justo al desecho.</p>
                 </div>
 
-                <!-- REMANUFACTURA -->
                 <div class="supplier-card">
                     <div class="supplier-icon-box">
                         <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
@@ -748,7 +877,6 @@
                     <p>Talleres y carpinterías aliadas encargadas de fabricar, reparar y desarmar módulos de tarimas dañadas para reincorporarlas con calidad certificada al mercado.</p>
                 </div>
 
-                <!-- TRANSPORTISTAS -->
                 <div class="supplier-card">
                     <div class="supplier-icon-box">
                         <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6.5h-2.5V9h2.5l1.5 2.5h-1.5z"/></svg>
@@ -761,7 +889,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN INTERMEDIA (Estilo Asimétrico de la Imagen 1) -->
+    <!-- INTRO TEXT SPLIT -->
     <section class="intro-text-split-section">
         <div class="intro-split-container">
             <div class="intro-split-left">
@@ -774,25 +902,19 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: TESTIMONIOS -->
+    <!-- TESTIMONIOS -->
     <section class="testimonials-section">
         <div class="testimonials-container">
             <span class="testimonials-badge">Testimonios</span>
-            
             <div class="testimonials-top-row">
                 <h2>Nuestra red de proveedores habla por nosotros</h2>
                 <div class="testimonials-nav-arrows">
-                    <div class="nav-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-                    </div>
-                    <div class="nav-arrow">
-                        <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-                    </div>
+                    <div class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+                    <div class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></div>
                 </div>
             </div>
 
             <div class="testimonials-grid">
-                <!-- Testimonio 1 -->
                 <div class="testimonial-card">
                     <p class="testimonial-quote">"PalletHub ha sido un salvavidas para nuestra logística de transporte. Aprovechar los viajes de retorno vacíos para mover tarimas hacia sus centros de distribución optimizó por completo nuestras rutas y aumentó la rentabilidad mensual."</p>
                     <div class="testimonial-profile">
@@ -811,7 +933,6 @@
                     </div>
                 </div>
 
-                <!-- Testimonio 2 -->
                 <div class="testimonial-card">
                     <p class="testimonial-quote">"No podría estar más satisfecho con el esquema de pagos y recolección de lotes. Como punto de acopio local, liberar espacio rápido es vital, y ellos cumplen de forma impecable con los tiempos de respuesta de 24 horas prometidos."</p>
                     <div class="testimonial-profile">
@@ -830,7 +951,6 @@
                     </div>
                 </div>
 
-                <!-- Testimonio 3 -->
                 <div class="testimonial-card">
                     <p class="testimonial-quote">"La transparencia en la valorización de la madera residual industrial nos dio la confianza para firmar exclusividad. Procesar el desperdicio bajo normas sustentables le dio un valor real de retorno a lo que antes considerábamos basura."</p>
                     <div class="testimonial-profile">
@@ -852,69 +972,43 @@
         </div>
     </section>
 
-    <!-- ELEMENTOS DE CONFIANZA (TRUST ELEMENTS) -->
+    <!-- TRUST ELEMENTS -->
     <section class="trust-section">
         <div class="trust-container">
             <h4>Trust Elements</h4>
             <p class="trust-sub">Certificaciones y Garantías Operativas</p>
-            
             <div class="trust-grid">
-                <!-- CERTIFICACIÓN -->
                 <div class="trust-card">
-                    <div class="trust-badge-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    </div>
-                    <h5>Certificación de Residuos</h5>
-                    <span>99%</span>
+                    <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                    <h5>Certificación de Residuos</h5><span>99%</span>
                 </div>
-
-                <!-- MERMAS REDUCIDAS -->
                 <div class="trust-card">
-                    <div class="trust-badge-icon">
-                        <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg>
-                    </div>
-                    <h5>Mermas Reducidas</h5>
-                    <span>15%</span>
+                    <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg></div>
+                    <h5>Mermas Reducidas</h5><span>15%</span>
                 </div>
-
-                <!-- TIEMPO DE RESPUESTA -->
                 <div class="trust-card">
-                    <div class="trust-badge-icon">
-                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                    </div>
-                    <h5>Logística de Retorno</h5>
-                    <span>24h</span>
+                    <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+                    <h5>Logística de Retorno</h5><span>24h</span>
                 </div>
-
-                <!-- VALORIZACIÓN JUSTA -->
                 <div class="trust-card">
-                    <div class="trust-badge-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
-                    </div>
-                    <h5>Valorización Justa</h5>
-                    <span>100%</span>
+                    <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg></div>
+                    <h5>Valorización Justa</h5><span>100%</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================
-       NUEVA SECCIÓN AGREGADA: PREGUNTAS FRECUENTES (FAQ)
-       ======================================================== -->
+    <!-- PREGUNTAS FRECUENTES (FAQ) -->
     <section class="faq-section">
         <div class="faq-container">
-            <!-- Columna Izquierda: Imagen Corporativa (Adaptada de tu muestra) -->
             <div class="faq-image-side">
-                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800" alt="Operador técnico e industrial de tarimas">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800" alt="Operador técnico">
             </div>
 
-            <!-- Columna Derecha: Encabezado y Acordeón Interactivo -->
             <div class="faq-content-side">
                 <h2>Preguntas Frecuentes</h2>
-                
                 <div class="faq-accordion-group">
-                    <!-- Pregunta 1 -->
-                    <div class="faq-item active"> <!-- Inicia abierta por defecto igual que la imagen de muestra -->
+                    <div class="faq-item active">
                         <button class="faq-trigger">
                             <span>¿Qué es el Círculo de Proveedores de PalletHub?</span>
                             <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
@@ -924,7 +1018,6 @@
                         </div>
                     </div>
 
-                    <!-- Pregunta 2 -->
                     <div class="faq-item">
                         <button class="faq-trigger">
                             <span>¿Cómo se determinan los precios y la valorización del lote?</span>
@@ -935,7 +1028,6 @@
                         </div>
                     </div>
 
-                    <!-- Pregunta 3 -->
                     <div class="faq-item">
                         <button class="faq-trigger">
                             <span>¿Cuál es el volumen mínimo para solicitar recolección en acopio?</span>
@@ -946,7 +1038,6 @@
                         </div>
                     </div>
 
-                    <!-- Pregunta 4 -->
                     <div class="faq-item">
                         <button class="faq-trigger">
                             <span>¿Qué certificaciones ambientales y de calidad emiten?</span>
@@ -957,7 +1048,6 @@
                         </div>
                     </div>
 
-                    <!-- Pregunta 5 -->
                     <div class="faq-item">
                         <button class="faq-trigger">
                             <span>¿Soy transportista independiente, cómo aprovecho los fletes muertos?</span>
@@ -972,7 +1062,80 @@
         </div>
     </section>
 
-    <!-- 5. PIE DE PÁGINA (FOOTER) -->
+
+    <!-- ========================================================
+       NUEVA SECCIÓN IMPLEMENTADA: CIERRE CTA DUAL SIMÉTRICO
+       ======================================================== -->
+    <section class="dual-cta-section">
+        <div class="dual-cta-container">
+            
+            <!-- TARJETA 1: PROVEEDORES DE PALLETS -->
+            <div class="cta-card">
+                <div>
+                    <span class="cta-card-badge">Más de 50 aserraderos y acopios aliados</span>
+                    <h3>Suministro de Pallets</h3>
+                    <p class="cta-description">Diseñado exclusivamente para aserraderos, recolectores locales y dueños de tarimas en desuso que buscan maximizar el valor de su inventario bajo un flujo predecible.</p>
+                    
+                    <ul class="cta-bullets-list">
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Valorización justa por volumen y tipo de madera residual.</span>
+                        </li>
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Panel personalizado para control de lotes e ingresos.</span>
+                        </li>
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Pagos rápidos garantizados al validar la descarga.</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-card-action">Registrarme como Proveedor de Tarimas</a>
+            </div>
+
+            <!-- TARJETA 2: PROVEEDORES DE LOGÍSTICA -->
+            <div class="cta-card">
+                <div>
+                    <span class="cta-card-badge">Optimización de retornos vacíos</span>
+                    <h3>Servicios Logísticos</h3>
+                    <p class="cta-description">Mantén tus camiones en movimiento. Ideal para hombres-camión y empresas transportistas que desean rentabilizar sus trayectos de regreso mediante rutas inteligentes.</p>
+                    
+                    <ul class="cta-bullets-list">
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Asignación automatizada de fletes muertos en tu ruta.</span>
+                        </li>
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Acceso sin costos ocultos al portal logístico PalletHub.</span>
+                        </li>
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Guías y manifiestos de carga 100% digitales y listos.</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-card-action">Registrarme como Aliado Logístico</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
     <footer>
         <div class="footer-container">
             <ul class="footer-links">
@@ -996,7 +1159,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DE INTERACTIVIDAD PARA EL ACORDEÓN DE PREGUNTAS FRECUENTES -->
+    <!-- SCRIPT DE INTERACTIVIDAD PARA EL ACORDEÓN -->
     <script>
         document.querySelectorAll('.faq-trigger').forEach(trigger => {
             trigger.addEventListener('click', () => {
@@ -1004,7 +1167,6 @@
                 const panel = currentItem.querySelector('.faq-panel');
                 const isActive = currentItem.classList.contains('active');
 
-                // Opcional: Cerrar otros acordeones abiertos para mantener orden (Estilo acordeón estricto)
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== currentItem) {
                         item.classList.remove('active');
@@ -1012,7 +1174,6 @@
                     }
                 });
 
-                // Alternar estado del elemento actual
                 if (isActive) {
                     currentItem.classList.remove('active');
                     panel.style.maxHeight = null;
