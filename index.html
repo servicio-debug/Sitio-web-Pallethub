@@ -13,8 +13,8 @@
         :root {
             --brand-green-light: #cce4c5; 
             --brand-green-cta: #166534; 
-            --brand-gray: #8d9394;         /* NUEVO: Gris Acero Industrial */
-            --brand-gray-light: #f1f3f4;   /* NUEVO: Fondo Gris Tenue */
+            --brand-gray: #8d9394;          /* Gris Acero Industrial */
+            --brand-gray-light: #f1f3f4;   /* Fondo Gris Tenue */
             --brand-dark: #0c0d0e;        
             --bg-neutral: #f8fafc;
             --text-muted: #64748b;
@@ -25,114 +25,126 @@
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-neutral); color: var(--brand-dark); }
 
-/* --- NUEVA ESTRUCTURA SPLIT-HERO 50/50 --- */
-.hero-split-container {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 80vh;
-    width: 100%;
-}
+        /* --- CONTENEDOR FLUIDO GLOBAL DE SECCIONES PARA COHERENCIA VISUAL --- */
+        .section-wrapper {
+            width: 100%;
+            display: block;
+            clear: both;
+        }
 
-.hero-half {
-    flex: 1;
-    min-width: 320px; /* Hace que se apilen verticalmente en móviles */
-    position: relative;
-    display: flex;
-    align-items: flex-end; /* Alinea el contenido hacia abajo */
-    padding: 60px 8%;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    overflow: hidden;
-}
+        /* --- NUEVA ESTRUCTURA SPLIT-HERO 50/50 --- */
+        .hero-split-container {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 80vh;
+            width: 100%;
+        }
 
-/* Imágenes de Fondo específicas para cada lado */
-.buyer-side {
-    background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80'); /* Imagen de fábrica/almacén */
-}
+        .hero-half {
+            flex: 1;
+            min-width: 320px; /* Hace que se apilen verticalmente en móviles */
+            position: relative;
+            display: flex;
+            align-items: flex-end; /* Alinea el contenido hacia abajo */
+            padding: 60px 8%;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            overflow: hidden;
+        }
 
-.supplier-side {
-    background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80'); /* Imagen de camión/logística */
-    border-left: 4px solid white; /* Línea divisoria elegante */
-}
+        /* Imágenes de Fondo específicas para cada lado */
+        .buyer-side {
+            background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80'); /* Imagen de fábrica/almacén */
+        }
 
-/* Capa oscura (Overlay) para que el texto blanco sea 100% legible */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.1) 100%);
-    z-index: 1;
-}
+        .supplier-side {
+            background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80'); /* Imagen de camión/logística */
+            border-left: 4px solid white; /* Línea divisoria elegante */
+        }
 
-/* Contenedor del contenido encima del fondo */
-.hero-half-content {
-    position: relative;
-    z-index: 2;
-    max-width: 540px;
-}
+        /* Capa oscura (Overlay) para que el texto blanco sea 100% legible */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.1) 100%);
+            z-index: 1;
+        }
 
-/* Badges (60% / 40%) */
-.hero-badge {
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 6px 14px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(4px);
-}
+        /* Contenedor del contenido encima del fondo */
+        .hero-half-content {
+            position: relative;
+            z-index: 2;
+            max-width: 540px;
+        }
 
-.badge-green {
-    background-color: rgba(34, 197, 94, 0.2);
-    color: #4ade80;
-}
+        /* Badges (60% / 40%) */
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(4px);
+        }
 
-/* Tipografía adaptada para fondo oscuro */
-.hero-half h1 {
-    font-size: 2rem !important;
-    font-weight: 800;
-    color: #ffffff !important;
-    line-height: 1.25;
-    margin-bottom: 16px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
+        .badge-green {
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+        }
 
-.hero-half h2 {
-    font-size: 1rem !important;
-    color: #cbd5e1 !important; /* Gris claro legible */
-    font-weight: 400 !important;
-    line-height: 1.5;
-    margin-bottom: 28px !important;
-}
+        /* Tipografía adaptada para fondo oscuro */
+        .hero-half h1 {
+            font-size: 2rem !important;
+            font-weight: 800;
+            color: #ffffff !important;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
 
-/* Ajustes de responsividad en pantallas pequeñas */
-@media (max-width: 768px) {
-    .hero-half {
-        min-height: 60vh;
-        padding: 40px 6%;
-    }
-    .supplier-side {
-        border-left: none;
-        border-top: 4px solid white;
-    }
-}
-        
+        .hero-half h2 {
+            font-size: 1rem !important;
+            color: #cbd5e1 !important; /* Gris claro legible */
+            font-weight: 400 !important;
+            line-height: 1.5;
+            margin-bottom: 28px !important;
+        }
+
+        /* Ajustes de responsividad en pantallas pequeñas */
+        @media (max-width: 768px) {
+            .hero-half {
+                min-height: 60vh;
+                padding: 40px 6%;
+            }
+            .supplier-side {
+                border-left: none;
+                border-top: 4px solid white;
+            }
+        }
+                
         /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 5%;
             background: white;
             border-bottom: 1px solid rgba(0,0,0,0.06);
             position: sticky;
             top: 0;
             z-index: 1000;
+            width: 100%;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo-area { 
@@ -153,20 +165,20 @@
             display: block;
         }
 
-    .menu-links {
-    display: flex;
-    list-style: none;
-    gap: 8px;
-    align-items: center;
-}
+        .menu-links {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            align-items: center;
+        }
 
-.menu-links a {
-    text-decoration: none;
-    color: var(--brand-dark);
-    font-weight: 600;
-    font-size: 0.82rem;
-    padding: 6px 10px;
-    white-space: nowrap;
+        .menu-links a {
+            text-decoration: none;
+            color: var(--brand-dark);
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 6px 10px;
+            white-space: nowrap;
             border-radius: 6px; 
             transition: all 0.2s ease; 
         }
@@ -202,7 +214,7 @@
         .hero-b2b {
             flex: 1.2; 
             min-width: 320px; 
-            background-color: var(--brand-gray-light); /* Actualizado a Gris Suave */
+            background-color: var(--brand-gray-light);
             padding: 60px 5%;
             display: flex; 
             flex-direction: column; 
@@ -226,7 +238,7 @@
         
         /* Botón Gris Acero Personalizado */
         .btn-gray-solid { background: var(--brand-gray); color: white; }
-        .btn-gray-solid:hover { background: #73797a; } /* Un tono más oscuro al pasar el cursor */
+        .btn-gray-solid:hover { background: #73797a; }
 
         .btn-green-solid { background: #166534; color: white; }
         .btn-green-solid:hover { background: #14532d; }
@@ -313,22 +325,30 @@
             line-height: 1.4;
         }
 
-        /* 5. PIE DE PÁGINA CORPORATIVO (FOOTER) UNIFICADO */
+        /* 5. PIE DE PÁGINA CORPORATIVO (FOOTER) UNIFICADO Y CENTRADO */
         footer {
             background-color: #edf2ee; 
             padding: 60px 5%;
             border-top: 1px solid var(--border-color);
+            width: 100%;
         }
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1.2fr 1.5fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 40px;
             align-items: center;
+            justify-items: center;
         }
         .footer-links {
             list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
         .footer-links li {
             margin-bottom: 14px;
@@ -350,6 +370,7 @@
             align-items: center;
             text-align: center;
             gap: 12px;
+            width: 100%;
         }
         .footer-logo-center img {
             width: 90px;
@@ -371,6 +392,7 @@
             align-items: flex-end;
             text-align: right;
             gap: 16px;
+            width: 100%;
         }
         .social-icon-linkedin {
             background: var(--brand-dark);
@@ -397,59 +419,62 @@
             .hero-center-img { min-height: 250px; }
             .tech-container { grid-template-columns: 1fr; gap: 40px; }
             .specs-grid { grid-template-columns: 1fr; }
-            .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 30px; }
+            .footer-links { align-items: center; text-align: center; }
             .footer-right { align-items: center; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR PREMIUM -->
+    <!-- MENÚ SUPERIOR PREMIUM CON ANCHO MÁXIMO -->
     <nav>
-        <a href="#" class="logo-area">
-            <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img">
-            <div>PalletHub</div>
-        </a>
-        <ul class="menu-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
-            <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
-            <li><a href="circulo-proveedores.html">Circulo de proveedores</a></li>
-            <li><a href="tecnologia.html">Tecnología</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img">
+                <div>PalletHub</div>
+            </a>
+            <ul class="menu-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
+                <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
+                <li><a href="circulo-proveedores.html">Circulo de proveedores</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
+            </ul>
+        </div>
     </nav>
 
-   <!-- SPLIT-HERO DE DOS COLUMNAS CON IMÁGENES DE FONDO -->
-<section class="hero-split-container">
-    
-    <!-- LADO IZQUIERDO: COMPRADOR INDUSTRIAL -->
-    <div class="hero-half buyer-side">
-        <div class="hero-overlay"></div>
-        <div class="hero-half-content">
-            <span class="hero-badge">60% Comprador Industrial</span>
-            <h1>Fabricación de Tarimas y Madera para Construcción en Guadalajara</h1>
-            <h2>Suministro corporativo de tarimas de madera y plástico con certificación NIMF-15 para logística en Jalisco</h2>
-            <a href="soluciones-b2b.html" class="cta-btn-main btn-gray-solid">Cotizar Tarimas o Madera</a>
+    <!-- SPLIT-HERO DE DOS COLUMNAS CON IMÁGENES DE FONDO -->
+    <section class="hero-split-container">
+        
+        <!-- LADO IZQUIERDO: COMPRADOR INDUSTRIAL -->
+        <div class="hero-half buyer-side">
+            <div class="hero-overlay"></div>
+            <div class="hero-half-content">
+                <span class="hero-badge">60% Comprador Industrial</span>
+                <h1>Fabricación de Tarimas y Madera para Construcción en Guadalajara</h1>
+                <h2>Suministro corporativo de tarimas de madera y plástico con certificación NIMF-15 para logística en Jalisco</h2>
+                <a href="soluciones-b2b.html" class="cta-btn-main btn-gray-solid">Cotizar Tarimas o Madera</a>
+            </div>
         </div>
-    </div>
-    
-    <!-- LADO DERECHO: ALIADO DE SUMINISTRO -->
-    <div class="hero-half supplier-side">
-        <div class="hero-overlay"></div>
-        <div class="hero-half-content">
-            <span class="hero-badge badge-green">40% Aliado de Suministro</span>
-            <h1>Monetiza tu Flota o Bodega. Únete a la Red de Suministro Inteligente</h1>
-            <h2>Monetiza fletes muertos y espacios disponibles. Conecta tu operación con nuestra plataforma digital de logística en GDL.</h2>
-            <a href="circulo-proveedores.html" class="btn-green-solid cta-btn-main">Unirte como Aliado</a>
+        
+        <!-- LADO DERECHO: ALIADO DE SUMINISTRO -->
+        <div class="hero-half supplier-side">
+            <div class="hero-overlay"></div>
+            <div class="hero-half-content">
+                <span class="hero-badge badge-green">40% Aliado de Suministro</span>
+                <h1>Monetiza tu Flota o Bodega. Únete a la Red de Suministro Inteligente</h1>
+                <h2>Monetiza fletes muertos y espacios disponibles. Conecta tu operación con nuestra plataforma digital de logística en GDL.</h2>
+                <a href="circulo-proveedores.html" class="btn-green-solid cta-btn-main">Unirte como Aliado</a>
+            </div>
         </div>
-    </div>
 
-</section>
+    </section>
 
     <!-- CERTIFICACIONES LOGÍSTICAS SUTILES -->
-    <section class="trust-bar">
+    <section class="trust-bar section-wrapper">
         <h4>Confianza Local y Nacional (Jalisco / GDL / Nacional)</h4>
         <div class="badges-container">
             <div class="badge-item"><div class="badge-icon">🪪</div>NIMF-15</div>
@@ -459,35 +484,35 @@
         </div>
     </section>
 
-    <!-- BLOQUE 1: SOLUCIONES B2B (OPTIMIZADO PARA SEO) -->
-    <section id="soluciones-b2b" class="technical-section">
+    <!-- BLOQUE 1: SOLUCIONES B2B -->
+    <section id="soluciones-b2b" class="technical-section section-wrapper">
         <div class="tech-container">
             <div class="tech-info">
                 <span class="tech-tag" style="color: var(--brand-gray);">Proveedores de Tarimas de Madera en Guadalajara</span>
                 <h2>Soluciones B2B</h2>
-                <p class="tech-lead">No vendemos solo madera; resolvemos el flujo de tu operación logística. Diseñamos, suministramos y recuperamos las tarimas industriales que mueven tu planta sin retrasos, sin quiebres de stock y sin drama operativo. Fabricación local con capacidad de distribución nacional para las cadenas de suministro más exigentes.</p>
+                <p class="tech-lead">No vendemos solo madera; resolvemos el flujo de tu operation logística. Diseñamos, suministramos y recuperamos las tarimas industriales que mueven tu planta sin retrasos, sin quiebres de stock y sin drama operativo. Fabricación local con capacidad de distribución nacional para las cadenas de suministro más exigentes.</p>
             </div>
 
             <div class="specs-grid">
-                <!-- TARJETA 1: TARIMAS NUEVAS -->
+                <!-- TARJETA 1 -->
                 <div class="spec-card">
                     <div class="spec-label">Ingeniería y Diseño de Empaque</div>
                     <div class="spec-value">Tarimas Nuevas: Medidas Std o Especiales</div>
                     <div class="spec-desc">Fabricación bajo especificación exacta (cálculo estructural) para resistir cargas críticas. Disponibilidad garantizada en tarimas estándar (piezas de 48x40) o diseños a la medida para que tu línea de producción nunca se detenga.</div>
                 </div>
-                <!-- TARJETA 2: TARIMAS SEMINUEVAS -->
+                <!-- TARJETA 2 -->
                 <div class="spec-card">
                     <div class="spec-label">Optimización de Costos Logísticos</div>
                     <div class="spec-value">Tarimas Seminuevas Seleccionadas</div>
                     <div class="spec-desc">El mismo rendimiento estructural que una pieza nueva, pero con un impacto directo en tu presupuesto. Suministro de tarimas recicladas, usadas y reparadas bajo un estricto control de calidad, listas para volver a la batalla operativa.</div>
                 </div>
-                <!-- TARJETA 3: RENTA Y LOGÍSTICA CIRCULAR -->
+                <!-- TARJETA 3 -->
                 <div class="spec-card">
                     <div class="spec-label">Eficiencia Operativa B2B</div>
                     <div class="spec-value">Renta y Soluciones de Logística Circular</div>
                     <div class="spec-desc">Elimina el costo de almacenamiento y la gestión de activos fijos con nuestro servicio de pooling y arrendamiento. Rentas el volumen exacto de pallets que necesitas y dejas la recuperación, el mantenimiento y el flujo logístico en nuestras manos.</div>
                 </div>
-                <!-- TARJETA 4: COMPRA Y RECOLECCIÓN -->
+                <!-- TARJETA 4 -->
                 <div class="spec-card">
                     <div class="spec-label">Sustentabilidad Industrial</div>
                     <div class="spec-value">Compra y Recolección de Tarimas en Desuso o Dañadas</div>
@@ -498,7 +523,7 @@
     </section>
 
     <!-- BLOQUE 2: MADERA PARA CONSTRUCCIÓN -->
-    <section id="madera-para-construccion" class="technical-section alt-bg">
+    <section id="madera-para-construccion" class="technical-section alt-bg section-wrapper">
         <div class="tech-container">
             <div class="tech-info">
                 <span class="tech-tag">Habilitado y Dimensionado</span>
@@ -532,7 +557,7 @@
     </section>
 
     <!-- BLOQUE 3: CÍRCULO DE PROVEEDORES -->
-    <section id="circulo-proveedores" class="technical-section">
+    <section id="circulo-proveedores" class="technical-section section-wrapper">
         <div class="tech-container">
             <div class="tech-info">
                 <span class="tech-tag">Red de Suministro Aliada</span>
@@ -565,8 +590,8 @@
         </div>
     </section>
 
-   <!-- BLOQUE 4: TECNOLOGÍA -->
-    <section id="tecnologia" class="technical-section alt-bg">
+    <!-- BLOQUE 4: TECNOLOGÍA -->
+    <section id="tecnologia" class="technical-section alt-bg section-wrapper">
         <div class="tech-container">
             <div class="tech-info">
                 <span class="tech-tag">Trazabilidad Automatizada</span>
@@ -596,24 +621,26 @@
                     <div class="spec-desc">Trazabilidad del ciclo de vida de cada lote de tarimas, asegurando un control riguroso de rotaciones.</div>
                 </div>
             </div>
-        </div> <!-- Se cierra el contenedor interno -->
-    </section> <!-- ¡AQUÍ ESTÁ LA SOLUCIÓN! Cerramos correctamente la sección Tecnología -->
+        </div>
+    </section>
 
 
-    <!-- SECCIÓN NOSOTROS -->
-    <section id="nosotros" class="technical-section" style="border-bottom: none; padding-bottom: 60px; width: 100%; display: block; clear: both;">
-        <div class="tech-container" style="grid-template-columns: 1fr; width: 100%; max-width: 1200px; margin: 0 auto;">
+    <!-- SECCIÓN NOSOTROS (INTEGRADA SIMÉTRICAMENTE) -->
+    <section id="nosotros" class="technical-section section-wrapper" style="border-bottom: none; padding-bottom: 80px;">
+        <div class="tech-container" style="grid-template-columns: 1fr;">
             <div class="tech-info" style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <span class="tech-tag">Sobre PalletHub</span>
                 <h2>Nosotros</h2>
-                <p class="tech-lead">Somos el nodo central del suministro e ingeniería de empaque industrial en el occidente del país. Conectamos la demanda corporativa de tarimas con una infraestructura logística sustentable, transparente y de alto rendimiento técnico.</p>
+                <p class="tech-lead" style="margin-bottom: 0;">Somos el nodo central del suministro e ingeniería de empaque industrial en el occidente del país. Conectamos la demanda corporativa de tarimas con una infraestructura logística sustentable, transparente y de alto rendimiento técnico.</p>
             </div>
         </div>
     </section>
 
-    <!-- 5. PIE DE PÁGINA (FOOTER) UNIFICADO -->
-    <footer style="width: 100%; display: block; clear: both;">
+    <!-- 5. PIE DE PÁGINA (FOOTER) UNIFICADO Y EN PARALELO CON NOSOTROS -->
+    <footer class="section-wrapper">
         <div class="footer-container">
+            
+            <!-- Columna Izquierda: Enlaces -->
             <ul class="footer-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
@@ -623,19 +650,20 @@
                 <li><a href="#nosotros">Nosotros</a></li>
             </ul>
 
-            <!-- Logotipo y registro centralizado -->
+            <!-- Columna Central: Identidad Global -->
             <div class="footer-logo-center">
                 <img src="logo-pallethub.png" alt="PalletHub Logo">
-                <a href="circulo-proveedores.html">Registrate en el circulo de proveedores</a>
+                <a href="circulo-proveedores.html">Regístrate en el círculo de proveedores</a>
             </div>
 
-            <!-- Redes y créditos obligatorios lado derecho -->
+            <!-- Columna Derecha: Redes y Créditos -->
             <div class="footer-right">
                 <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
                 <div class="footer-credits">
                     © 2026 Desarrollo por Fandango Ventures<br>con mucho cariño desde Guadalajara, Jalisco Mex.
                 </div>
             </div>
+            
         </div>
     </footer>
 
