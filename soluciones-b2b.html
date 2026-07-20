@@ -13,8 +13,8 @@
         :root {
             --brand-green-light: #cce4c5; 
             --brand-green-cta: #166534; 
-            --brand-gray: #8d9394;         /* NUEVO: Gris Acero Industrial */
-            --brand-gray-light: #f1f3f4;   /* NUEVO: Fondo Gris Tenue */
+            --brand-gray: #8d9394;         
+            --brand-gray-light: #f1f3f4;   
             --brand-dark: #0c0d0e;        
             --bg-neutral: #f8fafc;
             --text-muted: #64748b;
@@ -94,7 +94,7 @@
             max-width: 90%;
         }
 
-        /* --- ARQUITECTURA DE PRESENTACIÓN (SPLIT 50/50 DE IMAGEN) --- */
+        /* --- ARQUITECTURA DE PRESENTACIÓN (SPLIT 50/50) --- */
         .split-intro-section {
             max-width: 1200px;
             margin: 60px auto 40px;
@@ -176,7 +176,6 @@
             color: var(--text-muted);
         }
 
-        /* Lado de la Imagen */
         .split-visual {
             position: relative;
             width: 100%;
@@ -196,12 +195,11 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.04);
         }
 
-        /* Tarjeta Verde Estadística Flotante */
         .floating-badge-card {
             position: absolute;
             bottom: -20px;
             right: -20px;
-            background-color: #84cc16; /* Verde vibrante similar a la referencia */
+            background-color: #84cc16; 
             color: white;
             padding: 24px 28px;
             border-radius: 12px;
@@ -238,7 +236,7 @@
         .floating-badge-card .indicator-dot.w-long { width: 24px; background-color: white; }
         .floating-badge-card .indicator-dot.w-short { width: 12px; }
 
-        /* 3. GRID DE SOLUCIONES B2B (ESTILO ENVOLVENTE E INMERSIVO) */
+        /* 3. SECCIÓN PREMIUM DE SERVICIOS (GRID FIJO 2X2 CORREGIDO) */
         .services-premium-section {
             max-width: 1200px;
             margin: 60px auto 80px;
@@ -252,9 +250,69 @@
 
         .services-premium-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
+            /* Fuerza exactamente 2 columnas simétricas (2 arriba, 2 abajo) */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 28px;
             width: 100%;
+        }
+
+        .premium-card {
+            background: white; 
+            border-radius: 20px; 
+            padding: 32px; 
+            color: var(--brand-dark); 
+            display: grid; 
+            grid-template-rows: auto 1fr auto; /* Mantiene orden interno equilibrado */
+            gap: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .premium-card h3 {
+            font-size: 1.35rem; 
+            font-weight: 800; 
+            line-height: 1.3; 
+            color: var(--brand-dark);
+        }
+
+        .card-img-container {
+            position: relative; 
+            margin: 4px 0 12px 0; 
+            border-radius: 12px; 
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .card-img-container img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute; 
+            bottom: 12px; 
+            left: 12px; 
+            background: rgba(255,255,255,0.95); 
+            padding: 8px 14px; 
+            border-radius: 8px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+            border-left: 4px solid #84cc16;
+            color: var(--brand-dark);
+        }
+
+        .premium-card .card-highlight {
+            font-size: 0.9rem; 
+            font-weight: 700; 
+            color: var(--brand-green-cta); 
+            line-height: 1.45;
+        }
+
+        .premium-card .card-description {
+            font-size: 0.88rem; 
+            color: var(--text-muted); 
+            line-height: 1.6;
         }
 
         /* 4. BANNER DE CIERRE: LLAMADO A ACCIÓN */
@@ -302,7 +360,7 @@
         }
         .btn-b2b-cta:hover { background-color: #73797a; }
 
-        /* 5. PIE DE PÁGINA (FOOTER) UNIFICADO */
+        /* 5. PIE DE PÁGINA (FOOTER) */
         footer {
             background-color: var(--bg-accent-green); 
             padding: 60px 5%;
@@ -347,7 +405,7 @@
         }
         .footer-credits { font-size: 0.9rem; color: #475569; line-height: 1.5; }
 
-        /* RESPONSIVO */
+        /* RESPONSIVO SEGURO Y COMPLETO */
         @media (max-width: 992px) {
             .menu-links { display: none; }
             .split-intro-section { grid-template-columns: 1fr; gap: 40px; }
@@ -357,6 +415,21 @@
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
             .footer-right { align-items: center; text-align: center; }
         }
+
+        /* Adaptación a Celulares: Pasa de forma segura a 1 columna vertical */
+        @media (max-width: 768px) {
+            .services-premium-grid {
+                grid-template-columns: 1fr; 
+                gap: 20px;
+            }
+            .premium-card {
+                padding: 20px;
+            }
+            .card-img-container {
+                height: 160px;
+            }
+        }
+
         @media (max-width: 576px) {
             .b2b-hero-badge { font-size: 1.4rem; padding: 12px 20px; }
             .split-action-row { flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -389,22 +462,17 @@
         </div>
     </section>
 
-    <!-- CUADRO: ARQUITECTURA SPLIT (TEXTO + IMAGEN + CONTADOR FLOTANTE) -->
+    <!-- CUADRO: ARQUITECTURA SPLIT -->
     <section class="split-intro-section">
-        
-        <!-- Columna Izquierda: Mensaje Persuasivo de la Empresa -->
         <div class="split-content">
             <span class="intro-tag">Suministro Inteligente de Tarimas</span>
             <h1>Un proveedor aliado para fabricantes, instaladores y contratistas logísticos.</h1>
-            
             <p class="main-paragraph">
                 Diseñamos y distribuimos soluciones modulares que eliminan los quiebres de inventario en planta. Suministro estratégico con ingeniería de empaque integrada para que su cadena de valor nunca se detenga.
             </p>
-            
             <p class="sub-paragraph">
                 Nuestra infraestructura responde a las demandas industriales más críticas de la región con entregas puntuales y un control de calidad estricto. Sin demoras innecesarias en andén, optimizando cada metro cúbico disponible.
             </p>
-
             <div class="split-action-row">
                 <a href="cotizador.html" class="btn-split-cta">
                     <span>📅</span> Agendar una Cita Comercial
@@ -416,13 +484,9 @@
             </div>
         </div>
 
-        <!-- Columna Derecha: Imagen Estructural con Tarjeta Verde Flotante -->
         <div class="split-visual">
             <div class="image-container-wrapper">
-                <!-- Imagen de contexto industrial/almacén -->
                 <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" alt="Suministro Corporativo PalletHub" class="split-main-img">
-                
-                <!-- Tarjeta Verde Flotante (Idéntica a la referencia) -->
                 <div class="floating-badge-card">
                     <div class="stat-number">345</div>
                     <p class="stat-text">Maniobras eficientes con control total sobre su volumen de carga diario.</p>
@@ -433,13 +497,11 @@
                 </div>
             </div>
         </div>
-
     </section>
 
-    <!-- SECCIÓN DE SOLUCIONES INMERSIVAS INTEGRADA (Look Premium de Alto Impacto) -->
+    <!-- SECCIÓN DE SERVICIOS EN CONFIGURACIÓN BALANCIADA FIJA 2X2 -->
     <section class="services-premium-section">
         
-        <!-- Encabezado de Sección Estilo Referencia -->
         <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
             <div>
                 <span style="color: var(--brand-green-light); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block;">Portafolio Corporativo</span>
@@ -450,99 +512,58 @@
             </a>
         </div>
 
-        <!-- Grid de 4 Columnas / Tarjetas Tipo Contenedor Blanco -->
         <div class="services-premium-grid">
             
             <!-- TARJETA 1 -->
-            <div style="background: white; border-radius: 20px; padding: 24px; color: var(--brand-dark); display: flex; flex-direction: column; justify-content: space-between; min-height: 540px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-                <div>
-                    <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 16px; line-height: 1.3; color: var(--brand-dark);">Fabricación de Tarimas Nuevas con Tratamiento Térmico (NIMF-15)</h3>
-                    
-                    <!-- Contenedor de Imagen con Inserto Flotante -->
-                    <div style="position: relative; margin-bottom: 20px; border-radius: 12px; overflow: visible;">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80" alt="Tarimas Nuevas" style="width: 100%; height: 160px; object-fit: cover; border-radius: 12px;">
-                        <!-- Badge Flotante Estilo Referencia -->
-                        <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(255,255,255,0.95); padding: 8px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #84cc16; color: var(--brand-dark);">
-                            🟢 Certificación NIMF-15
-                        </div>
-                    </div>
-
-                    <p style="font-size: 0.85rem; font-weight: 700; color: var(--brand-green-cta); margin-bottom: 12px; line-height: 1.4;">
-                        Exportación sin riesgos: Tarimas certificadas y rastreables en tiempo real para tu cadena de suministro internacional.
-                    </p>
+            <div class="premium-card">
+                <h3>Fabricación de Tarimas Nuevas con Tratamiento Térmico (NIMF-15)</h3>
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Tarimas Nuevas">
+                    <div class="card-badge">🟢 Certificación NIMF-15</div>
                 </div>
-                <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-top: auto;">
-                    Contamos con el servicio de fabricación de tarimas de madera nuevas en medidas estándar (Americanas 48x40, Europeas y medidas personalizadas) totalmente listas para el comercio internacional. Cada una de nuestras piezas cuenta con tratamiento térmico certificado bajo la norma NIMF-15, indispensable para aduanas y exportación. Además, revolucionamos la industria con nuestra tecnología de trazabilidad digital, entregándote certificados digitales accesibles al instante para garantizar la transparencia, cumplimiento legal y seguridad de tus cargas en cualquier parte del mundo.
-                </p>
+                <div>
+                    <p class="card-highlight">Exportación sin riesgos: Tarimas certificadas y rastreables en tiempo real para tu cadena de suministro internacional.</p>
+                    <p class="card-description">Contamos con el servicio de fabricación de tarimas de madera nuevas en medidas estándar (Americanas 48x40, Europeas y medidas personalizadas) totalmente listas para el comercio internacional. Cada una de nuestras piezas cuenta con tratamiento térmico certificado bajo la norma NIMF-15, indispensable para aduanas y exportación. Además, garantizamos transparencia y cumplimiento legal para tus cargas en cualquier parte del mundo.</p>
+                </div>
             </div>
 
             <!-- TARJETA 2 -->
-            <div style="background: white; border-radius: 20px; padding: 24px; color: var(--brand-dark); display: flex; flex-direction: column; justify-content: space-between; min-height: 540px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-                <div>
-                    <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 16px; line-height: 1.3; color: var(--brand-dark);">Tarimas Seminuevas y de Segundo Uso de Alta Resistencia</h3>
-                    
-                    <!-- Contenedor de Imagen con Inserto Flotante -->
-                    <div style="position: relative; margin-bottom: 20px; border-radius: 12px; overflow: visible;">
-                        <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6c?auto=format&fit=crop&w=400&q=80" alt="Tarimas Seminuevas" style="width: 100%; height: 160px; object-fit: cover; border-radius: 12px;">
-                        <!-- Badge Flotante Estilo Referencia -->
-                        <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(255,255,255,0.95); padding: 8px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #84cc16; color: var(--brand-dark);">
-                            ♻️ Grado A y B Reconstruido
-                        </div>
-                    </div>
-
-                    <p style="font-size: 0.85rem; font-weight: 700; color: var(--brand-green-cta); margin-bottom: 12px; line-height: 1.4;">
-                        Sustentabilidad inteligente: El mismo rendimiento y soporte de una tarima nueva, a una fracción de su costo.
-                    </p>
+            <div class="premium-card">
+                <h3>Tarimas Seminuevas y de Segundo Uso de Alta Resistencia</h3>
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6c?auto=format&fit=crop&w=600&q=80" alt="Tarimas Seminuevas">
+                    <div class="card-badge">♻️ Grado A y B Reconstruido</div>
                 </div>
-                <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-top: auto;">
-                    Maximiza tu presupuesto operativo sin sacrificar la seguridad de tu almacén. Diseñamos y ensamblamos tarimas seminuevas adaptadas a cualquier tipo de necesidad logística utilizando madera de segundo uso rigurosamente seleccionada. Gracias a nuestros estrictos procesos de reconstrucción y control de calidad, logramos una estructura con una capacidad de carga estática y dinámica muy similar a la de un pallet nuevo. Es la solución perfecta en tarimas económicas en Guadalajara para empresas que buscan rentabilidad y compromiso ambiental.
-                </p>
+                <div>
+                    <p class="card-highlight">Sustentabilidad inteligente: El mismo rendimiento y soporte de una tarima nueva, a una fracción de su costo.</p>
+                    <p class="card-description">Maximiza tu presupuesto operativo sin sacrificar la seguridad de tu almacén. Diseñamos y ensamblamos tarimas seminuevas adaptadas a cualquier tipo de necesidad logística utilizando madera de segundo uso rigurosamente seleccionada. Gracias a nuestros estrictos procesos de reconstrucción y control de calidad, logramos una estructura con una capacidad de carga estática y dinámica óptima.</p>
+                </div>
             </div>
 
             <!-- TARJETA 3 -->
-            <div style="background: white; border-radius: 20px; padding: 24px; color: var(--brand-dark); display: flex; flex-direction: column; justify-content: space-between; min-height: 540px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-                <div>
-                    <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 16px; line-height: 1.3; color: var(--brand-dark);">Soluciones Logísticas: Renta de Pallets (Cadenas Circulares)</h3>
-                    
-                    <!-- Contenedor de Imagen con Inserto Flotante -->
-                    <div style="position: relative; margin-bottom: 20px; border-radius: 12px; overflow: visible;">
-                        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=400&q=80" alt="Renta de Pallets" style="width: 100%; height: 160px; object-fit: cover; border-radius: 12px;">
-                        <!-- Badge Flotante Estilo Referencia -->
-                        <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(255,255,255,0.95); padding: 8px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #84cc16; color: var(--brand-dark);">
-                            📦 Pooling Eficiente
-                        </div>
-                    </div>
-
-                    <p style="font-size: 0.85rem; font-weight: 700; color: var(--brand-green-cta); margin-bottom: 12px; line-height: 1.4;">
-                        Cero activos muertos: Optimiza tus flujos logísticos y reduce costos con nuestro esquema de pooling de tarimas.
-                    </p>
+            <div class="premium-card">
+                <h3>Soluciones Logísticas: Renta de Pallets (Cadenas Circulares)</h3>
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80" alt="Renta de Pallets">
+                    <div class="card-badge">📦 Pooling Eficiente</div>
                 </div>
-                <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-top: auto;">
-                    Transforma tu operación con nuestro servicio especializado de renta de pallets y tarimas de madera o plástico. Diseñado exclusivamente para corporativos y empresas que operan o desean migrar hacia una cadena logística circular (pooling). No gastes en activos que se pierden o deprecian; paga solo por lo que usas. ¿No estás seguro si tu operación califica? Nuestro equipo técnico te apoya con un análisis logístico y de viabilidad gratuito para evaluar los flujos de tus centros de distribución.
-                </p>
+                <div>
+                    <p class="card-highlight">Cero activos muertos: Optimiza tus flujos logísticos y reduce costos con nuestro esquema de pooling de tarimas.</p>
+                    <p class="card-description">Transforma tu operación con nuestro servicio especializado de renta de pallets y tarimas de madera o plástico. Diseñado exclusivamente para corporativos y empresas que operan o desean migrar hacia una cadena logística circular (pooling). No gastes en activos que se pierden o deprecian; paga solo por lo que usas en tus flujos de distribución.</p>
+                </div>
             </div>
 
             <!-- TARJETA 4 -->
-            <div style="background: white; border-radius: 20px; padding: 24px; color: var(--brand-dark); display: flex; flex-direction: column; justify-content: space-between; min-height: 540px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-                <div>
-                    <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 16px; line-height: 1.3; color: var(--brand-dark);">Recolección de Residuos de Madera y Manejo Ambiental</h3>
-                    
-                    <!-- Contenedor de Imagen con Inserto Flotante -->
-                    <div style="position: relative; margin-bottom: 20px; border-radius: 12px; overflow: visible;">
-                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=400&q=80" alt="Manejo Ambiental" style="width: 100%; height: 160px; object-fit: cover; border-radius: 12px;">
-                        <!-- Badge Flotante Estilo Referencia -->
-                        <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(255,255,255,0.95); padding: 8px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #4ade80; color: var(--brand-dark);">
-                            🌱 Empresa Verde Comprometida
-                        </div>
-                    </div>
-
-                    <p style="font-size: 0.85rem; font-weight: 700; color: var(--brand-green-cta); margin-bottom: 12px; line-height: 1.4;">
-                        Despacha tus mermas legalmente: Liberamos espacio en tus bodegas cumpliendo con las normativas verdes.
-                    </p>
+            <div class="premium-card">
+                <h3>Recolección de Residuos de Madera y Manejo Ambiental</h3>
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=600&q=80" alt="Manejo Ambiental">
+                    <div class="card-badge" style="border-left: 4px solid #4ade80;">🌱 Empresa Verde Comprometida</div>
                 </div>
-                <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-top: auto;">
-                    Evita acumulaciones peligrosas, multas y riesgos de incendio en tus plantas de producción. Ofrecemos un servicio integral de recolección de residuos de madera, pallets rotos y mermas industriales directo en tus instalaciones. Nos encargamos del retiro, traslado y procesamiento sustentable de los desechos, ayudando a tu empresa a cumplir con las auditorías ambientales de indexación y normativas locales. Convierte tus residuos en una ventaja ecológica corporativa.
-                </p>
+                <div>
+                    <p class="card-highlight">Despacha tus mermas legalmente: Liberamos espacio en tus bodegas cumpliendo con las normativas verdes.</p>
+                    <p class="card-description">Evita acumulaciones peligrosas, multas y riesgos de incendio en tus plantas de producción. Ofrecemos un servicio integral de recolección de residuos de madera, pallets rotos y mermas industriales directo en tus instalaciones. Nos encargamos del retiro, traslado y procesamiento sustentable de los desechos, ayudando a tu empresa a cumplir con las auditorías ambientales.</p>
+                </div>
             </div>
 
         </div>
