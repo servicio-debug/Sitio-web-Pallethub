@@ -55,12 +55,12 @@
 
         /* Imágenes de Fondo específicas para cada lado */
         .buyer-side {
-            background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80'); /* Imagen de fábrica/almacén */
+            background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80'); 
         }
 
         .supplier-side {
-            background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80'); /* Imagen de camión/logística */
-            border-left: 4px solid white; /* Línea divisoria elegante */
+            background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80'); 
+            border-left: 4px solid white; 
         }
 
         /* Capa oscura (Overlay) para que el texto blanco sea 100% legible */
@@ -111,7 +111,7 @@
 
         .hero-half h2 {
             font-size: 1rem !important;
-            color: #cbd5e1 !important; /* Gris claro legible */
+            color: #cbd5e1 !important; 
             font-weight: 400 !important;
             line-height: 1.5;
             margin-bottom: 28px !important;
@@ -325,6 +325,40 @@
             line-height: 1.4;
         }
 
+        /* --- NUEVO BLOQUE: SECCIÓN INTRODUCTORIA NOSOTROS EN EL HOME --- */
+        .home-about-section {
+            padding: 120px 5%;
+            background: #ffffff;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .home-about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .home-about-tag {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--brand-green-cta);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        .home-about-section h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            color: var(--brand-dark);
+            margin-bottom: 24px;
+        }
+        .home-about-lead {
+            font-size: 1.35rem;
+            color: #475569;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
         /* 5. PIE DE PÁGINA CORPORATIVO (FOOTER) UNIFICADO Y CENTRADO */
         footer {
             background-color: #edf2ee; 
@@ -419,6 +453,8 @@
             .hero-center-img { min-height: 250px; }
             .tech-container { grid-template-columns: 1fr; gap: 40px; }
             .specs-grid { grid-template-columns: 1fr; }
+            .home-about-section h2 { font-size: 2.5rem; }
+            .home-about-lead { font-size: 1.15rem; }
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 30px; }
             .footer-links { align-items: center; text-align: center; }
             .footer-right { align-items: center; text-align: center; }
@@ -494,25 +530,21 @@
             </div>
 
             <div class="specs-grid">
-                <!-- TARJETA 1 -->
                 <div class="spec-card">
                     <div class="spec-label">Ingeniería y Diseño de Empaque</div>
                     <div class="spec-value">Tarimas Nuevas: Medidas Std o Especiales</div>
                     <div class="spec-desc">Fabricación bajo especificación exacta (cálculo estructural) para resistir cargas críticas. Disponibilidad garantizada en tarimas estándar (piezas de 48x40) o diseños a la medida para que tu línea de producción nunca se detenga.</div>
                 </div>
-                <!-- TARJETA 2 -->
                 <div class="spec-card">
                     <div class="spec-label">Optimización de Costos Logísticos</div>
                     <div class="spec-value">Tarimas Seminuevas Seleccionadas</div>
                     <div class="spec-desc">El mismo rendimiento estructural que una pieza nueva, pero con un impacto directo en tu presupuesto. Suministro de tarimas recicladas, usadas y reparadas bajo un estricto control de calidad, listas para volver a la batalla operativa.</div>
                 </div>
-                <!-- TARJETA 3 -->
                 <div class="spec-card">
                     <div class="spec-label">Eficiencia Operativa B2B</div>
                     <div class="spec-value">Renta y Soluciones de Logística Circular</div>
                     <div class="spec-desc">Elimina el costo de almacenamiento y la gestión de activos fijos con nuestro servicio de pooling y arrendamiento. Rentas el volumen exacto de pallets que necesitas y dejas la recuperación, el mantenimiento y el flujo logístico en nuestras manos.</div>
                 </div>
-                <!-- TARJETA 4 -->
                 <div class="spec-card">
                     <div class="spec-label">Sustentabilidad Industrial</div>
                     <div class="spec-value">Compra y Recolección de Tarimas en Desuso o Dañadas</div>
@@ -621,6 +653,17 @@
                     <div class="spec-desc">Trazabilidad del ciclo de vida de cada lote de tarimas, asegurando un control riguroso de rotaciones.</div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- --- BLOQUE RESTAURADO: SECCIÓN INTRODUCTORIA DE NOSOTROS (IMAGEN 2) --- -->
+    <section class="home-about-section section-wrapper">
+        <div class="home-about-container">
+            <span class="home-about-tag">Sobre PalletHub</span>
+            <h2>Nosotros</h2>
+            <p class="home-about-lead">
+                Somos el nodo central del suministro e ingeniería de empaque industrial en el occidente del país. Conectamos la demanda corporativa de tarimas con una infraestructura logística sustentable, transparente y de alto rendimiento técnico.
+            </p>
         </div>
     </section>
 
