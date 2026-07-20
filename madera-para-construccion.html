@@ -71,7 +71,68 @@
         }
         .menu-links .btn-cotizador:hover { background-color: #14532d; transform: translateY(-1px); }
 
-        /* --- SECCIÓN BLOQUES ASIMÉTRICOS (Estilo Imagen 1 y 4) --- */
+        /* --- NUEVA SECCIÓN BANNER: MADERA A BUEN PRECIO (Estilo Imagen 1) --- */
+        .wood-banner-section {
+            width: 100%;
+            height: 480px;
+            /* Degradado de transparente a negro sólido hacia la derecha imitando la fotografía */
+            background: linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(12,13,14,0.4) 45%, rgba(12,13,14,0.95) 70%), 
+                        url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .banner-overlay-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .banner-text-content {
+            max-width: 580px;
+            text-align: right;
+            color: white;
+        }
+        .banner-text-content h2 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .banner-sub1 {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+        .banner-sub2 {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.5;
+            margin-bottom: 28px;
+        }
+        .btn-banner-cta {
+            background-color: var(--brand-green-cta);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(22, 101, 52, 0.3);
+        }
+        .btn-banner-cta:hover {
+            background-color: #14532d;
+            transform: translateY(-2px);
+        }
+
+        /* --- SECCIÓN BLOQUES ASIMÉTRICOS (Estilo Imagen 4) --- */
         .technical-section {
             padding: 90px 5%;
             background: #ffffff;
@@ -111,7 +172,6 @@
             margin-bottom: 24px;
         }
 
-        /* Botón de Llamada a la Acción de Sección */
         .btn-section-cta {
             background-color: var(--brand-green-cta);
             color: white;
@@ -139,9 +199,6 @@
             padding: 24px;
             border-radius: 12px;
             transition: border-color 0.2s;
-        }
-        .spec-card.highlighted {
-            border: 1px solid var(--brand-dark);
         }
         .spec-card:hover {
             border-color: var(--brand-dark);
@@ -287,6 +344,17 @@
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
             .footer-right { align-items: center; text-align: center; }
         }
+        @media (max-width: 768px) {
+            .wood-banner-section {
+                background: linear-gradient(rgba(12,13,14,0.8), rgba(12,13,14,0.95)), 
+                            url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800') no-repeat center center/cover;
+                height: auto;
+                padding: 60px 0;
+            }
+            .banner-overlay-container { justify-content: center; }
+            .banner-text-content { text-align: center; }
+            .banner-text-content h2 { font-size: 2.2rem; }
+        }
         @media (max-width: 576px) {
             .usability-grid { grid-template-columns: 1fr; }
             .specs-grid { grid-template-columns: 1fr; }
@@ -312,42 +380,19 @@
         </ul>
     </nav>
 
-    <!-- SECCIÓN 1: TECNOLOGÍA (Estilo Imagen 1) -->
-    <section class="technical-section section-wrapper">
-        <div class="tech-container">
-            <div class="tech-info">
-                <span class="tech-tag">Trazabilidad Automatizada</span>
-                <h2>Tecnología</h2>
-                <p class="tech-lead">Control algorítmico y monitoreo digital para la administración del inventario de tarimas. Desarrollamos herramientas que transparentan los ciclos de entrega, cubicación y balances operativos de activos logísticos.</p>
-                <a href="cotizador.html" class="btn-section-cta">Centro de Cotización</a>
-            </div>
-
-            <div class="specs-grid">
-                <div class="spec-card">
-                    <div class="spec-label">Cubicación Inteligente</div>
-                    <div class="spec-value">Algoritmos de Optimización</div>
-                    <div class="spec-desc">Cálculo exacto del acomodo volumétrico para maximizar la capacidad de cajas secas y contenedores.</div>
-                </div>
-                <div class="spec-card">
-                    <div class="spec-label">Monitoreo Fitosanitario</div>
-                    <div class="spec-value">Registro de Datos Termográficos</div>
-                    <div class="spec-desc">Acceso inmediato a los reportes técnicos digitales de tratamiento térmico NIMF-15 exigidos por aduanas.</div>
-                </div>
-                <div class="spec-card">
-                    <div class="spec-label">Integración Ágil</div>
-                    <div class="spec-value">Dashboard de Clientes</div>
-                    <div class="spec-desc">Consulta en tiempo real de estatus de pedidos, cotizaciones activas e históricos de consumo B2B.</div>
-                </div>
-                <div class="spec-card highlighted">
-                    <div class="spec-label">Transparencia Total</div>
-                    <div class="spec-value">Auditoría Digital de Activos</div>
-                    <div class="spec-desc">Trazabilidad del ciclo de vida de cada lote de tarimas, asegurando un control riguroso de rotaciones.</div>
-                </div>
+    <!-- SECCIÓN 1: BANNER MADERA DE CALIDAD A BUEN PRECIO (Reemplaza Tecnología) -->
+    <section class="wood-banner-section section-wrapper">
+        <div class="banner-overlay-container">
+            <div class="banner-text-content">
+                <h2>Madera de Calidad<br>A Buen Precio</h2>
+                <p class="banner-sub1">Madera de pino para carpintería y construcción.</p>
+                <p class="banner-sub2">En todas las medidas muy buenos gruesos, anchos y largos.</p>
+                <a href="cotizador.html" class="btn-banner-cta">Centro de Cotización</a>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN 2: USABILIDAD DE LA MADERA (Estilo Imagen 2) -->
+    <!-- SECCIÓN 2: USABILIDAD DE LA MADERA -->
     <section class="centered-info-section section-wrapper">
         <div class="centered-container">
             <span class="centered-tag">Uso y Aplicaciones Industriales</span>
@@ -381,7 +426,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 3: MANIFIESTO NODO CENTRAL (Estilo Imagen 3) -->
+    <!-- SECCIÓN 3: MANIFIESTO NODO CENTRAL -->
     <section class="centered-info-section alt-bg section-wrapper">
         <div class="centered-container">
             <span class="centered-tag">Sobre PalletHub</span>
@@ -392,7 +437,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 4: NUESTROS PRODUCTOS (Estilo Imagen 4) -->
+    <!-- SECCIÓN 4: NUESTROS PRODUCTOS -->
     <section class="technical-section section-wrapper">
         <div class="tech-container">
             <div class="tech-info">
