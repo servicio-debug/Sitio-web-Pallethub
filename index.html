@@ -68,7 +68,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.1) 100%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.2) 100%);
             z-index: 1;
         }
 
@@ -76,6 +76,7 @@
             position: relative;
             z-index: 2;
             max-width: 540px;
+            margin-bottom: 20px;
         }
 
         .hero-badge {
@@ -110,6 +111,39 @@
             font-weight: 400 !important;
             line-height: 1.5;
             margin-bottom: 28px !important;
+        }
+
+        /* CORRECCIÓN Y ESTILOS DE BOTONES (CALL TO ACTION) */
+        .cta-btn-main {
+            display: inline-block;
+            text-decoration: none;
+            padding: 14px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .btn-gray-solid {
+            background-color: #ffffff;
+            color: var(--brand-dark) !important;
+        }
+
+        .btn-gray-solid:hover {
+            background-color: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        .btn-green-solid {
+            background-color: var(--brand-green-cta);
+            color: #ffffff !important;
+        }
+
+        .btn-green-solid:hover {
+            background-color: #14532d;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -448,7 +482,7 @@
 
         @media (max-width: 992px) {
             .menu-links { display: none; }
-            .hero-section { flex-direction: column; }
+            .hero-split-container { flex-direction: column; }
             .tech-container { grid-template-columns: 1fr; gap: 40px; }
             .specs-grid { grid-template-columns: 1fr; }
             .home-about-section h2 { font-size: 2.5rem; }
@@ -461,7 +495,7 @@
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR PREMIUM CON ANCHO MÁXIMO -->
+    <!-- MENÚ SUPERIOR PREMIUM -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo-area">
@@ -480,7 +514,7 @@
         </div>
     </nav>
 
-    <!-- SPLIT-HERO DE DOS COLUMNAS CON IMÁGENES DE FONDO -->
+    <!-- SPLIT-HERO DE DOS COLUMNAS REVISADO CON LLAMADAS A LA ACCIÓN VISIBLES -->
     <section class="hero-split-container">
         
         <!-- LADO IZQUIERDO: COMPRADOR INDUSTRIAL -->
@@ -501,18 +535,18 @@
                 <span class="hero-badge badge-green">40% Aliado de Suministro</span>
                 <h1>Monetiza tu Flota o Bodega. Únete a la Red de Suministro Inteligente</h1>
                 <h2>Monetiza fletes muertos y espacios disponibles. Conecta tu operación con nuestra plataforma digital de logística en GDL.</h2>
-                <a href="circulo-proveedores.html" class="btn-green-solid cta-btn-main">Unirte como Aliado</a>
+                <a href="circulo-proveedores.html" class="cta-btn-main btn-green-solid">Unirte como Aliado</a>
             </div>
         </div>
 
     </section>
 
-    <!-- BARRA DE CONFIANZA ACTUALIZADA: AHORA CON 5 CONCEPTOS E ICONOS DE DISEÑO -->
+    <!-- BARRA DE CONFIANZA: 5 CONCEPTOS CON ICONOS VECTORIALES -->
     <section class="trust-bar section-wrapper">
         <h4>Confianza Local y Nacional (Jalisco / GDL / Nacional)</h4>
         <div class="badges-container">
             
-            <!-- 1. NIMF-15 (Icono de Credencial/Certificación) -->
+            <!-- 1. NIMF-15 -->
             <div class="badge-item">
                 <div class="badge-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -525,7 +559,7 @@
                 NIMF-15
             </div>
             
-            <!-- 2. Pino Nacional (Icono de Árbol Estilizado) -->
+            <!-- 2. Pino Nacional -->
             <div class="badge-item">
                 <div class="badge-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -536,7 +570,7 @@
                 Pino Nacional
             </div>
 
-            <!-- NUEVO -> 3. Ingeniería de Empaque (Icono de Diseño Isométrico / Plano Técnico) -->
+            <!-- 3. Ingeniería de Empaque -->
             <div class="badge-item">
                 <div class="badge-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -548,7 +582,7 @@
                 Ingeniería de Empaque
             </div>
             
-            <!-- 4. Retornos Círculo (Icono de Camión de Carga Logística) -->
+            <!-- 4. Retornos Círculo -->
             <div class="badge-item">
                 <div class="badge-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -561,7 +595,7 @@
                 Retornos Círculo
             </div>
             
-            <!-- 5. Trazabilidad (Icono de Candado Industrial de Seguridad) -->
+            <!-- 5. Trazabilidad -->
             <div class="badge-item">
                 <div class="badge-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -581,7 +615,7 @@
             <div class="tech-info">
                 <span class="tech-tag" style="color: var(--brand-gray);">Proveedores de Tarimas de Madera en Guadalajara</span>
                 <h2>Soluciones B2B</h2>
-                <p class="tech-lead">No vendemos solo madera; resolvemos el flujo de tu operación logística. Diseñamos, suministramos y recuperamos las tarimas industriales que mueven tu planta sin retrasos, sin quiebres de stock y sin drama operativo.</p>
+                <p class="tech-lead">No vendemos solo madera; resolvemos el flujo de tu operation logística. Diseñamos, suministramos y recuperamos las tarimas industriales que mueven tu planta sin retrasos, sin quiebres de stock y sin drama operativo.</p>
             </div>
 
             <div class="specs-grid">
