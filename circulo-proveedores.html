@@ -22,6 +22,11 @@
             --text-muted: #64748b;
             --border-color: #e2e8f0;
             --bg-accent-green: #edf2ee;
+            
+            /* Nuevos colores oscuros premium para la sección FAQ */
+            --faq-bg-dark: #1e2229;
+            --faq-card-bg: #282d37;
+            --faq-text-light: #f8fafc;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
@@ -469,6 +474,128 @@
             color: var(--brand-dark);
         }
 
+        /* ========================================================
+           NUEVA SECCIÓN: PREGUNTAS FRECUENTES (FAQ) PREMIUM DARK 
+           ======================================================== */
+        .faq-section {
+            background-color: var(--faq-bg-dark);
+            padding: 100px 5%;
+            color: var(--faq-text-light);
+        }
+
+        .faq-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .faq-image-side {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 520px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .faq-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Capa sutil superpuesta para homogeneizar con el fondo oscuro */
+        .faq-image-side::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(30,34,41,0.8));
+        }
+
+        .faq-content-side h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            margin-bottom: 36px;
+            color: white;
+        }
+
+        .faq-accordion-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .faq-item {
+            background-color: var(--faq-card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .faq-trigger {
+            width: 100%;
+            padding: 22px 28px;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            transition: color 0.2s ease;
+        }
+
+        .faq-trigger:hover {
+            color: var(--brand-orange);
+        }
+
+        .faq-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 28px;
+        }
+
+        .faq-panel p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding-bottom: 24px;
+        }
+
+        /* Clases de Estado Activo controladas por JS */
+        .faq-item.active {
+            border-color: rgba(224, 90, 38, 0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            fill: var(--brand-orange);
+        }
+
+        .faq-item.active .faq-trigger {
+            color: white;
+        }
+
         /* 5. PIE DE PÁGINA (FOOTER) */
         footer {
             background-color: var(--bg-accent-green); 
@@ -528,6 +655,12 @@
             .testimonials-nav-arrows { display: none; }
             .testimonials-grid { grid-template-columns: 1fr; }
             .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            
+            /* Ajustes responsivos FAQ */
+            .faq-container { grid-template-columns: 1fr; gap: 40px; }
+            .faq-image-side { height: 360px; order: 2; }
+            .faq-content-side h2 { font-size: 2.2rem; text-align: center; margin-bottom: 28px; }
+            
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
             .footer-right { align-items: center; text-align: center; }
         }
@@ -535,6 +668,9 @@
             .hero-content h1 { font-size: 2rem; }
             .intro-split-left h2 { font-size: 2rem; }
             .testimonials-top-row h2 { font-size: 2rem; }
+            .faq-content-side h2 { font-size: 1.8rem; }
+            .faq-trigger { padding: 18px 20px; font-size: 0.95rem; }
+            .faq-panel { padding: 0 20px; }
             .trust-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -755,38 +891,137 @@
                     <div class="trust-badge-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
                     </div>
-                    <h5>Material Reutilizado</h5>
-                    <span>85%</span>
+                    <h5>Valorización Justa</h5>
+                    <span>100%</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PIE DE PÁGINA (FOOTER) UNIFICADO -->
+    <!-- ========================================================
+       NUEVA SECCIÓN AGREGADA: PREGUNTAS FRECUENTES (FAQ)
+       ======================================================== -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <!-- Columna Izquierda: Imagen Corporativa (Adaptada de tu muestra) -->
+            <div class="faq-image-side">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800" alt="Operador técnico e industrial de tarimas">
+            </div>
+
+            <!-- Columna Derecha: Encabezado y Acordeón Interactivo -->
+            <div class="faq-content-side">
+                <h2>Preguntas Frecuentes</h2>
+                
+                <div class="faq-accordion-group">
+                    <!-- Pregunta 1 -->
+                    <div class="faq-item active"> <!-- Inicia abierta por defecto igual que la imagen de muestra -->
+                        <button class="faq-trigger">
+                            <span>¿Qué es el Círculo de Proveedores de PalletHub?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-panel" style="max-height: 200px;">
+                            <p>Es una red de suministro inteligente de carácter industrial y comercial que asocia a recolectores locales, aserraderos y profesionales logísticos. El ecosistema formaliza y optimiza el flujo de tarimas y madera residual, garantizando transacciones justas y soporte operativo integral.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Cómo se determinan los precios y la valorización del lote?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Utilizamos un esquema estandarizado basado en las dimensiones de las tarimas, el nivel de desgaste de los componentes y el volumen total de madera aprovechable para remanufactura. Esto asegura un retorno transparente y competitivo para el proveedor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 3 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Cuál es el volumen mínimo para solicitar recolección en acopio?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Depende de la zona urbana o industrial. Normalmente consolidamos lotes mínimos a partir de 50 a 100 unidades para enviar unidades logísticas dedicadas. Contáctanos mediante nuestro Centro de Cotización para evaluar alternativas personalizadas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 4 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Qué certificaciones ambientales y de calidad emiten?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Garantizamos el procesamiento bajo estrictos estándares de sustentabilidad de la madera residual. Emitimos reportes de trazabilidad y confinamiento que apoyan el cumplimiento de métricas de economía circular corporativa B2B de nuestros clientes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 5 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Soy transportista independiente, cómo aprovecho los fletes muertos?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Si manejas rutas de retorno habituales con tu caja vacía, puedes pre-registrar tu itinerario en PalletHub. Te asignamos lotes consolidados listos para cargar en tu origen que coincidan hacia nuestros centros de distribución de destino, rentabilizando tus retornos operativos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PIE DE PÁGINA (FOOTER) -->
     <footer>
         <div class="footer-container">
             <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
                 <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
-                <li><a href="#">Circulo de proveedores</a></li>
-                <li><a href="index.html#tecnologia">Tecnología</a></li>
-                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li><a href="#">Círculo de Proveedores</a></li>
             </ul>
-
             <div class="footer-logo-center">
                 <img src="logo-pallethub.png" alt="PalletHub Logo">
-                <a href="#">Registrate en el circulo de proveedores</a>
+                <a href="cotizador.html">Ir a Centro de Cotización →</a>
             </div>
-
             <div class="footer-right">
                 <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
                 <div class="footer-credits">
-                    © 2026 Desarrollo por Fandango Ventures<br> desde Guadalajara, Jalisco Mex.
+                    <strong>PalletHub México</strong><br>
+                    Ecosistema Inteligente de Tarimas y Logística Industrial.<br>
+                    Todos los derechos reservados © 2026.
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- SCRIPT DE INTERACTIVIDAD PARA EL ACORDEÓN DE PREGUNTAS FRECUENTES -->
+    <script>
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const currentItem = trigger.parentElement;
+                const panel = currentItem.querySelector('.faq-panel');
+                const isActive = currentItem.classList.contains('active');
+
+                // Opcional: Cerrar otros acordeones abiertos para mantener orden (Estilo acordeón estricto)
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== currentItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-panel').style.maxHeight = null;
+                    }
+                });
+
+                // Alternar estado del elemento actual
+                if (isActive) {
+                    currentItem.classList.remove('active');
+                    panel.style.maxHeight = null;
+                } else {
+                    currentItem.classList.add('active');
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
