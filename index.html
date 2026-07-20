@@ -565,7 +565,7 @@
         </div>
     </section>
 
-    <!-- BLOQUE 4: TECNOLOGÍA -->
+   <!-- BLOQUE 4: TECNOLOGÍA -->
     <section id="tecnologia" class="technical-section alt-bg">
         <div class="tech-container">
             <div class="tech-info">
@@ -596,12 +596,13 @@
                     <div class="spec-desc">Trazabilidad del ciclo de vida de cada lote de tarimas, asegurando un control riguroso de rotaciones.</div>
                 </div>
             </div>
-
+        </div> <!-- Se cierra el contenedor interno -->
+    </section> <!-- ¡AQUÍ ESTÁ LA SOLUCIÓN! Cerramos correctamente la sección Tecnología -->
 
 
     <!-- SECCIÓN NOSOTROS -->
-    <section id="nosotros" class="technical-section" style="border-bottom: none; padding-bottom: 60px;">
-        <div class="tech-container" style="grid-template-columns: 1fr;">
+    <section id="nosotros" class="technical-section" style="border-bottom: none; padding-bottom: 60px; width: 100%; display: block; clear: both;">
+        <div class="tech-container" style="grid-template-columns: 1fr; width: 100%; max-width: 1200px; margin: 0 auto;">
             <div class="tech-info" style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <span class="tech-tag">Sobre PalletHub</span>
                 <h2>Nosotros</h2>
@@ -611,7 +612,7 @@
     </section>
 
     <!-- 5. PIE DE PÁGINA (FOOTER) UNIFICADO -->
-    <footer>
+    <footer style="width: 100%; display: block; clear: both;">
         <div class="footer-container">
             <ul class="footer-links">
                 <li><a href="#">Home</a></li>
