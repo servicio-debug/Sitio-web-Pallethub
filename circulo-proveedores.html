@@ -150,8 +150,7 @@
         /* 3. SECCIÓN CÍRCULO DE PROVEEDORES (RED DE SUMINISTRO) */
         .suppliers-section {
             background-color: white;
-            padding: 80px 5%;
-            border-top: 1px solid var(--border-color);
+            padding: 80px 5% 40px 5%;
         }
 
         .suppliers-container {
@@ -240,10 +239,52 @@
             line-height: 1.6;
         }
 
+        /* --- NUEVA SECCIÓN ESTILO IMAGEN 1 (INTRO TEXT SPLIT) --- */
+        .intro-text-split-section {
+            background-color: #ffffff;
+            padding: 100px 5%;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .intro-split-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .intro-split-left .split-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #94a3b8;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .intro-split-left h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--brand-dark);
+            letter-spacing: -1px;
+        }
+
+        .intro-split-right p {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #475569;
+            font-weight: 400;
+            margin-top: 34px; /* Alineación visual balanceada con el h2 */
+        }
+
         /* --- NUEVA SECCIÓN: TESTIMONIOS (Estilo Mockup Compartido) --- */
         .testimonials-section {
             background-color: #ffffff;
-            padding: 100px 5%;
+            padding: 80px 5% 100px 5%;
             border-top: 1px solid var(--border-color);
             overflow: hidden;
         }
@@ -501,6 +542,8 @@
             .hero-image-container { height: 300px; }
             .suppliers-header { flex-direction: column; align-items: flex-start; gap: 8px; }
             .suppliers-grid { grid-template-columns: 1fr; }
+            .intro-split-container { grid-template-columns: 1fr; gap: 20px; }
+            .intro-split-right p { margin-top: 0; }
             .testimonials-top-row { flex-direction: column; align-items: flex-start; gap: 20px; }
             .testimonials-nav-arrows { display: none; }
             .testimonials-grid { grid-template-columns: 1fr; }
@@ -510,6 +553,7 @@
         }
         @media (max-width: 576px) {
             .hero-content h1 { font-size: 2rem; }
+            .intro-split-left h2 { font-size: 2rem; }
             .testimonials-top-row h2 { font-size: 2rem; }
             .trust-grid { grid-template-columns: 1fr; }
         }
@@ -591,7 +635,20 @@
         </div>
     </section>
 
-    <!-- --- NUEVA SECCIÓN INTEGRADA: TESTIMONIOS (Según Imagen Referencia) --- -->
+    <!-- NUEVA SECCIÓN INTEGRADA (Estilo de la Imagen 1) -->
+    <section class="intro-text-split-section">
+        <div class="intro-split-container">
+            <div class="intro-split-left">
+                <span class="split-badge">MÁS DE 200+ RECURSOS LOGÍSTICOS</span>
+                <h2>Revoluciona la gestión de tus tarimas y optimiza tu cadena</h2>
+            </div>
+            <div class="intro-split-right">
+                <p>PalletHub es una plataforma de suministro inteligente diseñada para ayudar a proveedores locales, transportistas y recolectores a perfeccionar su logística operativa y convertirse en expertos del sector. Nuestro ecosistema utiliza herramientas interactivas, asignación eficiente de rutas y un esquema transparente de valorización de madera para acelerar el ritmo y crecimiento de tu negocio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: TESTIMONIOS -->
     <section class="testimonials-section">
         <div class="testimonials-container">
             <span class="testimonials-badge">Testimonios</span>
@@ -750,4 +807,4 @@
     </footer>
 
 </body>
-</html> 
+</html>
