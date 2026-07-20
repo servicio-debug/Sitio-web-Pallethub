@@ -7,7 +7,7 @@
     <!-- Tipografía Corporativa Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -240,6 +240,123 @@
             line-height: 1.6;
         }
 
+        /* --- NUEVA SECCIÓN: TESTIMONIOS (Estilo Mockup Compartido) --- */
+        .testimonials-section {
+            background-color: #ffffff;
+            padding: 100px 5%;
+            border-top: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .testimonials-badge {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+        .testimonials-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 48px;
+        }
+        .testimonials-top-row h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--brand-dark);
+            line-height: 1.15;
+            max-width: 600px;
+        }
+        .testimonials-nav-arrows {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .nav-arrow {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .nav-arrow:hover {
+            background-color: #e2e8f0;
+        }
+        .nav-arrow svg {
+            width: 18px;
+            height: 18px;
+            fill: #475569;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .testimonial-card {
+            background-color: #f8fafc;
+            border-radius: 12px;
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+        }
+        .testimonial-quote {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #334155;
+            font-weight: 400;
+            margin-bottom: 28px;
+        }
+        .testimonial-profile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .avatar-img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #e2e8f0;
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .profile-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+        }
+        .profile-role {
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .stars-row {
+            display: flex;
+            gap: 2px;
+            margin-top: 2px;
+        }
+        .star-icon {
+            width: 13px;
+            height: 13px;
+            fill: #eab308;
+        }
+
         /* 4. ELEMENTOS DE CONFIANZA (TRUST ELEMENTS) */
         .trust-section {
             background-color: var(--brand-gray-light);
@@ -384,12 +501,16 @@
             .hero-image-container { height: 300px; }
             .suppliers-header { flex-direction: column; align-items: flex-start; gap: 8px; }
             .suppliers-grid { grid-template-columns: 1fr; }
+            .testimonials-top-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .testimonials-nav-arrows { display: none; }
+            .testimonials-grid { grid-template-columns: 1fr; }
             .trust-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
             .footer-right { align-items: center; text-align: center; }
         }
         @media (max-width: 576px) {
             .hero-content h1 { font-size: 2rem; }
+            .testimonials-top-row h2 { font-size: 2rem; }
             .trust-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -419,18 +540,16 @@
             <h1>Únete a la Red de Suministro Inteligente de Pallets</h1>
             <p>Conectamos aserraderos, recolectores, unidades de acopio y transportistas con grandes industrias que buscan certidumbre en su logística. Forma parte de un ecosistema escalable con pagos puntuales y soporte técnico.</p>
             <div class="hero-cta-group">
-                <!-- BOTONES DE ACCIÓN VISUALES (SIN URL LIGADA EN href) -->
                 <a href="#" class="btn-primary-cta">[Quiero Ser Proveedor de Pallets]</a>
                 <a href="#" class="btn-secondary-cta">[Quiero Proveer Servicios Logísticos]</a>
             </div>
         </div>
         <div class="hero-image-container">
-            <!-- Imagen de camión con suministro de madera según mockup -->
             <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800" alt="Suministro de Madera PalletHub">
         </div>
     </section>
 
-    <!-- SECCIÓN CÍRCULO DE PROVEEDORES (CONFORME A TU DIAGRAMA) -->
+    <!-- SECCIÓN CÍRCULO DE PROVEEDORES -->
     <section class="suppliers-section">
         <div class="suppliers-container">
             <div class="suppliers-header">
@@ -439,11 +558,9 @@
             </div>
 
             <div class="suppliers-grid">
-                
                 <!-- PUNTOS DE ACOPIO -->
                 <div class="supplier-card">
                     <div class="supplier-icon-box">
-                        <!-- Icono Minibodega -->
                         <svg viewBox="0 0 24 24"><path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3m6 11H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z"/></svg>
                     </div>
                     <h3>Puntos de Acopio</h3>
@@ -454,7 +571,6 @@
                 <!-- RECOLECTORES -->
                 <div class="supplier-card">
                     <div class="supplier-icon-box">
-                        <!-- Icono Recolector / Herramientas -->
                         <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
                     </div>
                     <h3>Recolectores</h3>
@@ -465,14 +581,90 @@
                 <!-- TRANSPORTISTAS -->
                 <div class="supplier-card">
                     <div class="supplier-icon-box">
-                        <!-- Icono Camión -->
                         <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6.5h-2.5V9h2.5l1.5 2.5h-1.5z"/></svg>
                     </div>
                     <h3>Transportistas</h3>
                     <div class="subtitle">Retornos Rentables</div>
                     <p>Choferes independientes que aprovechan sus viajes de retorno ("fletes muertos") para cargar tarimas hacia nuestros centros de distribución.</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- --- NUEVA SECCIÓN INTEGRADA: TESTIMONIOS (Según Imagen Referencia) --- -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <span class="testimonials-badge">Testimonios</span>
+            
+            <div class="testimonials-top-row">
+                <h2>Nuestra red de proveedores habla por nosotros</h2>
+                <div class="testimonials-nav-arrows">
+                    <div class="nav-arrow">
+                        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                    </div>
+                    <div class="nav-arrow">
+                        <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"PalletHub ha sido un salvavidas para nuestra logística de transporte. Aprovechar los viajes de retorno vacíos para mover tarimas hacia sus centros de distribución optimizó por completo nuestras rutas y aumentó la rentabilidad mensual."</p>
+                    <div class="testimonial-profile">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Proveedor Logístico" class="avatar-img">
+                        <div class="profile-info">
+                            <span class="profile-name">Carlos Mendoza</span>
+                            <span class="profile-role">Gerente de Logística, Transportes GDL</span>
+                            <div class="stars-row">
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"No podría estar más satisfecho con el esquema de pagos y recolección de lotes. Como punto de acopio local, liberar espacio rápido es vital, y ellos cumplen de forma impecable con los tiempos de respuesta de 24 horas prometidos."</p>
+                    <div class="testimonial-profile">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Administrador de Acopio" class="avatar-img">
+                        <div class="profile-info">
+                            <span class="profile-name">Ricardo Silva</span>
+                            <span class="profile-role">Director de Operaciones, Acopio Occidente</span>
+                            <div class="stars-row">
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"La transparencia en la valorización de la madera residual industrial nos dio la confianza para firmar exclusividad. Procesar el desperdicio bajo normas sustentables le dio un valor real de retorno a lo que antes considerábamos basura."</p>
+                    <div class="testimonial-profile">
+                        <img src="https://images.unsplash.com/photo-1628157582853-a796fa650a6a?auto=format&fit=crop&q=80&w=150" alt="Recolector Ambiental" class="avatar-img">
+                        <div class="profile-info">
+                            <span class="profile-name">Martín Stevens</span>
+                            <span class="profile-role">Encargado de Sustentabilidad, Recolecta S.A.</span>
+                            <div class="stars-row">
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -484,7 +676,6 @@
             <p class="trust-sub">Certificaciones y Garantías Operativas</p>
             
             <div class="trust-grid">
-                
                 <!-- CERTIFICACIÓN -->
                 <div class="trust-card">
                     <div class="trust-badge-icon">
@@ -512,7 +703,7 @@
                     <span>24h</span>
                 </div>
 
-                <!-- VALORIZACIÓN justa -->
+                <!-- VALORIZACIÓN JUSTA -->
                 <div class="trust-card">
                     <div class="trust-badge-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
@@ -520,7 +711,6 @@
                     <h5>Material Reutilizado</h5>
                     <span>85%</span>
                 </div>
-
             </div>
 
             <!-- ASOCIADOS Y MARCAS BASE -->
@@ -560,4 +750,4 @@
     </footer>
 
 </body>
-</html>
+</html> 
