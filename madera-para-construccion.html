@@ -13,8 +13,8 @@
         :root {
             --brand-green-light: #cce4c5; 
             --brand-green-cta: #166534; 
-            --brand-gray: #8d9394;          
-            --brand-gray-light: #f1f3f4;   
+            --brand-gray: #8d9394;          /* Gris Acero Industrial */
+            --brand-gray-light: #f1f3f4;   /* Fondo Gris Tenue */
             --brand-dark: #0c0d0e;        
             --bg-neutral: #f8fafc;
             --text-muted: #64748b;
@@ -25,13 +25,14 @@
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-neutral); color: var(--brand-dark); }
 
+        /* --- CONTENEDOR FLUIDO GLOBAL DE SECCIONES PARA COHERENCIA VISUAL --- */
         .section-wrapper {
             width: 100%;
             display: block;
             clear: both;
         }
-
-        /* --- 1. MENÚ DE NAVEGACIÓN SUPERIOR --- */
+                
+        /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
         nav {
             background: white;
             border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -48,6 +49,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .logo-area { 
             display: flex; 
             align-items: center; 
@@ -58,71 +60,219 @@
             font-size: 26px; 
             letter-spacing: -0.5px;
         }
-        .logo-img { width: 48px; height: 48px; object-fit: contain; display: block; }
-        .menu-links { display: flex; list-style: none; gap: 8px; align-items: center; }
-        .menu-links a { text-decoration: none; color: var(--brand-dark); font-weight: 600; font-size: 0.82rem; padding: 6px 10px; white-space: nowrap; border-radius: 6px; transition: all 0.2s ease; }
-        .menu-links a:hover { background: #f1f5f9; }
-        .menu-links .btn-cotizador { background-color: var(--brand-green-cta); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15); margin-left: 8px; }
-        .menu-links .btn-cotizador:hover { background-color: #14532d; }
 
-        /* --- SECCIÓN GLOBAL DE BLOQUES TÉCNICOS (Estilo Imagen 1) --- */
-        .technical-section { padding: 100px 5%; background: #ffffff; border-bottom: 1px solid var(--border-color); }
-        .technical-section.alt-bg { background: #fafafa; }
-        .tech-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
-        .tech-info h1, .tech-info h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; color: var(--brand-dark); }
-        .tech-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-green-cta); margin-bottom: 16px; }
-        .tech-info .tech-lead { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 30px; }
-        
-        .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .spec-card { background: #ffffff; border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; transition: border-color 0.2s; }
-        .spec-card:hover { border-color: var(--brand-dark); }
-        .spec-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; margin-bottom: 6px; }
-        .spec-value { font-size: 1.1rem; font-weight: 700; color: var(--brand-dark); margin-bottom: 4px; }
-        .spec-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
-        
-        /* Botones de Acción Internos */
-        .cta-btn-section { margin-top: 24px; padding: 14px 28px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; display: inline-block; transition: all 0.2s; }
-        .btn-green { background: var(--brand-green-cta); color: white; box-shadow: 0 4px 12px rgba(22, 101, 52, 0.15); }
-        .btn-green:hover { background: #14532d; transform: translateY(-2px); }
-        .btn-gray { background: var(--brand-gray); color: white; }
-        .btn-gray:hover { background: #73797a; transform: translateY(-2px); }
+        .logo-img {
+            width: 48px;       
+            height: 48px;
+            object-fit: contain;
+            display: block;
+        }
 
-        /* --- SECCIÓN CENTRADA (Estilo Imagen 2 y 3) --- */
-        .centered-info-section { padding: 120px 5%; background: #ffffff; text-align: center; border-bottom: 1px solid var(--border-color); }
-        .centered-info-section.alt-bg { background: #fafafa; }
-        .centered-container { max-width: 900px; margin: 0 auto; }
-        .centered-tag { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--brand-green-cta); margin-bottom: 16px; display: inline-block; }
-        .centered-info-section h2 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px; color: var(--brand-dark); margin-bottom: 24px; }
-        .centered-lead { font-size: 1.35rem; color: #475569; line-height: 1.6; font-weight: 400; margin-bottom: 40px; }
+        .menu-links {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            align-items: center;
+        }
 
-        /* Grilla de Usos o Atributos */
-        .use-cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-        .use-case-item { background: white; border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; text-align: left; }
-        .use-case-icon { font-size: 1.5rem; margin-bottom: 12px; }
-        .use-case-title { font-size: 1.1rem; font-weight: 700; color: var(--brand-dark); margin-bottom: 6px; }
-        .use-case-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+        .menu-links a {
+            text-decoration: none;
+            color: var(--brand-dark);
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 6px 10px;
+            white-space: nowrap;
+            border-radius: 6px; 
+            transition: all 0.2s ease; 
+        }
 
-        /* --- PIE DE PÁGINA (FOOTER) --- */
-        footer { background-color: #edf2ee; padding: 60px 5%; border-top: 1px solid var(--border-color); width: 100%; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; align-items: center; justify-items: center; }
-        .footer-links { list-style: none; padding: 0; margin: 0; width: 100%; display: flex; flex-direction: column; align-items: flex-start; }
-        .footer-links li { margin-bottom: 14px; }
-        .footer-links a { text-decoration: none; color: #2c3e35; font-size: 1.05rem; font-weight: 500; transition: color 0.2s ease; }
-        .footer-links a:hover { color: var(--brand-green-cta); text-decoration: underline; }
-        .footer-logo-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; width: 100%; }
-        .footer-logo-center img { width: 90px; height: 90px; object-fit: contain; }
-        .footer-logo-center a { font-size: 1rem; font-weight: 600; color: var(--brand-green-cta); text-decoration: none; }
-        .footer-logo-center a:hover { text-decoration: underline; }
-        .footer-right { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 16px; width: 100%; }
-        .social-icon-linkedin { background: var(--brand-dark); color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; text-decoration: none; }
-        .footer-credits { font-size: 0.9rem; color: #475569; line-height: 1.5; }
+        .menu-links a:hover { 
+            background: #f1f5f9; 
+        }
+
+        .menu-links .btn-cotizador {
+            background-color: var(--brand-green-cta);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
+            margin-left: 8px;
+        }
+
+        .menu-links .btn-cotizador:hover {
+            background-color: #14532d;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* 4. BLOQUES DE INFORMACIÓN TÉCNICA */
+        .technical-section {
+            padding: 100px 5%;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .technical-section.alt-bg {
+            background: #fafafa;
+        }
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .tech-info h1, .tech-info h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            color: var(--brand-dark);
+        }
+        .tech-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-green-cta);
+            margin-bottom: 16px;
+        }
+        .tech-info .tech-lead {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .spec-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .spec-card:hover {
+            border-color: var(--brand-dark);
+        }
+        .spec-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .spec-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 4px;
+        }
+        .spec-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* 5. PIE DE PÁGINA CORPORATIVO (FOOTER) UNIFICADO Y CENTRADO */
+        footer {
+            background-color: #edf2ee; 
+            padding: 60px 5%;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #2c3e35;
+            font-size: 1.05rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover {
+            color: var(--brand-green-cta);
+            text-decoration: underline;
+        }
+        .footer-logo-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+            width: 100%;
+        }
+        .footer-logo-center img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
+        .footer-logo-center a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--brand-green-cta);
+            text-decoration: none;
+        }
+        .footer-logo-center a:hover {
+            text-decoration: underline;
+        }
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            gap: 16px;
+            width: 100%;
+        }
+        .social-icon-linkedin {
+            background: var(--brand-dark);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .footer-credits {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.5;
+        }
 
         @media (max-width: 992px) {
             .menu-links { display: none; }
             .tech-container { grid-template-columns: 1fr; gap: 40px; }
             .specs-grid { grid-template-columns: 1fr; }
-            .centered-info-section h2 { font-size: 2.5rem; }
-            .centered-lead { font-size: 1.15rem; }
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 30px; }
             .footer-links { align-items: center; text-align: center; }
             .footer-right { align-items: center; text-align: center; }
@@ -150,122 +300,45 @@
         </div>
     </nav>
 
-    <!-- SECCIÓN 1: TECNOLOGÍA Y TRAZABILIDAD (Estilo Imagen 1) -->
+    <!-- BLOQUE: MADERA PARA CONSTRUCCIÓN INTERNO -->
     <section class="technical-section section-wrapper">
         <div class="tech-container">
             <div class="tech-info">
-                <span class="tech-tag">Trazabilidad Automatizada</span>
-                <h1>Tecnología Aplicada</h1>
-                <p class="tech-lead">Control algorítmico y monitoreo digital para la administración y distribución de madera estructural. Desarrollamos herramientas que transparentan los ciclos de cubicación, optimización y entregas críticas en obra civil.</p>
-                <a href="cotizador.html" class="cta-btn-section btn-green">Cotizar Volumen Ahora</a>
+                <span class="tech-tag">Habilitado y Dimensionado</span>
+                <h1>Madera para Construcción</h1>
+                <p class="tech-lead">Componentes primarios y polines de soporte cortados bajo tolerancias milimétricas rígidas. Diseñados para frentes de obra civil, estibadores de maquinaria pesada y embalajes especiales de alta resistencia estructural.</p>
             </div>
 
             <div class="specs-grid">
                 <div class="spec-card">
-                    <div class="spec-label">Cubicación Inteligente</div>
-                    <div class="spec-value">Algoritmos de Optimización</div>
-                    <div class="spec-desc">Cálculo exacto del acomodo volumétrico para maximizar la capacidad de carga y reducir mermas de madera.</div>
+                    <div class="spec-label">Configuración Física</div>
+                    <div class="spec-value">Polines y Tablas Rigurosas</div>
+                    <div class="spec-desc">Cortes limpios longitudinales sin nudos estructurales críticos que comprometan la flexión en cimbras.</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Monitoreo Fitosanitario</div>
-                    <div class="spec-value">Registro de Datos Termográficos</div>
-                    <div class="spec-desc">Acceso inmediato a los reportes técnicos digitales de tratamiento térmico exigidos por las normas vigentes.</div>
+                    <div class="spec-label">Grado Estructural</div>
+                    <div class="spec-value">Clasificación Nacional Selecta</div>
+                    <div class="spec-desc">Selección de especies con alta densidad molecular idóneas para acuñamiento y soporte físico pesado.</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Integración Ágil</div>
-                    <div class="spec-value">Dashboard de Clientes</div>
-                    <div class="spec-desc">Consulta en tiempo real de estatus de pedidos de aserradero, facturación y cubicación acumulada.</div>
+                    <div class="spec-label">Resistencia Mecánica</div>
+                    <div class="spec-value">Alto Módulo de Ruptura</div>
+                    <div class="spec-desc">Soporta esfuerzos cortantes perpendiculares extremos en maniobras críticas de estiba industrial.</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Transparencia Total</div>
-                    <div class="spec-value">Auditoría Digital de Activos</div>
-                    <div class="spec-desc">Trazabilidad completa desde el origen forestal controlado hasta la entrega en el patio de tu proyecto.</div>
+                    <div class="spec-label">Aplicación Directa</div>
+                    <div class="spec-value">Heavy-Duty & Embalaje</div>
+                    <div class="spec-desc">Perfecto para estructuras de fijación interna en contenedores marítimos y cimentaciones de obra.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN 2: USABILIDAD Y VALOR DE LA MADERA (Estilo Imagen 2) -->
-    <section class="centered-info-section section-wrapper">
-        <div class="centered-container">
-            <span class="centered-tag">Versatilidad Estructural</span>
-            <h2>Usabilidad Industrial</h2>
-            <p class="centered-lead">
-                Suministramos materia prima clasificada que responde con precisión mecánica a las aplicaciones de alta exigencia del mercado comercial, arquitectónico e industrial de la región.
-            </p>
-            
-            <div class="use-cases-grid">
-                <div class="use-case-item">
-                    <div class="use-case-icon">🪚</div>
-                    <div class="use-case-title">Fabricación de Muebles</div>
-                    <div class="use-case-desc">Madera desflemada con humedad óptima que evita deformaciones post-producción.</div>
-                </div>
-                <div class="use-case-item">
-                    <div class="use-case-icon">🏗️</div>
-                    <div class="use-case-title">Construcción y Carpintería</div>
-                    <div class="use-case-desc">Soporte seguro para cimbras, estructuras portantes y acabados residenciales limpios.</div>
-                </div>
-                <div class="use-case-item">
-                    <div class="use-case-icon">🪵</div>
-                    <div class="use-case-title">Cabañas, Pisos y Redilas</div>
-                    <div class="use-case-desc">Componentes de pino denso capaces de resistir la fricción severa de carrocería pesada.</div>
-                </div>
-                <div class="use-case-item">
-                    <div class="use-case-icon">📐</div>
-                    <div class="use-case-title">Marcos y Molduras</div>
-                    <div class="use-case-desc">Perfiles estables dimensionados bajo tolerancias estrictas para uso industrial estandarizado.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 3: MANIFESTO DE NODO CENTRAL (Estilo Imagen 3) -->
-    <section class="centered-info-section alt-bg section-wrapper">
-        <div class="centered-container">
-            <span class="centered-tag">Sostenibilidad e Infraestructura</span>
-            <h2>Ecosistema PalletHub</h2>
-            <p class="centered-lead" style="margin-bottom: 0;">
-                Somos el nodo central del suministro e ingeniería de empaque industrial en el occidente del país. Conectamos la demanda corporativa de tarimas con una infraestructura logística sustentable, transparente y de alto rendimiento técnico.
-            </p>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 4: NUESTROS PRODUCTOS DE MADERA (Estilo Imagen 4 / Variante Imagen 1) -->
-    <section class="technical-section section-wrapper">
-        <div class="tech-container">
-            <div class="tech-info">
-                <span class="tech-tag" style="color: var(--brand-gray);">Catálogo Certificado</span>
-                <h2>Nuestros Productos</h2>
-                <p class="tech-lead">Dimensiones exactas, cubicación transparente y disponibilidad garantizada para constructores, contratistas y plantas industriales de manufactura en Guadalajara.</p>
-                <a href="cotizador.html" class="cta-btn-section btn-gray">Descargar Fichas Técnicas</a>
-            </div>
-
-            <div class="specs-grid">
-                <!-- PRODUCTO 1 -->
-                <div class="spec-card">
-                    <div class="spec-label">Habilitado Premium</div>
-                    <div class="spec-value">Tabla de Pino</div>
-                    <div class="spec-desc">Tablas de primera y segunda clase. Espesores uniformes ideales para cimbra, paneles modulares y carpintería de obra negra o acabados.</div>
-                </div>
-                <!-- PRODUCTO 2 -->
-                <div class="spec-card">
-                    <div class="spec-label">Soporte de Carga</div>
-                    <div class="spec-value">Polín y Barrote para Construcción</div>
-                    <div class="spec-desc">Puntales robustos de alta resistencia mecánica. Diseñados para soportar cargas críticas axiales en apuntalamiento y marcos estructurales.</div>
-                </div>
-                <!-- PRODUCTO 3 -->
-                <div class="spec-card">
-                    <div class="spec-label">Estructural y Acabados</div>
-                    <div class="spec-value">Vigas y Chaflán de Pino</div>
-                    <div class="spec-desc">Vigas de gran sección para techumbres o claros amplios, complementadas con chaflán calibrado para remates perfectos en concreto.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PIE DE PÁGINA (FOOTER) -->
+    <!-- PIE DE PÁGINA (FOOTER) UNIFICADO -->
     <footer class="section-wrapper">
         <div class="footer-container">
+            
+            <!-- Columna Izquierda: Enlaces -->
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
@@ -275,17 +348,20 @@
                 <li><a href="nosotros.html">Nosotros</a></li>
             </ul>
 
+            <!-- Columna Central: Identidad Global -->
             <div class="footer-logo-center">
                 <img src="logo-pallethub.png" alt="PalletHub Logo">
                 <a href="circulo-proveedores.html">Regístrate en el círculo de proveedores</a>
             </div>
 
+            <!-- Columna Derecha: Redes y Créditos -->
             <div class="footer-right">
                 <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
                 <div class="footer-credits">
                     © 2026 Desarrollo por Fandango Ventures<br> desde Guadalajara, Jalisco Mex.
                 </div>
             </div>
+            
         </div>
     </footer>
 
