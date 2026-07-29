@@ -70,7 +70,7 @@
         }
         .menu-links .btn-cotizador:hover { background-color: #14532d; transform: translateY(-1px); }
 
-        /* HERO SECTION (Enfocado 100% en Pallets e Infraestructura) */
+        /* HERO SECTION */
         .hero-section {
             padding: 80px 5% 60px 5%;
             background: linear-gradient(180deg, #ffffff 0%, var(--bg-neutral) 100%);
@@ -124,7 +124,7 @@
         }
         .btn-secondary:hover { background: #f1f5f9; }
 
-        /* TRUST BAR / BENEFICIOS (Sin mención a Fandango) */
+        /* TRUST BAR / BENEFICIOS (Garantía de Suministro sin Fandango) */
         .trust-section {
             padding: 50px 5%;
             background: #ffffff;
@@ -146,6 +146,165 @@
         .trust-card-icon { font-size: 1.5rem; margin-bottom: 12px; }
         .trust-card-title { font-size: 1rem; font-weight: 700; color: var(--brand-dark); margin-bottom: 6px; }
         .trust-card-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
+        /* SECCIÓN 2: SOLUCIONES B2B */
+        .solutions-section {
+            padding: 90px 5%;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+        }
+        .section-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--brand-green-cta);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--brand-dark);
+            margin-bottom: 16px;
+        }
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .solutions-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .solution-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            background: #ffffff;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .solution-card:hover {
+            border-color: var(--brand-green-cta);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            transform: translateY(-4px);
+        }
+        .solution-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--brand-dark);
+        }
+        .solution-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        .solution-link {
+            font-weight: 600;
+            color: var(--brand-green-cta);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* SECCIÓN 3: CÍRCULO DE PROVEEDORES */
+        .suppliers-section {
+            padding: 90px 5%;
+            background: var(--bg-neutral);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .suppliers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .suppliers-text h2 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+        .suppliers-text p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+        .profile-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+        .profile-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            color: var(--brand-dark);
+            font-weight: 500;
+        }
+        .profile-item-icon {
+            background: var(--brand-green-light);
+            color: var(--brand-green-cta);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* SECCIÓN 4: TECNOLOGÍA & INFRAESTRUCTURA */
+        .tech-section {
+            padding: 90px 5%;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .tech-box {
+            background: var(--brand-dark);
+            color: white;
+            padding: 48px;
+            border-radius: 20px;
+        }
+        .tech-box h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .tech-box p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
 
         /* FOOTER ESTRATÉGICO CON LISTA DESTACADA E INTRANET */
         footer {
@@ -172,7 +331,6 @@
         }
         .footer-links a:hover { color: var(--brand-green-cta); text-decoration: underline; }
         
-        /* Highlight para Madera de Construcción en Footer */
         .footer-links a.highlight-wood {
             font-weight: 700;
             color: var(--brand-green-cta);
@@ -182,7 +340,6 @@
             display: inline-block;
         }
 
-        /* Enlace estilizado para Intranet */
         .footer-links a.link-intranet {
             font-weight: 700;
             color: var(--brand-dark);
@@ -216,20 +373,20 @@
 
         @media (max-width: 992px) {
             .menu-links { display: none; }
-            .hero-container { grid-template-columns: 1fr; }
-            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-container, .suppliers-container, .tech-container { grid-template-columns: 1fr; }
+            .solutions-grid, .trust-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 32px; }
             .footer-right { align-items: center; text-align: center; }
         }
         @media (max-width: 576px) {
-            .trust-grid { grid-template-columns: 1fr; }
+            .trust-grid, .solutions-grid { grid-template-columns: 1fr; }
             .hero-text h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV SUPERIOR (Sin Madera para Construcción) -->
+    <!-- 1. NAV SUPERIOR (Sin Madera para Construcción) -->
     <nav>
         <a href="index.html" class="logo-area">
             <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img">
@@ -245,7 +402,7 @@
         </ul>
     </nav>
 
-    <!-- HERO SECTION (Enfoque exclusivo en Tarimas e Infraestructura) -->
+    <!-- 2. HERO SECTION -->
     <section class="hero-section section-wrapper">
         <div class="hero-container">
             <div class="hero-text">
@@ -258,14 +415,13 @@
                     <a href="soluciones-b2b.html" class="btn-secondary">Soluciones B2B</a>
                 </div>
             </div>
-            <!-- Contenedor visual / Imagen corporativa de bodega piloto -->
             <div class="hero-image-block" style="background: #e2e8f0; height: 320px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: 600;">
-                [ Infraestructura de Bodega Pilot / Operaciones ]
+                [ Infraestructura de Bodega Piloto / Operaciones ]
             </div>
         </div>
     </section>
 
-    <!-- TRUST BAR (Badge #4 reemplazado por Garantía de Suministro sin mencion a Fandango) -->
+    <!-- 3. TRUST BAR / BENEFICIOS (Garantía de Suministro) -->
     <section class="trust-section section-wrapper">
         <div class="trust-grid">
             <div class="trust-card">
@@ -291,10 +447,89 @@
         </div>
     </section>
 
-    <!-- FOOTER ESTRATÉGICO -->
+    <!-- 4. SOLUCIONES B2B -->
+    <section class="solutions-section section-wrapper">
+        <div class="section-header">
+            <span class="section-tag">Modelo Corporativo</span>
+            <h2>Soluciones de Tarimas para la Industria</h2>
+            <p>Atendemos requerimientos de alta exigencia operacional en centros de distribución y plantas de manufactura.</p>
+        </div>
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <div>
+                    <div class="solution-title">Tarimas de Recupero (Grado A y B)</div>
+                    <div class="solution-desc">Tarimas reacondicionadas con control estructural estricto. La opción más rentable y sustentable para maniobra nacional.</div>
+                </div>
+                <a href="soluciones-b2b.html" class="solution-link">Ver especificaciones →</a>
+            </div>
+            <div class="solution-card">
+                <div>
+                    <div class="solution-title">Tarimas Nuevas / Dimensionadas</div>
+                    <div class="solution-desc">Fabricación bajo plano métrico con madera de pino de primera. Cumplimiento con especificaciones de exportación.</div>
+                </div>
+                <a href="soluciones-b2b.html" class="solution-link">Ver especificaciones →</a>
+            </div>
+            <div class="solution-card">
+                <div>
+                    <div class="solution-title">Programas de Reverse Logistics</div>
+                    <div class="solution-desc">Administramos el retorno y recolección de embalaje de madera en tus ubicaciones corporativas.</div>
+                </div>
+                <a href="soluciones-b2b.html" class="solution-link">Ver especificaciones →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CÍRCULO DE PROVEEDORES -->
+    <section class="suppliers-section section-wrapper">
+        <div class="suppliers-container">
+            <div class="suppliers-text">
+                <span class="section-tag">Red de Abasto</span>
+                <h2>El Círculo de Proveedores PalletHub</h2>
+                <p>Construimos alianzas de largo plazo con recolectores, minibodegas y transportistas independientes, garantizando pronto pago y volumen constante.</p>
+                <ul class="profile-list">
+                    <li class="profile-item">
+                        <span class="profile-item-icon">✓</span>
+                        <span><strong>Minibodegas y Lotes:</strong> Recepción continua con liquidación ágil.</span>
+                    </li>
+                    <li class="profile-item">
+                        <span class="profile-item-icon">✓</span>
+                        <span><strong>Recolectores:</strong> Compra directa de scrap y tarima usada.</span>
+                    </li>
+                    <li class="profile-item">
+                        <span class="profile-item-icon">✓</span>
+                        <span><strong>Transportistas Independientes:</strong> Integración de rutas de flete de retorno.</span>
+                    </li>
+                </ul>
+                <a href="circulo-proveedores.html" class="btn-primary">Sumarse al Círculo</a>
+            </div>
+            <div style="background: #e2e8f0; height: 360px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: 600;">
+                [ Esquema Ecosistema Círculo de Proveedores ]
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TECNOLOGÍA & INFRAESTRUCTURA -->
+    <section class="tech-section section-wrapper">
+        <div class="tech-container">
+            <div>
+                <span class="section-tag">Infraestructura Operativa</span>
+                <h2 style="font-size: 2.3rem; font-weight: 800; margin-bottom: 20px;">Trazabilidad y Control Digital en Bodega</h2>
+                <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+                    Aplicamos tecnología propietaria en nuestra bodega piloto para el rastreo de inventarios, cubicación y control de entradas/salidas en tiempo real.
+                </p>
+                <a href="tecnologia.html" class="btn-secondary">Conocer la Tecnología</a>
+            </div>
+            <div class="tech-box">
+                <h3>Portal de Operaciones</h3>
+                <p>Nuestra infraestructura digital permite coordinar la recepción de material, automatizar cotizaciones y gestionar el flujo logístico sin fricción.</p>
+                <a href="https://pallethub.enriquevg.com/intranet.php" target="_blank" style="color: white; font-weight: 600; text-decoration: underline;">Acceder a la Intranet de Operaciones →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER ESTRATÉGICO -->
     <footer>
         <div class="footer-container">
-            <!-- Columna 1: Navegación principal + Enlaces secundarios -->
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
@@ -305,13 +540,11 @@
                 <li><a href="https://pallethub.enriquevg.com/intranet.php" target="_blank" class="link-intranet">🔒 Portal Intranet</a></li>
             </ul>
 
-            <!-- Columna 2: Conversión Círculo de Proveedores -->
             <div class="footer-logo-center">
                 <img src="logo-pallethub.png" alt="PalletHub Logo">
                 <a href="circulo-proveedores.html">Regístrate en el círculo de proveedores</a>
             </div>
 
-            <!-- Columna 3: Créditos corporativos -->
             <div class="footer-right">
                 <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
                 <div class="footer-credits">
