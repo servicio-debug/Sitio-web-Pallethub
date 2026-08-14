@@ -27,45 +27,72 @@
         body { background-color: white; color: var(--brand-dark); }
 
         /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 5%;
-            background: white;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 5%;
+    background: white;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        .logo-area { 
-            display: flex; 
-            align-items: center; 
-            gap: 14px; 
-            text-decoration: none; 
-            color: var(--brand-dark); 
-            font-weight: 800; 
-            font-size: 26px; 
-            letter-spacing: -0.5px;
-        }
+.logo-area { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    text-decoration: none; 
+    color: var(--brand-dark); 
+    font-weight: 800; 
+    font-size: 24px; 
+    letter-spacing: -0.5px;
+    flex-shrink: 0;
+}
 
-        .logo-img { width: 48px; height: 48px; object-fit: contain; display: block; }
-        .menu-links { display: flex; list-style: none; gap: 12px; align-items: center; }
-        .menu-links a { text-decoration: none; color: var(--brand-dark); font-weight: 600; font-size: 0.95rem; padding: 8px 14px; border-radius: 6px; transition: all 0.2s ease; }
-        .menu-links a:hover { background: #f1f5f9; }
-        
-        .menu-links .btn-cotizador {
-            background-color: var(--brand-green-cta);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
-            margin-left: 8px;
-        }
-        .menu-links .btn-cotizador:hover { background-color: #14532d; transform: translateY(-1px); }
+.logo-img { width: 42px; height: 42px; object-fit: contain; display: block; }
 
+.menu-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 8px; 
+    align-items: center; 
+}
+
+/* Evita que los textos largos se rompan en dos líneas y desalineen el nav */
+.menu-links a { 
+    text-decoration: none; 
+    color: var(--brand-dark); 
+    font-weight: 600; 
+    font-size: 0.9rem; 
+    padding: 8px 12px; 
+    border-radius: 6px; 
+    transition: all 0.2s ease;
+    white-space: nowrap; 
+    display: inline-flex;
+    align-items: center;
+}
+
+.menu-links a:hover { background: #f1f5f9; }
+
+/* Botón estilizado, proporcional y alineado */
+.menu-links .btn-cotizador {
+    background-color: var(--brand-green-cta);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
+    margin-left: 6px;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.menu-links .btn-cotizador:hover { 
+    background-color: #14532d; 
+    transform: translateY(-1px); 
+}
         /* 2. HERO / BANNER PRINCIPAL (B2B) */
         .b2b-hero {
             padding: 60px 5%;
