@@ -96,12 +96,13 @@
         .menu-links .btn-cotizador:hover { background-color: #14532d; transform: translateY(-1px); }
 
         /* --- NUEVA SECCIÓN BANNER: MADERA A BUEN PRECIO --- */
+        /* --- NUEVA SECCIÓN BANNER: MADERA A BUEN PRECIO --- */
         .wood-banner-section {
             width: 100%;
             height: 480px;
-            /* Se cambió la URL por una imagen de madera dimensionada/apilada */
+            /* Nueva imagen de aserradero / madera apilada */
             background: linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(12,13,14,0.4) 45%, rgba(12,13,14,0.95) 70%), 
-                        url('https://images.unsplash.com/photo-1620577438166-5d6c810fbdf8?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
+                        url('https://images.unsplash.com/photo-1572085313466-6710de8d7ba3?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: flex-end;
@@ -368,10 +369,11 @@
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
             .footer-right { align-items: center; text-align: center; }
         }
-        @media (max-width: 768px) {
+      @media (max-width: 768px) {
             .wood-banner-section {
+                /* Misma imagen adaptada para celular */
                 background: linear-gradient(rgba(12,13,14,0.8), rgba(12,13,14,0.95)), 
-                            url('https://images.unsplash.com/photo-1620577438166-5d6c810fbdf8?auto=format&fit=crop&q=80&w=800') no-repeat center center/cover;
+                            url('https://images.unsplash.com/photo-1572085313466-6710de8d7ba3?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
                 height: auto;
                 padding: 60px 0;
             }
