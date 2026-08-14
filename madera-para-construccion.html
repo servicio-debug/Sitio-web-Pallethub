@@ -31,12 +31,12 @@
             clear: both;
         }
 
-        /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
+        /* 1. MENÚ DE NAVEGACIÓN SUPERIOR (CORREGIDO) */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 5%;
+            padding: 16px 5%; /* Reducido para un aspecto más premium */
             background: white;
             border-bottom: 1px solid rgba(0,0,0,0.06);
             position: sticky;
@@ -47,27 +47,51 @@
         .logo-area { 
             display: flex; 
             align-items: center; 
-            gap: 14px; 
+            gap: 12px; 
             text-decoration: none; 
             color: var(--brand-dark); 
             font-weight: 800; 
-            font-size: 26px; 
+            font-size: 24px; 
             letter-spacing: -0.5px;
+            flex-shrink: 0;
         }
 
-        .logo-img { width: 48px; height: 48px; object-fit: contain; display: block; }
-        .menu-links { display: flex; list-style: none; gap: 12px; align-items: center; }
-        .menu-links a { text-decoration: none; color: var(--brand-dark); font-weight: 600; font-size: 0.95rem; padding: 8px 14px; border-radius: 6px; transition: all 0.2s ease; }
+        .logo-img { width: 42px; height: 42px; object-fit: contain; display: block; }
+        
+        .menu-links { 
+            display: flex; 
+            list-style: none; 
+            gap: 8px; 
+            align-items: center; 
+        }
+        
+        .menu-links a { 
+            text-decoration: none; 
+            color: var(--brand-dark); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            padding: 8px 12px; 
+            border-radius: 6px; 
+            transition: all 0.2s ease; 
+            white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+            display: inline-block;
+        }
+        
         .menu-links a:hover { background: #f1f5f9; }
         
+        /* Ajuste específico para el botón del menú */
         .menu-links .btn-cotizador {
             background-color: var(--brand-green-cta);
             color: white;
-            padding: 10px 20px;
+            padding: 10px 18px;
             border-radius: 8px;
             font-weight: 600;
             box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
             margin-left: 8px;
+            white-space: nowrap; /* Mantiene el botón en una sola línea */
+            display: inline-flex;
+            align-items: center;
+            line-height: normal;
         }
         .menu-links .btn-cotizador:hover { background-color: #14532d; transform: translateY(-1px); }
 
@@ -75,8 +99,9 @@
         .wood-banner-section {
             width: 100%;
             height: 480px;
+            /* Se cambió la URL por una imagen de madera dimensionada/apilada */
             background: linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(12,13,14,0.4) 45%, rgba(12,13,14,0.95) 70%), 
-                        url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
+                        url('https://images.unsplash.com/photo-1620577438166-5d6c810fbdf8?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: flex-end;
@@ -346,7 +371,7 @@
         @media (max-width: 768px) {
             .wood-banner-section {
                 background: linear-gradient(rgba(12,13,14,0.8), rgba(12,13,14,0.95)), 
-                            url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800') no-repeat center center/cover;
+                            url('https://images.unsplash.com/photo-1620577438166-5d6c810fbdf8?auto=format&fit=crop&q=80&w=800') no-repeat center center/cover;
                 height: auto;
                 padding: 60px 0;
             }
@@ -369,10 +394,9 @@
             <div>PalletHub</div>
         </a>
         <ul class="menu-links">
-            <li><a href="index.html">Home</a></li>
             <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
             <li><a href="#">Madera para Construcción</a></li>
-            <li><a href="circulo-proveedores.html">Circulo de proveedores</a></li>
+            <li><a href="circulo-proveedores.html">Círculo de proveedores</a></li>
             <li><a href="tecnologia.html">Tecnología</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
@@ -494,5 +518,3 @@
 
 </body>
 </html>
-
-```
