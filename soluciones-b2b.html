@@ -13,7 +13,7 @@
         :root {
             --brand-green-light: #cce4c5; 
             --brand-green-cta: #166534; 
-            --brand-orange: #ea580c; /* Nuevo color naranja para CTA */
+            --brand-orange: #ea580c;
             --brand-orange-hover: #c2410c;
             --brand-gray: #8d9394;          
             --brand-gray-light: #f1f3f4;   
@@ -22,6 +22,7 @@
             --text-muted: #64748b;
             --border-color: #e2e8f0;
             --bg-accent-green: #edf2ee;
+            --footer-bg: #edf2ee; /* Fondo verdoso suave para el footer */
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
@@ -62,7 +63,6 @@
             align-items: center; 
         }
 
-        /* Evita que los textos largos se rompan en dos líneas y desalineen el nav */
         .menu-links a { 
             text-decoration: none; 
             color: var(--brand-dark); 
@@ -78,7 +78,6 @@
 
         .menu-links a:hover { background: #f1f5f9; }
 
-        /* Botón estilizado, proporcional y alineado */
         .menu-links .btn-cotizador {
             background-color: var(--brand-green-cta);
             color: white;
@@ -175,7 +174,6 @@
             flex-wrap: wrap;
         }
 
-        /* Botón Agendar Cita Comercial (Cambiado a Naranja) */
         .btn-split-cta {
             background-color: var(--brand-orange);
             color: white;
@@ -228,7 +226,6 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.04);
         }
 
-        /* Tarjeta 345 Maniobras (Cambiado al verde del Centro de Cotización) */
         .floating-badge-card {
             position: absolute;
             bottom: -20px;
@@ -408,6 +405,111 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
+        /* --- 4. ESTILOS DEL PIE DE PÁGINA (FOOTER) CORREGIDOS --- */
+        footer {
+            background-color: var(--footer-bg);
+            padding: 60px 5% 40px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* Columna 1: Enlaces */
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--brand-green-cta);
+        }
+
+        /* Columna 2: Logo e Ir a Centro de Cotización */
+        .footer-logo-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .footer-logo-center img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .footer-logo-center a {
+            color: var(--brand-green-cta);
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .footer-logo-center a:hover {
+            transform: translateX(3px);
+        }
+
+        /* Columna 3: Redes Sociales y Créditos */
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            gap: 16px;
+        }
+
+        .social-icon-linkedin {
+            background-color: #000;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .social-icon-linkedin:hover {
+            opacity: 0.85;
+        }
+
+        .footer-credits {
+            font-size: 0.85rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .footer-credits strong {
+            color: #1e293b;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
         /* RESPONSIVO SEGURO Y COMPLETO */
         @media (max-width: 992px) {
             .menu-links { display: none; }
@@ -415,6 +517,19 @@
             .split-main-img { height: 320px; }
             .floating-badge-card { position: relative; bottom: 0; right: 0; margin: -30px auto 0 20px; }
             .tech-split-header { grid-template-columns: 1fr; gap: 16px; }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                text-align: center;
+            }
+            .footer-links {
+                align-items: center;
+            }
+            .footer-right {
+                align-items: center;
+                text-align: center;
+            }
         }
 
         @media (max-width: 768px) {
@@ -435,7 +550,7 @@
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR PREMIUM (HOME REMOVIDO) -->
+    <!-- MENÚ SUPERIOR PREMIUM -->
     <nav>
         <a href="index.html" class="logo-area">
             <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img">
@@ -465,10 +580,10 @@
             <h1>Un proveedor aliado para fabricantes, instaladores y contratistas logísticos.</h1>
             <p class="main-paragraph">
                 Fabricamos y distribuimos tarimas de madera diseñadas para aguantar tu ritmo de carga y eliminar los quiebres de stock en planta. Entregamos a tiempo para que tu andén nunca se detenga.
-                
             </p>
             <p class="sub-paragraph">
                 Respondemos a la demanda operativa de Jalisco con especificaciones exactas, madera certificada (NIMF-15) y calidad constante en cada lote. Sin vueltas, sin sorpresas en recepción y con disponibilidad real cuando la necesitas.
+            </p>
             <div class="split-action-row">
                 <a href="cotizador.html" class="btn-split-cta">
                     <span>📅</span> Agendar una Cita Comercial
@@ -518,7 +633,6 @@
                 </div>
                 <div>
                     <p class="card-highlight">Cero rechazos en aduana: madera nueva, certificada y lista para exportar.</p>
-                  
                     <p class="card-description">Fabricamos tarimas de madera a la medida exacta de tu operación (estándar 48×40, europeas o diseños especiales para carga pesada). Cada lote sale de planta con tratamiento térmico normado y la documentación legal en regla para que tus embarques pasen aduanas internacionales sin frenos ni penalizaciones.</p>
                 </div>
             </div>
@@ -578,7 +692,8 @@
             </div>
         </div>
     </section>
- <!-- PIE DE PÁGINA (FOOTER) -->
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
     <footer>
         <div class="footer-container">
             <ul class="footer-links">
