@@ -31,12 +31,12 @@
             clear: both;
         }
 
-        /* 1. MENÚ DE NAVEGACIÓN SUPERIOR (CORREGIDO) */
+        /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 5%; /* Reducido para un aspecto más premium */
+            padding: 16px 5%;
             background: white;
             border-bottom: 1px solid rgba(0,0,0,0.06);
             position: sticky;
@@ -73,13 +73,12 @@
             padding: 8px 12px; 
             border-radius: 6px; 
             transition: all 0.2s ease; 
-            white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+            white-space: nowrap;
             display: inline-block;
         }
         
         .menu-links a:hover { background: #f1f5f9; }
         
-        /* Ajuste específico para el botón del menú */
         .menu-links .btn-cotizador {
             background-color: var(--brand-green-cta);
             color: white;
@@ -88,18 +87,17 @@
             font-weight: 600;
             box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
             margin-left: 8px;
-            white-space: nowrap; /* Mantiene el botón en una sola línea */
+            white-space: nowrap;
             display: inline-flex;
             align-items: center;
             line-height: normal;
         }
         .menu-links .btn-cotizador:hover { background-color: #14532d; transform: translateY(-1px); }
 
-        /* --- SECCIÓN BANNER: CON IMAGEN LOCAL --- */
+        /* --- SECCIÓN BANNER --- */
         .wood-banner-section {
             width: 100%;
             height: 480px;
-            /* Carga directamente tu archivo local 'aserradero.jpg' */
             background: linear-gradient(to left, rgba(12,13,14,0) 20%, rgba(12,13,14,0.5) 55%, rgba(12,13,14,0.95) 80%), 
                         url('aserradero.jpg') no-repeat center center/cover;
             display: flex;
@@ -131,8 +129,8 @@
         .banner-sub1 {
             font-size: 1.2rem;
             color: #e2e8f0;
-            font-weight: 400;
-            margin-bottom: 4px;
+            font-weight: 500;
+            margin-bottom: 6px;
         }
         .banner-sub2 {
             font-size: 0.95rem;
@@ -156,10 +154,9 @@
             transform: translateY(-2px);
         }
 
-        /* --- SECCIÓN NUESTROS PRODUCTOS CON ASSEDRADERO1 --- */
+        /* --- SECCIÓN NUESTROS PRODUCTOS --- */
         .technical-section {
             padding: 90px 5%;
-            /* Carga la imagen aserradero1.jpg con capa oscura para legibilidad */
             background: linear-gradient(rgba(12, 13, 14, 0.75), rgba(12, 13, 14, 0.85)), 
                         url('aserradero1.jpg') no-repeat center center/cover;
             border-bottom: 1px solid var(--border-color);
@@ -178,7 +175,7 @@
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 8px;
-            color: #ffffff; /* Texto blanco para resaltar sobre el fondo */
+            color: #ffffff;
         }
         .tech-tag {
             display: inline-block;
@@ -186,12 +183,12 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--brand-green-light); /* Verde claro */
+            color: var(--brand-green-light);
             margin-bottom: 16px;
         }
         .tech-info .tech-lead {
             font-size: 1.1rem;
-            color: #cbd5e1; /* Gris claro para mayor comodidad de lectura */
+            color: #cbd5e1;
             line-height: 1.6;
             margin-bottom: 24px;
         }
@@ -218,7 +215,7 @@
             gap: 20px;
         }
         .spec-card {
-            background: rgba(255, 255, 255, 0.95); /* Blanco limpio con ligera transparencia */
+            background: rgba(255, 255, 255, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 24px;
             border-radius: 12px;
@@ -316,7 +313,7 @@
             line-height: 1.4;
         }
 
-        /* 5. PIE DE PÁGINA (FOOTER) UNIFICADO */
+        /* PIE DE PÁGINA (FOOTER) UNIFICADO */
         footer {
             background-color: var(--bg-accent-green); 
             padding: 60px 5%;
@@ -405,70 +402,70 @@
         </ul>
     </nav>
 
-    <!-- SECCIÓN 1: BANNER MADERA DE CALIDAD A BUEN PRECIO -->
+    <!-- SECCIÓN 1: BANNER PRINCIPAL -->
     <section class="wood-banner-section section-wrapper">
         <div class="banner-overlay-container">
             <div class="banner-text-content">
-                <h2>Madera de Calidad<br>A Buen Precio</h2>
-                <p class="banner-sub1">Madera de pino para carpintería y construcción.</p>
-                <p class="banner-sub2">En todas las medidas muy buenos gruesos, anchos y largos.</p>
+                <h2>Madera Directa<br>Sin Mermas ni Retrasos</h2>
+                <p class="banner-sub1">Madera de pino habilitada para cimbra, construcción y manufactura industrial.</p>
+                <p class="banner-sub2">Dimensiones reales, volumen constante y entrega puntual directo a tu obra o planta en Jalisco.</p>
                 <a href="cotizador.html" class="btn-banner-cta">Centro de Cotización</a>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN 2: USABILIDAD DE LA MADERA -->
+    <!-- SECCIÓN 2: APLICACIONES E INDUSTRIA -->
     <section class="centered-info-section section-wrapper">
         <div class="centered-container">
-            <span class="centered-tag">Uso y Aplicaciones Industriales</span>
-            <h2>Nosotros</h2>
+            <span class="centered-tag">Rendimiento en Campo</span>
+            <h2>Diseñada para Trabajar, No para Mermar</h2>
             <p class="centered-lead">
-                Suministramos materia prima forestal seleccionada con excelente desempeño mecánico, respondiendo a las necesidades de manufactura, infraestructura y habilitado estructural de la industria nacional.
+                Sabemos lo que cuesta una obra parada por falta de barrotes o un lote rechazado por pino fuera de medida. Suministramos madera seleccionada con la densidad y las dimensiones exactas que tu proyecto requiere.
             </p>
 
             <div class="usability-grid">
                 <div class="usability-card">
                     <div class="usability-icon">🪵</div>
                     <div class="usability-title">Fabricación de Muebles</div>
-                    <div class="usability-desc">Madera desflemada y calibrada óptima para ensambles limpios y acabados estables de alta calidad.</div>
+                    <div class="usability-desc">Madera desflemada, seca y calibrada. Cero sorpresas en humedad para ensambles limpios y producciones estables.</div>
                 </div>
                 <div class="usability-card">
                     <div class="usability-icon">🏗️</div>
-                    <div class="usability-title">Construcción y Carpintería</div>
-                    <div class="usability-desc">Módulos resistentes para sistemas de cimbra, apuntalamiento crítico y soporte de obra civil.</div>
+                    <div class="usability-title">Construcción y Cimbrados</div>
+                    <div class="usability-desc">Módulos de alta rigidez para sistemas de cimbra, apuntalamiento pesado y soporte estructural en obra civil.</div>
                 </div>
                 <div class="usability-card">
                     <div class="usability-icon">🚚</div>
                     <div class="usability-title">Cabañas, Pisos y Redilas</div>
-                    <div class="usability-desc">Pino denso de gran resistencia mecánica preparado para soportar intemperie y cargas en carrocerías.</div>
+                    <div class="usability-desc">Pino de gran densidad mecánica preparado para resistir carga pesada, fricción constante e intemperie.</div>
                 </div>
                 <div class="usability-card">
                     <div class="usability-icon">📐</div>
-                    <div class="usability-title">Marcos e Usos Industriales</div>
-                    <div class="usability-desc">Molduras y perfiles dimensionados bajo estrictas tolerancias métricas para empaques especiales.</div>
+                    <div class="usability-title">Marcos y Uso Industrial</div>
+                    <div class="usability-desc">Perfiles y bastidores dimensionados con tolerancia estricta para empaque pesado y estructuras especiales.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN 3: MANIFIESTO NODO CENTRAL -->
+    <!-- SECCIÓN 3: SOBRE PALLETHUB -->
     <section class="centered-info-section alt-bg section-wrapper">
         <div class="centered-container">
-            <span class="centered-tag">Sobre PalletHub</span>
-            <h2>Infraestructura Unificada</h2>
+            <span class="centered-tag">El Modelo PalletHub</span>
+            <h2>Cero Drama en tu Cadena de Suministro</h2>
             <p class="centered-lead" style="margin-bottom: 0;">
-                Somos el nodo central del suministro e ingeniería de empaque industrial en el occidente del país. Conectamos la demanda corporativa de tarimas con una infraestructura logística sustentable, transparente y de alto rendimiento técnico.
+                Conectamos la capacidad operativa de nuestra red de aserraderos con infraestructura logística propia en el occidente del país. Eliminamos intermediarios innecesarios para garantizarte abasto continuo, cubicación honesta y respuesta inmediata.
             </p>
         </div>
     </section>
 
-    <!-- SECCIÓN 4: NUESTROS PRODUCTOS (CON ASSEDRADERO1 DE FONDO) -->
+    <!-- SECCIÓN 4: CATÁLOGO INDUSTRIAL -->
     <section class="technical-section section-wrapper">
         <div class="tech-container">
             <div class="tech-info">
-                <span class="tech-tag">Catálogo de Aserradero</span>
-                <h2>Nuestros Productos</h2>
-                <p class="tech-lead">Suministro oportuno de madera dimensionada con cubicación exacta. Soluciones estructurales listas para frentes de obra civil y manufactura pesada.</p>
+                <span class="tech-tag">Catálogo Industrial</span>
+                <h2>Madera Habilitada en Regla</h2>
+                <p class="tech-lead">Cubicación exacta y volumen asegurado. Soluciones estructurales listas para frentes de obra civil y manufactura pesada.</p>
                 <a href="cotizador.html" class="btn-section-cta">Cotizar Catálogo</a>
             </div>
 
@@ -476,17 +473,17 @@
                 <div class="spec-card">
                     <div class="spec-label">Habilitado Primario</div>
                     <div class="spec-value">Tabla de Pino</div>
-                    <div class="spec-desc">Disponibles en múltiples espesores y clases comerciales, ideales para sistemas de cimbrado y recubrimientos estables.</div>
+                    <div class="spec-desc">Espesores consistentes y caras parejas. Rendimiento óptimo para cimbrados repetitivos y recubrimientos estables.</div>
                 </div>
                 <div class="spec-card">
                     <div class="spec-label">Soporte de Carga Axial</div>
                     <div class="spec-value">Polín y Barrote para Construcción</div>
-                    <div class="spec-desc">Puntales estructurales rígidos sin nudos críticos, calculados para resistir alta tracción física y compresión en obra.</div>
+                    <div class="spec-desc">Puntales rígidos con alta resistencia a la compresión y tracción. Sin nudos críticos que comprometan la seguridad.</div>
                 </div>
                 <div class="spec-card">
                     <div class="spec-label">Estructura y Acabado</div>
                     <div class="spec-value">Vigas y Chaflán de Pino</div>
-                    <div class="spec-desc">Vigas de gran sección para claros abiertos y chaflanes perfectamente cepillados para remates óptimos en concreto.</div>
+                    <div class="spec-desc">Vigas de gran sección para claros abiertos y chaflán cepillado para remates limpios y precisos en colados de concreto.</div>
                 </div>
             </div>
         </div>
@@ -499,7 +496,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
                 <li><a href="#">Madera para Construcción</a></li>
-                <li><a href="circulo-proveedores.html">Circulo de proveedores</a></li>
+                <li><a href="circulo-proveedores.html">Círculo de proveedores</a></li>
                 <li><a href="tecnologia.html">Tecnología</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
             </ul>
