@@ -13,6 +13,8 @@
         :root {
             --brand-green-light: #cce4c5; 
             --brand-green-cta: #166534; 
+            --brand-orange: #ea580c; /* Nuevo color naranja para CTA */
+            --brand-orange-hover: #c2410c;
             --brand-gray: #8d9394;          
             --brand-gray-light: #f1f3f4;   
             --brand-dark: #0c0d0e;        
@@ -173,8 +175,9 @@
             flex-wrap: wrap;
         }
 
+        /* Botón Agendar Cita Comercial (Cambiado a Naranja) */
         .btn-split-cta {
-            background-color: var(--brand-dark);
+            background-color: var(--brand-orange);
             color: white;
             padding: 14px 28px;
             border-radius: 8px;
@@ -184,10 +187,11 @@
             align-items: center;
             gap: 8px;
             transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
         }
 
         .btn-split-cta:hover {
-            background-color: #1e293b;
+            background-color: var(--brand-orange-hover);
             transform: translateY(-1px);
         }
 
@@ -224,16 +228,17 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.04);
         }
 
+        /* Tarjeta 345 Maniobras (Cambiado al verde del Centro de Cotización) */
         .floating-badge-card {
             position: absolute;
             bottom: -20px;
             right: -20px;
-            background-color: #84cc16; 
+            background-color: var(--brand-green-cta); 
             color: white;
             padding: 24px 28px;
             border-radius: 12px;
             max-width: 240px;
-            box-shadow: 0 10px 25px rgba(132, 204, 22, 0.3);
+            box-shadow: 0 10px 25px rgba(22, 101, 52, 0.3);
             z-index: 10;
         }
 
@@ -497,7 +502,7 @@
                 <span style="color: var(--brand-green-light); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block;">Portafolio Corporativo</span>
                 <h2 style="font-size: 2.4rem; font-weight: 800; color: white; margin-top: 5px; letter-spacing: -1px;">Soluciones Logísticas a Gran Escala</h2>
             </div>
-            <a href="cotizador.html" class="btn-split-cta" style="background-color: white; color: var(--brand-dark); border-radius: 30px; padding: 12px 24px; font-size: 0.9rem;">
+            <a href="cotizador.html" class="btn-split-cta" style="background-color: white; color: var(--brand-dark); border-radius: 30px; padding: 12px 24px; font-size: 0.9rem; box-shadow: none;">
                 Ver Centro de Cotización →
             </a>
         </div>
