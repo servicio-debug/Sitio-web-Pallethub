@@ -1,1838 +1,1188 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Círculo de Proveedores | PalletHub</title>
-
     <!-- Tipografía Corporativa Premium -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap" rel="stylesheet">
 
-
-
     <style>
-
         :root {
-
             --brand-green-light: #cce4c5; 
-
             --brand-green-cta: #166534; 
-
             --brand-gray: #8d9394;         /* Gris Acero Industrial */
-
             --brand-gray-light: #f1f3f4;   /* Fondo Gris Tenue */
-
             --brand-orange: #e05a26;       /* Color Naranja de Acentuación */
-
             --brand-orange-light: #fef1eb; /* Fondo Naranja Tenue para Iconos */
-
             --brand-dark: #0c0d0e;        
-
             --bg-neutral: #f8fafc;
-
             --text-muted: #64748b;
-
             --border-color: #e2e8f0;
-
             --bg-accent-green: #edf2ee;
-
             
-
             /* Colores oscuros premium para la sección FAQ */
-
             --faq-bg-dark: #1e2229;
-
             --faq-card-bg: #282d37;
-
             --faq-text-light: #f8fafc;
-
         }
-
-
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-
         html { scroll-behavior: smooth; }
-
         body { background-color: white; color: var(--brand-dark); }
 
-
-
         /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
-
         nav {
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             padding: 24px 5%;
-
             background: white;
-
             border-bottom: 1px solid rgba(0,0,0,0.06);
-
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
-
         }
-
-
 
         .logo-area { 
-
             display: flex; 
-
             align-items: center; 
-
             gap: 14px; 
-
             text-decoration: none; 
-
             color: var(--brand-dark); 
-
             font-weight: 800; 
-
             font-size: 26px; 
-
             letter-spacing: -0.5px;
-
         }
-
-
 
         .logo-img { width: 48px; height: 48px; object-fit: contain; display: block; }
-
         .menu-links { display: flex; list-style: none; gap: 12px; align-items: center; }
-
         .menu-links a { text-decoration: none; color: var(--brand-dark); font-weight: 600; font-size: 0.95rem; padding: 8px 14px; border-radius: 6px; transition: all 0.2s ease; }
-
         .menu-links a:hover { background: #f1f5f9; }
-
         
-
         .menu-links .btn-cotizador {
-
             background-color: var(--brand-green-cta);
-
             color: white;
-
             padding: 10px 20px;
-
             border-radius: 8px;
-
             font-weight: 600;
-
             box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
-
             margin-left: 8px;
-
         }
-
         .menu-links .btn-cotizador:hover { background-color: #14532d; transform: translateY(-1px); }
 
-
-
         /* 2. HERO SECTION DE LA LANDING PAGE */
-
         .hero-section {
-
             max-width: 1200px;
-
             margin: 40px auto;
-
             padding: 0 5%;
-
             display: grid;
-
             grid-template-columns: 1.1fr 0.9fr;
-
             gap: 40px;
-
             align-items: center;
-
         }
-
-
 
         .hero-content h1 {
-
             font-size: 2.8rem;
-
             font-weight: 800;
-
             line-height: 1.15;
-
             color: var(--brand-dark);
-
             margin-bottom: 20px;
-
             letter-spacing: -1px;
-
         }
-
-
 
         .hero-content p {
-
             font-size: 1.1rem;
-
             color: var(--text-muted);
-
             line-height: 1.6;
-
             margin-bottom: 32px;
-
         }
-
-
 
         .hero-cta-group {
-
             display: flex;
-
             gap: 16px;
-
             flex-wrap: wrap;
-
         }
-
-
 
         .btn-primary-cta {
-
             background-color: var(--brand-dark);
-
             color: white;
-
             padding: 16px 28px;
-
             border-radius: 8px;
-
             font-weight: 700;
-
             font-size: 0.95rem;
-
             text-decoration: none;
-
             transition: background-color 0.2s, transform 0.2s;
-
             border: 2px solid var(--brand-dark);
-
         }
-
         .btn-primary-cta:hover {
-
             background-color: #22252a;
-
             transform: translateY(-1px);
-
         }
-
-
 
         .btn-secondary-cta {
-
             background-color: white;
-
             color: var(--brand-dark);
-
             padding: 16px 28px;
-
             border-radius: 8px;
-
             font-weight: 700;
-
             font-size: 0.95rem;
-
             text-decoration: none;
-
             transition: all 0.2s;
-
             border: 2px solid var(--brand-dark);
-
         }
-
         .btn-secondary-cta:hover {
-
             background-color: var(--brand-gray-light);
-
             transform: translateY(-1px);
-
         }
-
-
 
         .hero-image-container {
-
             width: 100%;
-
             height: 400px;
-
             border-radius: 16px;
-
             overflow: hidden;
-
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-
         }
-
-
 
         .hero-image-container img {
-
             width: 100%;
-
             height: 100%;
-
             object-fit: cover;
-
         }
-
-
 
         /* 3. SECCIÓN CÍRCULO DE PROVEEDORES (RED DE SUMINISTRO EN 4 COLUMNAS) */
-
         .suppliers-section {
-
             background-color: white;
-
             padding: 80px 5% 40px 5%;
-
         }
-
-
 
         .suppliers-container {
-
             max-width: 1200px;
-
             margin: 0 auto;
-
         }
-
-
 
         .suppliers-header {
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             margin-bottom: 48px;
-
             border-left: 4px solid var(--brand-orange);
-
             padding-left: 20px;
-
         }
-
-
 
         .suppliers-header h2 {
-
             font-size: 2.2rem;
-
             font-weight: 800;
-
             color: var(--brand-dark);
-
             letter-spacing: -0.5px;
-
         }
-
-
 
         .suppliers-badge {
-
             font-size: 0.9rem;
-
             font-weight: 700;
-
             color: var(--brand-gray);
-
             letter-spacing: 1px;
-
             text-transform: uppercase;
-
         }
-
-
 
         .suppliers-grid {
-
             display: grid;
-
             grid-template-columns: repeat(4, 1fr);
-
             gap: 24px;
-
         }
-
-
 
         .supplier-card {
-
             background: white;
-
             border: 1px solid var(--border-color);
-
             border-radius: 16px;
-
             padding: 40px 24px;
-
             transition: transform 0.2s, box-shadow 0.2s;
-
             display: flex;
-
             flex-direction: column;
-
             gap: 20px;
-
         }
-
-
 
         .supplier-card:hover {
-
             transform: translateY(-6px);
-
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-
         }
-
-
 
         .supplier-icon-box {
-
             width: 64px;
-
             height: 64px;
-
             background-color: var(--brand-orange-light);
-
             border-radius: 12px;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
         }
-
-
 
         .supplier-icon-box svg {
-
             width: 32px;
-
             height: 32px;
-
             fill: var(--brand-orange);
-
         }
-
-
 
         .supplier-card h3 {
-
             font-size: 1.4rem;
-
             font-weight: 800;
-
             color: var(--brand-dark);
-
         }
-
-
 
         .supplier-card .subtitle {
-
             font-size: 0.95rem;
-
             font-weight: 700;
-
             color: var(--brand-orange);
-
             margin-top: -12px;
-
         }
-
-
 
         .supplier-card p {
-
             font-size: 0.9rem;
-
             color: var(--text-muted);
-
             line-height: 1.6;
-
         }
-
-
 
         /* --- SECCIÓN INTERMEDIA: INTRO TEXT SPLIT --- */
-
         .intro-text-split-section {
-
             background-color: #ffffff;
-
             padding: 100px 5%;
-
             border-top: 1px solid var(--border-color);
-
         }
-
-
 
         .intro-split-container {
-
             max-width: 1200px;
-
             margin: 0 auto;
-
             display: grid;
-
             grid-template-columns: 1.1fr 0.9fr;
-
             gap: 60px;
-
             align-items: flex-start;
-
         }
-
-
 
         .intro-split-left .split-badge {
-
             font-size: 0.75rem;
-
             font-weight: 700;
-
             text-transform: uppercase;
-
             letter-spacing: 1.5px;
-
             color: #94a3b8;
-
             margin-bottom: 16px;
-
             display: block;
-
         }
-
-
 
         .intro-split-left h2 {
-
             font-size: 2.8rem;
-
             font-weight: 800;
-
             line-height: 1.15;
-
             color: var(--brand-dark);
-
             letter-spacing: -1px;
-
         }
-
-
 
         .intro-split-right p {
-
             font-size: 1.05rem;
-
             line-height: 1.65;
-
             color: #475569;
-
             font-weight: 400;
-
             margin-top: 34px;
-
         }
-
-
 
         /* --- SECCIÓN: TESTIMONIOS --- */
-
         .testimonials-section {
-
             background-color: #ffffff;
-
             padding: 80px 5% 100px 5%;
-
             border-top: 1px solid var(--border-color);
-
             overflow: hidden;
-
         }
-
         .testimonials-container {
-
             max-width: 1200px;
-
             margin: 0 auto;
-
         }
-
         .testimonials-badge {
-
             background-color: #e0f2fe;
-
             color: #0369a1;
-
             font-size: 0.75rem;
-
             font-weight: 700;
-
             padding: 6px 14px;
-
             border-radius: 6px;
-
             display: inline-block;
-
             margin-bottom: 24px;
-
         }
-
         .testimonials-top-row {
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: flex-end;
-
             margin-bottom: 48px;
-
         }
-
         .testimonials-top-row h2 {
-
             font-size: 2.8rem;
-
             font-weight: 800;
-
             letter-spacing: -1px;
-
             color: var(--brand-dark);
-
             line-height: 1.15;
-
             max-width: 600px;
-
         }
-
         .testimonials-nav-arrows {
-
             display: flex;
-
             gap: 12px;
-
             margin-bottom: 8px;
-
         }
-
         .nav-arrow {
-
             width: 44px;
-
             height: 44px;
-
             border-radius: 50%;
-
             background-color: #f1f5f9;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             cursor: pointer;
-
             transition: background-color 0.2s;
-
         }
-
         .nav-arrow:hover {
-
             background-color: #e2e8f0;
-
         }
-
         .nav-arrow svg {
-
             width: 18px;
-
             height: 18px;
-
             fill: #475569;
-
         }
-
         .testimonials-grid {
-
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 24px;
-
         }
-
         .testimonial-card {
-
             background-color: #f8fafc;
-
             border-radius: 12px;
-
             padding: 36px;
-
             display: flex;
-
             flex-direction: column;
-
             justify-content: space-between;
-
             min-height: 280px;
-
         }
-
         .testimonial-quote {
-
             font-size: 0.95rem;
-
             line-height: 1.6;
-
             color: #334155;
-
             font-weight: 400;
-
             margin-bottom: 28px;
-
         }
-
         .testimonial-profile {
-
             display: flex;
-
             align-items: center;
-
             gap: 14px;
-
         }
-
         .avatar-img {
-
             width: 42px;
-
             height: 42px;
-
             border-radius: 50%;
-
             object-fit: cover;
-
             background-color: #e2e8f0;
-
         }
-
         .profile-info {
-
             display: flex;
-
             flex-direction: column;
-
             gap: 4px;
-
         }
-
         .profile-name {
-
             font-size: 0.85rem;
-
             font-weight: 700;
-
             color: var(--brand-dark);
-
         }
-
         .profile-role {
-
             font-weight: 500;
-
             color: var(--text-muted);
-
         }
-
         .stars-row {
-
             display: flex;
-
             gap: 2px;
-
             margin-top: 2px;
-
         }
-
         .star-icon {
-
             width: 13px;
-
             height: 13px;
-
             fill: #eab308;
-
         }
-
-
 
         /* 4. ELEMENTOS DE CONFIANZA (TRUST ELEMENTS) */
-
         .trust-section {
-
             background-color: var(--brand-gray-light);
-
             padding: 60px 5% 80px 5%;
-
             text-align: center;
-
         }
-
-
 
         .trust-container {
-
             max-width: 1200px;
-
             margin: 0 auto;
-
         }
-
-
 
         .trust-section h4 {
-
             font-size: 1rem;
-
             text-transform: uppercase;
-
             letter-spacing: 2px;
-
             color: var(--brand-dark);
-
             margin-bottom: 8px;
-
             font-weight: 800;
-
         }
-
-
 
         .trust-section p.trust-sub {
-
             color: var(--text-muted);
-
             font-size: 0.95rem;
-
             margin-bottom: 40px;
-
         }
-
-
 
         .trust-grid {
-
             display: grid;
-
             grid-template-columns: repeat(4, 1fr);
-
             gap: 24px;
-
         }
-
-
 
         .trust-card {
-
             background: transparent;
-
             padding: 20px;
-
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
-
             gap: 12px;
-
         }
-
-
 
         .trust-badge-icon {
-
             width: 80px;
-
             height: 80px;
-
             background: white;
-
             border: 1px dashed var(--brand-gray);
-
             border-radius: 50%;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
         }
-
-
 
         .trust-badge-icon svg {
-
             width: 40px;
-
             height: 40px;
-
             fill: var(--brand-dark);
-
         }
-
-
 
         .trust-card h5 {
-
             font-size: 1.05rem;
-
             font-weight: 700;
-
             color: var(--brand-dark);
-
         }
-
-
 
         .trust-card span {
-
             font-size: 1.8rem;
-
             font-weight: 800;
-
             color: var(--brand-dark);
-
         }
-
-
 
         /* 5. PREGUNTAS FRECUENTES (FAQ) PREMIUM DARK */
-
         .faq-section {
-
             background-color: var(--faq-bg-dark);
-
             padding: 100px 5%;
-
             color: var(--faq-text-light);
-
         }
-
-
 
         .faq-container {
-
             max-width: 1200px;
-
             margin: 0 auto;
-
             display: grid;
-
             grid-template-columns: 0.9fr 1.1fr;
-
             gap: 50px;
-
             align-items: center;
-
         }
-
-
 
         .faq-image-side {
-
             position: relative;
-
             border-radius: 16px;
-
             overflow: hidden;
-
             height: 520px;
-
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-
         }
-
-
 
         .faq-image-side img {
-
             width: 100%;
-
             height: 100%;
-
             object-fit: cover;
-
         }
-
-
 
         .faq-image-side::after {
-
             content: '';
-
             position: absolute;
-
             top: 0; left: 0; width: 100%; height: 100%;
-
             background: linear-gradient(to bottom, transparent 60%, rgba(30,34,41,0.8));
-
         }
-
-
 
         .faq-content-side h2 {
-
             font-size: 2.8rem;
-
             font-weight: 800;
-
             letter-spacing: -1px;
-
             line-height: 1.2;
-
             margin-bottom: 36px;
-
             color: white;
-
         }
-
-
 
         .faq-accordion-group {
-
             display: flex;
-
             flex-direction: column;
-
             gap: 14px;
-
         }
-
-
 
         .faq-item {
-
             background-color: var(--faq-card-bg);
-
             border-radius: 8px;
-
             overflow: hidden;
-
             transition: all 0.3s ease;
-
             border: 1px solid rgba(255,255,255,0.03);
-
         }
-
-
 
         .faq-trigger {
-
             width: 100%;
-
             padding: 22px 28px;
-
             background: transparent;
-
             border: none;
-
             outline: none;
-
             color: white;
-
             font-size: 1.05rem;
-
             font-weight: 600;
-
             text-align: left;
-
             cursor: pointer;
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             gap: 20px;
-
             transition: color 0.2s ease;
-
         }
-
-
 
         .faq-trigger:hover {
-
             color: var(--brand-orange);
-
         }
-
-
 
         .faq-icon {
-
             width: 20px;
-
             height: 20px;
-
             fill: currentColor;
-
             transition: transform 0.3s ease;
-
             flex-shrink: 0;
-
         }
-
-
 
         .faq-panel {
-
             max-height: 0;
-
             overflow: hidden;
-
             transition: max-height 0.3s ease-out;
-
             padding: 0 28px;
-
         }
-
-
 
         .faq-panel p {
-
             color: #94a3b8;
-
             font-size: 0.95rem;
-
             line-height: 1.6;
-
             padding-bottom: 24px;
-
         }
-
-
 
         .faq-item.active {
-
             border-color: rgba(224, 90, 38, 0.3);
-
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-
         }
-
-
 
         .faq-item.active .faq-icon {
-
             transform: rotate(180deg);
-
             fill: var(--brand-orange);
-
         }
-
-
 
         .faq-item.active .faq-trigger {
-
             color: white;
-
         }
-
-
-
 
 
         /* ========================================================
-
            NUEVA SECCIÓN: CIERRE CTA DUAL (Segmentación de Proveedores)
-
            ======================================================== */
-
         .dual-cta-section {
-
             background-color: #f8fafc;
-
             padding: 100px 5%;
-
             border-top: 1px solid var(--border-color);
-
         }
-
-
 
         .dual-cta-container {
-
             max-width: 1200px;
-
             margin: 0 auto;
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 32px;
-
         }
-
-
 
         .cta-card {
-
             background-color: #ffffff;
-
             border: 1px solid var(--border-color);
-
             border-radius: 16px;
-
             padding: 48px;
-
             display: flex;
-
             flex-direction: column;
-
             justify-content: space-between;
-
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
-
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-
         }
-
-
 
         .cta-card:hover {
-
             transform: translateY(-4px);
-
             box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08);
-
         }
-
-
 
         .cta-card-badge {
-
             font-size: 0.8rem;
-
             font-weight: 700;
-
             text-transform: uppercase;
-
             letter-spacing: 1.5px;
-
             color: var(--brand-gray);
-
             margin-bottom: 16px;
-
             display: block;
-
         }
-
-
 
         .cta-card h3 {
-
             font-size: 2rem;
-
             font-weight: 800;
-
             letter-spacing: -0.5px;
-
             color: var(--brand-dark);
-
             margin-bottom: 18px;
-
         }
-
-
 
         .cta-card .cta-description {
-
             font-size: 1rem;
-
             color: var(--text-muted);
-
             line-height: 1.6;
-
             margin-bottom: 32px;
-
         }
-
-
 
         /* Lista de beneficios con checks */
-
         .cta-bullets-list {
-
             list-style: none;
-
             display: flex;
-
             flex-direction: column;
-
             gap: 16px;
-
             margin-bottom: 40px;
-
         }
-
-
 
         .cta-bullet-item {
-
             display: flex;
-
             align-items: flex-start;
-
             gap: 12px;
-
             font-size: 0.95rem;
-
             color: #334155;
-
             font-weight: 500;
-
             line-height: 1.4;
-
         }
-
-
 
         .cta-check-icon {
-
             width: 20px;
-
             height: 20px;
-
             background-color: #f0fdf4; /* Fondo verde tenue para el check */
-
             border-radius: 50%;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             flex-shrink: 0;
-
             margin-top: 1px;
-
         }
-
-
 
         .cta-check-icon svg {
-
             width: 12px;
-
             height: 12px;
-
             fill: #16a34a; /* Icono verde */
-
         }
-
-
 
         /* Botón de acción masivo */
-
         .btn-card-action {
-
             width: 100%;
-
             text-align: center;
-
             background-color: var(--brand-dark);
-
             color: white;
-
             padding: 16px 24px;
-
             border-radius: 8px;
-
             font-weight: 700;
-
             font-size: 0.95rem;
-
             text-decoration: none;
-
             transition: background-color 0.2s, transform 0.2s;
-
             display: inline-block;
-
             border: 2px solid var(--brand-dark);
-
         }
-
-
 
         .cta-card:first-child .btn-card-action {
-
             background-color: var(--brand-dark);
-
             border-color: var(--brand-dark);
-
         }
-
         .cta-card:first-child .btn-card-action:hover {
-
             background-color: #22252a;
-
         }
-
-
 
         /* El segundo botón usa el verde institucional CTA para diferenciar la acción técnica/logística */
-
         .cta-card:last-child .btn-card-action {
-
             background-color: var(--brand-green-cta);
-
             border-color: var(--brand-green-cta);
-
         }
-
         .cta-card:last-child .btn-card-action:hover {
-
             background-color: #14532d;
-
             border-color: #14532d;
-
         }
-
-
-
 
 
         /* 6. PIE DE PÁGINA (FOOTER) */
-
         footer {
-
             background-color: var(--bg-accent-green); 
-
             padding: 60px 5%;
-
             border-top: 1px solid var(--border-color);
-
         }
-
         .footer-container {
-
             max-width: 1200px;
-
             margin: 0 auto;
-
             display: grid;
-
             grid-template-columns: 1fr 1.2fr 1.5fr;
-
             gap: 40px;
-
             align-items: center;
-
         }
-
         .footer-links { list-style: none; }
-
         .footer-links li { margin-bottom: 14px; }
-
         .footer-links a {
-
             text-decoration: none;
-
             color: #2c3e35;
-
             font-size: 1.05rem;
-
             font-weight: 500;
-
             transition: color 0.2s ease;
-
         }
-
         .footer-links a:hover { color: var(--brand-green-cta); text-decoration: underline; }
-
         .footer-logo-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
-
         .footer-logo-center img { width: 90px; height: 90px; object-fit: contain; }
-
         .footer-logo-center a { font-size: 1rem; font-weight: 600; color: var(--brand-green-cta); text-decoration: none; }
-
         .footer-logo-center a:hover { text-decoration: underline; }
-
         .footer-right { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 16px; }
-
         
-
         .social-icon-linkedin {
-
             background: var(--brand-dark);
-
             color: white;
-
             width: 32px;
-
             height: 32px;
-
             border-radius: 6px;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             font-weight: 800;
-
             font-size: 0.9rem;
-
             text-decoration: none;
-
         }
-
         .footer-credits { font-size: 0.9rem; color: #475569; line-height: 1.5; }
 
-
-
         /* RESPONSIVO */
-
         @media (max-width: 992px) {
-
             .menu-links { display: none; }
-
             .hero-section { grid-template-columns: 1fr; text-align: center; }
-
             .hero-cta-group { justify-content: center; }
-
             .hero-image-container { height: 300px; }
-
             .suppliers-header { flex-direction: column; align-items: flex-start; gap: 8px; }
-
             .suppliers-grid { grid-template-columns: 1fr; }
-
             .intro-split-container { grid-template-columns: 1fr; gap: 20px; }
-
             .intro-split-right p { margin-top: 0; }
-
             .testimonials-top-row { flex-direction: column; align-items: flex-start; gap: 20px; }
-
             .testimonials-nav-arrows { display: none; }
-
             .testimonials-grid { grid-template-columns: 1fr; }
-
             .trust-grid { grid-template-columns: repeat(2, 1fr); }
-
             
-
             .faq-container { grid-template-columns: 1fr; gap: 40px; }
-
             .faq-image-side { height: 360px; order: 2; }
-
             .faq-content-side h2 { font-size: 2.2rem; text-align: center; margin-bottom: 28px; }
-
             
-
             /* Responsivo del Cierre Dual */
-
             .dual-cta-container { grid-template-columns: 1fr; gap: 24px; }
-
             .cta-card { padding: 32px; }
-
             
-
             .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
-
             .footer-right { align-items: center; text-align: center; }
-
         }
-
         @media (max-width: 576px) {
-
             .hero-content h1 { font-size: 2rem; }
-
             .intro-split-left h2 { font-size: 2rem; }
-
             .testimonials-top-row h2 { font-size: 2rem; }
-
             .faq-content-side h2 { font-size: 1.8rem; }
-
             .faq-trigger { padding: 18px 20px; font-size: 0.95rem; }
-
             .faq-panel { padding: 0 20px; }
-
             .trust-grid { grid-template-columns: 1fr; }
-
             .cta-card h3 { font-size: 1.6rem; }
-
         }
-
     </style>
-
 </head>
-
 <body>
 
-
-
     <!-- MENÚ SUPERIOR PREMIUM -->
-
     <nav>
-
         <a href="index.html" class="logo-area">
-
             <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img">
-
             <div>PalletHub</div>
-
         </a>
-
         <ul class="menu-links">
-
             <li><a href="index.html">Home</a></li>
-
             <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
-
             <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
-
             <li><a href="#">Circulo de proveedores</a></li>
-
             <li><a href="index.html#tecnologia">Tecnología</a></li>
-
             <li><a href="index.html#nosotros">Nosotros</a></li>
-
             <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
-
         </ul>
-
     </nav>
 
-
-
     <!-- HERO SECTION -->
-
     <section class="hero-section">
-
         <div class="hero-content">
-
             <h1>Únete a la Red de Suministro Inteligente de Pallets</h1>
-
             <p>Conectamos aserraderos, recolectores, unidades de acopio y transportistas con grandes industrias que buscan certidumbre en su logística. Forma parte de un ecosistema escalable con pagos puntuales y soporte técnico.</p>
-
             <div class="hero-cta-group">
-
                 <a href="#" class="btn-primary-cta">[Quiero Ser Proveedor de Pallets]</a>
-
                 <a href="#" class="btn-secondary-cta">[Quiero Proveer Servicios Logísticos]</a>
-
             </div>
-
         </div>
-
         <div class="hero-image-container">
-
             <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800" alt="Suministro de Madera PalletHub">
-
         </div>
-
     </section>
-
-
 
     <!-- CÍRCULO DE PROVEEDORES -->
-
     <section class="suppliers-section">
-
         <div class="suppliers-container">
-
             <div class="suppliers-header">
-
                 <h2>Círculo de Proveedores: Red de Suministro B2B</h2>
-
                 <span class="suppliers-badge">05 / ASOCIACIONES</span>
-
             </div>
-
-
 
             <div class="suppliers-grid">
-
                 <div class="supplier-card">
-
                     <div class="supplier-icon-box">
-
                         <svg viewBox="0 0 24 24"><path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3m6 11H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z"/></svg>
-
                     </div>
-
                     <h3>Puntos de Acopio</h3>
-
                     <div class="subtitle">Minibodegas y Lotes</div>
-
                     <p>Aliados locales que almacenan y consolidan lotes mínimos de tarimas en desuso. Ofrecemos recolección rápida para liberar su espacio operativo.</p>
-
                 </div>
 
-
-
                 <div class="supplier-card">
-
                     <div class="supplier-icon-box">
-
                         <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
-
                     </div>
-
                     <h3>Recolectores</h3>
-
                     <div class="subtitle">Residuos Industriales</div>
-
                     <p>Empresas recolectoras de desperdicios de embalaje. PalletHub procesa y re-manufactura la madera residual dándole un valor justo al desecho.</p>
-
                 </div>
 
-
-
                 <div class="supplier-card">
-
                     <div class="supplier-icon-box">
-
                         <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
-
                     </div>
-
                     <h3>Remanufactura</h3>
-
                     <div class="subtitle">Fabricación y Reparación</div>
-
                     <p>Talleres y carpinterías aliadas encargadas de fabricar, reparar y desarmar módulos de tarimas dañadas para reincorporarlas con calidad certificada al mercado.</p>
-
                 </div>
-
-
 
                 <div class="supplier-card">
-
                     <div class="supplier-icon-box">
-
                         <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6.5h-2.5V9h2.5l1.5 2.5h-1.5z"/></svg>
-
                     </div>
-
                     <h3>Transportistas</h3>
-
                     <div class="subtitle">Retornos Rentables</div>
-
                     <p>Choferes independientes que aprovechan sus viajes de retorno ("fletes muertos") para cargar tarimas hacia nuestros centros de distribución.</p>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
-
 
     <!-- INTRO TEXT SPLIT -->
-
     <section class="intro-text-split-section">
-
         <div class="intro-split-container">
-
             <div class="intro-split-left">
-
                 <span class="split-badge">MÁS DE 200+ RECURSOS LOGÍSTICOS</span>
-
                 <h2>Revoluciona la gestión de tus tarimas y optimiza tu cadena</h2>
-
             </div>
-
             <div class="intro-split-right">
-
                 <p>PalletHub es una plataforma de suministro inteligente diseñada para ayudar a proveedores locales, transportistas y recolectores a perfeccionar su logística operativa y convertirse en expertos del sector. Nuestro ecosistema utiliza herramientas interactivas, asignación eficiente de rutas y un esquema transparente de valorización de madera para acelerar el ritmo y crecimiento de tu negocio.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- TESTIMONIOS -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <span class="testimonials-badge">Testimonios</span>
+            <div class="testimonials-top-row">
+                <h2>Nuestra red de proveedores habla por nosotros</h2>
+                <div class="testimonials-nav-arrows">
+                    <div class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+                    <div class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></div>
+                </div>
             </div>
 
-        </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"PalletHub ha sido un salvavidas para nuestra logística de transporte. Aprovechar los viajes de retorno vacíos para mover tarimas hacia sus centros de distribución optimizó por completo nuestras rutas y aumentó la rentabilidad mensual."</p>
+                    <div class="testimonial-profile">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Proveedor Logístico" class="avatar-img">
+                        <div class="profile-info">
+                            <span class="profile-name">Carlos Mendoza</span>
+                            <span class="profile-role">Gerente de Logística, Transportes GDL</span>
+                            <div class="stars-row">
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"No podría estar más satisfecho con el esquema de pagos y recolección de lotes. Como punto de acopio local, liberar espacio rápido es vital, y ellos cumplen de forma impecable con los tiempos de respuesta de 24 horas prometidos."</p>
+                    <div class="testimonial-profile">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Administrador de Acopio" class="avatar-img">
+                        <div class="profile-info">
+                            <span class="profile-name">Ricardo Silva</span>
+                            <span class="profile-role">Director de Operaciones, Acopio Occidente</span>
+                            <div class="stars-row">
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"La transparencia en la valorización de la madera residual industrial nos dio la confianza para firmar exclusividad. Procesar el desperdicio bajo normas sustentables le dio un valor real de retorno a lo que antes considerábamos basura."</p>
+                    <div class="testimonial-profile">
+                        <img src="https://images.unsplash.com/photo-1628157582853-a796fa650a6a?auto=format&fit=crop&q=80&w=150" alt="Recolector Ambiental" class="avatar-img">
+                        <div class="profile-info">
+                            <span class="profile-name">Martín Stevens</span>
+                            <span class="profile-role">Encargado de Sustentabilidad, Recolecta S.A.</span>
+                            <div class="stars-row">
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST ELEMENTS -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <h4>Trust Elements</h4>
+            <p class="trust-sub">Certificaciones y Garantías Operativas</p>
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                    <h5>Certificación de Residuos</h5><span>99%</span>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg></div>
+                    <h5>Mermas Reducidas</h5><span>15%</span>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+                    <h5>Logística de Retorno</h5><span>24h</span>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg></div>
+                    <h5>Valorización Justa</h5><span>100%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-image-side">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800" alt="Operador técnico">
+            </div>
+
+            <div class="faq-content-side">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-accordion-group">
+                    <div class="faq-item active">
+                        <button class="faq-trigger">
+                            <span>¿Qué es el Círculo de Proveedores de PalletHub?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-panel" style="max-height: 200px;">
+                            <p>Es una red de suministro inteligente de carácter industrial y comercial que asocia a recolectores locales, aserraderos y profesionales logísticos. El ecosistema formaliza y optimiza el flujo de tarimas y madera residual, garantizando transacciones justas y soporte operativo integral.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Cómo se determinan los precios y la valorización del lote?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Utilizamos un esquema estandarizado basado en las dimensiones de las tarimas, el nivel de desgaste de los componentes y el volumen total de madera aprovechable para remanufactura. Esto asegura un retorno transparente y competitivo para el proveedor.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Cuál es el volumen mínimo para solicitar recolección en acopio?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Depende de la zona urbana o industrial. Normalmente consolidamos lotes mínimos a partir de 50 a 100 unidades para enviar unidades logísticas dedicadas. Contáctanos mediante nuestro Centro de Cotización para evaluar alternativas personalizadas.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Qué certificaciones ambientales y de calidad emiten?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Garantizamos el procesamiento bajo estrictos estándares de sustentabilidad de la madera residual. Emitimos reportes de trazabilidad y confinamiento que apoyan el cumplimiento de métricas de economía circular corporativa B2B de nuestros clientes.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Soy transportista independiente, cómo aprovecho los fletes muertos?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Si manejas rutas de retorno habituales con tu caja vacía, puedes pre-registrar tu itinerario en PalletHub. Te asignamos lotes consolidados listos para cargar en tu origen que coincidan hacia nuestros centros de distribución de destino, rentabilizando tus retornos operativos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
-
-    <!-- TESTIMONIOS -->
-
-    <section class="testimonials-section">
-
-        <div class="testimonials-container">
-
-            <span class="testimonials-badge">Testimonios</span>
-
-            <div class="testimonials-top-row">
-
-                <h2>Nuestra red de proveedores habla por nosotros</h2>
-
-                <div class="testimonials-nav-arrows">
-
-                    <div class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
-
-                    <div class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></div>
-
+    <!-- ========================================================
+       NUEVA SECCIÓN IMPLEMENTADA: CIERRE CTA DUAL SIMÉTRICO
+       ======================================================== -->
+    <section class="dual-cta-section">
+        <div class="dual-cta-container">
+            
+            <!-- TARJETA 1: PROVEEDORES DE PALLETS -->
+            <div class="cta-card">
+                <div>
+                    <span class="cta-card-badge">Más de 50 aserraderos y acopios aliados</span>
+                    <h3>Suministro de Pallets</h3>
+                    <p class="cta-description">Diseñado exclusivamente para aserraderos, recolectores locales y dueños de tarimas en desuso que buscan maximizar el valor de su inventario bajo un flujo predecible.</p>
+                    
+                    <ul class="cta-bullets-list">
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Valorización justa por volumen y tipo de madera residual.</span>
+                        </li>
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Panel personalizado para control de lotes e ingresos.</span>
+                        </li>
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Pagos rápidos garantizados al validar la descarga.</span>
+                        </li>
+                    </ul>
                 </div>
-
+                <a href="#" class="btn-card-action">Registrarme como Proveedor de Tarimas</a>
             </div>
 
+            <!-- TARJETA 2: PROVEEDORES DE LOGÍSTICA -->
+            <div class="cta-card">
+                <div>
+                    <span class="cta-card-badge">Optimización de retornos vacíos</span>
+                    <h3>Servicios Logísticos</h3>
+                    <p class="cta-description">Mantén tus camiones en movimiento. Ideal para hombres-camión y empresas transportistas que desean rentabilizar sus trayectos de regreso mediante rutas inteligentes.</p>
+                    
+                    <ul class="cta-bullets-list">
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Asignación automatizada de fletes muertos en tu ruta.</span>
+                        </li>
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Acceso sin costos ocultos al portal logístico PalletHub.</span>
+                        </li>
+                        <li class="cta-bullet-item">
+                            <div class="cta-check-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Guías y manifiestos de carga 100% digitales y listos.</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-card-action">Registrarme como Aliado Logístico</a>
+            </div>
+
+        </div>
+    </section>
 
 
-            <div class="testimonials-grid">
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
+                <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
+                <li><a href="#">Círculo de Proveedores</a></li>
+            </ul>
+            <div class="footer-logo-center">
+                <img src="logo-pallethub.png" alt="PalletHub Logo">
+                <a href="cotizador.html">Ir a Centro de Cotización →</a>
+            </div>
+            <div class="footer-right">
+                <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
+                <div class="footer-credits">
+                    <strong>PalletHub México</strong><br>
+                    Ecosistema Inteligente de Tarimas y Logística Industrial.<br>
+                    Todos los derechos reservados © 2026.
+                </div>
+            </div>
+        </div>
+    </footer>
 
-                <div class="testimonial-card">
+    <!-- SCRIPT DE INTERACTIVIDAD PARA EL ACORDEÓN -->
+    <script>
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const currentItem = trigger.parentElement;
+                const panel = currentItem.querySelector('.faq-panel');
+                const isActive = currentItem.classList.contains('active');
 
-                    <p class="testimonial-quote">"PalletHub ha sido un salvavidas para nuestra logística de transporte. Aprovechar los viajes de retorno vacíos para mover tarimas hacia sus centros de distribución optimizó por completo nuestras rutas y aumentó la rentabilidad 
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== currentItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-panel').style.maxHeight = null;
+                    }
+                });
 
+                if (isActive) {
+                    currentItem.classList.remove('active');
+                    panel.style.maxHeight = null;
+                } else {
+                    currentItem.classList.add('active');
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
