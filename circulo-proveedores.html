@@ -1,724 +1,1838 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soluciones B2B | PalletHub Jalisco</title>
+
+    <title>Círculo de Proveedores | PalletHub</title>
+
     <!-- Tipografía Corporativa Premium -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+
+
 
     <style>
+
         :root {
+
             --brand-green-light: #cce4c5; 
+
             --brand-green-cta: #166534; 
-            --brand-orange: #ea580c;
-            --brand-orange-hover: #c2410c;
-            --brand-gray: #8d9394;          
-            --brand-gray-light: #f1f3f4;   
+
+            --brand-gray: #8d9394;         /* Gris Acero Industrial */
+
+            --brand-gray-light: #f1f3f4;   /* Fondo Gris Tenue */
+
+            --brand-orange: #e05a26;       /* Color Naranja de Acentuación */
+
+            --brand-orange-light: #fef1eb; /* Fondo Naranja Tenue para Iconos */
+
             --brand-dark: #0c0d0e;        
+
             --bg-neutral: #f8fafc;
+
             --text-muted: #64748b;
+
             --border-color: #e2e8f0;
+
             --bg-accent-green: #edf2ee;
-            --footer-bg: #edf2ee; /* Fondo verdoso suave para el footer */
+
+            
+
+            /* Colores oscuros premium para la sección FAQ */
+
+            --faq-bg-dark: #1e2229;
+
+            --faq-card-bg: #282d37;
+
+            --faq-text-light: #f8fafc;
+
         }
+
+
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
         html { scroll-behavior: smooth; }
+
         body { background-color: white; color: var(--brand-dark); }
 
+
+
         /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
+
         nav {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
-            padding: 16px 5%;
+
+            padding: 24px 5%;
+
             background: white;
+
             border-bottom: 1px solid rgba(0,0,0,0.06);
+
             position: sticky;
+
             top: 0;
+
             z-index: 1000;
+
         }
+
+
 
         .logo-area { 
+
             display: flex; 
+
             align-items: center; 
-            gap: 12px; 
+
+            gap: 14px; 
+
             text-decoration: none; 
+
             color: var(--brand-dark); 
+
             font-weight: 800; 
-            font-size: 24px; 
+
+            font-size: 26px; 
+
             letter-spacing: -0.5px;
-            flex-shrink: 0;
+
         }
 
-        .logo-img { width: 42px; height: 42px; object-fit: contain; display: block; }
 
-        .menu-links { 
-            display: flex; 
-            list-style: none; 
-            gap: 8px; 
-            align-items: center; 
-        }
 
-        .menu-links a { 
-            text-decoration: none; 
-            color: var(--brand-dark); 
-            font-weight: 600; 
-            font-size: 0.9rem; 
-            padding: 8px 12px; 
-            border-radius: 6px; 
-            transition: all 0.2s ease;
-            white-space: nowrap; 
-            display: inline-flex;
-            align-items: center;
-        }
+        .logo-img { width: 48px; height: 48px; object-fit: contain; display: block; }
+
+        .menu-links { display: flex; list-style: none; gap: 12px; align-items: center; }
+
+        .menu-links a { text-decoration: none; color: var(--brand-dark); font-weight: 600; font-size: 0.95rem; padding: 8px 14px; border-radius: 6px; transition: all 0.2s ease; }
 
         .menu-links a:hover { background: #f1f5f9; }
 
+        
+
         .menu-links .btn-cotizador {
+
             background-color: var(--brand-green-cta);
+
             color: white;
-            padding: 10px 18px;
+
+            padding: 10px 20px;
+
             border-radius: 8px;
+
             font-weight: 600;
+
             box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
-            margin-left: 6px;
-            white-space: nowrap;
-            line-height: 1;
+
+            margin-left: 8px;
+
         }
 
-        .menu-links .btn-cotizador:hover { 
-            background-color: #14532d; 
-            transform: translateY(-1px); 
-        }
+        .menu-links .btn-cotizador:hover { background-color: #14532d; transform: translateY(-1px); }
 
-        /* 2. HERO / BANNER PRINCIPAL (B2B) */
-        .b2b-hero {
-            padding: 60px 5%;
+
+
+        /* 2. HERO SECTION DE LA LANDING PAGE */
+
+        .hero-section {
+
             max-width: 1200px;
-            margin: 20px auto;
-            background: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)), 
-                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
-            height: 240px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.05);
-        }
 
-        .b2b-hero-badge {
-            background-color: var(--brand-green-cta);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 2rem;
-            font-weight: 800;
-            text-align: center;
-            letter-spacing: -0.5px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            max-width: 90%;
-        }
+            margin: 40px auto;
 
-        /* --- ARQUITECTURA DE PRESENTACIÓN (SPLIT 50/50) --- */
-        .split-intro-section {
-            max-width: 1200px;
-            margin: 60px auto 40px;
             padding: 0 5%;
+
             display: grid;
+
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
-            align-items: center;
-        }
 
-        .split-content .intro-tag {
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--brand-green-cta);
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-
-        .split-content h1 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            line-height: 1.2;
-            color: var(--brand-dark);
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
-
-        .split-content .main-paragraph {
-            font-size: 1.05rem;
-            color: var(--brand-dark);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .split-content .sub-paragraph {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-
-        .split-action-row {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .btn-split-cta {
-            background-color: var(--brand-orange);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: background-color 0.2s, transform 0.2s;
-            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
-        }
-
-        .btn-split-cta:hover {
-            background-color: var(--brand-orange-hover);
-            transform: translateY(-1px);
-        }
-
-        .author-info {
-            display: flex;
-            flex-direction: column;
-        }
-        .author-name {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--brand-dark);
-        }
-        .author-title {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .split-visual {
-            position: relative;
-            width: 100%;
-        }
-
-        .image-container-wrapper {
-            position: relative;
-            border-radius: 16px;
-        }
-
-        .split-main-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 16px;
-            display: block;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-        }
-
-        .floating-badge-card {
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            background-color: var(--brand-green-cta); 
-            color: white;
-            padding: 24px 28px;
-            border-radius: 12px;
-            max-width: 240px;
-            box-shadow: 0 10px 25px rgba(22, 101, 52, 0.3);
-            z-index: 10;
-        }
-
-        .floating-badge-card .stat-number {
-            font-size: 2.6rem;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 8px;
-            letter-spacing: -1px;
-        }
-
-        .floating-badge-card .stat-text {
-            font-size: 0.85rem;
-            line-height: 1.4;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .floating-badge-card .stat-indicators {
-            display: flex;
-            gap: 6px;
-        }
-
-        .floating-badge-card .indicator-dot {
-            height: 4px;
-            border-radius: 2px;
-            background-color: rgba(255,255,255,0.4);
-        }
-        .floating-badge-card .indicator-dot.w-long { width: 24px; background-color: white; }
-        .floating-badge-card .indicator-dot.w-short { width: 12px; }
-
-        /* 3. SECCIÓN PREMIUM DE SERVICIOS */
-        .services-premium-section {
-            max-width: 1200px;
-            margin: 60px auto 40px;
-            padding: 60px 4%;
-            width: 100%;
-            box-sizing: border-box;
-            background-color: var(--brand-green-cta);
-            border-radius: 24px;
-            color: white;
-        }
-
-        .services-premium-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 28px;
-            width: 100%;
-        }
-
-        .premium-card {
-            background: white; 
-            border-radius: 20px; 
-            padding: 32px; 
-            color: var(--brand-dark); 
-            display: grid; 
-            grid-template-rows: auto 1fr auto; 
-            gap: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-
-        .premium-card h3 {
-            font-size: 1.35rem; 
-            font-weight: 800; 
-            line-height: 1.3; 
-            color: var(--brand-dark);
-        }
-
-        .card-img-container {
-            position: relative; 
-            margin: 4px 0 0 0; 
-            border-radius: 12px; 
-            overflow: hidden;
-            height: 200px;
-        }
-
-        .card-img-container img {
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover;
-        }
-
-        .card-badge {
-            position: absolute; 
-            bottom: 12px; 
-            left: 12px; 
-            background: rgba(255,255,255,0.95); 
-            padding: 8px 14px; 
-            border-radius: 8px; 
-            font-size: 0.75rem; 
-            font-weight: 700; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-            border-left: 4px solid #84cc16;
-            color: var(--brand-dark);
-        }
-
-        .premium-card .card-highlight {
-            font-size: 0.9rem; 
-            font-weight: 700; 
-            color: var(--brand-green-cta); 
-            line-height: 1.45;
-        }
-
-        .premium-card .card-description {
-            font-size: 0.88rem; 
-            color: var(--text-muted); 
-            line-height: 1.6;
-        }
-
-        /* INTRANET / TECNOLOGÍA APLICADA */
-        .tech-intranet-section {
-            max-width: 1200px;
-            margin: 60px auto 80px;
-            padding: 0 5%;
-        }
-
-        .tech-split-header {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
             gap: 40px;
-            margin-bottom: 40px;
-            align-items: start;
-        }
 
-        .tech-title-area .tech-pre {
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--brand-green-cta);
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .tech-title-area h2 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: var(--brand-dark);
-            line-height: 1.2;
-            letter-spacing: -1px;
-        }
-
-        .tech-desc-area p {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .btn-tech-action {
-            background-color: var(--brand-green-cta);
-            color: white;
-            padding: 10px 22px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 12px rgba(22, 101, 52, 0.15);
-            transition: all 0.2s ease;
+
         }
 
-        .btn-tech-action:hover {
+
+
+        .hero-content h1 {
+
+            font-size: 2.8rem;
+
+            font-weight: 800;
+
+            line-height: 1.15;
+
+            color: var(--brand-dark);
+
+            margin-bottom: 20px;
+
+            letter-spacing: -1px;
+
+        }
+
+
+
+        .hero-content p {
+
+            font-size: 1.1rem;
+
+            color: var(--text-muted);
+
+            line-height: 1.6;
+
+            margin-bottom: 32px;
+
+        }
+
+
+
+        .hero-cta-group {
+
+            display: flex;
+
+            gap: 16px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+
+        .btn-primary-cta {
+
             background-color: var(--brand-dark);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+            color: white;
+
+            padding: 16px 28px;
+
+            border-radius: 8px;
+
+            font-weight: 700;
+
+            font-size: 0.95rem;
+
+            text-decoration: none;
+
+            transition: background-color 0.2s, transform 0.2s;
+
+            border: 2px solid var(--brand-dark);
+
         }
 
-        /* --- 4. ESTILOS DEL PIE DE PÁGINA (FOOTER) CORREGIDOS --- */
-        footer {
-            background-color: var(--footer-bg);
-            padding: 60px 5% 40px;
-            margin-top: 60px;
+        .btn-primary-cta:hover {
+
+            background-color: #22252a;
+
+            transform: translateY(-1px);
+
+        }
+
+
+
+        .btn-secondary-cta {
+
+            background-color: white;
+
+            color: var(--brand-dark);
+
+            padding: 16px 28px;
+
+            border-radius: 8px;
+
+            font-weight: 700;
+
+            font-size: 0.95rem;
+
+            text-decoration: none;
+
+            transition: all 0.2s;
+
+            border: 2px solid var(--brand-dark);
+
+        }
+
+        .btn-secondary-cta:hover {
+
+            background-color: var(--brand-gray-light);
+
+            transform: translateY(-1px);
+
+        }
+
+
+
+        .hero-image-container {
+
+            width: 100%;
+
+            height: 400px;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+        }
+
+
+
+        .hero-image-container img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+
+        /* 3. SECCIÓN CÍRCULO DE PROVEEDORES (RED DE SUMINISTRO EN 4 COLUMNAS) */
+
+        .suppliers-section {
+
+            background-color: white;
+
+            padding: 80px 5% 40px 5%;
+
+        }
+
+
+
+        .suppliers-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .suppliers-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 48px;
+
+            border-left: 4px solid var(--brand-orange);
+
+            padding-left: 20px;
+
+        }
+
+
+
+        .suppliers-header h2 {
+
+            font-size: 2.2rem;
+
+            font-weight: 800;
+
+            color: var(--brand-dark);
+
+            letter-spacing: -0.5px;
+
+        }
+
+
+
+        .suppliers-badge {
+
+            font-size: 0.9rem;
+
+            font-weight: 700;
+
+            color: var(--brand-gray);
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+        }
+
+
+
+        .suppliers-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 24px;
+
+        }
+
+
+
+        .supplier-card {
+
+            background: white;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 16px;
+
+            padding: 40px 24px;
+
+            transition: transform 0.2s, box-shadow 0.2s;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+
+        }
+
+
+
+        .supplier-card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+        }
+
+
+
+        .supplier-icon-box {
+
+            width: 64px;
+
+            height: 64px;
+
+            background-color: var(--brand-orange-light);
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+
+        .supplier-icon-box svg {
+
+            width: 32px;
+
+            height: 32px;
+
+            fill: var(--brand-orange);
+
+        }
+
+
+
+        .supplier-card h3 {
+
+            font-size: 1.4rem;
+
+            font-weight: 800;
+
+            color: var(--brand-dark);
+
+        }
+
+
+
+        .supplier-card .subtitle {
+
+            font-size: 0.95rem;
+
+            font-weight: 700;
+
+            color: var(--brand-orange);
+
+            margin-top: -12px;
+
+        }
+
+
+
+        .supplier-card p {
+
+            font-size: 0.9rem;
+
+            color: var(--text-muted);
+
+            line-height: 1.6;
+
+        }
+
+
+
+        /* --- SECCIÓN INTERMEDIA: INTRO TEXT SPLIT --- */
+
+        .intro-text-split-section {
+
+            background-color: #ffffff;
+
+            padding: 100px 5%;
+
             border-top: 1px solid var(--border-color);
+
+        }
+
+
+
+        .intro-split-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: 1.1fr 0.9fr;
+
+            gap: 60px;
+
+            align-items: flex-start;
+
+        }
+
+
+
+        .intro-split-left .split-badge {
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            color: #94a3b8;
+
+            margin-bottom: 16px;
+
+            display: block;
+
+        }
+
+
+
+        .intro-split-left h2 {
+
+            font-size: 2.8rem;
+
+            font-weight: 800;
+
+            line-height: 1.15;
+
+            color: var(--brand-dark);
+
+            letter-spacing: -1px;
+
+        }
+
+
+
+        .intro-split-right p {
+
+            font-size: 1.05rem;
+
+            line-height: 1.65;
+
+            color: #475569;
+
+            font-weight: 400;
+
+            margin-top: 34px;
+
+        }
+
+
+
+        /* --- SECCIÓN: TESTIMONIOS --- */
+
+        .testimonials-section {
+
+            background-color: #ffffff;
+
+            padding: 80px 5% 100px 5%;
+
+            border-top: 1px solid var(--border-color);
+
+            overflow: hidden;
+
+        }
+
+        .testimonials-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+        .testimonials-badge {
+
+            background-color: #e0f2fe;
+
+            color: #0369a1;
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            padding: 6px 14px;
+
+            border-radius: 6px;
+
+            display: inline-block;
+
+            margin-bottom: 24px;
+
+        }
+
+        .testimonials-top-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            margin-bottom: 48px;
+
+        }
+
+        .testimonials-top-row h2 {
+
+            font-size: 2.8rem;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            color: var(--brand-dark);
+
+            line-height: 1.15;
+
+            max-width: 600px;
+
+        }
+
+        .testimonials-nav-arrows {
+
+            display: flex;
+
+            gap: 12px;
+
+            margin-bottom: 8px;
+
+        }
+
+        .nav-arrow {
+
+            width: 44px;
+
+            height: 44px;
+
+            border-radius: 50%;
+
+            background-color: #f1f5f9;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+            transition: background-color 0.2s;
+
+        }
+
+        .nav-arrow:hover {
+
+            background-color: #e2e8f0;
+
+        }
+
+        .nav-arrow svg {
+
+            width: 18px;
+
+            height: 18px;
+
+            fill: #475569;
+
+        }
+
+        .testimonials-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 24px;
+
+        }
+
+        .testimonial-card {
+
+            background-color: #f8fafc;
+
+            border-radius: 12px;
+
+            padding: 36px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            min-height: 280px;
+
+        }
+
+        .testimonial-quote {
+
+            font-size: 0.95rem;
+
+            line-height: 1.6;
+
+            color: #334155;
+
+            font-weight: 400;
+
+            margin-bottom: 28px;
+
+        }
+
+        .testimonial-profile {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+        }
+
+        .avatar-img {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            background-color: #e2e8f0;
+
+        }
+
+        .profile-info {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 4px;
+
+        }
+
+        .profile-name {
+
+            font-size: 0.85rem;
+
+            font-weight: 700;
+
+            color: var(--brand-dark);
+
+        }
+
+        .profile-role {
+
+            font-weight: 500;
+
+            color: var(--text-muted);
+
+        }
+
+        .stars-row {
+
+            display: flex;
+
+            gap: 2px;
+
+            margin-top: 2px;
+
+        }
+
+        .star-icon {
+
+            width: 13px;
+
+            height: 13px;
+
+            fill: #eab308;
+
+        }
+
+
+
+        /* 4. ELEMENTOS DE CONFIANZA (TRUST ELEMENTS) */
+
+        .trust-section {
+
+            background-color: var(--brand-gray-light);
+
+            padding: 60px 5% 80px 5%;
+
+            text-align: center;
+
+        }
+
+
+
+        .trust-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .trust-section h4 {
+
+            font-size: 1rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            color: var(--brand-dark);
+
+            margin-bottom: 8px;
+
+            font-weight: 800;
+
+        }
+
+
+
+        .trust-section p.trust-sub {
+
+            color: var(--text-muted);
+
+            font-size: 0.95rem;
+
+            margin-bottom: 40px;
+
+        }
+
+
+
+        .trust-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 24px;
+
+        }
+
+
+
+        .trust-card {
+
+            background: transparent;
+
+            padding: 20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+
+        .trust-badge-icon {
+
+            width: 80px;
+
+            height: 80px;
+
+            background: white;
+
+            border: 1px dashed var(--brand-gray);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+
+        .trust-badge-icon svg {
+
+            width: 40px;
+
+            height: 40px;
+
+            fill: var(--brand-dark);
+
+        }
+
+
+
+        .trust-card h5 {
+
+            font-size: 1.05rem;
+
+            font-weight: 700;
+
+            color: var(--brand-dark);
+
+        }
+
+
+
+        .trust-card span {
+
+            font-size: 1.8rem;
+
+            font-weight: 800;
+
+            color: var(--brand-dark);
+
+        }
+
+
+
+        /* 5. PREGUNTAS FRECUENTES (FAQ) PREMIUM DARK */
+
+        .faq-section {
+
+            background-color: var(--faq-bg-dark);
+
+            padding: 100px 5%;
+
+            color: var(--faq-text-light);
+
+        }
+
+
+
+        .faq-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: 0.9fr 1.1fr;
+
+            gap: 50px;
+
+            align-items: center;
+
+        }
+
+
+
+        .faq-image-side {
+
+            position: relative;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            height: 520px;
+
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+
+        }
+
+
+
+        .faq-image-side img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+
+        .faq-image-side::after {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0; left: 0; width: 100%; height: 100%;
+
+            background: linear-gradient(to bottom, transparent 60%, rgba(30,34,41,0.8));
+
+        }
+
+
+
+        .faq-content-side h2 {
+
+            font-size: 2.8rem;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            line-height: 1.2;
+
+            margin-bottom: 36px;
+
+            color: white;
+
+        }
+
+
+
+        .faq-accordion-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 14px;
+
+        }
+
+
+
+        .faq-item {
+
+            background-color: var(--faq-card-bg);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            transition: all 0.3s ease;
+
+            border: 1px solid rgba(255,255,255,0.03);
+
+        }
+
+
+
+        .faq-trigger {
+
+            width: 100%;
+
+            padding: 22px 28px;
+
+            background: transparent;
+
+            border: none;
+
+            outline: none;
+
+            color: white;
+
+            font-size: 1.05rem;
+
+            font-weight: 600;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            transition: color 0.2s ease;
+
+        }
+
+
+
+        .faq-trigger:hover {
+
+            color: var(--brand-orange);
+
+        }
+
+
+
+        .faq-icon {
+
+            width: 20px;
+
+            height: 20px;
+
+            fill: currentColor;
+
+            transition: transform 0.3s ease;
+
+            flex-shrink: 0;
+
+        }
+
+
+
+        .faq-panel {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.3s ease-out;
+
+            padding: 0 28px;
+
+        }
+
+
+
+        .faq-panel p {
+
+            color: #94a3b8;
+
+            font-size: 0.95rem;
+
+            line-height: 1.6;
+
+            padding-bottom: 24px;
+
+        }
+
+
+
+        .faq-item.active {
+
+            border-color: rgba(224, 90, 38, 0.3);
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+
+        }
+
+
+
+        .faq-item.active .faq-icon {
+
+            transform: rotate(180deg);
+
+            fill: var(--brand-orange);
+
+        }
+
+
+
+        .faq-item.active .faq-trigger {
+
+            color: white;
+
+        }
+
+
+
+
+
+        /* ========================================================
+
+           NUEVA SECCIÓN: CIERRE CTA DUAL (Segmentación de Proveedores)
+
+           ======================================================== */
+
+        .dual-cta-section {
+
+            background-color: #f8fafc;
+
+            padding: 100px 5%;
+
+            border-top: 1px solid var(--border-color);
+
+        }
+
+
+
+        .dual-cta-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 32px;
+
+        }
+
+
+
+        .cta-card {
+
+            background-color: #ffffff;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 16px;
+
+            padding: 48px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+
+
+        .cta-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08);
+
+        }
+
+
+
+        .cta-card-badge {
+
+            font-size: 0.8rem;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            color: var(--brand-gray);
+
+            margin-bottom: 16px;
+
+            display: block;
+
+        }
+
+
+
+        .cta-card h3 {
+
+            font-size: 2rem;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+
+            color: var(--brand-dark);
+
+            margin-bottom: 18px;
+
+        }
+
+
+
+        .cta-card .cta-description {
+
+            font-size: 1rem;
+
+            color: var(--text-muted);
+
+            line-height: 1.6;
+
+            margin-bottom: 32px;
+
+        }
+
+
+
+        /* Lista de beneficios con checks */
+
+        .cta-bullets-list {
+
+            list-style: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 16px;
+
+            margin-bottom: 40px;
+
+        }
+
+
+
+        .cta-bullet-item {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            font-size: 0.95rem;
+
+            color: #334155;
+
+            font-weight: 500;
+
+            line-height: 1.4;
+
+        }
+
+
+
+        .cta-check-icon {
+
+            width: 20px;
+
+            height: 20px;
+
+            background-color: #f0fdf4; /* Fondo verde tenue para el check */
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            margin-top: 1px;
+
+        }
+
+
+
+        .cta-check-icon svg {
+
+            width: 12px;
+
+            height: 12px;
+
+            fill: #16a34a; /* Icono verde */
+
+        }
+
+
+
+        /* Botón de acción masivo */
+
+        .btn-card-action {
+
+            width: 100%;
+
+            text-align: center;
+
+            background-color: var(--brand-dark);
+
+            color: white;
+
+            padding: 16px 24px;
+
+            border-radius: 8px;
+
+            font-weight: 700;
+
+            font-size: 0.95rem;
+
+            text-decoration: none;
+
+            transition: background-color 0.2s, transform 0.2s;
+
+            display: inline-block;
+
+            border: 2px solid var(--brand-dark);
+
+        }
+
+
+
+        .cta-card:first-child .btn-card-action {
+
+            background-color: var(--brand-dark);
+
+            border-color: var(--brand-dark);
+
+        }
+
+        .cta-card:first-child .btn-card-action:hover {
+
+            background-color: #22252a;
+
+        }
+
+
+
+        /* El segundo botón usa el verde institucional CTA para diferenciar la acción técnica/logística */
+
+        .cta-card:last-child .btn-card-action {
+
+            background-color: var(--brand-green-cta);
+
+            border-color: var(--brand-green-cta);
+
+        }
+
+        .cta-card:last-child .btn-card-action:hover {
+
+            background-color: #14532d;
+
+            border-color: #14532d;
+
+        }
+
+
+
+
+
+        /* 6. PIE DE PÁGINA (FOOTER) */
+
+        footer {
+
+            background-color: var(--bg-accent-green); 
+
+            padding: 60px 5%;
+
+            border-top: 1px solid var(--border-color);
+
         }
 
         .footer-container {
+
             max-width: 1200px;
+
             margin: 0 auto;
+
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+
+            grid-template-columns: 1fr 1.2fr 1.5fr;
+
             gap: 40px;
+
             align-items: center;
+
         }
 
-        /* Columna 1: Enlaces */
-        .footer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
+        .footer-links { list-style: none; }
+
+        .footer-links li { margin-bottom: 14px; }
 
         .footer-links a {
+
             text-decoration: none;
-            color: #334155;
-            font-weight: 600;
-            font-size: 0.95rem;
+
+            color: #2c3e35;
+
+            font-size: 1.05rem;
+
+            font-weight: 500;
+
             transition: color 0.2s ease;
+
         }
 
-        .footer-links a:hover {
-            color: var(--brand-green-cta);
-        }
+        .footer-links a:hover { color: var(--brand-green-cta); text-decoration: underline; }
 
-        /* Columna 2: Logo e Ir a Centro de Cotización */
-        .footer-logo-center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            text-align: center;
-        }
+        .footer-logo-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
 
-        .footer-logo-center img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-        }
+        .footer-logo-center img { width: 90px; height: 90px; object-fit: contain; }
 
-        .footer-logo-center a {
-            color: var(--brand-green-cta);
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: transform 0.2s ease;
-        }
+        .footer-logo-center a { font-size: 1rem; font-weight: 600; color: var(--brand-green-cta); text-decoration: none; }
 
-        .footer-logo-center a:hover {
-            transform: translateX(3px);
-        }
+        .footer-logo-center a:hover { text-decoration: underline; }
 
-        /* Columna 3: Redes Sociales y Créditos */
-        .footer-right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-align: right;
-            gap: 16px;
-        }
+        .footer-right { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 16px; }
+
+        
 
         .social-icon-linkedin {
-            background-color: #000;
+
+            background: var(--brand-dark);
+
             color: white;
+
             width: 32px;
+
             height: 32px;
+
             border-radius: 6px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
-            text-decoration: none;
-            font-weight: 700;
+
+            font-weight: 800;
+
             font-size: 0.9rem;
-            transition: opacity 0.2s ease;
+
+            text-decoration: none;
+
         }
 
-        .social-icon-linkedin:hover {
-            opacity: 0.85;
-        }
+        .footer-credits { font-size: 0.9rem; color: #475569; line-height: 1.5; }
 
-        .footer-credits {
-            font-size: 0.85rem;
-            color: #475569;
-            line-height: 1.5;
-        }
 
-        .footer-credits strong {
-            color: #1e293b;
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
 
-        /* RESPONSIVO SEGURO Y COMPLETO */
+        /* RESPONSIVO */
+
         @media (max-width: 992px) {
-            .menu-links { display: none; }
-            .split-intro-section { grid-template-columns: 1fr; gap: 40px; }
-            .split-main-img { height: 320px; }
-            .floating-badge-card { position: relative; bottom: 0; right: 0; margin: -30px auto 0 20px; }
-            .tech-split-header { grid-template-columns: 1fr; gap: 16px; }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 32px;
-                text-align: center;
-            }
-            .footer-links {
-                align-items: center;
-            }
-            .footer-right {
-                align-items: center;
-                text-align: center;
-            }
-        }
 
-        @media (max-width: 768px) {
-            .services-premium-grid {
-                grid-template-columns: 1fr; 
-                gap: 20px;
-            }
-            .premium-card { padding: 20px; }
-            .card-img-container { height: 160px; }
+            .menu-links { display: none; }
+
+            .hero-section { grid-template-columns: 1fr; text-align: center; }
+
+            .hero-cta-group { justify-content: center; }
+
+            .hero-image-container { height: 300px; }
+
+            .suppliers-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+            .suppliers-grid { grid-template-columns: 1fr; }
+
+            .intro-split-container { grid-template-columns: 1fr; gap: 20px; }
+
+            .intro-split-right p { margin-top: 0; }
+
+            .testimonials-top-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+
+            .testimonials-nav-arrows { display: none; }
+
+            .testimonials-grid { grid-template-columns: 1fr; }
+
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+
+            
+
+            .faq-container { grid-template-columns: 1fr; gap: 40px; }
+
+            .faq-image-side { height: 360px; order: 2; }
+
+            .faq-content-side h2 { font-size: 2.2rem; text-align: center; margin-bottom: 28px; }
+
+            
+
+            /* Responsivo del Cierre Dual */
+
+            .dual-cta-container { grid-template-columns: 1fr; gap: 24px; }
+
+            .cta-card { padding: 32px; }
+
+            
+
+            .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+
+            .footer-right { align-items: center; text-align: center; }
+
         }
 
         @media (max-width: 576px) {
-            .b2b-hero-badge { font-size: 1.4rem; padding: 12px 20px; }
-            .split-action-row { flex-direction: column; align-items: flex-start; gap: 16px; }
-            .tech-title-area h2 { font-size: 1.9rem; }
+
+            .hero-content h1 { font-size: 2rem; }
+
+            .intro-split-left h2 { font-size: 2rem; }
+
+            .testimonials-top-row h2 { font-size: 2rem; }
+
+            .faq-content-side h2 { font-size: 1.8rem; }
+
+            .faq-trigger { padding: 18px 20px; font-size: 0.95rem; }
+
+            .faq-panel { padding: 0 20px; }
+
+            .trust-grid { grid-template-columns: 1fr; }
+
+            .cta-card h3 { font-size: 1.6rem; }
+
         }
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <!-- MENÚ SUPERIOR PREMIUM -->
+
     <nav>
+
         <a href="index.html" class="logo-area">
+
             <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img">
+
             <div>PalletHub</div>
+
         </a>
+
         <ul class="menu-links">
+
+            <li><a href="index.html">Home</a></li>
+
             <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
-            <li><a href="circulo-proveedores.html">Círculo de proveedores</a></li>
+
+            <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
+
+            <li><a href="#">Circulo de proveedores</a></li>
+
             <li><a href="index.html#tecnologia">Tecnología</a></li>
+
             <li><a href="index.html#nosotros">Nosotros</a></li>
+
             <li><a href="cotizador.html" class="btn-cotizador">Centro de Cotización</a></li>
+
         </ul>
+
     </nav>
 
-    <!-- BANNER PRINCIPAL (HERO B2B) -->
-    <section class="b2b-hero">
-        <div class="b2b-hero-badge">
-            Soluciones Corporativas B2B
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero-section">
+
+        <div class="hero-content">
+
+            <h1>Únete a la Red de Suministro Inteligente de Pallets</h1>
+
+            <p>Conectamos aserraderos, recolectores, unidades de acopio y transportistas con grandes industrias que buscan certidumbre en su logística. Forma parte de un ecosistema escalable con pagos puntuales y soporte técnico.</p>
+
+            <div class="hero-cta-group">
+
+                <a href="#" class="btn-primary-cta">[Quiero Ser Proveedor de Pallets]</a>
+
+                <a href="#" class="btn-secondary-cta">[Quiero Proveer Servicios Logísticos]</a>
+
+            </div>
+
         </div>
+
+        <div class="hero-image-container">
+
+            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800" alt="Suministro de Madera PalletHub">
+
+        </div>
+
     </section>
 
-    <!-- CUADRO: ARQUITECTURA SPLIT -->
-    <section class="split-intro-section">
-        <div class="split-content">
-            <span class="intro-tag">Suministro de tarimas sin dramas para plantas industriales, logística y manufactura.</span>
-            <h1>Un proveedor aliado para fabricantes, instaladores y contratistas logísticos.</h1>
-            <p class="main-paragraph">
-                Fabricamos y distribuimos tarimas de madera diseñadas para aguantar tu ritmo de carga y eliminar los quiebres de stock en planta. Entregamos a tiempo para que tu andén nunca se detenga.
-            </p>
-            <p class="sub-paragraph">
-                Respondemos a la demanda operativa de Jalisco con especificaciones exactas, madera certificada (NIMF-15) y calidad constante en cada lote. Sin vueltas, sin sorpresas en recepción y con disponibilidad real cuando la necesitas.
-            </p>
-            <div class="split-action-row">
-                <a href="cotizador.html" class="btn-split-cta">
-                    <span>📅</span> Agendar una Cita Comercial
-                </a>
-                <div class="author-info">
-                    <span class="author-name">Equipo Operativo</span>
-                    <span class="author-title">PalletHub Corporativo</span>
-                </div>
-            </div>
-        </div>
 
-        <div class="split-visual">
-            <div class="image-container-wrapper">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800" alt="Suministro Corporativo PalletHub" class="split-main-img">
-                <div class="floating-badge-card">
-                    <div class="stat-number">388</div>
-                    <p class="stat-text">Maniobras eficientes con control total sobre su volumen de carga diario.</p>
-                    <div class="stat-indicators">
-                        <span class="indicator-dot w-long"></span>
-                        <span class="indicator-dot w-short"></span>
+
+    <!-- CÍRCULO DE PROVEEDORES -->
+
+    <section class="suppliers-section">
+
+        <div class="suppliers-container">
+
+            <div class="suppliers-header">
+
+                <h2>Círculo de Proveedores: Red de Suministro B2B</h2>
+
+                <span class="suppliers-badge">05 / ASOCIACIONES</span>
+
+            </div>
+
+
+
+            <div class="suppliers-grid">
+
+                <div class="supplier-card">
+
+                    <div class="supplier-icon-box">
+
+                        <svg viewBox="0 0 24 24"><path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3m6 11H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z"/></svg>
+
                     </div>
+
+                    <h3>Puntos de Acopio</h3>
+
+                    <div class="subtitle">Minibodegas y Lotes</div>
+
+                    <p>Aliados locales que almacenan y consolidan lotes mínimos de tarimas en desuso. Ofrecemos recolección rápida para liberar su espacio operativo.</p>
+
                 </div>
+
+
+
+                <div class="supplier-card">
+
+                    <div class="supplier-icon-box">
+
+                        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+
+                    </div>
+
+                    <h3>Recolectores</h3>
+
+                    <div class="subtitle">Residuos Industriales</div>
+
+                    <p>Empresas recolectoras de desperdicios de embalaje. PalletHub procesa y re-manufactura la madera residual dándole un valor justo al desecho.</p>
+
+                </div>
+
+
+
+                <div class="supplier-card">
+
+                    <div class="supplier-icon-box">
+
+                        <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+
+                    </div>
+
+                    <h3>Remanufactura</h3>
+
+                    <div class="subtitle">Fabricación y Reparación</div>
+
+                    <p>Talleres y carpinterías aliadas encargadas de fabricar, reparar y desarmar módulos de tarimas dañadas para reincorporarlas con calidad certificada al mercado.</p>
+
+                </div>
+
+
+
+                <div class="supplier-card">
+
+                    <div class="supplier-icon-box">
+
+                        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6.5h-2.5V9h2.5l1.5 2.5h-1.5z"/></svg>
+
+                    </div>
+
+                    <h3>Transportistas</h3>
+
+                    <div class="subtitle">Retornos Rentables</div>
+
+                    <p>Choferes independientes que aprovechan sus viajes de retorno ("fletes muertos") para cargar tarimas hacia nuestros centros de distribución.</p>
+
+                </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- SECCIÓN DE SERVICIOS EN CONFIGURACIÓN BALANCIADA FIJA 2X2 -->
-    <section class="services-premium-section">
-        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
-            <div>
-                <span style="color: var(--brand-green-light); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block;">Portafolio Corporativo</span>
-                <h2 style="font-size: 2.4rem; font-weight: 800; color: white; margin-top: 5px; letter-spacing: -1px;">Soluciones Logísticas a Gran Escala</h2>
-            </div>
-            <a href="cotizador.html" class="btn-split-cta" style="background-color: white; color: var(--brand-dark); border-radius: 30px; padding: 12px 24px; font-size: 0.9rem; box-shadow: none;">
-                Ver Centro de Cotización →
-            </a>
-        </div>
 
-        <div class="services-premium-grid">
-            
-            <!-- TARJETA 1 -->
-            <div class="premium-card">
-                <h3>Tarimas Nuevas con Tratamiento Térmico (NIMF-15)</h3>
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Tarimas Nuevas">
-                    <div class="card-badge">🟢 Certificación NIMF-15</div>
-                </div>
-                <div>
-                    <p class="card-highlight">Cero rechazos en aduana: madera nueva, certificada y lista para exportar.</p>
-                    <p class="card-description">Fabricamos tarimas de madera a la medida exacta de tu operación (estándar 48×40, europeas o diseños especiales para carga pesada). Cada lote sale de planta con tratamiento térmico normado y la documentación legal en regla para que tus embarques pasen aduanas internacionales sin frenos ni penalizaciones.</p>
-                </div>
+
+    <!-- INTRO TEXT SPLIT -->
+
+    <section class="intro-text-split-section">
+
+        <div class="intro-split-container">
+
+            <div class="intro-split-left">
+
+                <span class="split-badge">MÁS DE 200+ RECURSOS LOGÍSTICOS</span>
+
+                <h2>Revoluciona la gestión de tus tarimas y optimiza tu cadena</h2>
+
             </div>
 
-            <!-- TARJETA 2 -->
-            <div class="premium-card">
-                <h3>Tarimas Recicladas de Alta Resistencia (Grado A y B)</h3>
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=600&q=80" alt="Tarimas Seminuevas">
-                    <div class="card-badge">♻️ Calidad Reacondicionada Grado A y B</div>
-                </div>
-                <div>
-                    <p class="card-highlight">Mismo soporte que una tarima nueva, pero recortando tu costo por movimiento.</p>
-                    <p class="card-description">Optimiza tu presupuesto operativo sin arriesgar la carga en andén ni en racks. Seleccionamos y reacondicionamos tarimas de segundo uso bajo estándares estrictos: estructura firme, sin clavos expuestos y con capacidad de carga verificada. La solución ideal para distribución nacional y logística interna sin pagar el precio de la madera nueva.</p>
-                </div>
-            </div>
+            <div class="intro-split-right">
 
-            <!-- TARJETA 3 -->
-            <div class="premium-card">
-                <h3>Renta, Pooling y Mantenimiento de Tarimas Propias</h3>
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80" alt="Renta de Pallets">
-                    <div class="card-badge">🔄 Renta y Reparación de Flota</div>
-                </div>
-                <div>
-                    <p class="card-highlight">Cero activos perdidos y cero madera rota estancada en tu patio.</p>
-                    <p class="card-description">Protege tu flujo de caja con dos esquemas diseñados para la operación real:
+                <p>PalletHub es una plataforma de suministro inteligente diseñada para ayudar a proveedores locales, transportistas y recolectores a perfeccionar su logística operativa y convertirse en expertos del sector. Nuestro ecosistema utiliza herramientas interactivas, asignación eficiente de rutas y un esquema transparente de valorización de madera para acelerar el ritmo y crecimiento de tu negocio.</p>
 
-Renta y Pooling: Administramos tu flujo de tarimas para que pagues solo por lo que está en tránsito, eliminando la compra de activos que nunca regresan.
-
-Mantenimiento de Flota Propia: Nos hacemos cargo de la logística inversa de tus tarimas dañadas. Las recogemos directamente en tu planta, las restauramos a su especificación de carga original y te las entregamos de regreso operativas en tu andén.</p>
-                </div>
-            </div>
-
-            <!-- TARJETA 4 -->
-            <div class="premium-card">
-                <h3>Recolección de Mermas y Limpieza Programada de Patios</h3>
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=600&q=80" alt="Manejo Ambiental">
-                    <div class="card-badge" style="border-left: 4px solid #4ade80;">🚛 Gestión Operativa de Residuos de Madera</div>
-                </div>
-                <div>
-                    <p class="card-highlight">Despeja tu patio de maniobras: retiros programados, cero acumulación y valorización de merma.</p>
-                    <p class="card-description">Evita saturación en andenes, riesgos de incendio y observaciones en auditorías. A través de alianzas estratégicas con nuestro Círculo de Proveedores, garantizamos la limpieza sistemática de tu patio mediante retiros continuos de tarimas rotas, pedacería y merma de madera. Liberamos espacio operativo en tu planta con manifiestos de disposición final en regla y trazabilidad completa.</p>
-                </div>
             </div>
 
         </div>
+
     </section>
 
-    <!-- SECCIÓN DE TECNOLOGÍA APLICADA / INTRANET PARA COMPRADORES -->
-    <section class="tech-intranet-section" id="tecnologia-intranet">
-        <div class="tech-split-header">
-            <div class="tech-title-area">
-                <span class="tech-pre">Portal de Compras Inteligente</span>
-                <h2>Las herramientas que su departamento realmente necesita</h2>
-            </div>
-            <div class="tech-desc-area">
-                <p>La plataforma corporativa de PalletHub otorga control analítico absoluto a los compradores. Monitoree de extremo a extremo el ciclo de sus tarimas, descargue documentación oficial de manera automatizada y optimice sus flujos desde una sola intranet dedicada.</p>
-                <a href="#tecnologia-intranet" class="btn-tech-action">Conocer Intranet Corporativa</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- PIE DE PÁGINA (FOOTER) -->
-    <footer>
-        <div class="footer-container">
-            <ul class="footer-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
-                <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
-                <li><a href="circulo-proveedores.html">Círculo de Proveedores</a></li>
-            </ul>
-            <div class="footer-logo-center">
-                <img src="logo-pallethub.png" alt="PalletHub Logo">
-                <a href="cotizador.html">Ir a Centro de Cotización →</a>
-            </div>
-            <div class="footer-right">
-                <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
-                <div class="footer-credits">
-                    <strong>PalletHub México</strong><br>
-                    Ecosistema Inteligente de Tarimas y Logística Industrial.<br>
-                    Todos los derechos reservados © 2026.
+
+    <!-- TESTIMONIOS -->
+
+    <section class="testimonials-section">
+
+        <div class="testimonials-container">
+
+            <span class="testimonials-badge">Testimonios</span>
+
+            <div class="testimonials-top-row">
+
+                <h2>Nuestra red de proveedores habla por nosotros</h2>
+
+                <div class="testimonials-nav-arrows">
+
+                    <div class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+
+                    <div class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></div>
+
                 </div>
-            </div>
-        </div>
-    </footer>
 
-</body>
-</html>
+            </div>
+
+
+
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card">
+
+                    <p class="testimonial-quote">"PalletHub ha sido un salvavidas para nuestra logística de transporte. Aprovechar los viajes de retorno vacíos para mover tarimas hacia sus centros de distribución optimizó por completo nuestras rutas y aumentó la rentabilidad 
+
