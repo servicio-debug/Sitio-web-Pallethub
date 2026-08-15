@@ -33,46 +33,73 @@
         html { scroll-behavior: smooth; }
         body { background-color: white; color: var(--brand-dark); }
 
-        /* 1. MENÚ DE NAVEGACIÓN SUPERIOR */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 5%;
-            background: white;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+      /* 1. MENÚ DE NAVEGACIÓN SUPERIOR (ACTUALIZADO) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 4%;
+    background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        .logo-area { 
-            display: flex; 
-            align-items: center; 
-            gap: 14px; 
-            text-decoration: none; 
-            color: var(--brand-dark); 
-            font-weight: 800; 
-            font-size: 26px; 
-            letter-spacing: -0.5px;
-        }
+.logo-area { 
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+    text-decoration: none; 
+    color: #0c0d0e; 
+    font-weight: 800; 
+    font-size: 28px; 
+    letter-spacing: -0.6px;
+}
 
-        .logo-img { width: 48px; height: 48px; object-fit: contain; display: block; }
-        .menu-links { display: flex; list-style: none; gap: 12px; align-items: center; }
-        .menu-links a { text-decoration: none; color: var(--brand-dark); font-weight: 600; font-size: 0.95rem; padding: 8px 14px; border-radius: 6px; transition: all 0.2s ease; }
-        .menu-links a:hover { background: #f1f5f9; }
-        
-        .menu-links .btn-cotizador {
-            background-color: var(--brand-green-cta);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
-            margin-left: 8px;
-        }
-        .menu-links .btn-cotizador:hover { background-color: #14532d; transform: translateY(-1px); }
+.logo-img { 
+    width: 44px; 
+    height: 44px; 
+    object-fit: contain; 
+    display: block; 
+}
 
+.menu-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 28px; 
+    align-items: center; 
+}
+
+.menu-links a { 
+    text-decoration: none; 
+    color: #0c0d0e; 
+    font-weight: 700; 
+    font-size: 0.98rem; 
+    padding: 6px 4px;
+    transition: opacity 0.2s ease;
+}
+
+.menu-links a:not(.btn-cotizador):hover { 
+    opacity: 0.7; 
+}
+
+.menu-links .btn-cotizador {
+    background-color: #116b38;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(17, 107, 56, 0.15);
+    margin-left: 12px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.menu-links .btn-cotizador:hover { 
+    background-color: #0d542c; 
+    opacity: 1;
+}
         /* 2. HERO SECTION DE LA LANDING PAGE */
         .hero-section {
             max-width: 1200px;
