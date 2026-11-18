@@ -843,5 +843,90 @@
         </div>
     </div>
 </footer>
+    <!-- MODAL RÁPIDO WHATSAPP -->
+<div id="modalCotizarWA" class="wa-modal-backdrop" onclick="cerrarModalFondo(event)">
+    <div class="wa-modal-card">
+        <button type="button" class="wa-modal-close" onclick="cerrarModalWhatsApp()" aria-label="Cerrar">×</button>
+        <span class="wa-modal-badge">Respuesta Inmediata</span>
+        <h3>Cotización Express</h3>
+        <p class="wa-modal-sub">Completa estos 3 datos para enviarte disponibilidad y precio directo a tu WhatsApp.</p>
+
+        <form onsubmit="enviarCotizacionWhatsApp(event)">
+            <div class="wa-field">
+                <label for="waTipoTarima">1. Tipo de tarima o madera *</label>
+                <select id="waTipoTarima" required>
+                    <option value="" disabled selected>Selecciona una opción...</option>
+                    <option value="Tarima Nueva Estándar (48x40)">Tarima Nueva Estándar (48×40)</option>
+                    <option value="Tarima Nueva con Tratamiento NIMF-15">Tarima Nueva con Tratamiento NIMF-15</option>
+                    <option value="Tarima Reciclada Grado A / B">Tarima Reciclada Grado A / B</option>
+                    <option value="Tarima a la Medida / Especial">Tarima a la Medida / Especial</option>
+                    <option value="Madera para Construcción (Tabla, Polín, Viga)">Madera para Construcción (Tabla, Polín, Viga)</option>
+                    <option value="Renta, Pooling o Recolección de Merma">Renta, Pooling o Recolección de Merma</option>
+                </select>
+            </div>
+
+            <div class="wa-field">
+                <label for="waVolumen">2. Volumen mensual estimado *</label>
+                <select id="waVolumen" required>
+                    <option value="" disabled selected>Selecciona cantidad aproximada...</option>
+                    <option value="Menos de 300 piezas / mes">Menos de 300 piezas / mes</option>
+                    <option value="300 a 1,000 piezas / mes">300 a 1,000 piezas / mes</option>
+                    <option value="1,000 a 5,000 piezas / mes">1,000 a 5,000 piezas / mes</option>
+                    <option value="Más de 5,000 piezas / mes">Más de 5,000 piezas / mes</option>
+                    <option value="Pedido único / Por proyecto">Pedido único / Por proyecto</option>
+                </select>
+            </div>
+
+            <div class="wa-field">
+                <label for="waZona">3. Zona o Parque Industrial de entrega *</label>
+                <input type="text" id="waZona" placeholder="Ej. El Salto, Zapopan Norte, Tlajomulco..." required>
+            </div>
+
+            <button type="submit" class="wa-submit-btn">
+                Enviar solicitud por WhatsApp →
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function abrirModalWhatsApp() {
+        const menuToggle = document.getElementById('menu-toggle');
+        if (menuToggle) {
+            menuToggle.checked = false;
+        }
+        document.getElementById('modalCotizarWA').classList.add('activo');
+    }
+
+    function cerrarModalWhatsApp() {
+        document.getElementById('modalCotizarWA').classList.remove('activo');
+    }
+
+    function cerrarModalFondo(e) {
+        if (e.target.id === 'modalCotizarWA') {
+            cerrarModalWhatsApp();
+        }
+    }
+
+    function enviarCotizacionWhatsApp(e) {
+        e.preventDefault();
+        
+        const telefono = "523350185490";
+        const tipo = document.getElementById('waTipoTarima').value;
+        const volumen = document.getElementById('waVolumen').value;
+        const zona = document.getElementById('waZona').value.trim();
+
+        const mensaje = `Hola equipo de *PalletHub*, me gustaría solicitar una cotización:\n\n` +
+                        `• *Requerimiento:* ${tipo}\n` +
+                        `• *Volumen:* ${volumen}\n` +
+                        `• *Zona / Parque Industrial:* ${zona}\n\n` +
+                        `Quedo atento a su disponibilidad y precios.`;
+
+        const urlWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        
+        window.open(urlWhatsApp, '_blank');
+        cerrarModalWhatsApp();
+    }
+</script>
 </body>
 </html>
