@@ -869,10 +869,6 @@ Mantenimiento de Flota Propia: Nos hacemos cargo de la logística inversa de tus
             </div>
         </div>
     </footer>
-
-</body>
-</html>
-
 <!-- MODAL RÁPIDO WHATSAPP -->
 <div id="modalCotizarWA" class="wa-modal-backdrop" onclick="cerrarModalFondo(event)">
     <div class="wa-modal-card">
@@ -920,16 +916,23 @@ Mantenimiento de Flota Propia: Nos hacemos cargo de la logística inversa de tus
 </div>
 
 <script>
+    <script>
     function abrirModalWhatsApp() {
         const menuToggle = document.getElementById('menu-toggle');
         if (menuToggle) {
             menuToggle.checked = false;
         }
-        document.getElementById('modalCotizarWA').classList.add('activo');
+        const modal = document.getElementById('modalCotizarWA');
+        if (modal) {
+            modal.classList.add('activo');
+        }
     }
 
     function cerrarModalWhatsApp() {
-        document.getElementById('modalCotizarWA').classList.remove('activo');
+        const modal = document.getElementById('modalCotizarWA');
+        if (modal) {
+            modal.classList.remove('activo');
+        }
     }
 
     function cerrarModalFondo(e) {
@@ -947,8 +950,16 @@ Mantenimiento de Flota Propia: Nos hacemos cargo de la logística inversa de tus
         const zona = document.getElementById('waZona').value.trim();
 
         const mensaje = `Hola equipo de *PalletHub*, me gustaría solicitar una cotización:\n\n` +
-                        `• *Requerimiento:* ${tipo}\n` + `• *Volumen:* ${volumen}\n` +
+                        `• *Requerimiento:* ${tipo}\n` +
+                        `• *Volumen:* ${volumen}\n` +
                         `• *Zona / Parque Industrial:* ${zona}\n\n` +
                         `Quedo atento a su disponibilidad y precios.`;
 
-        const urlWhatsApp = `
+        const urlWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        
+        window.open(urlWhatsApp, '_blank');
+        cerrarModalWhatsApp();
+    }
+</script>
+</body>
+</html>
