@@ -546,6 +546,146 @@
             .split-action-row { flex-direction: column; align-items: flex-start; gap: 16px; }
             .tech-title-area h2 { font-size: 1.9rem; }
         }
+   /* MODAL RÁPIDO DE COTIZACIÓN WHATSAPP */
+.wa-modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 13, 14, 0.72);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.wa-modal-backdrop.activo {
+    display: flex;
+}
+
+.wa-modal-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    animation: modalEntrada 0.22s ease-out;
+}
+
+@keyframes modalEntrada {
+    from { opacity: 0; transform: translateY(14px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.wa-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #f1f5f9;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #475569;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.wa-modal-close:hover {
+    background: #e2e8f0;
+    color: #0c0d0e;
+}
+
+.wa-modal-badge {
+    display: inline-block;
+    background: #dcfce7;
+    color: #156637;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.wa-modal-card h3 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #0c0d0e;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.wa-modal-sub {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.45;
+    margin-bottom: 22px;
+}
+
+.wa-field {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.wa-field label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.wa-field select,
+.wa-field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #0c0d0e;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.wa-field select:focus,
+.wa-field input:focus {
+    border-color: #156637;
+}
+
+.wa-submit-btn {
+    width: 100%;
+    background-color: #16a34a;
+    color: #ffffff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.wa-submit-btn:hover {
+    background-color: #15803d;
+    transform: translateY(-1px);
+}
     </style>
 </head>
 <body>
