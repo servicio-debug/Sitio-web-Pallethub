@@ -1160,54 +1160,1075 @@ nav {
     </section>
 
 
-    <!-- PIE DE PÁGINA (FOOTER) -->
-    <footer>
-        <div class="footer-container">
-            <ul class="footer-links">
-                <li><a href="index.html">Inicio</a></li>
+<!DOCTYPE html>
+<meta property="og:title" content="PalletHub | Suministro Inteligente de Tarimas">
+<meta property="og:description" content="Fabricación y suministro corporativo de tarimas de madera con certificación NIMF-15 en Guadalajara y Jalisco.">
+<meta property="og:type" content="website">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PalletHub | Suministro Inteligente de Tarimas y Embalaje</title>
+    <!-- Tipografía Corporativa Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-green-light: #cce4c5; 
+            --brand-green-cta: #166534; 
+            --brand-green-hover: #14532d;
+            --brand-gray: #8d9394;           /* Gris Acero Industrial */
+            --brand-gray-light: #f1f3f4;   /* Fondo Gris Tenue */
+            --brand-dark: #0c0d0e;        
+            --bg-neutral: #f8fafc;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-neutral); color: var(--brand-dark); }
+
+        /* --- CONTENEDOR FLUIDO GLOBAL --- */
+        .section-wrapper {
+            width: 100%;
+            display: block;
+            clear: both;
+        }
+
+        /* --- 1. MENÚ DE NAVEGACIÓN SUPERIOR --- */
+        nav {
+            background: white;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+            text-decoration: none; 
+            color: var(--brand-dark); 
+            font-weight: 800; 
+            font-size: 24px; 
+            letter-spacing: -0.5px;
+        }
+
+        .logo-img {
+            width: 42px;       
+            height: 42px;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Menú Móvil Hack (sin JS) */
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--brand-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-links {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .menu-links a {
+            text-decoration: none;
+            color: var(--brand-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            white-space: nowrap;
+            border-radius: 6px; 
+            transition: all 0.2s ease; 
+        }
+
+        .menu-links a:hover { 
+            background: #f1f5f9; 
+        }
+
+        .menu-links .btn-cotizador {
+            background-color: var(--brand-green-cta);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
+            margin-left: 8px;
+        }
+
+        .menu-links .btn-cotizador:hover {
+            background-color: var(--brand-green-hover);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* --- 2. ESTRUCTURA SPLIT-HERO 50/50 --- */
+        .hero-split-container {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 80vh;
+            width: 100%;
+        }
+
+        .hero-half {
+            flex: 1;
+            min-width: 320px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 60px 8%;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .buyer-side {
+            background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80'); 
+        }
+
+        .supplier-side {
+            background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80'); 
+            border-left: 4px solid white; 
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.2) 100%);
+            z-index: 1;
+        }
+
+        .hero-half-content {
+            position: relative;
+            z-index: 2;
+            max-width: 540px;
+            margin-bottom: 20px;
+        }
+
+        .hero-half h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-half h2 {
+            font-size: 1rem;
+            color: #cbd5e1; 
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 28px;
+        }
+
+        /* BOTONES CTA */
+        .cta-btn-main {
+            display: inline-block;
+            text-decoration: none;
+            padding: 14px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .btn-gray-solid {
+            background-color: #ffffff;
+            color: var(--brand-dark) !important;
+        }
+
+        .btn-gray-solid:hover {
+            background-color: #f1f5f9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-green-solid {
+            background-color: var(--brand-green-cta);
+            color: #ffffff !important;
+        }
+
+        .btn-green-solid:hover {
+            background-color: var(--brand-green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(22, 101, 52, 0.3);
+        }
+
+        /* --- 3. BARRA DE CONFIANZA --- */
+        .trust-bar { 
+            padding: 60px 5%; 
+            background: white; 
+            text-align: center; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+        .trust-bar h3 { 
+            font-size: 0.88rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            color: #475569; 
+            font-weight: 700;
+            margin-bottom: 32px; 
+        }
+        .badges-container { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 36px; 
+            flex-wrap: wrap; 
+        }
+        .badge-item { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            color: var(--brand-dark); 
+            gap: 12px;
+        }
+        .badge-icon { 
+            width: 56px; 
+            height: 56px; 
+            background: #f8fafc; 
+            border-radius: 12px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border: 1px solid #e2e8f0; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+        .badge-item:hover .badge-icon {
+            transform: translateY(-3px);
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .badge-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        /* --- 4. BLOQUES DE INFORMACIÓN TÉCNICA --- */
+        .technical-section {
+            padding: 90px 5%;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .technical-section.alt-bg {
+            background: #fafafa;
+        }
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .tech-info h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            color: var(--brand-dark);
+        }
+        .tech-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-green-cta);
+            margin-bottom: 12px;
+        }
+        .tech-info .tech-lead {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .spec-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 12px;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .spec-card:hover {
+            border-color: var(--brand-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .spec-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .spec-value {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 6px;
+        }
+        .spec-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* --- 5. SECCIÓN SOBRE NOSOTROS (REPRESENTATIVO OPCIONAL) --- */
+        .home-about-section {
+            padding: 100px 5%;
+            background: #ffffff;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .home-about-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        .home-about-tag {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--brand-green-cta);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        .home-about-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+        .home-about-lead {
+            font-size: 1.25rem;
+            color: #475569;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* --- 6. PIE DE PÁGINA (FOOTER) --- */
+        footer {
+            background-color: #edf2ee; 
+            padding: 60px 5%;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #2c3e35;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover {
+            color: var(--brand-green-cta);
+            text-decoration: underline;
+        }
+        .footer-logo-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+            width: 100%;
+        }
+        .footer-logo-center img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        .footer-logo-center a {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--brand-green-cta);
+            text-decoration: none;
+        }
+        .footer-logo-center a:hover {
+            text-decoration: underline;
+        }
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            gap: 16px;
+            width: 100%;
+        }
+        .social-icon-linkedin {
+            background: var(--brand-dark);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .social-icon-linkedin:hover {
+            background-color: var(--brand-green-cta);
+        }
+        .footer-credits {
+            font-size: 0.85rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* --- RESPONSIVIDAD (MEDIA QUERIES) --- */
+        @media (max-width: 992px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            .menu-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                gap: 12px;
+            }
+
+            .menu-toggle:checked ~ .menu-links {
+                display: flex;
+            }
+
+            .menu-links .btn-cotizador {
+                margin-left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-split-container { flex-direction: column; }
+            .hero-half { min-height: 50vh; padding: 40px 6%; }
+            .supplier-side { border-left: none; border-top: 4px solid white; }
+            
+            .tech-container { grid-template-columns: 1fr; gap: 40px; }
+            .home-about-section h2 { font-size: 2.2rem; }
+            .home-about-lead { font-size: 1.1rem; }
+            
+            .footer-container { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 30px; }
+            .footer-links { align-items: center; text-align: center; }
+            .footer-right { align-items: center; text-align: center; }
+        }
+
+        @media (max-width: 640px) {
+            .specs-grid { grid-template-columns: 1fr; }
+            .hero-half h1 { font-size: 1.6rem; }
+        }
+        /* MODAL RÁPIDO DE COTIZACIÓN WHATSAPP */
+.wa-modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 13, 14, 0.72);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.wa-modal-backdrop.activo {
+    display: flex;
+}
+
+.wa-modal-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    animation: modalEntrada 0.22s ease-out;
+}
+
+@keyframes modalEntrada {
+    from { opacity: 0; transform: translateY(14px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.wa-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #f1f5f9;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #475569;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.wa-modal-close:hover {
+    background: #e2e8f0;
+    color: #0c0d0e;
+}
+
+.wa-modal-badge {
+    display: inline-block;
+    background: #dcfce7;
+    color: #156637;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.wa-modal-card h3 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #0c0d0e;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.wa-modal-sub {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.45;
+    margin-bottom: 22px;
+}
+
+.wa-field {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.wa-field label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.wa-field select,
+.wa-field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #0c0d0e;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.wa-field select:focus,
+.wa-field input:focus {
+    border-color: #156637;
+}
+
+.wa-submit-btn {
+    width: 100%;
+    background-color: #16a34a;
+    color: #ffffff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.wa-submit-btn:hover {
+    background-color: #15803d;
+    transform: translateY(-1px);
+}
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ SUPERIOR PREMIUM RESPONSIVO -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-area">
+                <img src="logo-pallethub.png" alt="PalletHub Logo" class="logo-img" width="42" height="42">
+                <div>PalletHub</div>
+            </a>
+            
+            <!-- Control de Menú Hamburguesa en CSS puro -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="menu-links">
                 <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
-                <li><a href="madera-para-construccion.html">Madera para Construcción</a></li>
-                <li><a href="#">Círculo de Proveedores</a></li>
+                <li><a href="circulo-proveedores.html">Círculo de proveedores</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li>
+    <button type="button" class="btn-cotizador" onclick="abrirModalWhatsApp()">
+        Cotizar por WhatsApp →
+    </button>
+</li>
             </ul>
-            <div class="footer-logo-center">
-                <img src="logo-pallethub.png" alt="PalletHub Logo">
-                <a href="cotizador.html">Ir a Centro de Cotización →</a>
-            </div>
-            <div class="footer-right">
-                <a href="https://linkedin.com" target="_blank" class="social-icon-linkedin">in</a>
-                <div class="footer-credits">
-                    <strong>PalletHub México</strong><br>
-                    Ecosistema Inteligente de Tarimas y Logística Industrial.<br>
-                    Todos los derechos reservados © 2026.
+        </div>
+    </nav>
+
+    <main>
+        <!-- SPLIT-HERO DE DOS COLUMNAS -->
+        <section class="hero-split-container">
+            
+            <!-- LADO IZQUIERDO: COMPRADOR INDUSTRIAL -->
+            <div class="hero-half buyer-side">
+                <div class="hero-overlay"></div>
+                <div class="hero-half-content">
+                    <h1>Fabricación de Tarimas y Embalajes en Guadalajara</h1>
+                    <h2>Suministro corporativo de tarimas de madera con certificación NIMF-15 para logística en Jalisco</h2>
+                    <a href="soluciones-b2b.html" class="cta-btn-main btn-gray-solid">Cotizar Tarimas</a>
                 </div>
             </div>
+            
+            <!-- LADO DERECHO: ALIADO DE SUMINISTRO -->
+            <div class="hero-half supplier-side">
+                <div class="hero-overlay"></div>
+                <div class="hero-half-content">
+                    <h1>Monetiza tu Flota, Fábrica o Bodega. Únete a la Red de Suministro Inteligente</h1>
+                    <h2>Monetiza fletes muertos y espacios disponibles. Conecta tu operación con nuestra plataforma digital de logística en GDL.</h2>
+                    <a href="circulo-proveedores.html" class="cta-btn-main btn-green-solid">Unirte como Aliado</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- BARRA DE CONFIANZA -->
+        <section class="trust-bar section-wrapper">
+            <h3>Confianza Local y Nacional (Jalisco / GDL / Nacional)</h3>
+            <div class="badges-container">
+                
+                <!-- 1. NIMF-15 -->
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect>
+                            <line x1="7" y1="8" x2="17" y2="8"></line>
+                            <line x1="7" y1="12" x2="13" y2="12"></line>
+                            <line x1="7" y1="16" x2="11" y2="16"></line>
+                        </svg>
+                    </div>
+                    NIMF-15
+                </div>
+                
+                <!-- 2. Pino Nacional -->
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="12 2 20 12 15 12 21 19 3 19 9 12 4 12 12 2"></polyline>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                        </svg>
+                    </div>
+                    Pino Nacional
+                </div>
+
+                <!-- 3. Ingeniería de Empaque -->
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    Ingeniería de Empaque
+                </div>
+                
+                <!-- 4. Retornos Círculo -->
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                    </div>
+                    Retornos Círculo
+                </div>
+                
+                <!-- 5. Trazabilidad -->
+                <div class="badge-item">
+                    <div class="badge-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    Trazabilidad
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BLOQUE 1: SOLUCIONES B2B -->
+        <section id="soluciones-b2b" class="technical-section section-wrapper">
+            <div class="tech-container">
+                <div class="tech-info">
+                    <span class="tech-tag" style="color: var(--brand-gray);">Proveedores de Tarimas de Madera en Guadalajara</span>
+                    <h2>Soluciones B2B</h2>
+                    <p class="tech-lead">No vendemos solo madera; resolvemos el flujo de tu operación logística. Diseñamos, suministramos y recuperamos las tarimas industriales que mueven tu planta sin retrasos, sin quiebres de stock y sin drama operativo.</p>
+                </div>
+
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-label">Ingeniería y Diseño de Empaque</div>
+                        <div class="spec-value">Tarimas Nuevas: Medidas Std o Especiales</div>
+                        <div class="spec-desc">Fabricación bajo especificación exacta para resistir cargas críticas. Disponibilidad garantizada en tarimas estándar (piezas de 48x40).</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-label">Optimización de Costos Logísticos</div>
+                        <div class="spec-value">Tarimas Seminuevas Seleccionadas</div>
+                        <div class="spec-desc">El mismo rendimiento estructural que una pieza nueva. Suministro de tarimas recicladas, usadas y reparadas bajo un estricto control de calidad.</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-label">Eficiencia Operativa B2B</div>
+                        <div class="spec-value">Renta y Soluciones de Logística Circular</div>
+                        <div class="spec-desc">Elimina el costo de almacenamiento y la gestión de activos fijos con nuestro servicio de pooling y arrendamiento de pallets.</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-label">Sustentabilidad Industrial</div>
+                        <div class="spec-value">Compra y Recolección de Tarimas en Desuso</div>
+                        <div class="spec-desc">Desocupa tus patios operativos y recupera valor de tus activos mediante esquemas de recolecciones programadas de forma transparente.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 3: CÍRCULO DE PROVEEDORES -->
+        <section id="circulo-proveedores" class="technical-section section-wrapper">
+            <div class="tech-container">
+                <div class="tech-info">
+                    <span class="tech-tag">RED DE SUMINISTRO ALIADA</span>
+                    <h2>Círculo de Proveedores.</h2>
+                    <p class="tech-lead">Ecosistema logístico en Jalisco para transportistas, recolectores y fabricantes. Eliminamos el costo del flete de regreso, conectando tu transporte con la compra y reciclaje continuo de tarimas de madera.</p>
+                </div>
+
+                <div class="specs-grid">
+                    <!-- Tarjeta 1 -->
+                    <div class="spec-card">
+                        <div class="spec-label">OPTIMIZACIÓN DE RUTAS Y FLETES</div>
+                        <h3 class="spec-value">Cero Flete Vacío</h3>
+                        <p class="spec-desc">Reduce los costos de traslado. Asignamos oportunidades de carga de tarimas de madera en tus trayectos de regreso por los principales corredores industriales de Jalisco (Guadalajara, El Salto, Zapopan,Tlaquepaque,Colotlán, Tlajomulco.. etc).</p>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="spec-card">
+                        <div class="spec-label">MONETIZACIÓN DE INVENTARIO</div>
+                        <h3 class="spec-value">Compra y Recuperación Continua</h3>
+                        <p class="spec-desc">Monetiza tus excedentes y tarimas recicladas o dañadas. Asignamos tu inventario de madera directamente en la red de acopio de PalletHub sin intermediarios.</p>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="spec-card">
+                        <div class="spec-label">SUSTENTABILIDAD INDUSTRIAL</div>
+                        <h3 class="spec-value">Economía Circular en Planta</h3>
+                        <p class="spec-desc">Disminuye la huella de carbono de tu flota aprovechando espacios vacíos en tránsitos locales. Mueve tarimas reacondicionadas y optimiza el ciclo de vida de la madera.</p>
+                    </div>
+
+                    <!-- Tarjeta 4 -->
+                    <div class="spec-card">
+                        <div class="spec-label">MODELO DE PAGO B2B</div>
+                        <h3 class="spec-value">Liquidación Rápida y Transparente</h3>
+                        <p class="spec-desc">Procesos claros de auditoría de tarimas recibidas al instante. Cuentas claras, flujos de efectivo seguros y esquemas de pago preferenciales por volumen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+     <!-- BLOQUE 4: TECNOLOGÍA -->
+<section id="tecnologia" class="technical-section section-wrapper">
+    <div class="tech-container">
+        <div class="tech-info">
+            <span class="tech-tag">Trazabilidad Automatizada</span>
+            <h2>Tecnología</h2>
+            <p class="tech-lead">Control algorítmico y monitoreo digital para la administración de inventario de tarimas y balances operativos de activos logísticos.</p>
         </div>
-    </footer>
 
-    <!-- SCRIPT DE INTERACTIVIDAD PARA EL ACORDEÓN -->
-    <script>
-        document.querySelectorAll('.faq-trigger').forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                const currentItem = trigger.parentElement;
-                const panel = currentItem.querySelector('.faq-panel');
-                const isActive = currentItem.classList.contains('active');
+        <div class="specs-grid">
+            <div class="spec-card">
+                <div class="spec-label">Cubicación Inteligente</div>
+                <div class="spec-value">Algoritmos de Optimización</div>
+                <div class="spec-desc">Cálculo exacto del acomodo volumétrico para maximizar la capacidad de cajas secas y contenedores.</div>
+            </div>
+            <div class="spec-card">
+                <div class="spec-label">Monitoreo Fitosanitario</div>
+                <div class="spec-value">Registro de Datos Termográficos</div>
+                <div class="spec-desc">Acceso inmediato a los reportes técnicos digitales de tratamiento térmico NIMF-15 exigidos por aduanas.</div>
+            </div>
+            <div class="spec-card">
+                <div class="spec-label">Integración Ágil</div>
+                <div class="spec-value">Dashboard de Clientes</div>
+                <div class="spec-desc">Consulta en tiempo real de estatus de pedidos, cotizaciones activas e históricos de consumo B2B.</div>
+            </div>
+            <div class="spec-card">
+                <div class="spec-label">Transparencia Total</div>
+                <div class="spec-value">Auditoría Digital de Activos</div>
+                <div class="spec-desc">Trazabilidad del ciclo de vida de cada lote de tarimas, asegurando un control riguroso de rotaciones.</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    if (item !== currentItem) {
-                        item.classList.remove('active');
-                        item.querySelector('.faq-panel').style.maxHeight = null;
-                    }
-                });
+        <!-- BLOQUE 5: NOSOTROS -->
+        <section id="nosotros" class="technical-section section-wrapper">
+            <div class="tech-container">
+                
+                <!-- LADO IZQUIERDO -->
+                <div class="tech-info">
+                    <span class="tech-tag">Respaldo y Experiencia</span>
+                    <h2>Nosotros</h2>
+                    <p class="tech-lead">Infraestructura industrial y capacidades logísticas dedicadas al suministro integral de activos de empaque y madera de alta resistencia.</p>
+                </div>
 
-                if (isActive) {
-                    currentItem.classList.remove('active');
-                    panel.style.maxHeight = null;
-                } else {
-                    currentItem.classList.add('active');
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        });
-    </script>
+                <!-- LADO DERECHO: MISMAS CLASES Y ESTRUCTURA CSS -->
+                <div class="specs-grid">
+                    <!-- CUADRO 1 -->
+                    <div class="spec-card">
+                        <div class="spec-label">Capacidad Operativa</div>
+                        <div class="spec-value">Infraestructura Industrial</div>
+                        <div class="spec-desc">Líneas automatizadas de ensamble y procesos optimizados para responder con agilidad a pedidos de gran volumen B2B.</div>
+                    </div>
+
+                    <!-- CUADRO 2 -->
+                    <div class="spec-card">
+                        <div class="spec-label">Calidad Garantizada</div>
+                        <div class="spec-value">Cumplimiento NIMF-15</div>
+                        <div class="spec-desc">Horno de tratamiento térmico propio certificado por SEMARNAT para la emisión de reportes fitosanitarios de exportación.</div>
+                    </div>
+
+                    <!-- CUADRO 3 -->
+                    <div class="spec-card">
+                        <div class="spec-label">Logística Estratégica</div>
+                        <div class="spec-value">Cobertura Regional</div>
+                        <div class="spec-desc">Red de distribución eficiente centrada en Guadalajara y el occidente del país para garantizar entregas justo a tiempo.</div>
+                    </div>
+
+                    <!-- CUADRO 4 -->
+                    <div class="spec-card">
+                        <div class="spec-label">Economía Circular</div>
+                        <div class="spec-value">Compromiso Sustentable</div>
+                        <div class="spec-desc">Abastecimiento responsable de fuentes certificadas y modelos de recuperación para maximizar la vida útil del activo.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<!-- PIE DE PÁGINA (FOOTER) -->
+<!-- PIE DE PÁGINA (FOOTER) -->
+<footer>
+    <div class="footer-container">
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="soluciones-b2b.html">Soluciones B2B</a></li>
+            <li><a href="circulo-proveedores.html">Círculo de proveedores</a></li>
+            <li><a href="tecnologia.html">Tecnología</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="madera-construccion.html">Madera para construcción</a></li>
+            <li><a href="https://pallethub.enriquevg.com/intranet.php" target="_blank" rel="noopener noreferrer">Intranet</a></li>
+        </ul>
+
+        <div class="footer-logo-center">
+            <img src="logo-pallethub.png" alt="PalletHub Logo">
+          <a href="javascript:void(0)" onclick="abrirModalWhatsApp()">Cotizar por WhatsApp →</a>
+        </div>
+
+        <div class="footer-right">
+            <a href="#" class="social-icon-linkedin" aria-label="LinkedIn">in</a>
+            <div class="footer-credits">
+                &copy; 2026 PalletHub.<br>Todos los derechos reservados.
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- MODAL RÁPIDO WHATSAPP -->
+<div id="modalCotizarWA" class="wa-modal-backdrop" onclick="cerrarModalFondo(event)">
+    <div class="wa-modal-card">
+        <button type="button" class="wa-modal-close" onclick="cerrarModalWhatsApp()" aria-label="Cerrar">×</button>
+        <span class="wa-modal-badge">Respuesta Inmediata</span>
+        <h3>Cotización Express</h3>
+        <p class="wa-modal-sub">Completa estos 3 datos para enviarte disponibilidad y precio directo a tu WhatsApp.</p>
+
+        <form onsubmit="enviarCotizacionWhatsApp(event)">
+            <div class="wa-field">
+                <label for="waTipoTarima">1. Tipo de tarima o madera *</label>
+                <select id="waTipoTarima" required>
+                    <option value="" disabled selected>Selecciona una opción...</option>
+                    <option value="Tarima Nueva Estándar (48x40)">Tarima Nueva Estándar (48×40)</option>
+                    <option value="Tarima Nueva con Tratamiento NIMF-15">Tarima Nueva con Tratamiento NIMF-15</option>
+                    <option value="Tarima Reciclada Grado A / B">Tarima Reciclada Grado A / B</option>
+                    <option value="Tarima a la Medida / Especial">Tarima a la Medida / Especial</option>
+                    <option value="Madera para Construcción (Tabla, Polín, Viga)">Madera para Construcción (Tabla, Polín, Viga)</option>
+                    <option value="Renta, Pooling o Recolección de Merma">Renta, Pooling o Recolección de Merma</option>
+                </select>
+            </div>
+
+            <div class="wa-field">
+                <label for="waVolumen">2. Volumen mensual estimado *</label>
+                <select id="waVolumen" required>
+                    <option value="" disabled selected>Selecciona cantidad aproximada...</option>
+                    <option value="Menos de 300 piezas / mes">Menos de 300 piezas / mes</option>
+                    <option value="300 a 1,000 piezas / mes">300 a 1,000 piezas / mes</option>
+                    <option value="1,000 a 5,000 piezas / mes">1,000 a 5,000 piezas / mes</option>
+                    <option value="Más de 5,000 piezas / mes">Más de 5,000 piezas / mes</option>
+                    <option value="Pedido único / Por proyecto">Pedido único / Por proyecto</option>
+                </select>
+            </div>
+
+            <div class="wa-field">
+                <label for="waZona">3. Zona o Parque Industrial de entrega *</label>
+                <input type="text" id="waZona" placeholder="Ej. El Salto, Zapopan Norte, Tlajomulco..." required>
+            </div>
+
+            <button type="submit" class="wa-submit-btn">
+                Enviar solicitud por WhatsApp →
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function abrirModalWhatsApp() {
+        const menuToggle = document.getElementById('menu-toggle');
+        if (menuToggle) {
+            menuToggle.checked = false;
+        }
+        document.getElementById('modalCotizarWA').classList.add('activo');
+    }
+
+    function cerrarModalWhatsApp() {
+        document.getElementById('modalCotizarWA').classList.remove('activo');
+    }
+
+    function cerrarModalFondo(e) {
+        if (e.target.id === 'modalCotizarWA') {
+            cerrarModalWhatsApp();
+        }
+    }
+
+    function enviarCotizacionWhatsApp(e) {
+        e.preventDefault();
+        
+        const telefono = "523350185490";
+        const tipo = document.getElementById('waTipoTarima').value;
+        const volumen = document.getElementById('waVolumen').value;
+        const zona = document.getElementById('waZona').value.trim();
+
+        const mensaje = `Hola equipo de *PalletHub*, me gustaría solicitar una cotización:\n\n` +
+                        `• *Requerimiento:* ${tipo}\n` +
+                        `• *Volumen:* ${volumen}\n` +
+                        `• *Zona / Parque Industrial:* ${zona}\n\n` +
+                        `Quedo atento a su disponibilidad y precios.`;
+
+        const urlWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        
+        window.open(urlWhatsApp, '_blank');
+        cerrarModalWhatsApp();
+    }
+</script>
 </body>
 </html>
